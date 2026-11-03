@@ -32,11 +32,26 @@ and line to confirm the verb, path and handler are really there.
   configuration, and constructs that only look like endpoints.
 - **Scope is declared routes, not the runtime HTTP surface.** Both extractors
   read source only.
+- **Other frameworks** (the non-Java drafts):
+  - A route registered for GET and HEAD (gorilla/mux `.Methods(GET, HEAD)`)
+    counts once, as GET; the HEAD variant goes to `excluded`, because the
+    extraction schema has no HEAD.
+  - A route with no verb restriction (no `.Methods`, an MVC action with no
+    `[Http*]` attribute) is `ANY`, with `http_method_inferred`.
+  - Router mounts (`app.use('/events', router)`), static file servers,
+    health-check middleware (`UseHealthChecks("/hc")`) and gRPC methods are
+    excluded.
+  - ASP.NET conventional routes are written as `/controller/action`, plus
+    `/{id}` when the action binds `id`. Index is also reachable without
+    `/index`; that alias is not counted.
+  - `path_literal` is the route text as written at the cited lines, where it
+    differs from the composed path (`api/v1/[controller]`, an action name).
+  - `module_dir: "."` is the repository root (a one-service repository).
 
 ## Normalization (M2)
 
 In this order: resolve `${prop:default}` to its default, replace `{...}` with
-`{}`, drop the query string, host and `:param` segments, collapse slashes, drop
+`{}`, drop the query string and host, replace `:param` segments with `{}`, collapse slashes, drop
 the trailing slash, lowercase. Braces must go before the `?` split, otherwise
 CIMET's `{?}` is cut in half.
 
@@ -61,4 +76,4 @@ it CIMET finds 0 of 50 and its precision is undefined, not zero.
 
 ## Limitations
 
-Single labeller (no inter-rater agreement), small systems, Java/Spring only.
+Single labeller (no inter-rater agreement). The validated systems are Java/Spring only; the non-Java systems are drafts.

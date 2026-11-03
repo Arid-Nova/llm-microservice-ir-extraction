@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "system": "rasa-sdk",
+    "repository": "https://github.com/RasaHQ/rasa-sdk",
+    "commit": "07b0b74f9c653638b3795d5465c503aa82182faf",
+    "commit_date": "2026-10-23",
+    "language": "Python",
+    "frameworks": [
+      "Sanic",
+      "gRPC"
+    ],
+    "labeled_by": "draft: Jaroslav Knapek; every route declaration read at the cited line, compared with P. Deshpande's ground_truth_summary.xlsx (shared 2026-10), sheet 'Endpoint Detail'",
+    "labeled_on": "2026-11-03",
+    "draft": true,
+    "scope": "inbound HTTP endpoints declared in the source; outbound calls are not labeled",
+    "frame": {
+      "kind": "whole_system",
+      "definition": "the whole repository"
+    },
+    "notes": "Agrees with the sheet (3 endpoints). The sheet's lines 119/125/188 come from another commit; at this commit the decorators are at 104/110/173.",
+    "protocol": "see README.md in this directory"
+  },
+  "counts": {
+    "inbound_endpoints": 3,
+    "outbound_calls": 0,
+    "excluded": 1
+  },
+  "services": [
+    {
+      "name": "rasa_sdk",
+      "module_dir": "rasa_sdk",
+      "inbound_endpoints": 3,
+      "note": "the action server"
+    }
+  ],
+  "inbound_endpoints": [
+    {
+      "id": "ep-01",
+      "service": "rasa_sdk",
+      "http_method": "GET",
+      "path_declared": "/health",
+      "path_normalized": "/health",
+      "class": "",
+      "method": "health",
+      "file": "rasa_sdk/endpoint.py",
+      "line_method_annotation": 104,
+      "line_handler": 105,
+      "declaration_kind": "decorator",
+      "evidence": "@app.get(\"/health\") (Sanic)",
+      "notes": ""
+    },
+    {
+      "id": "ep-02",
+      "service": "rasa_sdk",
+      "http_method": "POST",
+      "path_declared": "/webhook",
+      "path_normalized": "/webhook",
+      "class": "",
+      "method": "webhook",
+      "file": "rasa_sdk/endpoint.py",
+      "line_method_annotation": 110,
+      "line_handler": 111,
+      "declaration_kind": "decorator",
+      "evidence": "@app.post(\"/webhook\") (Sanic)",
+      "notes": ""
+    },
+    {
+      "id": "ep-03",
+      "service": "rasa_sdk",
+      "http_method": "GET",
+      "path_declared": "/actions",
+      "path_normalized": "/actions",
+      "class": "",
+      "method": "actions",
+      "file": "rasa_sdk/endpoint.py",
+      "line_method_annotation": 173,
+      "line_handler": 174,
+      "declaration_kind": "decorator",
+      "evidence": "@app.get(\"/actions\") (Sanic)",
+      "notes": ""
+    }
+  ],
+  "outbound_calls": [],
+  "excluded": [
+    {
+      "id": "X-01",
+      "kind": "grpc",
+      "what": "gRPC ActionService (rasa_sdk/grpc_server.py:113: Actions, Webhook, WebhookStream, AckStreamChunks)",
+      "reason": "gRPC methods, not HTTP routes",
+      "revisit_if": "the benchmark counts gRPC methods"
+    }
+  ]
+}

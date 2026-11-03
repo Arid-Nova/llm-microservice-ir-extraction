@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "system": "golang-crud-rest-api-gin",
+    "repository": "https://github.com/Shikha-code36/golang-crud-rest-api-gin",
+    "commit": "3072397d45859cd289e637d1f1da46c2a8d180ba",
+    "commit_date": "2024-04-21",
+    "language": "Go",
+    "frameworks": [
+      "gin"
+    ],
+    "labeled_by": "draft: Jaroslav Knapek; every route declaration read at the cited line, compared with P. Deshpande's ground_truth_summary.xlsx (shared 2026-10), sheet 'Endpoint Detail'",
+    "labeled_on": "2026-11-03",
+    "draft": true,
+    "scope": "inbound HTTP endpoints declared in the source; outbound calls are not labeled",
+    "frame": {
+      "kind": "whole_system",
+      "definition": "the whole repository"
+    },
+    "notes": "Agrees with the sheet (5 endpoints).",
+    "protocol": "see README.md in this directory"
+  },
+  "counts": {
+    "inbound_endpoints": 5,
+    "outbound_calls": 0,
+    "excluded": 0
+  },
+  "services": [
+    {
+      "name": "golang-crud-rest-api-gin",
+      "module_dir": ".",
+      "inbound_endpoints": 5,
+      "note": "one service at the repository root"
+    }
+  ],
+  "inbound_endpoints": [
+    {
+      "id": "ep-01",
+      "service": "golang-crud-rest-api-gin",
+      "http_method": "GET",
+      "path_declared": "/users",
+      "path_normalized": "/users",
+      "class": "handlers",
+      "method": "GetUsers",
+      "file": "main.go",
+      "line_method_annotation": 11,
+      "line_handler": 11,
+      "declaration_kind": "router_call",
+      "evidence": "r.GET(\"/users\", handlers.GetUsers)",
+      "notes": ""
+    },
+    {
+      "id": "ep-02",
+      "service": "golang-crud-rest-api-gin",
+      "http_method": "GET",
+      "path_declared": "/user/:id",
+      "path_normalized": "/user/{}",
+      "class": "handlers",
+      "method": "GetUser",
+      "file": "main.go",
+      "line_method_annotation": 12,
+      "line_handler": 12,
+      "declaration_kind": "router_call",
+      "evidence": "r.GET(\"/user/:id\", handlers.GetUser)",
+      "notes": ""
+    },
+    {
+      "id": "ep-03",
+      "service": "golang-crud-rest-api-gin",
+      "http_method": "POST",
+      "path_declared": "/create_user",
+      "path_normalized": "/create_user",
+      "class": "handlers",
+      "method": "CreateUser",
+      "file": "main.go",
+      "line_method_annotation": 13,
+      "line_handler": 13,
+      "declaration_kind": "router_call",
+      "evidence": "r.POST(\"/create_user\", handlers.CreateUser)",
+      "notes": ""
+    },
+    {
+      "id": "ep-04",
+      "service": "golang-crud-rest-api-gin",
+      "http_method": "PUT",
+      "path_declared": "/update_user/:id",
+      "path_normalized": "/update_user/{}",
+      "class": "handlers",
+      "method": "UpdateUser",
+      "file": "main.go",
+      "line_method_annotation": 14,
+      "line_handler": 14,
+      "declaration_kind": "router_call",
+      "evidence": "r.PUT(\"/update_user/:id\", handlers.UpdateUser)",
+      "notes": ""
+    },
+    {
+      "id": "ep-05",
+      "service": "golang-crud-rest-api-gin",
+      "http_method": "DELETE",
+      "path_declared": "/delete_user/:id",
+      "path_normalized": "/delete_user/{}",
+      "class": "handlers",
+      "method": "DeleteUser",
+      "file": "main.go",
+      "line_method_annotation": 15,
+      "line_handler": 15,
+      "declaration_kind": "router_call",
+      "evidence": "r.DELETE(\"/delete_user/:id\", handlers.DeleteUser)",
+      "notes": ""
+    }
+  ],
+  "outbound_calls": [],
+  "excluded": []
+}

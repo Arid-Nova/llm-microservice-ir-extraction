@@ -143,7 +143,7 @@ function normPath(p){
   p = p.replace(/\{[^}]*\}/g, "{}");
   p = p.split("?")[0];
   p = p.replace(/^https?:\/\/[^/]+/, "");
-  p = p.replace(/:[^/]+/g, "");
+  p = p.replace(/(?<=\/):[^/]+/g, "{}");
   p = p.replace(/\/+/g, "/");
   if (!p.startsWith("/")) p = "/" + p;
   if (p.length > 1) p = p.replace(/\/+$/, "");
@@ -176,11 +176,11 @@ function frameFilter(doc){
 }
 function serviceResolver(doc){
   const pairs = [];
-  for (const s of doc.services || []) for (const d of [s.module_dir, ...(s.serves_modules || [])]) if (d) pairs.push([slash(d).replace(/^\/+|\/+$/g, ""), s.name]);
+  for (const s of doc.services || []) for (const d of [s.module_dir, ...(s.serves_modules || [])]) if (d) pairs.push([slash(d).replace(/^\/+|\/+$/g, "").replace(/^\.$/, ""), s.name]);
   pairs.sort((a, b) => b[0].length - a[0].length);
   if (!pairs.length) return null;
   return path => { const p = slash(path).replace(/^\/+/, "");
-    for (const [pre, name] of pairs) if (p === pre || p.startsWith(pre + "/")) return name;
+    for (const [pre, name] of pairs) if (!pre || p === pre || p.startsWith(pre + "/")) return name;
     return null; };
 }
 // ------------------------------------------------------------------ loaders --

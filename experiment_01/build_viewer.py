@@ -47,8 +47,8 @@ def slim_cimet(d):
 
 
 def collect(cimet_dirs):
-    files = [(HERE / "groundtruth" / n, "gt") for n in ("movie-recommendation.gt.json", "xs2a.gt.json", "geoserver-cloud.gt.json",
-                                                         "spinnaker.gt.json")]
+    files = [(p, "gt") for p in sorted(HERE.glob("groundtruth/*.gt.json"))]
+    gt = {json.loads(p.read_text(encoding="utf-8"))["meta"]["system"] for p, _ in files}
     seen = set()
     for n in CIMET_NAMES:   # one CIMET IR per system: IR-x.cimet.json wins over IR-x.json
         p = next((d / n for d in cimet_dirs if (d / n).exists()), None)
@@ -58,6 +58,9 @@ def collect(cimet_dirs):
             files.append((p, "cimet"))
     files += [(p, "run") for p in sorted(HERE.glob("out/llm_ir*.json"))]
     files += [(p, "run") for p in sorted(EXP2.glob("agent_ir*.json")) if not p.name.endswith(".messages.json")]
+    # pool runs of the systems that have a ground truth (one unit = the whole system)
+    files += [(p, "run") for p in sorted(EXP2.glob("pool/agent_ir*.json"))
+              if p.name.split(".")[1] in gt and not p.name.endswith(".messages.json")]
     out = []
     for p, kind in files:
         try:

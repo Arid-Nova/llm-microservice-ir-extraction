@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "system": "E-commerce-Microservice",
+    "repository": "https://github.com/ondiekelijah/E-commerce-Microservice",
+    "commit": "00b178b4c0366cfed667c2c9abbf6a198151d9ff",
+    "commit_date": "2022-08-25",
+    "language": "JavaScript",
+    "frameworks": [
+      "Express",
+      "RabbitMQ (amqplib)"
+    ],
+    "labeled_by": "draft: Jaroslav Knapek; every route declaration read at the cited line, compared with P. Deshpande's ground_truth_summary.xlsx (shared 2026-10), sheet 'Endpoint Detail'",
+    "labeled_on": "2026-11-03",
+    "draft": true,
+    "scope": "inbound HTTP endpoints declared in the source; outbound calls are not labeled",
+    "frame": {
+      "kind": "whole_system",
+      "definition": "the whole repository"
+    },
+    "notes": "Agrees with the sheet (4 endpoints, order-service none).",
+    "protocol": "see README.md in this directory"
+  },
+  "counts": {
+    "inbound_endpoints": 4,
+    "outbound_calls": 0,
+    "excluded": 0
+  },
+  "services": [
+    {
+      "name": "auth-service",
+      "module_dir": "auth-service",
+      "inbound_endpoints": 2,
+      "note": ""
+    },
+    {
+      "name": "product-service",
+      "module_dir": "product-service",
+      "inbound_endpoints": 2,
+      "note": ""
+    },
+    {
+      "name": "order-service",
+      "module_dir": "order-service",
+      "inbound_endpoints": 0,
+      "note": "RabbitMQ consumer only; no HTTP route"
+    }
+  ],
+  "inbound_endpoints": [
+    {
+      "id": "ep-01",
+      "service": "auth-service",
+      "http_method": "POST",
+      "path_declared": "/auth/register",
+      "path_normalized": "/auth/register",
+      "class": "router",
+      "method": "",
+      "file": "auth-service/routes/auth.js",
+      "line_method_annotation": 9,
+      "path_literal": "/register",
+      "declaration_kind": "router_call",
+      "evidence": "router.post('/register', ...) mounted by app.use('/auth', ...) at auth-service/index.js:9",
+      "notes": ""
+    },
+    {
+      "id": "ep-02",
+      "service": "auth-service",
+      "http_method": "POST",
+      "path_declared": "/auth/login",
+      "path_normalized": "/auth/login",
+      "class": "router",
+      "method": "",
+      "file": "auth-service/routes/auth.js",
+      "line_method_annotation": 34,
+      "path_literal": "/login",
+      "declaration_kind": "router_call",
+      "evidence": "router.post('/login', ...) mounted by app.use('/auth', ...) at auth-service/index.js:9",
+      "notes": ""
+    },
+    {
+      "id": "ep-03",
+      "service": "product-service",
+      "http_method": "POST",
+      "path_declared": "/products/",
+      "path_normalized": "/products",
+      "class": "router",
+      "method": "",
+      "file": "product-service/routes/product.js",
+      "line_method_annotation": 19,
+      "path_literal": "/",
+      "declaration_kind": "router_call",
+      "evidence": "router.post('/', ...) mounted by app.use('/products', ...) at product-service/index.js:9",
+      "notes": ""
+    },
+    {
+      "id": "ep-04",
+      "service": "product-service",
+      "http_method": "POST",
+      "path_declared": "/products/buy",
+      "path_normalized": "/products/buy",
+      "class": "router",
+      "method": "",
+      "file": "product-service/routes/product.js",
+      "line_method_annotation": 36,
+      "path_literal": "/buy",
+      "declaration_kind": "router_call",
+      "evidence": "router.post('/buy', ...) mounted by app.use('/products', ...) at product-service/index.js:9",
+      "notes": ""
+    }
+  ],
+  "outbound_calls": [],
+  "excluded": []
+}

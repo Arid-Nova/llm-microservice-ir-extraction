@@ -1,0 +1,382 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "system": "microservices-demo",
+    "repository": "https://github.com/GoogleCloudPlatform/microservices-demo",
+    "commit": "38e7348eb289eb5b87c0c6e8cb19ced0449dc389",
+    "commit_date": "2026-09-18",
+    "language": "Go, C#, Python, Node.js, Java",
+    "frameworks": [
+      "gorilla/mux",
+      "Flask",
+      "ASP.NET Core",
+      "gRPC"
+    ],
+    "labeled_by": "draft: Jaroslav Knapek; every route declaration read at the cited line, compared with P. Deshpande's ground_truth_summary.xlsx (shared 2026-10), sheet 'Endpoint Detail'",
+    "labeled_on": "2026-11-03",
+    "draft": true,
+    "scope": "inbound HTTP endpoints declared in the source; outbound calls are not labeled",
+    "frame": {
+      "kind": "whole_system",
+      "definition": "the whole repository"
+    },
+    "notes": "The sheet has the 13 frontend routes and shoppingassistant POST /, and misses cartservice GET /. /robots.txt and /_healthz are ANY here, GET in the sheet.",
+    "protocol": "see README.md in this directory"
+  },
+  "counts": {
+    "inbound_endpoints": 15,
+    "outbound_calls": 0,
+    "excluded": 5
+  },
+  "services": [
+    {
+      "name": "frontend",
+      "module_dir": "src/frontend",
+      "inbound_endpoints": 13,
+      "note": ""
+    },
+    {
+      "name": "shoppingassistantservice",
+      "module_dir": "src/shoppingassistantservice",
+      "inbound_endpoints": 1,
+      "note": ""
+    },
+    {
+      "name": "cartservice",
+      "module_dir": "src/cartservice",
+      "inbound_endpoints": 1,
+      "note": ""
+    },
+    {
+      "name": "adservice",
+      "module_dir": "src/adservice",
+      "inbound_endpoints": 0,
+      "note": "gRPC only"
+    },
+    {
+      "name": "checkoutservice",
+      "module_dir": "src/checkoutservice",
+      "inbound_endpoints": 0,
+      "note": "gRPC only"
+    },
+    {
+      "name": "currencyservice",
+      "module_dir": "src/currencyservice",
+      "inbound_endpoints": 0,
+      "note": "gRPC only"
+    },
+    {
+      "name": "emailservice",
+      "module_dir": "src/emailservice",
+      "inbound_endpoints": 0,
+      "note": "gRPC only"
+    },
+    {
+      "name": "loadgenerator",
+      "module_dir": "src/loadgenerator",
+      "inbound_endpoints": 0,
+      "note": "Locust load generator, no server"
+    },
+    {
+      "name": "paymentservice",
+      "module_dir": "src/paymentservice",
+      "inbound_endpoints": 0,
+      "note": "gRPC only"
+    },
+    {
+      "name": "productcatalogservice",
+      "module_dir": "src/productcatalogservice",
+      "inbound_endpoints": 0,
+      "note": "gRPC only"
+    },
+    {
+      "name": "recommendationservice",
+      "module_dir": "src/recommendationservice",
+      "inbound_endpoints": 0,
+      "note": "gRPC only"
+    },
+    {
+      "name": "shippingservice",
+      "module_dir": "src/shippingservice",
+      "inbound_endpoints": 0,
+      "note": "gRPC only"
+    }
+  ],
+  "inbound_endpoints": [
+    {
+      "id": "ep-01",
+      "service": "frontend",
+      "http_method": "GET",
+      "path_declared": "/",
+      "path_normalized": "/",
+      "class": "frontendServer",
+      "method": "homeHandler",
+      "file": "src/frontend/main.go",
+      "line_method_annotation": 150,
+      "line_handler": 150,
+      "path_literal": "/",
+      "declaration_kind": "router_call",
+      "evidence": "r.HandleFunc(baseUrl+\"/\", svc.homeHandler).Methods(http.MethodGet, http.MethodHead)",
+      "notes": "GET and HEAD registered; counted once, as GET (the extraction schema has no HEAD)"
+    },
+    {
+      "id": "ep-02",
+      "service": "frontend",
+      "http_method": "GET",
+      "path_declared": "/product/{id}",
+      "path_normalized": "/product/{}",
+      "class": "frontendServer",
+      "method": "productHandler",
+      "file": "src/frontend/main.go",
+      "line_method_annotation": 151,
+      "line_handler": 151,
+      "path_literal": "/product/{id}",
+      "declaration_kind": "router_call",
+      "evidence": "r.HandleFunc(baseUrl+\"/product/{id}\", svc.productHandler).Methods(http.MethodGet, http.MethodHead)",
+      "notes": "GET and HEAD registered; counted once, as GET (the extraction schema has no HEAD)"
+    },
+    {
+      "id": "ep-03",
+      "service": "frontend",
+      "http_method": "GET",
+      "path_declared": "/cart",
+      "path_normalized": "/cart",
+      "class": "frontendServer",
+      "method": "viewCartHandler",
+      "file": "src/frontend/main.go",
+      "line_method_annotation": 152,
+      "line_handler": 152,
+      "path_literal": "/cart",
+      "declaration_kind": "router_call",
+      "evidence": "r.HandleFunc(baseUrl+\"/cart\", svc.viewCartHandler).Methods(http.MethodGet, http.MethodHead)",
+      "notes": "GET and HEAD registered; counted once, as GET (the extraction schema has no HEAD)"
+    },
+    {
+      "id": "ep-04",
+      "service": "frontend",
+      "http_method": "POST",
+      "path_declared": "/cart",
+      "path_normalized": "/cart",
+      "class": "frontendServer",
+      "method": "addToCartHandler",
+      "file": "src/frontend/main.go",
+      "line_method_annotation": 153,
+      "line_handler": 153,
+      "path_literal": "/cart",
+      "declaration_kind": "router_call",
+      "evidence": "r.HandleFunc(baseUrl+\"/cart\", svc.addToCartHandler).Methods(http.MethodPost)",
+      "notes": ""
+    },
+    {
+      "id": "ep-05",
+      "service": "frontend",
+      "http_method": "POST",
+      "path_declared": "/cart/empty",
+      "path_normalized": "/cart/empty",
+      "class": "frontendServer",
+      "method": "emptyCartHandler",
+      "file": "src/frontend/main.go",
+      "line_method_annotation": 154,
+      "line_handler": 154,
+      "path_literal": "/cart/empty",
+      "declaration_kind": "router_call",
+      "evidence": "r.HandleFunc(baseUrl+\"/cart/empty\", svc.emptyCartHandler).Methods(http.MethodPost)",
+      "notes": ""
+    },
+    {
+      "id": "ep-06",
+      "service": "frontend",
+      "http_method": "POST",
+      "path_declared": "/setCurrency",
+      "path_normalized": "/setcurrency",
+      "class": "frontendServer",
+      "method": "setCurrencyHandler",
+      "file": "src/frontend/main.go",
+      "line_method_annotation": 155,
+      "line_handler": 155,
+      "path_literal": "/setCurrency",
+      "declaration_kind": "router_call",
+      "evidence": "r.HandleFunc(baseUrl+\"/setCurrency\", svc.setCurrencyHandler).Methods(http.MethodPost)",
+      "notes": ""
+    },
+    {
+      "id": "ep-07",
+      "service": "frontend",
+      "http_method": "GET",
+      "path_declared": "/logout",
+      "path_normalized": "/logout",
+      "class": "frontendServer",
+      "method": "logoutHandler",
+      "file": "src/frontend/main.go",
+      "line_method_annotation": 156,
+      "line_handler": 156,
+      "path_literal": "/logout",
+      "declaration_kind": "router_call",
+      "evidence": "r.HandleFunc(baseUrl+\"/logout\", svc.logoutHandler).Methods(http.MethodGet)",
+      "notes": ""
+    },
+    {
+      "id": "ep-08",
+      "service": "frontend",
+      "http_method": "POST",
+      "path_declared": "/cart/checkout",
+      "path_normalized": "/cart/checkout",
+      "class": "frontendServer",
+      "method": "placeOrderHandler",
+      "file": "src/frontend/main.go",
+      "line_method_annotation": 157,
+      "line_handler": 157,
+      "path_literal": "/cart/checkout",
+      "declaration_kind": "router_call",
+      "evidence": "r.HandleFunc(baseUrl+\"/cart/checkout\", svc.placeOrderHandler).Methods(http.MethodPost)",
+      "notes": ""
+    },
+    {
+      "id": "ep-09",
+      "service": "frontend",
+      "http_method": "GET",
+      "path_declared": "/assistant",
+      "path_normalized": "/assistant",
+      "class": "frontendServer",
+      "method": "assistantHandler",
+      "file": "src/frontend/main.go",
+      "line_method_annotation": 158,
+      "line_handler": 158,
+      "path_literal": "/assistant",
+      "declaration_kind": "router_call",
+      "evidence": "r.HandleFunc(baseUrl+\"/assistant\", svc.assistantHandler).Methods(http.MethodGet)",
+      "notes": ""
+    },
+    {
+      "id": "ep-10",
+      "service": "frontend",
+      "http_method": "ANY",
+      "path_declared": "/robots.txt",
+      "path_normalized": "/robots.txt",
+      "class": "",
+      "method": "",
+      "file": "src/frontend/main.go",
+      "line_method_annotation": 160,
+      "path_literal": "/robots.txt",
+      "http_method_inferred": true,
+      "declaration_kind": "router_call",
+      "evidence": "r.HandleFunc(baseUrl+\"/robots.txt\", func(w http.ResponseWriter, _ *http.Request) { fmt.Fprint(w, \"User-agent: *\\nDisallow: /\") })",
+      "notes": "no .Methods(...): every verb matches; the sheet says GET"
+    },
+    {
+      "id": "ep-11",
+      "service": "frontend",
+      "http_method": "ANY",
+      "path_declared": "/_healthz",
+      "path_normalized": "/_healthz",
+      "class": "",
+      "method": "",
+      "file": "src/frontend/main.go",
+      "line_method_annotation": 161,
+      "path_literal": "/_healthz",
+      "http_method_inferred": true,
+      "declaration_kind": "router_call",
+      "evidence": "r.HandleFunc(baseUrl+\"/_healthz\", func(w http.ResponseWriter, _ *http.Request) { fmt.Fprint(w, \"ok\") })",
+      "notes": "no .Methods(...): every verb matches; the sheet says GET"
+    },
+    {
+      "id": "ep-12",
+      "service": "frontend",
+      "http_method": "GET",
+      "path_declared": "/product-meta/{ids}",
+      "path_normalized": "/product-meta/{}",
+      "class": "frontendServer",
+      "method": "getProductByID",
+      "file": "src/frontend/main.go",
+      "line_method_annotation": 162,
+      "line_handler": 162,
+      "path_literal": "/product-meta/{ids}",
+      "declaration_kind": "router_call",
+      "evidence": "r.HandleFunc(baseUrl+\"/product-meta/{ids}\", svc.getProductByID).Methods(http.MethodGet)",
+      "notes": ""
+    },
+    {
+      "id": "ep-13",
+      "service": "frontend",
+      "http_method": "POST",
+      "path_declared": "/bot",
+      "path_normalized": "/bot",
+      "class": "frontendServer",
+      "method": "chatBotHandler",
+      "file": "src/frontend/main.go",
+      "line_method_annotation": 163,
+      "line_handler": 163,
+      "path_literal": "/bot",
+      "declaration_kind": "router_call",
+      "evidence": "r.HandleFunc(baseUrl+\"/bot\", svc.chatBotHandler).Methods(http.MethodPost)",
+      "notes": ""
+    },
+    {
+      "id": "ep-14",
+      "service": "shoppingassistantservice",
+      "http_method": "POST",
+      "path_declared": "/",
+      "path_normalized": "/",
+      "class": "",
+      "method": "talkToGemini",
+      "file": "src/shoppingassistantservice/shoppingassistantservice.py",
+      "line_method_annotation": 65,
+      "line_handler": 66,
+      "declaration_kind": "decorator",
+      "evidence": "@app.route(\"/\", methods=['POST']) (Flask)",
+      "notes": ""
+    },
+    {
+      "id": "ep-15",
+      "service": "cartservice",
+      "http_method": "GET",
+      "path_declared": "/",
+      "path_normalized": "/",
+      "class": "Startup",
+      "method": "",
+      "file": "src/cartservice/src/Startup.cs",
+      "line_method_annotation": 77,
+      "declaration_kind": "minimal_api",
+      "evidence": "endpoints.MapGet(\"/\", ...) next to the gRPC services",
+      "notes": "Answers plain HTTP with a hint to use a gRPC client. Not in the sheet."
+    }
+  ],
+  "outbound_calls": [],
+  "excluded": [
+    {
+      "id": "X-01",
+      "kind": "head_variant",
+      "what": "HEAD / (src/frontend/main.go:150)",
+      "reason": "registered together with GET; the extraction schema has no HEAD verb",
+      "revisit_if": "HEAD becomes a verb of its own"
+    },
+    {
+      "id": "X-02",
+      "kind": "head_variant",
+      "what": "HEAD /product/{id} (src/frontend/main.go:151)",
+      "reason": "registered together with GET; the extraction schema has no HEAD verb",
+      "revisit_if": "HEAD becomes a verb of its own"
+    },
+    {
+      "id": "X-03",
+      "kind": "head_variant",
+      "what": "HEAD /cart (src/frontend/main.go:152)",
+      "reason": "registered together with GET; the extraction schema has no HEAD verb",
+      "revisit_if": "HEAD becomes a verb of its own"
+    },
+    {
+      "id": "X-04",
+      "kind": "static_files",
+      "what": "/static/ (src/frontend/main.go:159, PathPrefix + http.FileServer)",
+      "reason": "a file server under a prefix, not a declared route",
+      "revisit_if": "static content is counted"
+    },
+    {
+      "id": "X-05",
+      "kind": "grpc",
+      "what": "gRPC services of all eleven services (protos/demo.proto: 15 rpc, plus grpc.health.v1)",
+      "reason": "gRPC methods, not HTTP routes",
+      "revisit_if": "the benchmark counts gRPC methods"
+    }
+  ]
+}

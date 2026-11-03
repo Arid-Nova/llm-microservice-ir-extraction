@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "system": "crud-tutorial-csharp",
+    "repository": "https://github.com/leo-aa88/crud-tutorial-csharp",
+    "commit": "366cd02846e04d48621574e22a643aa09d38ec44",
+    "commit_date": "2023-09-09",
+    "language": "C#",
+    "frameworks": [
+      "ASP.NET Core"
+    ],
+    "labeled_by": "draft: Jaroslav Knapek; every route declaration read at the cited line, compared with P. Deshpande's ground_truth_summary.xlsx (shared 2026-10), sheet 'Endpoint Detail'",
+    "labeled_on": "2026-11-03",
+    "draft": true,
+    "scope": "inbound HTTP endpoints declared in the source; outbound calls are not labeled",
+    "frame": {
+      "kind": "whole_system",
+      "definition": "the whole repository"
+    },
+    "notes": "Agrees with the sheet (5 endpoints).",
+    "protocol": "see README.md in this directory"
+  },
+  "counts": {
+    "inbound_endpoints": 5,
+    "outbound_calls": 0,
+    "excluded": 0
+  },
+  "services": [
+    {
+      "name": "SimpleCRUDAPI",
+      "module_dir": "SimpleCRUDAPI",
+      "inbound_endpoints": 5,
+      "note": ""
+    }
+  ],
+  "inbound_endpoints": [
+    {
+      "id": "ep-01",
+      "service": "SimpleCRUDAPI",
+      "http_method": "GET",
+      "path_declared": "/api/v1/Items",
+      "path_normalized": "/api/v1/items",
+      "class": "ItemsController",
+      "method": "GetItems",
+      "file": "SimpleCRUDAPI/Controllers/ItemsController.cs",
+      "line_method_annotation": 17,
+      "line_class_annotation": 7,
+      "line_handler": 18,
+      "path_literal": "api/v1/[controller]",
+      "declaration_kind": "attribute_route",
+      "evidence": "[Route(\"api/v1/[controller]\")] on the class; [HttpGet] on the method",
+      "notes": ""
+    },
+    {
+      "id": "ep-02",
+      "service": "SimpleCRUDAPI",
+      "http_method": "GET",
+      "path_declared": "/api/v1/Items/{id}",
+      "path_normalized": "/api/v1/items/{}",
+      "class": "ItemsController",
+      "method": "GetItem",
+      "file": "SimpleCRUDAPI/Controllers/ItemsController.cs",
+      "line_method_annotation": 23,
+      "line_class_annotation": 7,
+      "line_handler": 24,
+      "path_literal": "api/v1/[controller]",
+      "declaration_kind": "attribute_route",
+      "evidence": "[Route(\"api/v1/[controller]\")] on the class; [HttpGet(\"{id}\")] on the method",
+      "notes": ""
+    },
+    {
+      "id": "ep-03",
+      "service": "SimpleCRUDAPI",
+      "http_method": "POST",
+      "path_declared": "/api/v1/Items",
+      "path_normalized": "/api/v1/items",
+      "class": "ItemsController",
+      "method": "CreateItem",
+      "file": "SimpleCRUDAPI/Controllers/ItemsController.cs",
+      "line_method_annotation": 29,
+      "line_class_annotation": 7,
+      "line_handler": 30,
+      "path_literal": "api/v1/[controller]",
+      "declaration_kind": "attribute_route",
+      "evidence": "[Route(\"api/v1/[controller]\")] on the class; [HttpPost] on the method",
+      "notes": ""
+    },
+    {
+      "id": "ep-04",
+      "service": "SimpleCRUDAPI",
+      "http_method": "PUT",
+      "path_declared": "/api/v1/Items",
+      "path_normalized": "/api/v1/items",
+      "class": "ItemsController",
+      "method": "UpdateItem",
+      "file": "SimpleCRUDAPI/Controllers/ItemsController.cs",
+      "line_method_annotation": 35,
+      "line_class_annotation": 7,
+      "line_handler": 36,
+      "path_literal": "api/v1/[controller]",
+      "declaration_kind": "attribute_route",
+      "evidence": "[Route(\"api/v1/[controller]\")] on the class; [HttpPut] on the method",
+      "notes": ""
+    },
+    {
+      "id": "ep-05",
+      "service": "SimpleCRUDAPI",
+      "http_method": "DELETE",
+      "path_declared": "/api/v1/Items/{id}",
+      "path_normalized": "/api/v1/items/{}",
+      "class": "ItemsController",
+      "method": "DeleteItem",
+      "file": "SimpleCRUDAPI/Controllers/ItemsController.cs",
+      "line_method_annotation": 41,
+      "line_class_annotation": 7,
+      "line_handler": 42,
+      "path_literal": "api/v1/[controller]",
+      "declaration_kind": "attribute_route",
+      "evidence": "[Route(\"api/v1/[controller]\")] on the class; [HttpDelete(\"{id}\")] on the method",
+      "notes": ""
+    }
+  ],
+  "outbound_calls": [],
+  "excluded": []
+}

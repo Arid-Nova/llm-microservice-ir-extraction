@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "system": "node-js-restful-api-example",
+    "repository": "https://github.com/Leonelcode/node-js-restful-api-example",
+    "commit": "1758f866ee904c7765265340b9c2723788eb2ee2",
+    "commit_date": "2016-10-05",
+    "language": "JavaScript",
+    "frameworks": [
+      "Express"
+    ],
+    "labeled_by": "draft: Jaroslav Knapek; every route declaration read at the cited line, compared with P. Deshpande's ground_truth_summary.xlsx (shared 2026-10), sheet 'Endpoint Detail'",
+    "labeled_on": "2026-11-03",
+    "draft": true,
+    "scope": "inbound HTTP endpoints declared in the source; outbound calls are not labeled",
+    "frame": {
+      "kind": "whole_system",
+      "definition": "the whole repository"
+    },
+    "notes": "Agrees with the sheet (5 endpoints). The sheet gives line 35 for POST and 58 for DELETE; the route calls are at 36 and 60 in this commit.",
+    "protocol": "see README.md in this directory"
+  },
+  "counts": {
+    "inbound_endpoints": 5,
+    "outbound_calls": 0,
+    "excluded": 2
+  },
+  "services": [
+    {
+      "name": "server",
+      "module_dir": "server",
+      "inbound_endpoints": 5,
+      "note": "the Express app; client/ is static content it serves"
+    }
+  ],
+  "inbound_endpoints": [
+    {
+      "id": "ep-01",
+      "service": "server",
+      "http_method": "GET",
+      "path_declared": "/events/",
+      "path_normalized": "/events",
+      "class": "eventsRouter",
+      "method": "",
+      "file": "server/routers/events-router.js",
+      "line_method_annotation": 27,
+      "path_literal": "/",
+      "declaration_kind": "router_call",
+      "evidence": "eventsRouter.get('/', ...) mounted by app.use('/events', eventsRouter) at server/server.js:24",
+      "notes": ""
+    },
+    {
+      "id": "ep-02",
+      "service": "server",
+      "http_method": "GET",
+      "path_declared": "/events/:id",
+      "path_normalized": "/events/{}",
+      "class": "eventsRouter",
+      "method": "",
+      "file": "server/routers/events-router.js",
+      "line_method_annotation": 31,
+      "path_literal": "/:id",
+      "declaration_kind": "router_call",
+      "evidence": "eventsRouter.get('/:id', ...) mounted by app.use('/events', eventsRouter) at server/server.js:24",
+      "notes": ""
+    },
+    {
+      "id": "ep-03",
+      "service": "server",
+      "http_method": "POST",
+      "path_declared": "/events/",
+      "path_normalized": "/events",
+      "class": "eventsRouter",
+      "method": "",
+      "file": "server/routers/events-router.js",
+      "line_method_annotation": 36,
+      "path_literal": "/",
+      "declaration_kind": "router_call",
+      "evidence": "eventsRouter.post('/', ...) mounted by app.use('/events', eventsRouter) at server/server.js:24",
+      "notes": ""
+    },
+    {
+      "id": "ep-04",
+      "service": "server",
+      "http_method": "PUT",
+      "path_declared": "/events/:id",
+      "path_normalized": "/events/{}",
+      "class": "eventsRouter",
+      "method": "",
+      "file": "server/routers/events-router.js",
+      "line_method_annotation": 43,
+      "path_literal": "/:id",
+      "declaration_kind": "router_call",
+      "evidence": "eventsRouter.put('/:id', ...) mounted by app.use('/events', eventsRouter) at server/server.js:24",
+      "notes": ""
+    },
+    {
+      "id": "ep-05",
+      "service": "server",
+      "http_method": "DELETE",
+      "path_declared": "/events/:id",
+      "path_normalized": "/events/{}",
+      "class": "eventsRouter",
+      "method": "",
+      "file": "server/routers/events-router.js",
+      "line_method_annotation": 60,
+      "path_literal": "/:id",
+      "declaration_kind": "router_call",
+      "evidence": "eventsRouter.delete('/:id', ...) mounted by app.use('/events', eventsRouter) at server/server.js:24",
+      "notes": ""
+    }
+  ],
+  "outbound_calls": [],
+  "excluded": [
+    {
+      "id": "X-01",
+      "kind": "router_mount",
+      "what": "ANY /events (server/server.js:24, app.use('/events', eventsRouter))",
+      "reason": "mounts the router; its routes are listed one by one",
+      "revisit_if": "the convention for router mounts changes"
+    },
+    {
+      "id": "X-02",
+      "kind": "static_files",
+      "what": "static files from client/ (server/server.js:10, express.static)",
+      "reason": "a file server, not a declared route",
+      "revisit_if": "static content is counted"
+    }
+  ]
+}

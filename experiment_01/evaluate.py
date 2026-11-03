@@ -43,7 +43,7 @@ def norm_path(p):
     p = re.sub(r"\{[^}]*\}", "{}", p)
     p = p.split("?")[0]
     p = re.sub(r"^https?://[^/]+", "", p)
-    p = re.sub(r":[^/]+", "", p)
+    p = re.sub(r"(?<=/):[^/]+", "{}", p)
     p = re.sub(r"/+", "/", p)
     if not p.startswith("/"):
         p = "/" + p
@@ -87,8 +87,9 @@ def service_resolver(gt_doc):
     pairs = []
     for svc in gt_doc.get("services", []):
         for d in [svc.get("module_dir")] + list(svc.get("serves_modules") or []):
-            if d:
-                pairs.append((d.replace("\\", "/").strip("/"), svc["name"]))
+            if d:   # "." = the repository root (a one-service repo)
+                d = d.replace("\\", "/").strip("/")
+                pairs.append(("" if d == "." else d, svc["name"]))
     pairs.sort(key=lambda x: -len(x[0]))
     if not pairs:
         return None
@@ -96,7 +97,7 @@ def service_resolver(gt_doc):
     def resolve(path):
         p = (path or "").replace("\\", "/").lstrip("/")
         for prefix, name in pairs:
-            if p == prefix or p.startswith(prefix + "/"):
+            if not prefix or p == prefix or p.startswith(prefix + "/"):
                 return name
         segs = [x for x in p.split("/") if x]
         return segs[0] if segs else "?"

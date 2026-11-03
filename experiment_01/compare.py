@@ -29,7 +29,7 @@ def canon_path(p):
     # query separator before this would truncate the path at the '?'.
     p = re.sub(r"\{[^}]*\}", "{}", p.strip())
     p = p.split("?")[0]
-    p = re.sub(r":[^/]+", "", p)          # /user/:id style
+    p = re.sub(r"(?<=/):[^/]+", "{}", p)          # /user/:id style
     p = re.sub(r"/+", "/", p)
     if not p.startswith("/"):
         p = "/" + p

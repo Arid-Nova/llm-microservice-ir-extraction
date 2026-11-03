@@ -55,7 +55,7 @@ def norm_path(p):
     p = re.sub(r"\{[^}]*\}", "{}", p)
     p = p.split("?")[0]
     p = re.sub(r"^https?://[^/]+", "", p)
-    p = re.sub(r":[^/]+", "", p)
+    p = re.sub(r"(?<=/):[^/]+", "{}", p)
     p = re.sub(r"/+", "/", p)
     if not p.startswith("/"):
         p = "/" + p
@@ -164,7 +164,10 @@ def source_check(gt, repo, check):
 
         # The declared route must be at one of those lines. A URL built by
         # concatenation only contains its literal prefix, so compare that much.
-        needle = e.get("path_method_level") or e.get("path_class_level") or e["path_declared"]
+        # path_literal: the route text as written at those lines, where it differs
+        # from the composed path (ASP.NET [controller] tokens, conventional routes)
+        needle = (e.get("path_literal") or e.get("path_method_level")
+                  or e.get("path_class_level") or e["path_declared"])
         needle = re.sub(r"^https?://", "", needle).split("{")[0]
         if needle and needle not in window:
             alt = re.sub(r"^https?://", "", e["path_declared"]).split("{")[0]
@@ -177,9 +180,12 @@ def source_check(gt, repo, check):
         if e.get("http_method_inferred"):
             continue          # verb is not in the source; the entry says so
         ann = VERB_ANNOTATION.get(verb, "")
+        # other frameworks: r.GET( router.get( @app.get( [HttpGet] MapGet
+        # http.MethodGet methods=['GET']
+        other = re.search(rf"(?i)(\.|http|method|map|['\"]){verb}\b", window)
         if (f"RequestMethod.{verb}" not in window
                 and f"HttpMethod.{verb}" not in window
-                and (not ann or ann not in window)):
+                and (not ann or ann not in window) and not other):
             bad_verb.append((e["id"], verb, lines[ln - 1].strip()[:90]))
 
         # the handler name must be at the line the entry points to
