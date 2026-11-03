@@ -1,0 +1,393 @@
+{
+  "system": "greenpress-auth",
+  "services": [
+    {
+      "name": "greenpress-auth",
+      "dirs": [
+        "/"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/server/routes/index.ts",
+      "service": "greenpress-auth",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getMe",
+          "httpMethod": "GET",
+          "path": "/api/me",
+          "line": 11,
+          "evidence": ".get('/api/me', verifyUser, onlyAuthenticated, getMe)",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "setMe",
+          "httpMethod": "POST",
+          "path": "/api/me",
+          "line": 12,
+          "evidence": ".post('/api/me', verifyUser, onlyAuthenticated, setMe);",
+          "framework": "Express",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/server/routes/auth.ts",
+      "service": "greenpress-auth",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "signin",
+          "httpMethod": "POST",
+          "path": "/api/signin",
+          "line": 12,
+          "evidence": ".post('/api/signin', signin)",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "signup",
+          "httpMethod": "POST",
+          "path": "/api/signup",
+          "line": 13,
+          "evidence": ".post('/api/signup', signup)",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "refreshToken",
+          "httpMethod": "POST",
+          "path": "/api/token/refresh",
+          "line": 14,
+          "evidence": ".post('/api/token/refresh', refreshToken)",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "logout",
+          "httpMethod": "POST",
+          "path": "/api/logout",
+          "line": 15,
+          "evidence": ".post('/api/logout', verifyUser, onlyAuthenticated, logout);",
+          "framework": "Express",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/server/routes/users.ts",
+      "service": "greenpress-auth",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getUsers",
+          "httpMethod": "GET",
+          "path": "/api/users",
+          "line": 10,
+          "evidence": ".get('/api/users', verifyUser, getUsers)",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "createUser",
+          "httpMethod": "POST",
+          "path": "/api/users",
+          "line": 11,
+          "evidence": ".post('/api/users', verifyUser, onlyPrivileged, createUser)",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "setUserEncryptedData",
+          "httpMethod": "POST",
+          "path": "/api/users/:userId/encrypted",
+          "line": 12,
+          "evidence": ".post('/api/users/:userId/encrypted', verifyUser, onlyPrivileged, setUserEncryptedData)",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "getUser",
+          "httpMethod": "GET",
+          "path": "/api/users/:userId",
+          "line": 13,
+          "evidence": ".get('/api/users/:userId', verifyUser, getUser)",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "getUserEncryptedData",
+          "httpMethod": "GET",
+          "path": "/api/users/:userId/encrypted",
+          "line": 14,
+          "evidence": ".get('/api/users/:userId/encrypted', verifyUser, onlyPrivileged, getUserEncryptedData)",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "updateUser",
+          "httpMethod": "PUT",
+          "path": "/api/users/:userId",
+          "line": 15,
+          "evidence": ".put('/api/users/:userId', verifyUser, onlyPrivileged, updateUser)",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "removeUser",
+          "httpMethod": "DELETE",
+          "path": "/api/users/:userId",
+          "line": 16,
+          "evidence": ".delete('/api/users/:userId', verifyUser, onlyPrivileged, removeUser);",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "getUsersForAdmin",
+          "httpMethod": "GET",
+          "path": "/internal-api/users",
+          "line": 19,
+          "evidence": ".get('/internal-api/users', getUsersForAdmin)",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "createUser",
+          "httpMethod": "POST",
+          "path": "/internal-api/users",
+          "line": 20,
+          "evidence": ".post('/internal-api/users', createUser)",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "updateUser",
+          "httpMethod": "PUT",
+          "path": "/internal-api/users/:userId",
+          "line": 21,
+          "evidence": ".put('/internal-api/users/:userId', updateUser)",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "removeUser",
+          "httpMethod": "DELETE",
+          "path": "/internal-api/users/:userId",
+          "line": 22,
+          "evidence": ".delete('/internal-api/users/:userId', removeUser);",
+          "framework": "Express",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "DeepSeek-V4.1-Flash-1017",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "low",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "auth",
+    "commit": "d93622119a54a406f5797be520fc150641703e05",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 11,
+    "tool_calls": 20,
+    "rejected_entries": 0,
+    "no_call_replies": 0,
+    "input_tokens": 54965,
+    "cached_input_tokens": 46336,
+    "output_tokens": 2196,
+    "list_price_usd": 0.0028,
+    "wall_seconds": 19.3,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".nvmrc\nCONTRIBUTING.md\nLICENSE.md\nREADME.md\nconfig/\ncoverage/\nhelpers/\nindex.ts\njest.config.js\nmocks/\npackage-lock.json\npackage.json\nserver/\ntsconfig.json\ntypes/"
+      },
+      {
+        "step": 1,
+        "tool": "find",
+        "args": {
+          "pattern": "Dockerfile"
+        },
+        "result_head": "(no files)"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/package.json"
+        },
+        "result_head": "1: {\n2:   \"name\": \"@greenpress/auth\",\n3:   \"version\": \"2.0.21\",\n4:   \"description\": \"Express Passport authentication service\",\n5:   \"keywords\": [\n6:     \"express\",\n7:     \"passport\",\n8:     \"mongoose\",\n9:     \"authentication service\",\n10:     \"greenpress\"\n11:   ],\n12:   \"scripts\": {\n13:     \"build\": \"tsc -d\",\n14:     \"prepublishOnly\": \"npm test && npm run build\",\n15:     \"start\": \"node --use_strict dist/index.js\",\n16:     \"dev\": \"npx tsx watch index.ts\",\n17:     \"test\": \"jest\"\n18:   },\n19:   \"main\": \"dist/index.js\",\n20:   \"author\": \"David Meir-Levy <davidmeirlevy@gmail.com>\",\n21:   \"license\": \"MIT\",\n22:   \"dependencies\": {\n23:     \"@greenpress/api-kit\": \"^2.0.21\",\n24:     \"@greenpress/cache-manager\": \"^2.0.21\",\n25:     \"bcryptjs\": \"^2.4.3\",\n26:     \"cookie-parser\": \"^1.4.5\",\n27:     \"jsonwebtoken\": \"^8.5.1\",\n28:     \"mongoose\": \"^5.10.5\",\n29:     \"passport\": \"^0.3.2\",\n30:     \"passport-local\": \"^1.0.0\",\n31:     \"validator\": \"^7.0.0\"\n32:   },\n33:   \"devDependencies\": {\n34:     \"@types/b"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/index.ts"
+        },
+        "result_head": "1: import {mongoUri} from './config'\n2: import {connect} from './server/models';\n3: \n4: // connect to the database and load models\n5: connect(mongoUri)\n6: \n7: // load passport strategies\n8: import './server/passport'\n9: import './server/routes'\n10: \n11: // start the server\n12: require('@greenpress/api-kit')\n13:       .start(\n14:           'Authentication Service',\n15:           process.env.PORT || 9000,\n16:           process.env.IP || '0.0.0.0'\n17:       )"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server"
+        },
+        "result_head": "controllers/\nmiddleware/\nmodels/\npassport/\nroutes/\nservices/"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server/routes"
+        },
+        "result_head": "auth.ts\nindex.ts\nusers.ts"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server/controllers"
+        },
+        "result_head": "logout.ts\nme.ts\nrefresh-token.ts\nsignin-signup-token.ts\nsignin.ts\nsignup.ts\nusers.ts"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/routes/index.ts"
+        },
+        "result_head": "1: const app = require('@greenpress/api-kit').app();\n2: import { getMe, setMe } from '../controllers/me';\n3: import { onlyAuthenticated } from '../middleware/auth-check';\n4: import verifyUser from '../middleware/verify-user';\n5: import usersRouter from './users';\n6: import authRouter from './auth';\n7: \n8: app.use(require('cookie-parser')());\n9: \n10: app\n11:   .get('/api/me', verifyUser, onlyAuthenticated, getMe)\n12:   .post('/api/me', verifyUser, onlyAuthenticated, setMe);\n13: \n14: app.use(usersRouter);\n15: app.use(authRouter);"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/routes/auth.ts"
+        },
+        "result_head": "1: import {getRouter} from '@greenpress/api-kit'\n2: import {onlyAuthenticated} from '../middleware/auth-check';\n3: import verifyUser from '../middleware/verify-user';\n4: import {signin} from '../controllers/signin';\n5: import {signup} from '../controllers/signup';\n6: import {refreshToken} from '../controllers/refresh-token';\n7: import {logout} from '../controllers/logout';\n8: \n9: const router = getRouter()\n10: \n11: router\n12:   .post('/api/signin', signin)\n13:   .post('/api/signup', signup)\n14:   .post('/api/token/refresh', refreshToken)\n15:   .post('/api/logout', verifyUser, onlyAuthenticated, logout);\n16: \n17: export default router;"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/routes/users.ts"
+        },
+        "result_head": "1: import {getRouter} from '@greenpress/api-kit'\n2: import users from '../controllers/users'\n3: import verifyUser from '../middleware/verify-user'\n4: import {onlyPrivileged} from '../middleware/auth-check'\n5: \n6: const {getUsersForAdmin, getUsers, createUser, getUser, updateUser, removeUser, getUserEncryptedData, setUserEncryptedData} = users\n7: const router = getRouter()\n8: \n9: router\n10:   .get('/api/users', verifyUser, getUsers)\n11:   .post('/api/users', verifyUser, onlyPrivileged, createUser)\n12:   .post('/api/users/:userId/encrypted', verifyUser, onlyPrivileged, setUserEncryptedData)\n13:   .get('/api/users/:userId', verifyUser, getUser)\n14:   .get('/api/users/:userId/encrypted', verifyUser, onlyPrivileged, getUserEncryptedData)\n15:   .put('/api/users/:userId', verifyUser, onlyPrivileged, updateUser)\n16:   .delete('/api/users/:userId', verifyUser, onlyPrivileged, removeUser);\n17: \n18: router\n19:   .get('/internal-api/users', getUsersForAdmin)\n20:   .post('/internal-api/users', crea"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "pattern": "\\.(get|post|put|delete|patch|use)\\(['\\\"]/",
+          "path": "/"
+        },
+        "result_head": "/server/routes/auth.ts:12: .post('/api/signin', signin)\n/server/routes/auth.ts:13: .post('/api/signup', signup)\n/server/routes/auth.ts:14: .post('/api/token/refresh', refreshToken)\n/server/routes/auth.ts:15: .post('/api/logout', verifyUser, onlyAuthenticated, logout);\n/server/routes/index.ts:11: .get('/api/me', verifyUser, onlyAuthenticated, getMe)\n/server/routes/index.ts:12: .post('/api/me', verifyUser, onlyAuthenticated, setMe);\n/server/routes/users.ts:10: .get('/api/users', verifyUser, getUsers)\n/server/routes/users.ts:11: .post('/api/users', verifyUser, onlyPrivileged, createUser)\n/server/routes/users.ts:12: .post('/api/users/:userId/encrypted', verifyUser, onlyPrivileged, setUserEncryptedData)\n/server/routes/users.ts:13: .get('/api/users/:userId', verifyUser, getUser)\n/server/routes/users.ts:14: .get('/api/users/:userId/encrypted', verifyUser, onlyPrivileged, getUserEncryptedData)\n/server/routes/users.ts:15: .put('/api/users/:userId', verifyUser, onlyPrivileged, updateUser)\n/serve"
+      },
+      {
+        "step": 5,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server/middleware"
+        },
+        "result_head": "auth-check.ts\npopulate-user.ts\ntests/\nverify-user.ts"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/controllers/users.ts"
+        },
+        "result_head": "1: import {Response, Request, RequestHandler} from 'express'\n2: import {AuthRequest} from '../../types'\n3: import User, {IUser} from '../models/user'\n4: import UserInternalMetadata from '../models/user-internal-metadata';\n5: import {getEncryptedData, setEncryptedData} from '../services/encrypted-data';\n6: \n7: const {Types: {ObjectId}} = require('mongoose')\n8: const UsersService = require('../services/users')\n9: const {isObjectId} = require('../../helpers/mongo-utils')\n10: \n11: const privilegedUserFields = 'email fullName firstName lastName birthDate roles';\n12: \n13: function getUsersForAdmin(req: AuthRequest, res: Response): void {\n14:   const email = req.query.email?.toString().toLowerCase() || undefined;\n15: \n16:   User\n17:     .find({tenant: req.headers.tenant, email: req.query.exact ? email : new RegExp(email)})\n18:     .select(privilegedUserFields)\n19:     .lean()\n20:     .exec()\n21:     .then(users => {\n22:       res.json(users).end();\n23:     })\n24:     .catch(() => {\n25:       "
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/controllers/me.ts"
+        },
+        "result_head": "1: import {updateUser} from '../services/users'\n2: import {Response} from 'express'\n3: import {AuthRequest} from '../../types'\n4: \n5: export function getMe(req: AuthRequest, res: Response) {\n6:   const fullName = req.userPayload.fullName || req.userPayload.name;\n7:   res.status(200).json({\n8:     _id: req.userPayload.sub,\n9:     email: req.userPayload.email,\n10:     name: fullName,\n11:     fullName,\n12:     roles: req.userPayload.roles\n13:   }).end();\n14: }\n15: \n16: export async function setMe(req: AuthRequest, res: Response) {\n17:   const {email, password, name, fullName, firstName, lastName, birthDate} = req.body || {}\n18:   try {\n19:     await updateUser(\n20:       {_id: req.userPayload.sub, tenant: req.userPayload.tenant},\n21:       {email, password, fullName: fullName || name, firstName, lastName, birthDate}\n22:     )\n23:     res.status(200).json({\n24:       _id: req.userPayload.sub,\n25:       email: email || req.userPayload.email,\n26:       name: name || req.userPayload.name,\n27:"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/",
+          "pattern": "export (async )?function|export const"
+        },
+        "result_head": "/config/index.ts:3: export const privilegedRoles = process.env.PRIVILEGED_ROLES ? process.env.PRIVILEGED_ROLES.split(',') : ['admin']\n/config/index.ts:5: export const roles = process.env.ROLES ? process.env.ROLES.split(',') : ['user', 'plugin', 'admin']\n/config/index.ts:7: export const mongoUri = process.env.MONGO_URI || 'mongodb://localhost/greenpress';\n/config/index.ts:8: export const cookieBaseDomain = process.env.COOKIE_BASE_DOMAIN ||\n/config/index.ts:13: export const jwtSecret = process.env.JWT_SECRET || 'abcddddd';\n/config/index.ts:14: export const refreshTokenSecret = process.env.REFRESH_TOKEN_SECRET || 'a secret 2 phrase!!';\n/config/index.ts:15: export const tokenExpiration = process.env.TOKEN_EXPIRATION || '10m';\n/config/index.ts:16: export const refreshTokenExpiration = process.env.REFRESH_TOKEN_EXPIRATION || '30d';\n/config/index.ts:17: export const cookieTokenVerificationTime = Number(process.env.COOKIE_TOKEN_VERIFICATION_TIME || TEN_MINUTES);\n/config/index.ts:18: export con"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/",
+          "pattern": "getRouter|api-kit|express\\(\\)"
+        },
+        "result_head": "/index.ts:12: require('@greenpress/api-kit')\n/package.json:23: \"@greenpress/api-kit\": \"^2.0.21\",\n/server/passport/index.ts:1: const app = require('@greenpress/api-kit').app()\n/server/routes/auth.ts:1: import {getRouter} from '@greenpress/api-kit'\n/server/routes/auth.ts:9: const router = getRouter()\n/server/routes/index.ts:1: const app = require('@greenpress/api-kit').app();\n/server/routes/users.ts:1: import {getRouter} from '@greenpress/api-kit'\n/server/routes/users.ts:7: const router = getRouter()\n/server/services/encrypted-data.ts:2: import {service} from '@greenpress/api-kit';"
+      },
+      {
+        "step": 8,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/passport/index.ts"
+        },
+        "result_head": "1: const app = require('@greenpress/api-kit').app()\n2: import passport from 'passport';\n3: \n4: // pass the passport middleware\n5: app.use(passport.initialize());\n6: \n7: // load passport strategies\n8: passport.use('local-signup', require('./local-signup'));\n9: passport.use('local-login', require('./local-login'));"
+      },
+      {
+        "step": 9,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\":[{\"name\":\"greenpress-auth\",\"dirs\":[\"/\"]}],\"files\":[\n{\"path\":\"/server/routes/index.ts\",\"service\":\"greenpress-auth\",\"endpoints\":[\n{\"className\":\"\",\"methodName\":\"getMe\",\"httpMethod\":\"GET\",\"pat"
+        },
+        "result_head": "Recorded 18 new: service greenpress-auth, GET /api/me, POST /api/me, POST /api/signin, POST /api/signup, POST /api/token/refresh, POST /api/logout, GET /api/users, POST /api/users, POST /api/users/:userId/encrypted, GET /api/users/:userId, GET /api/users/:userId/encrypted, PUT /api/users/:userId, DELETE /api/users/:userId, GET /internal-api/users, POST /internal-api/users, PUT /internal-api/users/:userId, DELETE /internal-api/users/:userId\nTotal: 1 services, 17 endpoints in 3 files."
+      },
+      {
+        "step": 10,
+        "tool": "grep",
+        "args": {
+          "path": "/",
+          "pattern": "app\\.(get|post|put|delete|patch|use)|router\\.(get|post|put|delete|patch)"
+        },
+        "result_head": "/server/passport/index.ts:5: app.use(passport.initialize());\n/server/routes/index.ts:8: app.use(require('cookie-parser')());\n/server/routes/index.ts:14: app.use(usersRouter);\n/server/routes/index.ts:15: app.use(authRouter);"
+      },
+      {
+        "step": 11,
+        "tool": "submit",
+        "args": {},
+        "result_head": "[ACCEPTED] 1 services, 17 endpoints."
+      }
+    ]
+  }
+}

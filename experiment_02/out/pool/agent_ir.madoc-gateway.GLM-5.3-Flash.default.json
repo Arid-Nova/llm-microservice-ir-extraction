@@ -1,0 +1,320 @@
+{
+  "system": "madoc-gateway",
+  "services": [
+    {
+      "name": "madoc-gateway",
+      "dirs": [
+        "/"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/conf.d/gateway.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/_validate_jwt",
+          "line": 23,
+          "evidence": "location /_validate_jwt",
+          "framework": "nginx",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/",
+          "line": 39,
+          "evidence": "location /",
+          "framework": "nginx",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/500.html",
+          "line": 47,
+          "evidence": "location = /500.html",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/config-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/configurator",
+          "line": 1,
+          "evidence": "location /api/configurator",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/madoc-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/madoc",
+          "line": 1,
+          "evidence": "location /api/madoc",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/madoc-assets.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/s/default/madoc/assets",
+          "line": 3,
+          "evidence": "location /s/default/madoc/assets",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/model-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/crowdsourcing",
+          "line": 1,
+          "evidence": "location /api/crowdsourcing",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/okra-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/okra",
+          "line": 1,
+          "evidence": "location /api/okra",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/public-storage.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/public/storage",
+          "line": 1,
+          "evidence": "location /public/storage",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/search-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/search",
+          "line": 1,
+          "evidence": "location /api/search",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/storage-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/storage",
+          "line": 1,
+          "evidence": "location /api/storage",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/tasks-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/tasks",
+          "line": 1,
+          "evidence": "location /api/tasks",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "GLM-5.3-Flash",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "default",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "gateway",
+    "commit": "66b286df5190796c64e2915c2fc93a45bbef4b57",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 9,
+    "tool_calls": 12,
+    "rejected_entries": 22,
+    "no_call_replies": 0,
+    "input_tokens": 26925,
+    "cached_input_tokens": 14528,
+    "output_tokens": 3142,
+    "list_price_usd": 0.0039,
+    "wall_seconds": 35.4,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": "Dockerfile\nDockerfile.dev\nREADME.md\nconf.d/\ndev/\nnginx.conf\nwww/"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/nginx.conf"
+        },
+        "result_head": "1: user nginx;\n2: worker_processes 5;\n3: worker_rlimit_nofile 8192;\n4: \n5: error_log  /var/log/nginx/error.log notice;\n6: pid        /var/run/nginx.pid;\n7: \n8: events {\n9:     worker_connections  4096;\n10: }\n11: \n12: \n13: http {\n14:     include       /etc/nginx/mime.types;\n15:     default_type  application/octet-stream;\n16: \n17:     log_format   main '$time_local | --> $request $status '\n18:         '$body_bytes_sent \"$http_referer\" '\n19:         '\"$http_x_forwarded_for\"';\n20: \n21:     access_log  /var/log/nginx/access.log  main;\n22: \n23:     proxy_cache_path /var/cache/nginx/asset levels=1:2 keys_zone=asset_cache:10m max_size=100m\n24:                          inactive=60m use_temp_path=off;\n25: \n26:     proxy_cache_path /var/cache/nginx/media levels=1:2 keys_zone=media_cache:10m max_size=10g\n27:                          inactive=60m use_temp_path=off;\n28: \n29:     proxy_cache_path /var/cache/nginx/token_responses keys_zone=token_responses:1m max_size=2m;\n30: \n31:     server_names_hash"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/conf.d"
+        },
+        "result_head": "custom/\ngateway.conf\nservices/"
+      },
+      {
+        "step": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "/conf.d/gateway.conf"
+        },
+        "result_head": "1: server {\n2:     listen 8080 default_server;\n3: \n4:     proxy_redirect          off;\n5:     proxy_set_header        Host            $host;\n6:     proxy_set_header        X-Real-IP       $remote_addr;\n7:     proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;\n8:     client_max_body_size    10m;\n9:     client_body_buffer_size 128k;\n10:     proxy_connect_timeout   90;\n11:     proxy_send_timeout      90;\n12:     proxy_read_timeout      90;\n13:     proxy_buffer_size       128k;\n14:     proxy_buffers           4 256k;\n15:     proxy_busy_buffers_size 256k;\n16: \n17:     # Built-in APIs and services\n18:     include conf.d/services/*.conf;\n19: \n20:     # Custom APIs and services\n21:     include conf.d/custom/*.conf;\n22: \n23:     location /_validate_jwt {\n24:         # Usage: auth_request /_validate_jwt;\n25:         internal;\n26:         proxy_method      POST;\n27:         proxy_set_header  Authorization $http_authorization;\n28:         proxy_pass_header Authorization;\n29:      "
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/conf.d/services"
+        },
+        "result_head": "config-api.conf\nmadoc-api.conf\nmadoc-assets.conf\nmodel-api.conf\nokra-api.conf\npublic-storage.conf\nsearch-api.conf\nstorage-api.conf\ntasks-api.conf"
+      },
+      {
+        "step": 4,
+        "tool": "list_dir",
+        "args": {
+          "path": "/conf.d/custom"
+        },
+        "result_head": ".gitkeep"
+      },
+      {
+        "step": 4,
+        "tool": "grep",
+        "args": {
+          "path": "/conf.d/services",
+          "pattern": "location|proxy_pass|listen|server_name"
+        },
+        "result_head": "/conf.d/services/config-api.conf:1: location /api/configurator {\n/conf.d/services/config-api.conf:3: proxy_pass http://config-service:8000/configurator;\n/conf.d/services/madoc-api.conf:1: location /api/madoc {\n/conf.d/services/madoc-api.conf:3: proxy_pass http://madoc-ts:3000/api/madoc;\n/conf.d/services/madoc-assets.conf:3: location /s/default/madoc/assets {\n/conf.d/services/madoc-assets.conf:5: proxy_pass http://madoc-ts:3000;\n/conf.d/services/model-api.conf:1: location /api/crowdsourcing {\n/conf.d/services/model-api.conf:3: proxy_pass http://model-api:3000/api/crowdsourcing;\n/conf.d/services/okra-api.conf:1: location /api/okra {\n/conf.d/services/okra-api.conf:3: proxy_pass http://okra:80/api/okra;\n/conf.d/services/public-storage.conf:1: location /public/storage {\n/conf.d/services/public-storage.conf:4: proxy_pass http://storage-api:3000/public/storage;\n/conf.d/services/search-api.conf:1: location /api/search {\n/conf.d/services/search-api.conf:3: proxy_pass http://search:8000/api/sear"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/Dockerfile"
+        },
+        "result_head": "1: FROM nginx:stable-alpine\n2: \n3: \n4: # Nginx config\n5: COPY ./nginx.conf /etc/nginx/nginx.conf\n6: COPY ./conf.d /etc/nginx/conf.d\n7: COPY ./www /www"
+      },
+      {
+        "step": 6,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"madoc-gateway\", \"dirs\": [\"/\"]}], \"files\": [{\"path\": \"/conf.d/gateway.conf\", \"service\": \"madoc-gateway\", \"endpoints\": [{\"className\": \"nginx server (gateway.conf)\", \"methodName\":"
+        },
+        "result_head": "Recorded 1 new: service madoc-gateway\nTotal: 1 services, 0 endpoints in 0 files.\nServices with no endpoints recorded yet: madoc-gateway.\n[REJECTED 12] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0].endpoints[0] ANY /_validate_jwt (nginx server (gateway.conf).(inline)): class nginx server (gateway.conf) does not appear in this file\n- files[0].endpoints[1] ANY / (nginx server (gateway.conf).(inline)): class nginx server (gateway.conf) does not appear in this file\n- files[0].endpoints[2] ANY /500.html (nginx server (gateway.conf).(inline)): class nginx server (gateway.conf) does not appear in this file\n- files[1].endpoints[0] ANY /api/configurator (nginx location (config-api.conf).(inline)): class nginx location (config-api.conf) does not appear in this file\n- files[2].endpoints[0] ANY /api/madoc (nginx location (madoc-api.conf).(inline)): class nginx location (madoc-api.conf) does not appear in this file\n- files[3].endpoints[0] ANY /s/default/"
+      },
+      {
+        "step": 7,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"endpoints\": [{\"className\": \"\", \"confidence\": \"high\", \"evidence\": \"location /_validate_jwt\", \"framework\": \"nginx\", \"httpMethod\": \"ANY\", \"line\": 23, \"methodName\": \"(inline)\", \"path\": \"/_val"
+        },
+        "result_head": "Recorded 0 new: nothing\nTotal: 1 services, 0 endpoints in 0 files.\nServices with no endpoints recorded yet: madoc-gateway.\n[REJECTED 10] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0]: service None is not recorded; record it first (recorded: madoc-gateway)\n- files[1]: service None is not recorded; record it first (recorded: madoc-gateway)\n- files[2]: service None is not recorded; record it first (recorded: madoc-gateway)\n- files[3]: service None is not recorded; record it first (recorded: madoc-gateway)\n- files[4]: service None is not recorded; record it first (recorded: madoc-gateway)\n- files[5]: service None is not recorded; record it first (recorded: madoc-gateway)\n- files[6]: service None is not recorded; record it first (recorded: madoc-gateway)\n- files[7]: service None is not recorded; record it first (recorded: madoc-gateway)\n- files[8]: service None is not recorded; record it first (recorded: madoc-gateway)\n- files[9]: service None i"
+      },
+      {
+        "step": 8,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/conf.d/gateway.conf\", \"service\": \"madoc-gateway\", \"endpoints\": [{\"className\": \"\", \"methodName\": \"(inline)\", \"httpMethod\": \"ANY\", \"path\": \"/_validate_jwt\", \"line\": 23, \"evidence\":"
+        },
+        "result_head": "Recorded 12 new: ANY /_validate_jwt, ANY /, ANY /500.html, ANY /api/configurator, ANY /api/madoc, ANY /s/default/madoc/assets, ANY /api/crowdsourcing, ANY /api/okra, ANY /public/storage, ANY /api/search, ANY /api/storage, ANY /api/tasks\nTotal: 1 services, 12 endpoints in 10 files."
+      },
+      {
+        "step": 9,
+        "tool": "submit",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"madoc-gateway\", \"dirs\": [\"/\"]}], \"summary\": \"madoc-gateway is an nginx reverse proxy (Dockerfile based on nginx:stable-alpine). It listens on 8080 and routes to backend service"
+        },
+        "result_head": "Recorded 1 new: service madoc-gateway\nTotal: 1 services, 12 endpoints in 10 files.\n[ACCEPTED] 1 services, 12 endpoints."
+      }
+    ]
+  }
+}

@@ -1,0 +1,499 @@
+{
+  "system": "madoc-gateway",
+  "services": [
+    {
+      "name": "madoc-gateway",
+      "dirs": [
+        "/"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/conf.d/gateway.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/_validate_jwt",
+          "line": 23,
+          "evidence": "location /_validate_jwt {",
+          "framework": "nginx",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/",
+          "line": 39,
+          "evidence": "location / {",
+          "framework": "nginx",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/500.html",
+          "line": 47,
+          "evidence": "location = /500.html {",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/config-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/configurator",
+          "line": 1,
+          "evidence": "location /api/configurator {",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/madoc-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/madoc",
+          "line": 1,
+          "evidence": "location /api/madoc {",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/madoc-assets.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/s/default/madoc/assets",
+          "line": 3,
+          "evidence": "location /s/default/madoc/assets {",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/model-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/crowdsourcing",
+          "line": 1,
+          "evidence": "location /api/crowdsourcing {",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/okra-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/okra",
+          "line": 1,
+          "evidence": "location /api/okra {",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/public-storage.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/public/storage",
+          "line": 1,
+          "evidence": "location /public/storage {",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/search-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/search",
+          "line": 1,
+          "evidence": "location /api/search {",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/storage-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/storage",
+          "line": 1,
+          "evidence": "location /api/storage {",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/conf.d/services/tasks-api.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/api/tasks",
+          "line": 1,
+          "evidence": "location /api/tasks {",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/dev/gateway-shared.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/__vite_ping",
+          "line": 20,
+          "evidence": "location /__vite_ping {",
+          "framework": "nginx",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/_validate_jwt",
+          "line": 24,
+          "evidence": "location /_validate_jwt {",
+          "framework": "nginx",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/",
+          "line": 40,
+          "evidence": "location / {",
+          "framework": "nginx",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/500.html",
+          "line": 48,
+          "evidence": "location = /500.html {",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/dev/madoc-assets.conf",
+      "service": "madoc-gateway",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/s/default/madoc/assets",
+          "line": 2,
+          "evidence": "location /s/default/madoc/assets {",
+          "framework": "nginx",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "DeepSeek-V4.1-Flash-1017",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "low",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "gateway",
+    "commit": "66b286df5190796c64e2915c2fc93a45bbef4b57",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 9,
+    "tool_calls": 27,
+    "rejected_entries": 13,
+    "no_call_replies": 0,
+    "input_tokens": 42473,
+    "cached_input_tokens": 33664,
+    "output_tokens": 4063,
+    "list_price_usd": 0.0039,
+    "wall_seconds": 21.5,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": "Dockerfile\nDockerfile.dev\nREADME.md\nconf.d/\ndev/\nnginx.conf\nwww/"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/conf.d"
+        },
+        "result_head": "custom/\ngateway.conf\nservices/"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/www"
+        },
+        "result_head": "errors/"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/Dockerfile"
+        },
+        "result_head": "1: FROM nginx:stable-alpine\n2: \n3: \n4: # Nginx config\n5: COPY ./nginx.conf /etc/nginx/nginx.conf\n6: COPY ./conf.d /etc/nginx/conf.d\n7: COPY ./www /www"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/nginx.conf"
+        },
+        "result_head": "1: user nginx;\n2: worker_processes 5;\n3: worker_rlimit_nofile 8192;\n4: \n5: error_log  /var/log/nginx/error.log notice;\n6: pid        /var/run/nginx.pid;\n7: \n8: events {\n9:     worker_connections  4096;\n10: }\n11: \n12: \n13: http {\n14:     include       /etc/nginx/mime.types;\n15:     default_type  application/octet-stream;\n16: \n17:     log_format   main '$time_local | --> $request $status '\n18:         '$body_bytes_sent \"$http_referer\" '\n19:         '\"$http_x_forwarded_for\"';\n20: \n21:     access_log  /var/log/nginx/access.log  main;\n22: \n23:     proxy_cache_path /var/cache/nginx/asset levels=1:2 keys_zone=asset_cache:10m max_size=100m\n24:                          inactive=60m use_temp_path=off;\n25: \n26:     proxy_cache_path /var/cache/nginx/media levels=1:2 keys_zone=media_cache:10m max_size=10g\n27:                          inactive=60m use_temp_path=off;\n28: \n29:     proxy_cache_path /var/cache/nginx/token_responses keys_zone=token_responses:1m max_size=2m;\n30: \n31:     server_names_hash"
+      },
+      {
+        "step": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "/conf.d/gateway.conf"
+        },
+        "result_head": "1: server {\n2:     listen 8080 default_server;\n3: \n4:     proxy_redirect          off;\n5:     proxy_set_header        Host            $host;\n6:     proxy_set_header        X-Real-IP       $remote_addr;\n7:     proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;\n8:     client_max_body_size    10m;\n9:     client_body_buffer_size 128k;\n10:     proxy_connect_timeout   90;\n11:     proxy_send_timeout      90;\n12:     proxy_read_timeout      90;\n13:     proxy_buffer_size       128k;\n14:     proxy_buffers           4 256k;\n15:     proxy_busy_buffers_size 256k;\n16: \n17:     # Built-in APIs and services\n18:     include conf.d/services/*.conf;\n19: \n20:     # Custom APIs and services\n21:     include conf.d/custom/*.conf;\n22: \n23:     location /_validate_jwt {\n24:         # Usage: auth_request /_validate_jwt;\n25:         internal;\n26:         proxy_method      POST;\n27:         proxy_set_header  Authorization $http_authorization;\n28:         proxy_pass_header Authorization;\n29:      "
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/conf.d/services"
+        },
+        "result_head": "config-api.conf\nmadoc-api.conf\nmadoc-assets.conf\nmodel-api.conf\nokra-api.conf\npublic-storage.conf\nsearch-api.conf\nstorage-api.conf\ntasks-api.conf"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/conf.d/custom"
+        },
+        "result_head": ".gitkeep"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/dev"
+        },
+        "result_head": "gateway-shared.conf\ngateway-ssl.conf\nmadoc-assets.conf"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/conf.d/services/config-api.conf"
+        },
+        "result_head": "1: location /api/configurator {\n2:     auth_request /_validate_jwt;\n3:     proxy_pass http://config-service:8000/configurator;\n4: }"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/conf.d/services/madoc-api.conf"
+        },
+        "result_head": "1: location /api/madoc {\n2:     auth_request /_validate_jwt;\n3:     proxy_pass http://madoc-ts:3000/api/madoc;\n4: }"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/conf.d/services/madoc-assets.conf"
+        },
+        "result_head": "1: # @todo change this to /public/assets/...\n2: # @todo add hash to bundles and re-add asset_cache\n3: location /s/default/madoc/assets {\n4:     proxy_cache asset_cache;\n5:     proxy_pass http://madoc-ts:3000;\n6:     proxy_cache_use_stale error timeout http_500 http_502 http_503 http_504;\n7:     proxy_ignore_headers Cache-Control;\n8:     proxy_cache_valid any 30m;\n9:     add_header X-Cache-Status $upstream_cache_status;\n10: }"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/conf.d/services/model-api.conf"
+        },
+        "result_head": "1: location /api/crowdsourcing {\n2:     auth_request /_validate_jwt;\n3:     proxy_pass http://model-api:3000/api/crowdsourcing;\n4: }"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/conf.d/services/okra-api.conf"
+        },
+        "result_head": "1: location /api/okra {\n2:     auth_request /_validate_jwt;\n3:     proxy_pass http://okra:80/api/okra;\n4: }"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/conf.d/services/public-storage.conf"
+        },
+        "result_head": "1: location /public/storage {\n2:     # Public Storage API\n3:     proxy_cache media_cache;\n4:     proxy_pass http://storage-api:3000/public/storage;\n5:     proxy_cache_use_stale error timeout http_500 http_502 http_503 http_504;\n6:     proxy_ignore_headers Cache-Control;\n7:     proxy_cache_valid any 30m;\n8:     add_header X-Cache-Status $upstream_cache_status;\n9:     proxy_cache_bypass $http_x-cache-bypass;\n10:     proxy_intercept_errors on;\n11: }"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/conf.d/services/search-api.conf"
+        },
+        "result_head": "1: location /api/search {\n2:     auth_request /_validate_jwt;\n3:     proxy_pass http://search:8000/api/search;\n4: }"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/conf.d/services/storage-api.conf"
+        },
+        "result_head": "1: location /api/storage {\n2:     auth_request /_validate_jwt;\n3:     proxy_pass http://storage-api:3000/api/storage;\n4: }"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/conf.d/services/tasks-api.conf"
+        },
+        "result_head": "1: location /api/tasks {\n2:     auth_request /_validate_jwt;\n3:     proxy_pass http://tasks-api:3000/tasks;\n4: }"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/dev/gateway-shared.conf"
+        },
+        "result_head": "1: proxy_redirect          off;\n2: proxy_set_header        Host            $host;\n3: proxy_set_header        X-Real-IP       $remote_addr;\n4: proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;\n5: client_max_body_size    10m;\n6: client_body_buffer_size 128k;\n7: proxy_connect_timeout   90;\n8: proxy_send_timeout      90;\n9: proxy_read_timeout      90;\n10: proxy_buffer_size       128k;\n11: proxy_buffers           4 256k;\n12: proxy_busy_buffers_size 256k;\n13: \n14: # Built-in APIs and services\n15: include conf.d/services/*.conf;\n16: \n17: # Custom APIs and services\n18: include conf.d/custom/*.conf;\n19: \n20: location /__vite_ping {\n21:     return 200;\n22: }\n23: \n24: location /_validate_jwt {\n25:     # Usage: auth_request /_validate_jwt;\n26:     internal;\n27:     proxy_method      POST;\n28:     proxy_set_header  Authorization $http_authorization;\n29:     proxy_pass_header Authorization;\n30:     proxy_pass        http://madoc-ts:3001;\n31:     proxy_intercept_errors on;\n32: \n33: "
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/dev/gateway-ssl.conf"
+        },
+        "result_head": "1: server {\n2:     listen 8080 default_server;\n3: \n4:     include conf.d/gateway-shared.conf;\n5: }\n6: server {\n7:     # SSL Specifics start\n8:     listen 443 ssl http2;\n9:     server_name madoc.local;\n10:     ssl_certificate /certs/local-cert.pem;\n11:     ssl_certificate_key /certs/local-key.pem;\n12:     ssl_session_cache builtin:1000 shared:SSL:10m;\n13:     ssl_protocols TLSv1.2 TLSv1.3;\n14:     ssl_ciphers HIGH:!RC4:!3DES:!aDSS:!aNULL:!kPSK:!kSRP:!MD5:@STRENGTH:+SHA1:+kRSA;\n15:     ssl_prefer_server_ciphers on;\n16:     resolver 8.8.8.8 8.8.4.4 valid=300s;\n17:     resolver_timeout 5s;\n18:     # SSL Specifics end\n19: \n20:     include conf.d/gateway-shared.conf;\n21: }"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/dev/madoc-assets.conf"
+        },
+        "result_head": "1: # Removed the proxy caching in dev.\n2: location /s/default/madoc/assets {\n3:     proxy_pass http://madoc-ts:3000;\n4: }"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/README.md"
+        },
+        "result_head": "1: # Gateway2\n2: \n3: Implements: https://www.nginx.com/blog/validating-oauth-2-0-access-tokens-nginx/\n4: https://www.nginx.com/resources/wiki/start/topics/examples/full/\n5: \n6: - Simple NGINX configuration\n7: - Micro-management API\n8: - Auth endpoint in Madoc TS to validate everything (is cached for minutes)\n9: - Madoc TS will use lighter runtime (similar to queue)\n10: \n11: ## Kubernetes\n12: \n13: Should be simple enough to translate over to Kubernetes.\n14: \n15: https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/nginx-configuration/annotations.md#external-authentication\n16: \n17: \n18: ## New service creation\n19: When we have the shared database configurable, this will be a fairly simple process.\n20: \n21: 1) Create a nginx config and volume/copy it to `/var/nginx/custom/my-api.conf`\n22: \n23: ```nginx configuration\n24: location /api/my-api {\n25:   proxy_pass http://some_internal_host:8000/\n26:   include /var/nginx/includes/jwt-auth.conf\n27: }\n28: ```\n29: \n30: 2) Volume i"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/Dockerfile.dev"
+        },
+        "result_head": "1: FROM nginx:stable-alpine\n2: \n3: # Nginx config\n4: COPY ./nginx.conf /etc/nginx/nginx.conf\n5: COPY ./conf.d /etc/nginx/conf.d\n6: \n7: ## DEV ONLY.\n8: COPY ./dev/madoc-assets.conf /etc/nginx/conf.d/services/madoc-assets.conf\n9: COPY ./dev/gateway-ssl.conf /etc/nginx/conf.d/gateway.conf\n10: COPY ./dev/gateway-shared.conf /etc/nginx/conf.d/gateway-shared.conf\n11: ##\n12: \n13: COPY ./www /www"
+      },
+      {
+        "step": 6,
+        "tool": "record",
+        "args": {
+          "json": "{\n  \"services\": [\n    {\"name\": \"madoc-gateway\", \"dirs\": [\"/conf.d\", \"/dev\", \"/www\", \"/nginx.conf\", \"/Dockerfile\", \"/Dockerfile.dev\"]}\n  ],\n  \"files\": [\n    {\"path\": \"/conf.d/gateway.conf\", \"service\": "
+        },
+        "result_head": "Recorded 0 new: nothing\nTotal: 0 services, 0 endpoints in 0 files.\n[REJECTED 13] Fix these and record them again (accepted entries are kept, do not resend them):\n- services[0]: not a directory with source files: /nginx.conf, /Dockerfile, /Dockerfile.dev\n- files[0]: service 'madoc-gateway' is not recorded; record it first (recorded: none)\n- files[1]: service 'madoc-gateway' is not recorded; record it first (recorded: none)\n- files[2]: service 'madoc-gateway' is not recorded; record it first (recorded: none)\n- files[3]: service 'madoc-gateway' is not recorded; record it first (recorded: none)\n- files[4]: service 'madoc-gateway' is not recorded; record it first (recorded: none)\n- files[5]: service 'madoc-gateway' is not recorded; record it first (recorded: none)\n- files[6]: service 'madoc-gateway' is not recorded; record it first (recorded: none)\n- files[7]: service 'madoc-gateway' is not recorded; record it first (recorded: none)\n- files[8]: service 'madoc-gateway' is not recorded; recor"
+      },
+      {
+        "step": 7,
+        "tool": "record",
+        "args": {
+          "json": "{\n  \"services\": [\n    {\"name\": \"madoc-gateway\", \"dirs\": [\"/\"]}\n  ]\n}"
+        },
+        "result_head": "Recorded 1 new: service madoc-gateway\nTotal: 1 services, 0 endpoints in 0 files.\nServices with no endpoints recorded yet: madoc-gateway."
+      },
+      {
+        "step": 8,
+        "tool": "record",
+        "args": {
+          "json": "{\n  \"files\": [\n    {\"path\": \"/conf.d/gateway.conf\", \"service\": \"madoc-gateway\", \"endpoints\": [\n      {\"className\": \"\", \"methodName\": \"(inline)\", \"httpMethod\": \"POST\", \"path\": \"/_validate_jwt\", \"line\":"
+        },
+        "result_head": "Recorded 17 new: POST /_validate_jwt, ANY /, GET /500.html, ANY /api/configurator, ANY /api/madoc, ANY /s/default/madoc/assets, ANY /api/crowdsourcing, ANY /api/okra, ANY /public/storage, ANY /api/search, ANY /api/storage, ANY /api/tasks, ANY /__vite_ping, POST /_validate_jwt, ANY /, GET /500.html, ANY /s/default/madoc/assets\nTotal: 1 services, 17 endpoints in 12 files."
+      },
+      {
+        "step": 9,
+        "tool": "submit",
+        "args": {},
+        "result_head": "[ACCEPTED] 1 services, 17 endpoints."
+      }
+    ]
+  }
+}

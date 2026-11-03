@@ -1,0 +1,1087 @@
+{
+  "system": "caliopen-rest",
+  "services": [
+    {
+      "name": "caliopen-rest-go",
+      "dirs": [
+        "/go.server"
+      ]
+    },
+    {
+      "name": "caliopen-rest-py",
+      "dirs": [
+        "/py.server"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/go.server/api_server.go",
+      "service": "caliopen-rest-go",
+      "endpoints": [
+        {
+          "className": "AddHandlers",
+          "methodName": "users.PatchUser",
+          "httpMethod": "PATCH",
+          "path": "/api/v2/users/:user_id",
+          "line": 205,
+          "evidence": "usrs.PATCH(\"/:user_id\", users.PatchUser)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "users.Delete",
+          "httpMethod": "POST",
+          "path": "/api/v2/users/:user_id/actions",
+          "line": 206,
+          "evidence": "usrs.POST(\"/:user_id/actions\", users.Delete)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "identities.GetLocalsIdentities",
+          "httpMethod": "GET",
+          "path": "/api/v2/identities/locals",
+          "line": 210,
+          "evidence": "ids.GET(\"/locals\", identities.GetLocalsIdentities)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "identities.GetLocalIdentity",
+          "httpMethod": "GET",
+          "path": "/api/v2/identities/locals/:identity_id",
+          "line": 211,
+          "evidence": "ids.GET(\"/locals/:identity_id\", identities.GetLocalIdentity)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "identities.GetRemoteIdentities",
+          "httpMethod": "GET",
+          "path": "/api/v2/identities/remotes",
+          "line": 212,
+          "evidence": "ids.GET(\"/remotes\", identities.GetRemoteIdentities)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "identities.NewRemoteIdentity",
+          "httpMethod": "POST",
+          "path": "/api/v2/identities/remotes",
+          "line": 213,
+          "evidence": "ids.POST(\"/remotes\", identities.NewRemoteIdentity)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "identities.GetRemoteIdentity",
+          "httpMethod": "GET",
+          "path": "/api/v2/identities/remotes/:remote_id",
+          "line": 214,
+          "evidence": "ids.GET(\"/remotes/:remote_id\", identities.GetRemoteIdentity)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "identities.PatchRemoteIdentity",
+          "httpMethod": "PATCH",
+          "path": "/api/v2/identities/remotes/:remote_id",
+          "line": 215,
+          "evidence": "ids.PATCH(\"/remotes/:remote_id\", identities.PatchRemoteIdentity)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "identities.DeleteRemoteIdentity",
+          "httpMethod": "DELETE",
+          "path": "/api/v2/identities/remotes/:remote_id",
+          "line": 216,
+          "evidence": "ids.DELETE(\"/remotes/:remote_id\", identities.DeleteRemoteIdentity)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "notImplemented",
+          "httpMethod": "GET",
+          "path": "/api/v2/passwords/reset",
+          "line": 220,
+          "evidence": "passwords.GET(\"/reset\", notImplemented)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "users.RequestPasswordReset",
+          "httpMethod": "POST",
+          "path": "/api/v2/passwords/reset",
+          "line": 221,
+          "evidence": "passwords.POST(\"/reset\", users.RequestPasswordReset)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "users.ValidatePassResetToken",
+          "httpMethod": "GET",
+          "path": "/api/v2/passwords/reset/:reset_token",
+          "line": 222,
+          "evidence": "passwords.GET(\"/reset/:reset_token\", users.ValidatePassResetToken)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "users.ResetPassword",
+          "httpMethod": "POST",
+          "path": "/api/v2/passwords/reset/:reset_token",
+          "line": 223,
+          "evidence": "passwords.POST(\"/reset/:reset_token\", users.ResetPassword)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "users.IsAvailable",
+          "httpMethod": "GET",
+          "path": "/api/v2/username/isAvailable",
+          "line": 226,
+          "evidence": "api.GET(\"/username/isAvailable\", users.IsAvailable)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "messages.GetMessagesList",
+          "httpMethod": "GET",
+          "path": "/api/v2/messages",
+          "line": 230,
+          "evidence": "msg.GET(\"\", messages.GetMessagesList)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "messages.GetMessage",
+          "httpMethod": "GET",
+          "path": "/api/v2/messages/:message_id",
+          "line": 231,
+          "evidence": "msg.GET(\"/:message_id\", messages.GetMessage)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "messages.Actions",
+          "httpMethod": "POST",
+          "path": "/api/v2/messages/:message_id/actions",
+          "line": 232,
+          "evidence": "msg.POST(\"/:message_id/actions\", messages.Actions)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "messages.UploadAttachment",
+          "httpMethod": "POST",
+          "path": "/api/v2/messages/:message_id/attachments",
+          "line": 234,
+          "evidence": "msg.POST(\"/:message_id/attachments\", messages.UploadAttachment)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "messages.DeleteAttachment",
+          "httpMethod": "DELETE",
+          "path": "/api/v2/messages/:message_id/attachments/:attachment_id",
+          "line": 235,
+          "evidence": "msg.DELETE(\"/:message_id/attachments/:attachment_id\", messages.DeleteAttachment)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "messages.DownloadAttachment",
+          "httpMethod": "GET",
+          "path": "/api/v2/messages/:message_id/attachments/:attachment_id",
+          "line": 236,
+          "evidence": "msg.GET(\"/:message_id/attachments/:attachment_id\", messages.DownloadAttachment)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "tags.PatchResourceWithTags",
+          "httpMethod": "PATCH",
+          "path": "/api/v2/messages/:message_id/tags",
+          "line": 238,
+          "evidence": "msg.PATCH(\"/:message_id/tags\", tags.PatchResourceWithTags)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "discussions.GetDiscussionsList",
+          "httpMethod": "GET",
+          "path": "/api/v2/discussions",
+          "line": 242,
+          "evidence": "disc.GET(\"\", discussions.GetDiscussionsList)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "discussions.GetDiscussion",
+          "httpMethod": "GET",
+          "path": "/api/v2/discussions/:discussionId",
+          "line": 243,
+          "evidence": "disc.GET(\"/:discussionId\", discussions.GetDiscussion)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "participants.Suggest",
+          "httpMethod": "GET",
+          "path": "/api/v2/participants/suggest",
+          "line": 247,
+          "evidence": "parts.GET(\"/suggest\", participants.Suggest)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "participants.HashUris",
+          "httpMethod": "POST",
+          "path": "/api/v2/participants/discussion",
+          "line": 248,
+          "evidence": "parts.POST(\"/discussion\", participants.HashUris)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "contacts.GetContactsList",
+          "httpMethod": "GET",
+          "path": "/api/v2/contacts",
+          "line": 252,
+          "evidence": "cts.GET(\"\", contacts.GetContactsList)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "contacts.NewContact",
+          "httpMethod": "POST",
+          "path": "/api/v2/contacts",
+          "line": 253,
+          "evidence": "cts.POST(\"\", contacts.NewContact)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "contacts.GetContact",
+          "httpMethod": "GET",
+          "path": "/api/v2/contacts/:contactID",
+          "line": 254,
+          "evidence": "cts.GET(\"/:contactID\", contacts.GetContact)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "contacts.PatchContact",
+          "httpMethod": "PATCH",
+          "path": "/api/v2/contacts/:contactID",
+          "line": 255,
+          "evidence": "cts.PATCH(\"/:contactID\", contacts.PatchContact)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "contacts.DeleteContact",
+          "httpMethod": "DELETE",
+          "path": "/api/v2/contacts/:contactID",
+          "line": 256,
+          "evidence": "cts.DELETE(\"/:contactID\", contacts.DeleteContact)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "contacts.GetIdentities",
+          "httpMethod": "GET",
+          "path": "/api/v2/contacts/:contactID/identities",
+          "line": 257,
+          "evidence": "cts.GET(\"/:contactID/identities\", contacts.GetIdentities)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "contacts.NewPublicKey",
+          "httpMethod": "POST",
+          "path": "/api/v2/contacts/:contactID/publickeys",
+          "line": 259,
+          "evidence": "cts.POST(\"/:contactID/publickeys\", contacts.NewPublicKey)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "contacts.GetPubKeys",
+          "httpMethod": "GET",
+          "path": "/api/v2/contacts/:contactID/publickeys",
+          "line": 260,
+          "evidence": "cts.GET(\"/:contactID/publickeys\", contacts.GetPubKeys)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "contacts.GetPubKey",
+          "httpMethod": "GET",
+          "path": "/api/v2/contacts/:contactID/publickeys/:pubkeyID",
+          "line": 261,
+          "evidence": "cts.GET(\"/:contactID/publickeys/:pubkeyID\", contacts.GetPubKey)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "contacts.PatchPubKey",
+          "httpMethod": "PATCH",
+          "path": "/api/v2/contacts/:contactID/publickeys/:pubkeyID",
+          "line": 262,
+          "evidence": "cts.PATCH(\"/:contactID/publickeys/:pubkeyID\", contacts.PatchPubKey)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "contacts.DeletePubKey",
+          "httpMethod": "DELETE",
+          "path": "/api/v2/contacts/:contactID/publickeys/:pubkeyID",
+          "line": 263,
+          "evidence": "cts.DELETE(\"/:contactID/publickeys/:pubkeyID\", contacts.DeletePubKey)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "tags.PatchResourceWithTags",
+          "httpMethod": "PATCH",
+          "path": "/api/v2/contacts/:contactID/tags",
+          "line": 265,
+          "evidence": "cts.PATCH(\"/:contactID/tags\", tags.PatchResourceWithTags)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "devices.ValidateDevice",
+          "httpMethod": "GET",
+          "path": "/api/v2/validate-device/:token",
+          "line": 268,
+          "evidence": "api.GET(\"/validate-device/:token\", ... devices.ValidateDevice)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "devices.GetDevicesList",
+          "httpMethod": "GET",
+          "path": "/api/v2/devices",
+          "line": 270,
+          "evidence": "dev.GET(\"\", devices.GetDevicesList)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "devices.GetDevice",
+          "httpMethod": "GET",
+          "path": "/api/v2/devices/:deviceID",
+          "line": 272,
+          "evidence": "dev.GET(\"/:deviceID\", devices.GetDevice)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "devices.PatchDevice",
+          "httpMethod": "PATCH",
+          "path": "/api/v2/devices/:deviceID",
+          "line": 273,
+          "evidence": "dev.PATCH(\"/:deviceID\", devices.PatchDevice)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "devices.DeleteDevice",
+          "httpMethod": "DELETE",
+          "path": "/api/v2/devices/:deviceID",
+          "line": 274,
+          "evidence": "dev.DELETE(\"/:deviceID\", devices.DeleteDevice)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "devices.Actions",
+          "httpMethod": "POST",
+          "path": "/api/v2/devices/:deviceID/actions",
+          "line": 275,
+          "evidence": "dev.POST(\"/:deviceID/actions\", devices.Actions)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "imports.ImportFile",
+          "httpMethod": "POST",
+          "path": "/api/v2/imports",
+          "line": 279,
+          "evidence": "imp.POST(\"\", imports.ImportFile)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "tags.RetrieveUserTags",
+          "httpMethod": "GET",
+          "path": "/api/v2/tags",
+          "line": 283,
+          "evidence": "tag.GET(\"\", tags.RetrieveUserTags)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "tags.CreateTag",
+          "httpMethod": "POST",
+          "path": "/api/v2/tags",
+          "line": 284,
+          "evidence": "tag.POST(\"\", tags.CreateTag)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "tags.RetrieveTag",
+          "httpMethod": "GET",
+          "path": "/api/v2/tags/:tag_name",
+          "line": 285,
+          "evidence": "tag.GET(\"/:tag_name\", tags.RetrieveTag)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "tags.PatchTag",
+          "httpMethod": "PATCH",
+          "path": "/api/v2/tags/:tag_name",
+          "line": 286,
+          "evidence": "tag.PATCH(\"/:tag_name\", tags.PatchTag)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "tags.DeleteTag",
+          "httpMethod": "DELETE",
+          "path": "/api/v2/tags/:tag_name",
+          "line": 287,
+          "evidence": "tag.DELETE(\"/:tag_name\", tags.DeleteTag)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "operations.SimpleSearch",
+          "httpMethod": "GET",
+          "path": "/api/v2/search",
+          "line": 291,
+          "evidence": "search.GET(\"\", operations.SimpleSearch)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "operations.AdvancedSearch",
+          "httpMethod": "POST",
+          "path": "/api/v2/search",
+          "line": 292,
+          "evidence": "search.POST(\"\", operations.AdvancedSearch)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "notifications.GetPendingNotif",
+          "httpMethod": "GET",
+          "path": "/api/v2/notifications",
+          "line": 296,
+          "evidence": "notif.GET(\"\", notifications.GetPendingNotif)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "notifications.DeleteNotifications",
+          "httpMethod": "DELETE",
+          "path": "/api/v2/notifications",
+          "line": 297,
+          "evidence": "notif.DELETE(\"\", notifications.DeleteNotifications)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "notifications.GetNotification",
+          "httpMethod": "GET",
+          "path": "/api/v2/notifications/:notification_id",
+          "line": 298,
+          "evidence": "notif.GET(\"/:notification_id\", notifications.GetNotification)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "notifications.DeleteNotification",
+          "httpMethod": "DELETE",
+          "path": "/api/v2/notifications/:notification_id",
+          "line": 299,
+          "evidence": "notif.DELETE(\"/:notification_id\", notifications.DeleteNotification)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "providers.GetProvidersList",
+          "httpMethod": "GET",
+          "path": "/api/v2/providers",
+          "line": 303,
+          "evidence": "prov.GET(\"\", ... providers.GetProvidersList)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "providers.GetProvider",
+          "httpMethod": "GET",
+          "path": "/api/v2/providers/:provider_name",
+          "line": 304,
+          "evidence": "prov.GET(\"/:provider_name\", ... providers.GetProvider)",
+          "framework": "gin",
+          "confidence": "high"
+        },
+        {
+          "className": "AddHandlers",
+          "methodName": "providers.CallbackHandler",
+          "httpMethod": "GET",
+          "path": "/api/v2/providers/:provider_name/callback",
+          "line": 305,
+          "evidence": "prov.GET(\"/:provider_name/callback\", providers.CallbackHandler)",
+          "framework": "gin",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/py.server/caliopen_api/user/user.py",
+      "service": "caliopen-rest-py",
+      "endpoints": [
+        {
+          "className": "UserAPI",
+          "methodName": "collection_post",
+          "httpMethod": "POST",
+          "path": "/api/v1/users",
+          "line": 170,
+          "evidence": "@resource(path='/users/{user_id}', collection_path='/users', name='User', factory=DefaultContext)",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        },
+        {
+          "className": "MeUserAPI",
+          "methodName": "get",
+          "httpMethod": "GET",
+          "path": "/api/v1/me",
+          "line": 244,
+          "evidence": "@resource(path='/me', name='MeUser', factory=DefaultContext)",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        },
+        {
+          "className": "AuthenticationAPI",
+          "methodName": "collection_post",
+          "httpMethod": "POST",
+          "path": "/api/v1/authentications",
+          "line": 93,
+          "evidence": "@resource(path='', collection_path='/authentications', name='Authentication', factory=DefaultContext",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/py.server/caliopen_api/user/settings.py",
+      "service": "caliopen-rest-py",
+      "endpoints": [
+        {
+          "className": "SettingsAPI",
+          "methodName": "get",
+          "httpMethod": "GET",
+          "path": "/api/v1/settings",
+          "line": 20,
+          "evidence": "@resource(path='/settings', name='Settings', factory=DefaultContext)",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        },
+        {
+          "className": "SettingsAPI",
+          "methodName": "patch",
+          "httpMethod": "PATCH",
+          "path": "/api/v1/settings",
+          "line": 20,
+          "evidence": "@resource(path='/settings', name='Settings', factory=DefaultContext)",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/py.server/caliopen_api/user/contact.py",
+      "service": "caliopen-rest-py",
+      "endpoints": [
+        {
+          "className": "Contact",
+          "methodName": "collection_get",
+          "httpMethod": "GET",
+          "path": "/api/v1/contacts",
+          "line": 28,
+          "evidence": "@resource(collection_path='/contacts', path='/contacts/{contact_id}')",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        },
+        {
+          "className": "Contact",
+          "methodName": "collection_post",
+          "httpMethod": "POST",
+          "path": "/api/v1/contacts",
+          "line": 28,
+          "evidence": "@resource(collection_path='/contacts', path='/contacts/{contact_id}')",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        },
+        {
+          "className": "Contact",
+          "methodName": "get",
+          "httpMethod": "GET",
+          "path": "/api/v1/contacts/{contact_id}",
+          "line": 28,
+          "evidence": "@resource(collection_path='/contacts', path='/contacts/{contact_id}')",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        },
+        {
+          "className": "Contact",
+          "methodName": "patch",
+          "httpMethod": "PATCH",
+          "path": "/api/v1/contacts/{contact_id}",
+          "line": 28,
+          "evidence": "@resource(collection_path='/contacts', path='/contacts/{contact_id}')",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        },
+        {
+          "className": "Contact",
+          "methodName": "delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v1/contacts/{contact_id}",
+          "line": 28,
+          "evidence": "@resource(collection_path='/contacts', path='/contacts/{contact_id}')",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/py.server/caliopen_api/user/imports.py",
+      "service": "caliopen-rest-py",
+      "endpoints": [
+        {
+          "className": "ContactImport",
+          "methodName": "collection_post",
+          "httpMethod": "POST",
+          "path": "/api/v1/imports",
+          "line": 22,
+          "evidence": "@resource(collection_path='/imports', path='')",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/py.server/caliopen_api/message/message.py",
+      "service": "caliopen-rest-py",
+      "endpoints": [
+        {
+          "className": "Message",
+          "methodName": "collection_post",
+          "httpMethod": "POST",
+          "path": "/api/v1/messages",
+          "line": 23,
+          "evidence": "@resource(collection_path='/messages', path='/messages/{message_id}')",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        },
+        {
+          "className": "Message",
+          "methodName": "patch",
+          "httpMethod": "PATCH",
+          "path": "/api/v1/messages/{message_id}",
+          "line": 23,
+          "evidence": "@resource(collection_path='/messages', path='/messages/{message_id}')",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        },
+        {
+          "className": "Message",
+          "methodName": "delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v1/messages/{message_id}",
+          "line": 23,
+          "evidence": "@resource(collection_path='/messages', path='/messages/{message_id}')",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        },
+        {
+          "className": "Raw",
+          "methodName": "get",
+          "httpMethod": "GET",
+          "path": "/api/v1/raws/{raw_msg_id}",
+          "line": 103,
+          "evidence": "@resource(path='/raws/{raw_msg_id}')",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/py.server/caliopen_api/discussion/participants.py",
+      "service": "caliopen-rest-py",
+      "endpoints": [
+        {
+          "className": "ParticipantDiscussion",
+          "methodName": "collection_post",
+          "httpMethod": "POST",
+          "path": "/api/v1/participants/discussion",
+          "line": 12,
+          "evidence": "@resource(collection_path='/participants/discussion', path='/participants/discussion')",
+          "framework": "Pyramid/Cornice",
+          "confidence": "medium"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "GLM-5.3-Flash",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "default",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "REST",
+    "commit": "7b4c692ab7cbdfe8f0ffd7e5ec58d3da11b7e938",
+    "dirty": true,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 19,
+    "tool_calls": 31,
+    "rejected_entries": 18,
+    "no_call_replies": 0,
+    "input_tokens": 215962,
+    "cached_input_tokens": 173568,
+    "output_tokens": 8048,
+    "list_price_usd": 0.0156,
+    "wall_seconds": 64.8,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": "go.server/\npy.server/"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/go.server"
+        },
+        "result_head": "README.md\napi_server.go\ncmd/\ndump_request.go\nerrors.go\nmiddlewares/\noperations/\nproxy.go"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/py.server"
+        },
+        "result_head": "CHANGES.rst\nMANIFEST.in\nREADME.rst\ncaliopen_api/\nrequirements.deps\nsetup.cfg\nsetup.py"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/go.server/cmd"
+        },
+        "result_head": "caliopen_rest/"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/py.server/caliopen_api"
+        },
+        "result_head": "__init__.py\nbase/\ndiscussion/\nmessage/\nuser/"
+      },
+      {
+        "step": 4,
+        "tool": "list_dir",
+        "args": {
+          "path": "/go.server/cmd/caliopen_rest"
+        },
+        "result_head": "cli_cmds/\nmain.go"
+      },
+      {
+        "step": 4,
+        "tool": "list_dir",
+        "args": {
+          "path": "/py.server/caliopen_api/base"
+        },
+        "result_head": "__init__.py\nconfig.py\ncontext.py\ndeserializer.py\nerrors.py\nexception.py\nrenderer.py"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/go.server/cmd/caliopen_rest/main.go"
+        },
+        "result_head": "1: // Copyleft (ɔ) 2017 The Caliopen contributors.\n2: // Use of this source code is governed by a GNU AFFERO GENERAL PUBLIC\n3: // license (AGPL) that can be found in the LICENSE file.\n4: \n5: package main\n6: \n7: import (\n8: \t\"fmt\"\n9: \t\"github.com/CaliOpen/Caliopen/src/backend/interfaces/REST/go.server/cmd/caliopen_rest/cli_cmds\"\n10: \t\"os\"\n11: )\n12: \n13: func main() {\n14: \t// launch 'root cmd' that will register other commands that could be executed\n15: \tif err := cmd.RootCmd.Execute(); err != nil {\n16: \t\tfmt.Println(err)\n17: \t\tos.Exit(-1)\n18: \t}\n19: }"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "path": "/go.server",
+          "pattern": "(GET|POST|PUT|DELETE|PATCH|Any|Handle|route|Route)"
+        },
+        "result_head": "/go.server/README.md:3: By default, a proxy server runs in front of the http server to route requests to py.server or go.server as needed. For now, routes /api/v1/ are handled by py.server and routes /api/v2 by go server.\n/go.server/api_server.go:175: // Creates a gin router with default middleware:\n/go.server/api_server.go:177: router := gin.Default()\n/go.server/api_server.go:179: //router.Use(Dumper())\n/go.server/api_server.go:186: router.Use(http_middleware.SwaggerValidator())\n/go.server/api_server.go:188: // adds our routes and handlers\n/go.server/api_server.go:189: api := router.Group(http_middleware.RoutePrefix)\n/go.server/api_server.go:190: server.AddHandlers(api)\n/go.server/api_server.go:194: err = router.Run(addr)\n/go.server/api_server.go:201: func (server *REST_API) AddHandlers(api *gin.RouterGroup) {\n/go.server/api_server.go:205: usrs.PATCH(\"/:user_id\", users.PatchUser)\n/go.server/api_server.go:206: usrs.POST(\"/:user_id/actions\", users.Delete)\n/go.server/api_server.go:209: i"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/go.server/api_server.go",
+          "start": "160"
+        },
+        "result_head": "160: \n161: \t//checks that with could open the swagger specs file\n162: \t_, err = os.Stat(server.config.SwaggerFile)\n163: \tif err != nil {\n164: \t\treturn err\n165: \t}\n166: \n167: \treturn nil\n168: }\n169: \n170: func StartServer() error {\n171: \treturn server.start()\n172: }\n173: \n174: func (server *REST_API) start() error {\n175: \t// Creates a gin router with default middleware:\n176: \t// logger and recovery (crash-free) middleware\n177: \trouter := gin.Default()\n178: \n179: \t//router.Use(Dumper())\n180: \n181: \t// adds our middlewares\n182: \terr := http_middleware.InitSwaggerMiddleware(server.config.SwaggerFile)\n183: \tif err != nil {\n184: \t\tlog.WithError(err).Warn(\"init swagger middleware failed\")\n185: \t} else {\n186: \t\trouter.Use(http_middleware.SwaggerValidator())\n187: \t}\n188: \t// adds our routes and handlers\n189: \tapi := router.Group(http_middleware.RoutePrefix)\n190: \tserver.AddHandlers(api)\n191: \n192: \t// listens\n193: \taddr := server.config.Interface + \":\" + server.config.ListenPort\n194: \terr = rou"
+      },
+      {
+        "step": 6,
+        "tool": "grep",
+        "args": {
+          "path": "/go.server/middlewares",
+          "pattern": "RoutePrefix|UsersRoute|IdentitiesRoute|ContactsRoute|DevicesRoute|TagsRoute|ImportsRoute|MessagesRoute|DiscussionsRoute|ParticipantsRoute|PasswordsRoute"
+        },
+        "result_head": "/go.server/middlewares/config.go:4: RoutePrefix     = \"/api/v2\"\n/go.server/middlewares/config.go:5: IdentitiesRoute = \"/identities\"\n/go.server/middlewares/config.go:6: TagsRoute       = \"/tags\"\n/go.server/middlewares/config.go:7: ContactsRoute   = \"/contacts\"\n/go.server/middlewares/config.go:8: DevicesRoute    = \"/devices\"\n/go.server/middlewares/config.go:9: ImportsRoute    = \"/imports\""
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/go.server/api_server.go",
+          "start": "294"
+        },
+        "result_head": "294: \t/** notifications API **/\n295: \tnotif := api.Group(\"/notifications\", http_middleware.BasicAuthFromCache(caliopen.Facilities.Cache, \"caliopen\"))\n296: \tnotif.GET(\"\", notifications.GetPendingNotif)\n297: \tnotif.DELETE(\"\", notifications.DeleteNotifications)\n298: \tnotif.GET(\"/:notification_id\", notifications.GetNotification)\n299: \tnotif.DELETE(\"/:notification_id\", notifications.DeleteNotification)\n300: \n301: \t/** providers **/\n302: \tprov := api.Group(\"/providers\")\n303: \tprov.GET(\"\", http_middleware.BasicAuthFromCache(caliopen.Facilities.Cache, \"caliopen\"), providers.GetProvidersList)\n304: \tprov.GET(\"/:provider_name\", http_middleware.BasicAuthFromCache(caliopen.Facilities.Cache, \"caliopen\"), providers.GetProvider)\n305: \tprov.GET(\"/:provider_name/callback\", providers.CallbackHandler)\n306: \tapi.StaticFile(\"/test/oauth\", \"../interfaces/REST/go.server/operations/providers/oauth-test.html\")\n307: }"
+      },
+      {
+        "step": 7,
+        "tool": "list_dir",
+        "args": {
+          "path": "/py.server/caliopen_api/user"
+        },
+        "result_head": "__init__.py\nauthentication.py\nconfig.py\ncontact.py\nimports.py\nsettings.py\nuser.py\nutil.py"
+      },
+      {
+        "step": 8,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"caliopen-rest-go\", \"dirs\": [\"/go.server\"]}], \"files\": [{\"path\": \"/go.server/api_server.go\", \"service\": \"caliopen-rest-go\", \"endpoints\": [\n{\"className\": \"AddHandlers\", \"methodNa"
+        },
+        "result_head": "Recorded 59 new: service caliopen-rest-go, PATCH /api/v2/users/:user_id, POST /api/v2/users/:user_id/actions, GET /api/v2/identities/locals, GET /api/v2/identities/locals/:identity_id, GET /api/v2/identities/remotes, POST /api/v2/identities/remotes, GET /api/v2/identities/remotes/:remote_id, PATCH /api/v2/identities/remotes/:remote_id, DELETE /api/v2/identities/remotes/:remote_id, GET /api/v2/passwords/reset, POST /api/v2/passwords/reset, GET /api/v2/passwords/reset/:reset_token, POST /api/v2/passwords/reset/:reset_token, GET /api/v2/username/isAvailable, GET /api/v2/messages, GET /api/v2/messages/:message_id, POST /api/v2/messages/:message_id/actions, POST /api/v2/messages/:message_id/attachments, DELETE /api/v2/messages/:message_id/attachments/:attachment_id, GET /api/v2/messages/:message_id/attachments/:attachment_id, PATCH /api/v2/messages/:message_id/tags, GET /api/v2/discussions, GET /api/v2/discussions/:discussionId, GET /api/v2/participants/suggest, POST /api/v2/participants/di"
+      },
+      {
+        "step": 9,
+        "tool": "grep",
+        "args": {
+          "path": "/py.server/caliopen_api",
+          "pattern": "route|add_view|@view|config\\.add|path=|pattern"
+        },
+        "result_head": "/py.server/caliopen_api/__init__.py:31: route_prefix = settings.get('caliopen_api.route_prefix')\n/py.server/caliopen_api/__init__.py:34: config.include(service, route_prefix=route_prefix)\n/py.server/caliopen_api/base/config.py:33: config.add_renderer('text_plain', TextPlainRenderer)\n/py.server/caliopen_api/base/config.py:34: config.add_renderer('json', JsonRenderer)\n/py.server/caliopen_api/base/config.py:35: config.add_renderer('simplejson', JsonRenderer)\n/py.server/caliopen_api/base/config.py:36: config.add_renderer('part', PartRenderer)\n/py.server/caliopen_api/base/config.py:40: config.add_cornice_deserializer('application/json',\n/py.server/caliopen_api/base/config.py:43: config.add_exception_view(context=swagger_context,\n/py.server/caliopen_api/base/errors.py:56: route = (request.matched_route.name\n/py.server/caliopen_api/base/errors.py:57: if request.matched_route else ('Unknown'))\n/py.server/caliopen_api/base/errors.py:58: return {'component': route,\n/py.server/caliopen_api/base/e"
+      },
+      {
+        "step": 10,
+        "tool": "read_file",
+        "args": {
+          "path": "/py.server/caliopen_api/__init__.py"
+        },
+        "result_head": "1: # -*- coding: utf-8 -*-\n2: \n3: __version__ = '0.23.0'\n4: \n5: \n6: import logging\n7: from pyramid.config import Configurator\n8: from caliopen_storage.config import Configuration\n9: \n10: log = logging.getLogger(__name__)\n11: \n12: logging.basicConfig(level=logging.DEBUG)\n13: \n14: \n15: def main(global_config, **settings):\n16:     \"\"\"Caliopen entry point for WSGI application.\n17: \n18:     Load Caliopen configuration and setup a WSGI application\n19:     with loaded API services.\n20:     \"\"\"\n21:     # XXX ugly way to init caliopen configuration before pyramid\n22:     caliopen_config = settings['caliopen.config'].split(':')[1]\n23:     Configuration.load(caliopen_config, 'global')\n24: \n25:     settings['pyramid_swagger.exclude_paths'] = [r'^/api-ui/?', r'^/doc/api/?', r'^/defs/?']\n26:     settings['pyramid_swagger.enable_response_validation'] = True\n27:     config = Configurator(settings=settings)\n28:     services = config.registry.settings. \\\n29:         get('caliopen_api.services', []). \\\n3"
+      },
+      {
+        "step": 10,
+        "tool": "read_file",
+        "args": {
+          "path": "/py.server/caliopen_api/user/user.py"
+        },
+        "result_head": "1: # -*- coding: utf-8 -*-\n2: \"\"\"Caliopen user API.\"\"\"\n3: from __future__ import absolute_import, print_function, unicode_literals\n4: \n5: import logging\n6: import datetime\n7: \n8: from pyramid.security import NO_PERMISSION_REQUIRED\n9: from cornice.resource import resource, view\n10: \n11: import tornado.ioloop\n12: import tornado.gen\n13: from nats.io import Client as Nats\n14: import json\n15: \n16: from ..base.context import DefaultContext\n17: from .util import create_token\n18: \n19: from ..base import Api\n20: from ..base.exception import AuthenticationError, NotAcceptable\n21: from ..base.exception import Unprocessable, ValidationError\n22: \n23: from caliopen_storage.exception import NotFound\n24: from caliopen_storage.config import Configuration\n25: from caliopen_main.common.core import PublicKey\n26: from caliopen_main.user.core import User\n27: from caliopen_main.user.parameters import NewUser, Settings\n28: from caliopen_main.user.returns.user import ReturnUser\n29: from caliopen_main.contact.p"
+      },
+      {
+        "step": 11,
+        "tool": "read_file",
+        "args": {
+          "path": "/py.server/caliopen_api/user/user.py",
+          "start": "160"
+        },
+        "result_head": "160:                            'status': device.status}}\n161: \n162: \n163: def no_such_user(request):\n164:     \"\"\"Validator that an user does not exist.\"\"\"\n165:     username = request.swagger_data['user']['username']\n166:     if not User.is_username_available(username):\n167:         raise NotAcceptable(detail='User already exist')\n168: \n169: \n170: @resource(path='/users/{user_id}',\n171:           collection_path='/users',\n172:           name='User',\n173:           factory=DefaultContext)\n174: class UserAPI(Api):\n175:     \"\"\"User API.\"\"\"\n176: \n177:     @view(renderer='json',\n178:           permission=NO_PERMISSION_REQUIRED,\n179:           validators=no_such_user)\n180:     def collection_post(self):\n181:         \"\"\"Create a new user.\"\"\"\n182:         settings = Settings()\n183:         settings.import_data(self.request.swagger_data['user']['settings'])\n184:         try:\n185:             settings.validate()\n186:         except Exception as exc:\n187:             raise Unprocessable(detail=ex"
+      },
+      {
+        "step": 11,
+        "tool": "read_file",
+        "args": {
+          "path": "/py.server/caliopen_api/user/settings.py"
+        },
+        "result_head": "1: # -*- coding: utf-8 -*-\n2: \"\"\"Caliopen ReST API for user settings management.\"\"\"\n3: from __future__ import absolute_import, print_function, unicode_literals\n4: \n5: import logging\n6: \n7: from pyramid.response import Response\n8: from pyramid.httpexceptions import HTTPNoContent\n9: from caliopen_main.user.objects.settings import Settings as ObjectSettings\n10: from cornice.resource import resource, view\n11: \n12: from ..base import Api\n13: from ..base.context import DefaultContext\n14: \n15: from ..base.exception import MergePatchError\n16: \n17: log = logging.getLogger(__name__)\n18: \n19: \n20: @resource(path='/settings',\n21:           name='Settings',\n22:           factory=DefaultContext\n23:           )\n24: class SettingsAPI(Api):\n25:     \"\"\"Settings management API.\"\"\"\n26: \n27:     def __init__(self, request, context):\n28:         \"\"\"Create an instance of Device API.\"\"\"\n29:         self.request = request\n30:         self.user = request.authenticated_userid\n31: \n32:     @view(renderer='json', "
+      },
+      {
+        "step": 12,
+        "tool": "read_file",
+        "args": {
+          "path": "/py.server/caliopen_api/user/contact.py"
+        },
+        "result_head": "1: # -*- coding: utf-8 -*-\n2: \"\"\"Caliopen Contact REST API.\"\"\"\n3: from __future__ import absolute_import, print_function, unicode_literals\n4: \n5: import logging\n6: import uuid\n7: from cornice.resource import resource, view\n8: from pyramid.response import Response\n9: from pyramid.httpexceptions import HTTPServerError, HTTPForbidden\n10: from caliopen_main.common.errors import ForbiddenAction\n11: \n12: from caliopen_main.contact.core import Contact as CoreContact\n13: \n14: from caliopen_main.contact.objects.contact import Contact as ContactObject\n15: \n16: from caliopen_main.contact.returns import ReturnContact\n17: \n18: from caliopen_main.contact.parameters import NewContact as NewContactParam\n19: \n20: from ..base import Api\n21: from ..base.exception import (ResourceNotFound,\n22:                               ValidationError,\n23:                               MergePatchError)\n24: \n25: log = logging.getLogger(__name__)\n26: \n27: \n28: @resource(collection_path='/contacts',\n29:           path='/"
+      },
+      {
+        "step": 12,
+        "tool": "read_file",
+        "args": {
+          "path": "/py.server/caliopen_api/message/message.py"
+        },
+        "result_head": "1: # -*- coding: utf-8 -*-\n2: from __future__ import absolute_import, print_function, unicode_literals\n3: \n4: import logging\n5: \n6: from cornice.resource import resource, view\n7: from pyramid.response import Response\n8: \n9: from caliopen_main.message.objects.message import Message as ObjectMessage\n10: from caliopen_main.message.core import RawMessage\n11: from caliopen_storage.exception import NotFound\n12: \n13: from ..base import Api\n14: \n15: from ..base.exception import (ResourceNotFound,\n16:                               MergePatchError)\n17: from pyramid.httpexceptions import HTTPServerError, HTTPMovedPermanently\n18: from caliopen_pi.features import marshal_features\n19: \n20: log = logging.getLogger(__name__)\n21: \n22: \n23: @resource(collection_path='/messages',\n24:           path='/messages/{message_id}')\n25: class Message(Api):\n26:     def __init__(self, request):\n27:         self.request = request\n28:         self.user = request.authenticated_userid\n29: \n30:     @view(renderer='json'"
+      },
+      {
+        "step": 13,
+        "tool": "read_file",
+        "args": {
+          "path": "/py.server/caliopen_api/discussion/participants.py"
+        },
+        "result_head": "1: import logging\n2: \n3: from cornice.resource import resource, view\n4: \n5: from ..base import Api\n6: from caliopen_main.participant.core import hash_participants_uri\n7: from caliopen_main.participant.objects import Participant\n8: \n9: log = logging.getLogger(__name__)\n10: \n11: \n12: @resource(collection_path='/participants/discussion',\n13:           path='/participants/discussion')\n14: class ParticipantDiscussion(Api):\n15:     \"\"\"\n16:     returns canonical hash of participant_uris\n17:     which is the corresponding discussion_id\n18:     \"\"\"\n19: \n20:     def __init__(self, request):\n21:         self.request = request\n22:         self.user = request.authenticated_userid\n23: \n24:     @view(renderer='json', permission='authenticated')\n25:     def collection_post(self):\n26:         parts = self.request.swagger_data['participants']\n27:         participants = []\n28:         for part in parts:\n29:             participant = Participant()\n30:             participant.address = part['address']\n31: "
+      },
+      {
+        "step": 13,
+        "tool": "read_file",
+        "args": {
+          "path": "/py.server/caliopen_api/user/imports.py"
+        },
+        "result_head": "1: # -*- coding: utf-8 -*-\n2: \"\"\"Caliopen file import REST API.\"\"\"\n3: from __future__ import absolute_import, print_function, unicode_literals\n4: \n5: import logging\n6: \n7: from caliopen_main.contact.core import Contact as CoreContact\n8: \n9: from cornice.resource import resource, view\n10: from pyramid.response import Response\n11: \n12: from caliopen_main.contact.parsers import VcardParser\n13: \n14: from ..base.exception import (ValidationError,\n15:                               Unprocessable)\n16: \n17: from ..base import Api\n18: \n19: log = logging.getLogger(__name__)\n20: \n21: \n22: @resource(collection_path='/imports', path='')\n23: class ContactImport(Api):\n24:     def __init__(self, request):\n25:         self.request = request\n26:         self.user = request.authenticated_userid\n27: \n28:     @view(permission='authenticated')\n29:     def collection_post(self):\n30:         \"\"\"API to import an user file (vcard at this time).\"\"\"\n31:         # need to check by ourself if <file> param is present"
+      },
+      {
+        "step": 13,
+        "tool": "grep",
+        "args": {
+          "path": "/py.server",
+          "pattern": "route_prefix|caliopen_api\\.services|discussion|message|user"
+        },
+        "result_head": "/py.server/CHANGES.rst:8: - routes « threads » renamed to « discussions »\n/py.server/README.rst:33: caliopen.api.services = caliopen.api.user\n/py.server/README.rst:34: caliopen.api.message\n/py.server/README.rst:40: to create user and load mail data.\n/py.server/README.rst:57: * `caliopen_api.user`\n/py.server/README.rst:58: * `caliopen_api.message`\n/py.server/caliopen_api/__init__.py:29: get('caliopen_api.services', []). \\\n/py.server/caliopen_api/__init__.py:31: route_prefix = settings.get('caliopen_api.route_prefix')\n/py.server/caliopen_api/__init__.py:34: config.include(service, route_prefix=route_prefix)\n/py.server/caliopen_api/base/config.py:24: raise ValidationError(exc.child.message)\n/py.server/caliopen_api/base/context.py:29: def authenticated_user(self):\n/py.server/caliopen_api/base/context.py:31: Return the authenticated user.\n/py.server/caliopen_api/base/context.py:33: :return: authenticated user\n/py.server/caliopen_api/base/context.py:36: user = self.request.authenticated_user"
+      },
+      {
+        "step": 14,
+        "tool": "read_file",
+        "args": {
+          "path": "/py.server/README.rst"
+        },
+        "result_head": "1: Entry point\n2: ===========\n3: \n4: This repository is part of CaliOpen platform. For documentation, installation and\n5: contribution instructions, please refer to https://caliopen.github.io\n6: \n7: caliopen.api\n8: ============\n9: \n10: caliopen_api package is a simple Pyramid container to include CaliOpen Rest API services.\n11: \n12: \n13: Documentation\n14: -------------\n15: \n16: The complete documentation of the API is available at `/doc/api/swagger.json` (it follows swagger/openAPI specs).\n17: Developers can browse and test the API at `http://localhost:6543/api-ui/`\n18: \n19: Local Installation\n20: ------------------\n21: \n22: To install local dependencies, use `pip <https://pip.pypa.io/en/latest/>`_:\n23: \n24: ::\n25: \n26:     pip install -e \".[dev,test]\"\n27: \n28: Then install supported components and include them under caliopen.api.services\n29: in pyramid configuration file.\n30: \n31: ::\n32: \n33:     caliopen.api.services = caliopen.api.user\n34:                             caliopen.api.me"
+      },
+      {
+        "step": 14,
+        "tool": "read_file",
+        "args": {
+          "path": "/py.server/setup.py"
+        },
+        "result_head": "1: import os\n2: import sys\n3: import re\n4: \n5: from setuptools import setup, find_packages\n6: \n7: PY3 = sys.version_info[0] == 3\n8: \n9: name = \"caliopen_api\"\n10: \n11: here = os.path.abspath(os.path.dirname(__file__))\n12: README = open(os.path.join(here, 'README.rst')).read()\n13: CHANGES = open(os.path.join(here, 'CHANGES.rst')).read()\n14: \n15: with open(\n16:         os.path.join(*([here] + name.split('.') + ['__init__.py']))) as v_file:\n17:     version = re.compile(r\".*__version__ = '(.*?)'\", re.S).match(\n18:         v_file.read()).group(1)\n19: \n20: requires = [\n21:     'pyramid',\n22:     'pyramid_jinja2',\n23:     'redis==2.10.6',  # Enforce this version, version >= 3.0.0 break setex\n24:     'pyramid_kvs==0.3.0',\n25:     'waitress',\n26:     'cornice==1.2.1',\n27:     'colander',\n28:     'pyramid-swagger',\n29:     'rfc3987',\n30:     'webcolors',\n31:     'strict-rfc3339',\n32:     'nats-client',\n33:     'tornado==4.2',\n34:     'gunicorn',\n35:     'ecdsa']\n36: \n37: if (os.path.isfile('./req"
+      },
+      {
+        "step": 15,
+        "tool": "grep",
+        "args": {
+          "path": "/py.server",
+          "pattern": "api/v1|route_prefix\\s*=|\\.ini"
+        },
+        "result_head": "/py.server/MANIFEST.in:1: include *.txt *.ini *.cfg *.rst\n/py.server/caliopen_api/__init__.py:31: route_prefix = settings.get('caliopen_api.route_prefix')\n/py.server/caliopen_api/__init__.py:34: config.include(service, route_prefix=route_prefix)"
+      },
+      {
+        "step": 16,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"caliopen-rest-py\", \"dirs\": [\"/py.server\"]}], \"files\": [\n{\"path\": \"/py.server/caliopen_api/user/user.py\", \"service\": \"caliopen-rest-py\", \"endpoints\": [\n{\"className\": \"Authentica"
+        },
+        "result_head": "Recorded 1 new: service caliopen-rest-py\nTotal: 2 services, 58 endpoints in 1 files.\nServices with no endpoints recorded yet: caliopen-rest-py.\n[REJECTED 16] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0].endpoints[0] POST {route_prefix}/authentications (AuthenticationAPI.collection_post): path must be the full route, starting with /\n- files[0].endpoints[1] POST {route_prefix}/users (UserAPI.collection_post): path must be the full route, starting with /\n- files[0].endpoints[2] GET {route_prefix}/me (MeUserAPI.get): path must be the full route, starting with /\n- files[1].endpoints[0] GET {route_prefix}/settings (SettingsAPI.get): path must be the full route, starting with /\n- files[1].endpoints[1] PATCH {route_prefix}/settings (SettingsAPI.patch): path must be the full route, starting with /\n- files[2].endpoints[0] GET {route_prefix}/contacts (Contact.collection_get): path must be the full route, starting with /\n- files[2].endpoints[1] POST {"
+      },
+      {
+        "step": 17,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [\n{\"path\": \"/py.server/caliopen_api/user/user.py\", \"service\": \"caliopen-rest-py\", \"endpoints\": [\n{\"className\": \"AuthenticationAPI\", \"methodName\": \"collection_post\", \"httpMethod\": \"POST\", \"pa"
+        },
+        "result_head": "Recorded 15 new: POST /api/v1/users, GET /api/v1/me, GET /api/v1/settings, PATCH /api/v1/settings, GET /api/v1/contacts, POST /api/v1/contacts, GET /api/v1/contacts/{contact_id}, PATCH /api/v1/contacts/{contact_id}, DELETE /api/v1/contacts/{contact_id}, POST /api/v1/imports, POST /api/v1/messages, PATCH /api/v1/messages/{message_id}, DELETE /api/v1/messages/{message_id}, GET /api/v1/raws/{raw_msg_id}, POST /api/v1/participants/discussion\nTotal: 2 services, 73 endpoints in 7 files.\n[REJECTED 1] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0].endpoints[0] POST /api/v1/authentications (AuthenticationAPI.collection_post): evidence is not at line 92; copy the route declaration verbatim. Lines 89-95 read: return result @resource(path='', collection_path='/authentications', name='Authentication', factory=DefaultContext"
+      },
+      {
+        "step": 18,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/py.server/caliopen_api/user/user.py\", \"service\": \"caliopen-rest-py\", \"endpoints\": [{\"className\": \"AuthenticationAPI\", \"methodName\": \"collection_post\", \"httpMethod\": \"POST\", \"path"
+        },
+        "result_head": "Recorded 1 new: POST /api/v1/authentications\nTotal: 2 services, 74 endpoints in 7 files."
+      },
+      {
+        "step": 19,
+        "tool": "submit",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"caliopen-rest-go\", \"dirs\": [\"/go.server\"]}, {\"name\": \"caliopen-rest-py\", \"dirs\": [\"/py.server\"]}], \"summary\": \"Two REST API services: Go gin server (cmd/caliopen_rest/main.go e"
+        },
+        "result_head": "Recorded 2 new: service caliopen-rest-go, service caliopen-rest-py\nTotal: 2 services, 74 endpoints in 7 files.\n[ACCEPTED] 2 services, 74 endpoints."
+      }
+    ]
+  }
+}

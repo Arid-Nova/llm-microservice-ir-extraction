@@ -1,0 +1,338 @@
+{
+  "system": "aether-ui",
+  "services": [
+    {
+      "name": "aether-ui",
+      "dirs": [
+        "/"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/aether/ui/urls.py",
+      "service": "aether-ui",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "pipeline-app",
+          "httpMethod": "GET",
+          "path": "/",
+          "line": 31,
+          "evidence": "path('', view=login_required(TemplateView.as_view(template_name='pages/pipeline.html')), name='pipeline-app')",
+          "framework": "Django",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "styleguide",
+          "httpMethod": "GET",
+          "path": "/styleguide",
+          "line": 36,
+          "evidence": "path('styleguide', view=login_required(TemplateView.as_view(template_name='pages/styleguide.html')), name='styleguide')",
+          "framework": "Django",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/aether/ui/api/urls.py",
+      "service": "aether-ui",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "get_kernel_url",
+          "httpMethod": "GET",
+          "path": "/api/kernel-url/",
+          "line": 31,
+          "evidence": "path('kernel-url/', view=views.get_kernel_url, name='kernel-url')",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ProjectViewSet",
+          "evidence": "router.register('projects', views.ProjectViewSet)",
+          "httpMethod": "ANY",
+          "line": 25,
+          "methodName": "register",
+          "path": "/api/projects",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "PipelineViewSet",
+          "evidence": "router.register('pipelines', views.PipelineViewSet)",
+          "httpMethod": "ANY",
+          "line": 26,
+          "methodName": "register",
+          "path": "/api/pipelines",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ContractViewSet",
+          "evidence": "router.register('contracts', views.ContractViewSet)",
+          "httpMethod": "ANY",
+          "line": 27,
+          "methodName": "register",
+          "path": "/api/contracts",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/aether/ui/api/views.py",
+      "service": "aether-ui",
+      "endpoints": [
+        {
+          "className": "PipelineViewSet",
+          "methodName": "fetch",
+          "httpMethod": "POST",
+          "path": "/api/pipelines/fetch/",
+          "line": 43,
+          "evidence": "@action(methods=['post'], detail=False)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "PipelineViewSet",
+          "methodName": "delete_artefacts",
+          "httpMethod": "POST",
+          "path": "/api/pipelines/{pk}/delete-artefacts/",
+          "line": 54,
+          "evidence": "@action(detail=True, methods=['post'], url_path='delete-artefacts')",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "PipelineViewSet",
+          "methodName": "rename",
+          "httpMethod": "PUT",
+          "path": "/api/pipelines/{pk}/rename/",
+          "line": 74,
+          "evidence": "@action(detail=True, methods=['put'], url_path='rename')",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ContractViewSet",
+          "methodName": "publish",
+          "httpMethod": "POST",
+          "path": "/api/contracts/{pk}/publish/",
+          "line": 104,
+          "evidence": "@action(methods=['post'], detail=True)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ContractViewSet",
+          "methodName": "publish_preflight",
+          "httpMethod": "GET",
+          "path": "/api/contracts/{pk}/publish-preflight/",
+          "line": 123,
+          "evidence": "@action(methods=['get'], detail=True, url_path='publish-preflight')",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ContractViewSet",
+          "methodName": "delete_artefacts",
+          "httpMethod": "POST",
+          "path": "/api/contracts/{pk}/delete-artefacts/",
+          "line": 135,
+          "evidence": "@action(detail=True, methods=['post'], url_path='delete-artefacts')",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "get_kernel_url",
+          "httpMethod": "GET",
+          "path": "/api/kernel-url/",
+          "line": 156,
+          "evidence": "@api_view(['GET'])",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "GLM-5.3-Flash",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "default",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "aether-ui",
+    "commit": "2a4bf1b78d1bcb207af51dc06c6393ad78fe0291",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 12,
+    "tool_calls": 18,
+    "rejected_entries": 6,
+    "no_call_replies": 0,
+    "input_tokens": 59430,
+    "cached_input_tokens": 42368,
+    "output_tokens": 3037,
+    "list_price_usd": 0.0053,
+    "wall_seconds": 21.4,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".dockerignore\nDockerfile\naether/\nconf/\nentrypoint.sh\nmanage.py\nsetup.cfg\nsetup.py"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/aether"
+        },
+        "result_head": "__init__.py\nui/"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/Dockerfile"
+        },
+        "result_head": "1: FROM python:3.10-slim\n2: \n3: LABEL description=\"Aether Kernel UI\" \\\n4:       name=\"aether-ui\" \\\n5:       author=\"eHealth Africa\"\n6: \n7: ################################################################################\n8: ## set up container\n9: ################################################################################\n10: \n11: COPY ./conf/docker/* /tmp/\n12: RUN /tmp/setup.sh\n13: \n14: WORKDIR /code\n15: ENTRYPOINT [\"/code/entrypoint.sh\"]\n16: \n17: ################################################################################\n18: ## install dependencies\n19: ## copy files one by one and split commands to use docker cache\n20: ################################################################################\n21: \n22: COPY --chown=aether:aether ./conf/pip /code/conf/pip\n23: \n24: ENV VIRTUAL_ENV=/var/run/aether/venv\n25: ENV PATH=\"$VIRTUAL_ENV/bin:$PATH\"\n26: \n27: RUN mkdir -p $VIRTUAL_ENV && \\\n28:     python3 -m venv $VIRTUAL_ENV && \\\n29:     pip install -q --upgrade pip && \\\n30:     pip "
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/aether/ui"
+        },
+        "result_head": "__init__.py\nadmin.py\napi/\napps.py\nassets/\nsettings.py\ntemplates/\ntests/\nurls.py"
+      },
+      {
+        "step": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "/entrypoint.sh"
+        },
+        "result_head": "1: #!/usr/bin/env bash\n2: #\n3: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n4: #\n5: # See the NOTICE file distributed with this work for additional information\n6: # regarding copyright ownership.\n7: #\n8: # Licensed under the Apache License, Version 2.0 (the \"License\");\n9: # you may not use this file except in compliance with\n10: # the License.  You may obtain a copy of the License at\n11: #\n12: #   http://www.apache.org/licenses/LICENSE-2.0\n13: #\n14: # Unless required by applicable law or agreed to in writing,\n15: # software distributed under the License is distributed on an\n16: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n17: # KIND, either express or implied.  See the License for the\n18: # specific language governing permissions and limitations\n19: # under the License.\n20: #\n21: set -Eeo pipefail\n22: \n23: function show_help {\n24:     echo \"\"\"\n25:     Commands\n26:     ----------------------------------------------------------------------------\n27:  "
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/ui/urls.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: from django.urls import include, path\n20: from django.contrib.auth.decorators import login_required\n21: from django.views.generic import TemplateView\n22: \n23: from aether.sdk.conf.urls import generate_ur"
+      },
+      {
+        "step": 4,
+        "tool": "list_dir",
+        "args": {
+          "path": "/aether/ui/api"
+        },
+        "result_head": "__init__.py\nkernel_utils.py\nmigrations/\nmodels.py\nserializers.py\ntests/\nurls.py\nutils.py\nviews.py"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/ui/api/urls.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: from django.urls import path\n20: from rest_framework import routers\n21: \n22: from . import views\n23: \n24: router = routers.DefaultRouter()\n25: router.register('projects', views.ProjectViewSet)\n26: router"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/ui/api/views.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: from rest_framework import viewsets, status\n20: from rest_framework.decorators import action, api_view\n21: from rest_framework.response import Response\n22: from requests.exceptions import HTTPError\n23: \n"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/ui/api/views.py",
+          "start": "146"
+        },
+        "result_head": "146:                 if not artefacts_result:\n147:                     return Response(status=status.HTTP_204_NO_CONTENT)\n148:             except Exception as e:\n149:                 return Response(str(e), status=status.HTTP_500_INTERNAL_SERVER_ERROR)\n150:         else:\n151:             contract.delete()\n152: \n153:         return Response(artefacts_result)\n154: \n155: \n156: @api_view(['GET'])\n157: def get_kernel_url(request, *args, **kwargs):\n158:     return Response(kernel_utils.get_kernel_url(request))"
+      },
+      {
+        "step": 6,
+        "tool": "grep",
+        "args": {
+          "path": "/aether/ui",
+          "pattern": "ROOT_URLCONF|generate_urlpatterns|SUBPATH|FORCE_SCRIPT_NAME"
+        },
+        "result_head": "/aether/ui/settings.py:35: ROOT_URLCONF = 'aether.ui.urls'\n/aether/ui/tests/test_settings.py:36: self.assertEqual(settings.ROOT_URLCONF, 'aether.ui.urls')\n/aether/ui/urls.py:23: from aether.sdk.conf.urls import generate_urlpatterns\n/aether/ui/urls.py:26: urlpatterns = generate_urlpatterns(app=["
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/",
+          "pattern": "def generate_urlpatterns"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/manage.py"
+        },
+        "result_head": "1: #!/usr/bin/env python\n2: \n3: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n4: #\n5: # See the NOTICE file distributed with this work for additional information\n6: # regarding copyright ownership.\n7: #\n8: # Licensed under the Apache License, Version 2.0 (the \"License\");\n9: # you may not use this file except in compliance with\n10: # the License.  You may obtain a copy of the License at\n11: #\n12: #   http://www.apache.org/licenses/LICENSE-2.0\n13: #\n14: # Unless required by applicable law or agreed to in writing,\n15: # software distributed under the License is distributed on an\n16: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n17: # KIND, either express or implied.  See the License for the\n18: # specific language governing permissions and limitations\n19: # under the License.\n20: \n21: import sys\n22: \n23: if __name__ == '__main__':\n24:     from django.core.management import execute_from_command_line\n25: \n26:     execute_from_command_line(sys.argv)"
+      },
+      {
+        "step": 8,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/ui/settings.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: import os\n20: import logging\n21: \n22: # Common settings\n23: # ------------------------------------------------------------------------------\n24: \n25: from aether.sdk.conf.settings_aether import *  # noqa"
+      },
+      {
+        "step": 9,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"aether-ui\", \"dirs\": [\"/\"], \"notes\": \"Django app served by uWSGI (entrypoint.sh 'start'), Dockerfile at /Dockerfile, manage.py entry point, ROOT_URLCONF=aether.ui.urls\"}], \"file"
+        },
+        "result_head": "Recorded 11 new: service aether-ui, GET /, GET /styleguide, GET /api/kernel-url/, POST /api/pipelines/fetch/, POST /api/pipelines/{pk}/delete-artefacts/, PUT /api/pipelines/{pk}/rename/, POST /api/contracts/{pk}/publish/, GET /api/contracts/{pk}/publish-preflight/, POST /api/contracts/{pk}/delete-artefacts/, GET /api/kernel-url/\nTotal: 1 services, 10 endpoints in 3 files.\n[REJECTED 3] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[1].endpoints[0] ANY /api/projects (ProjectViewSet.list/create/retrieve/partial_update/destroy (DRF ModelViewSet)): method list/create/retrieve/partial_update/destroy (DRF ModelViewSet) does not appear in this file\n- files[1].endpoints[1] ANY /api/pipelines (PipelineViewSet.list/create/retrieve/partial_update/destroy (DRF ModelViewSet)): method list/create/retrieve/partial_update/destroy (DRF ModelViewSet) does not appear in this file\n- files[1].endpoints[2] ANY /api/contracts (ContractViewSet.list/create/retrieve/part"
+      },
+      {
+        "step": 10,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"endpoints\": [{\"className\": \"ProjectViewSet\", \"evidence\": \"router.register('projects', views.ProjectViewSet)\", \"httpMethod\": \"ANY\", \"line\": 25, \"methodName\": \"(router.register)\", \"path\": \""
+        },
+        "result_head": "Recorded 0 new: nothing\nTotal: 1 services, 10 endpoints in 3 files.\n[REJECTED 3] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0].endpoints[0] ANY /api/projects (ProjectViewSet.(router.register)): method (router.register) does not appear in this file\n- files[0].endpoints[1] ANY /api/pipelines (PipelineViewSet.(router.register)): method (router.register) does not appear in this file\n- files[0].endpoints[2] ANY /api/contracts (ContractViewSet.(router.register)): method (router.register) does not appear in this file"
+      },
+      {
+        "step": 11,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"endpoints\": [{\"className\": \"ProjectViewSet\", \"evidence\": \"router.register('projects', views.ProjectViewSet)\", \"httpMethod\": \"ANY\", \"line\": 25, \"methodName\": \"register\", \"path\": \"/api/proj"
+        },
+        "result_head": "Recorded 3 new: ANY /api/projects, ANY /api/pipelines, ANY /api/contracts\nTotal: 1 services, 13 endpoints in 3 files."
+      },
+      {
+        "step": 12,
+        "tool": "submit",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"aether-ui\", \"dirs\": [\"/\"]}], \"files\": [{\"path\": \"/aether/ui/urls.py\", \"service\": \"aether-ui\", \"endpoints\": [{\"className\": \"\", \"methodName\": \"pipeline-app\", \"httpMethod\": \"GET\","
+        },
+        "result_head": "Recorded 1 new: service aether-ui\nTotal: 1 services, 13 endpoints in 3 files.\n[ACCEPTED] 1 services, 13 endpoints."
+      }
+    ]
+  }
+}

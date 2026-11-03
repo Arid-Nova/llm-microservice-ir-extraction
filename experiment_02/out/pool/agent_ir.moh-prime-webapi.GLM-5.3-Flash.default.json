@@ -1,0 +1,3395 @@
+{
+  "system": "moh-prime-webapi",
+  "services": [
+    {
+      "name": "moh-prime-webapi",
+      "dirs": [
+        "/"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/Controllers/AddressAutocompleteController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "AddressAutocompleteController",
+          "methodName": "Find",
+          "httpMethod": "GET",
+          "path": "/api/AddressAutocomplete/find",
+          "line": 33,
+          "evidence": "[HttpGet(\"find\", Name = nameof(Find))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "AddressAutocompleteController",
+          "methodName": "Retrieve",
+          "httpMethod": "GET",
+          "path": "/api/AddressAutocomplete/retrieve",
+          "line": 53,
+          "evidence": "[HttpGet(\"retrieve\", Name = nameof(Retrieve))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/AdminsController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "AdminsController",
+          "methodName": "CreateAdmin",
+          "httpMethod": "POST",
+          "path": "/api/Admins",
+          "line": 31,
+          "evidence": "[HttpPost(Name = nameof(CreateAdmin))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "AdminsController",
+          "methodName": "GetAdmins",
+          "httpMethod": "GET",
+          "path": "/api/Admins",
+          "line": 67,
+          "evidence": "[HttpGet(Name = nameof(GetAdmins))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "AdminsController",
+          "methodName": "GetAdminById",
+          "httpMethod": "GET",
+          "path": "/api/Admins/{adminId}",
+          "line": 83,
+          "evidence": "[HttpGet(\"{adminId}\", Name = nameof(GetAdminById))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "AdminsController",
+          "methodName": "GetMetabaseEmbeddedString",
+          "httpMethod": "GET",
+          "path": "/api/Admins/embedded-metabase-url",
+          "line": 103,
+          "evidence": "[HttpGet(\"embedded-metabase-url\", Name = nameof(GetMetabaseEmbeddedString))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/AgreementsController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "AgreementsController",
+          "methodName": "GetLatestAgreementVersions",
+          "httpMethod": "GET",
+          "path": "/api/Agreements",
+          "line": 29,
+          "evidence": "[HttpGet(Name = nameof(GetLatestAgreementVersions))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "AgreementsController",
+          "methodName": "GetAgreementVersionById",
+          "httpMethod": "GET",
+          "path": "/api/Agreements/{agreementVersionId}",
+          "line": 45,
+          "evidence": "[HttpGet(\"{agreementVersionId}\", Name = nameof(GetAgreementVersionById))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/AuthorizedUsersController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "AuthorizedUsersController",
+          "methodName": "GetAuthorizedUserByUsername",
+          "httpMethod": "GET",
+          "path": "/api/parties/authorized-users/{username}",
+          "line": 36,
+          "evidence": "[HttpGet(\"{username}\", Name = nameof(GetAuthorizedUserByUsername))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorizedUsersController",
+          "methodName": "GetAuthorizedUserSites",
+          "httpMethod": "GET",
+          "path": "/api/parties/authorized-users/{authorizedUserId:int}/sites",
+          "line": 86,
+          "evidence": "[HttpGet(\"{authorizedUserId:int}/sites\", Name = nameof(GetAuthorizedUserSites))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorizedUsersController",
+          "methodName": "CreateAuthorizedUser",
+          "httpMethod": "POST",
+          "path": "/api/parties/authorized-users",
+          "line": 112,
+          "evidence": "[HttpPost(Name = nameof(CreateAuthorizedUser))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorizedUsersController",
+          "methodName": "UpdateAuthorizedUser",
+          "httpMethod": "PUT",
+          "path": "/api/parties/authorized-users/{authorizedUserId}",
+          "line": 149,
+          "evidence": "[HttpPut(\"{authorizedUserId}\", Name = nameof(UpdateAuthorizedUser))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorizedUsersController",
+          "methodName": "ActivateAuthorizedUser",
+          "httpMethod": "POST",
+          "path": "/api/parties/authorized-users/{authorizedUserId}/activate",
+          "line": 185,
+          "evidence": "[HttpPost(\"{authorizedUserId}/activate\", Name = nameof(ActivateAuthorizedUser))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorizedUsersController",
+          "methodName": "ApproveAuthorizedUser",
+          "httpMethod": "POST",
+          "path": "/api/parties/authorized-users/{authorizedUserId}/approve",
+          "line": 221,
+          "evidence": "[HttpPost(\"{authorizedUserId}/approve\", Name = nameof(ApproveAuthorizedUser))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/BannersController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "BannersController",
+          "methodName": "CreateBanner",
+          "httpMethod": "POST",
+          "path": "/api/Banners",
+          "line": 33,
+          "evidence": "[HttpPost(\"\", Name = nameof(CreateBanner))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "BannersController",
+          "methodName": "UpdateBanner",
+          "httpMethod": "PUT",
+          "path": "/api/Banners/{bannerId}",
+          "line": 50,
+          "evidence": "[HttpPut(\"{bannerId}\", Name = nameof(UpdateBanner))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "BannersController",
+          "methodName": "DeleteBanner",
+          "httpMethod": "DELETE",
+          "path": "/api/Banners/{bannerId}",
+          "line": 72,
+          "evidence": "[HttpDelete(\"{bannerId}\", Name = nameof(DeleteBanner))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "BannersController",
+          "methodName": "GetBannerById",
+          "httpMethod": "GET",
+          "path": "/api/Banners/{bannerId}",
+          "line": 88,
+          "evidence": "[HttpGet(\"{bannerId}\", Name = nameof(GetBannerById))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "BannersController",
+          "methodName": "GetEnrolmentLandingBanners",
+          "httpMethod": "GET",
+          "path": "/api/Banners/enrolment-landing",
+          "line": 103,
+          "evidence": "[HttpGet(\"enrolment-landing\", Name = nameof(GetEnrolmentLandingBanners))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "BannersController",
+          "methodName": "GetSiteLandingBanners",
+          "httpMethod": "GET",
+          "path": "/api/Banners/site-landing",
+          "line": 118,
+          "evidence": "[HttpGet(\"site-landing\", Name = nameof(GetSiteLandingBanners))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "BannersController",
+          "methodName": "GetActiveBannersByLocationCode",
+          "httpMethod": "GET",
+          "path": "/api/Banners/active",
+          "line": 134,
+          "evidence": "[HttpGet(\"active\", Name = nameof(GetActiveBannersByLocationCode))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/ClientLogsController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "ClientLogsController",
+          "methodName": "CreateLog",
+          "httpMethod": "POST",
+          "path": "/api/client-logs",
+          "line": 28,
+          "evidence": "[HttpPost(\"\", Name = nameof(CreateLog))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/DiagnosticsController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "DiagnosticsController",
+          "methodName": "GetDiagnostics",
+          "httpMethod": "GET",
+          "path": "/api/Diagnostics",
+          "line": 27,
+          "evidence": "[HttpGet(Name = nameof(GetDiagnostics))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "DiagnosticsController",
+          "methodName": "GCCollect",
+          "httpMethod": "POST",
+          "path": "/api/Diagnostics/gc-collect",
+          "line": 88,
+          "evidence": "[HttpPost(\"gc-collect\", Name = nameof(GCCollect))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/DocumentAccessController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "DocumentAccessController",
+          "methodName": "GetDocumentByAccessToken",
+          "httpMethod": "GET",
+          "path": "/api/document-access/{accessTokenId}",
+          "line": 34,
+          "evidence": "[HttpGet(\"{accessTokenId}\", Name = nameof(GetDocumentByAccessToken))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "DocumentAccessController",
+          "methodName": "DeleteDocumentAccessToken",
+          "httpMethod": "DELETE",
+          "path": "/api/document-access/{accessTokenId}",
+          "line": 60,
+          "evidence": "[HttpDelete(\"{accessTokenId}\", Name = nameof(DeleteDocumentAccessToken))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/DocumentManagerController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "DocumentManagerController",
+          "methodName": "InitializeFileUploadWithDocumentManager",
+          "httpMethod": "POST",
+          "path": "/api/document",
+          "line": 34,
+          "evidence": "[HttpPost(Name = nameof(InitializeFileUploadWithDocumentManager))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "DocumentManagerController",
+          "methodName": "GetFileFromDocumentManager",
+          "httpMethod": "GET",
+          "path": "/api/document/{documentGuid}",
+          "line": 75,
+          "evidence": "[HttpGet(\"{documentGuid}\", Name = nameof(GetFileFromDocumentManager))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/EmailsController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "EmailsController",
+          "methodName": "UpdateEmailLogStatuses",
+          "httpMethod": "POST",
+          "path": "/api/Emails/management/statuses",
+          "line": 38,
+          "evidence": "[HttpPost(\"management/statuses\", Name = nameof(UpdateEmailLogStatuses))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EmailsController",
+          "methodName": "SendEnrolleeRenewalEmails",
+          "httpMethod": "POST",
+          "path": "/api/Emails/management/enrollees/renewal",
+          "line": 54,
+          "evidence": "[HttpPost(\"management/enrollees/renewal\", Name = nameof(SendEnrolleeRenewalEmails))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EmailsController",
+          "methodName": "SendEnrolleeUnsignedToaReminderEmails",
+          "httpMethod": "POST",
+          "path": "/api/Emails/management/enrollees/unsigned-toa",
+          "line": 76,
+          "evidence": "[HttpPost(\"management/enrollees/unsigned-toa\", Name = nameof(SendEnrolleeUnsignedToaReminderEmails))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EmailsController",
+          "methodName": "GetEmailTemplates",
+          "httpMethod": "GET",
+          "path": "/api/Emails/management/templates",
+          "line": 99,
+          "evidence": "[HttpGet(\"management/templates\", Name = nameof(GetEmailTemplates))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EmailsController",
+          "methodName": "GetEmailTemplate",
+          "httpMethod": "GET",
+          "path": "/api/Emails/management/templates/{emailTemplateId}",
+          "line": 115,
+          "evidence": "[HttpGet(\"management/templates/{emailTemplateId}\", Name = nameof(GetEmailTemplate))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EmailsController",
+          "methodName": "UpdateEmailTemplate",
+          "httpMethod": "PUT",
+          "path": "/api/Emails/management/templates/{emailTemplateId}",
+          "line": 132,
+          "evidence": "[HttpPut(\"management/templates/{emailTemplateId}\", Name = nameof(UpdateEmailTemplate))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/EnrolleeAgreementsController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "EnrolleeAgreementsController",
+          "methodName": "GetEnrolleeAgreements",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/agreements",
+          "line": 55,
+          "evidence": "[HttpGet(\"{enrolleeId}/agreements\", Name = nameof(GetEnrolleeAgreements))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleeAgreementsController",
+          "methodName": "GetEnrolleeAcceptedAgreement",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/agreement",
+          "line": 87,
+          "evidence": "[HttpGet(\"{enrolleeId}/agreement\", Name = nameof(GetEnrolleeAcceptedAgreement))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleeAgreementsController",
+          "methodName": "GetEnrolleeEnrolmentCards",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/cards",
+          "line": 122,
+          "evidence": "[HttpGet(\"{enrolleeId}/cards\", Name = nameof(GetEnrolleeEnrolmentCards))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleeAgreementsController",
+          "methodName": "GetAgreement",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/agreements/{agreementId}",
+          "line": 171,
+          "evidence": "[HttpGet(\"{enrolleeId}/agreements/{agreementId}\", Name = nameof(GetAgreement))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleeAgreementsController",
+          "methodName": "GetSubmissionForAgreement",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/agreements/{agreementId}/submission",
+          "line": 209,
+          "evidence": "[HttpGet(\"{enrolleeId}/agreements/{agreementId}/submission\", Name = nameof(GetSubmissionForAgreement))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleeAgreementsController",
+          "methodName": "GetAccessTermSignable",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/agreements/{agreementId}/signable",
+          "line": 253,
+          "evidence": "[HttpGet(\"{enrolleeId}/agreements/{agreementId}/signable\", Name = nameof(GetAccessTermSignable))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleeAgreementsController",
+          "methodName": "IsOboToRuAgreementTypeChange",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/agreements/current/obo-to-ru",
+          "line": 290,
+          "evidence": "[HttpGet(\"{enrolleeId}/agreements/current/obo-to-ru\", Name = nameof(IsOboToRuAgreementTypeChange))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleeAgreementsController",
+          "methodName": "GetCurrentAgreementGroupForAnEnrollee",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/agreements/current/agreement-group",
+          "line": 316,
+          "evidence": "[HttpGet(\"{enrolleeId}/agreements/current/agreement-group\", Name = nameof(GetCurrentAgreementGroupForAnEnrollee))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/EnrolleePaperSubmissionsController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "CreateEnrolleePaperSubmission",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/paper-submissions",
+          "line": 46,
+          "evidence": "[HttpPost(\"paper-submissions\", Name = nameof(CreateEnrolleePaperSubmission))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "UpdateEnrolleePaperSubmissionAgreement",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/paper-submissions/agreement",
+          "line": 68,
+          "evidence": "[HttpPut(\"{enrolleeId}/paper-submissions/agreement\", Name = nameof(UpdateEnrolleePaperSubmissionAgreement))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "UpdateEnrolleePaperSubmissionCareSettings",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/paper-submissions/care-settings",
+          "line": 89,
+          "evidence": "[HttpPut(\"{enrolleeId}/paper-submissions/care-settings\", Name = nameof(UpdateEnrolleePaperSubmissionCareSettings))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "UpdateEnrolleePaperSubmissionCertifications",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/paper-submissions/certifications",
+          "line": 110,
+          "evidence": "[HttpPut(\"{enrolleeId}/paper-submissions/certifications\", Name = nameof(UpdateEnrolleePaperSubmissionCertifications))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "UpdateEnrolleePaperSubmissionDeviceProvider",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/paper-submissions/device-provider",
+          "line": 131,
+          "evidence": "[HttpPut(\"{enrolleeId}/paper-submissions/device-provider\", Name = nameof(UpdateEnrolleePaperSubmissionDeviceProvider))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "UpdateEnrolleePaperSubmissionUnlistedCertifications",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/paper-submissions/unlisted-certifications",
+          "line": 152,
+          "evidence": "[HttpPut(\"{enrolleeId}/paper-submissions/unlisted-certifications\", Name = nameof(UpdateEnrolleePaperSubmissionUnlistedCertifications))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "GetUnlistedCertifications",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/unlisted-certifications",
+          "line": 174,
+          "evidence": "[HttpGet(\"{enrolleeId}/unlisted-certifications\", Name = nameof(GetUnlistedCertifications))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "UpdateEnrolleePaperSubmissionDemographics",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/paper-submissions/demographics",
+          "line": 198,
+          "evidence": "[HttpPut(\"{enrolleeId}/paper-submissions/demographics\", Name = nameof(UpdateEnrolleePaperSubmissionDemographics))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "UpdateEnrolleePaperSubmissionOboSites",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/paper-submissions/obo-sites",
+          "line": 220,
+          "evidence": "[HttpPut(\"{enrolleeId}/paper-submissions/obo-sites\", Name = nameof(UpdateEnrolleePaperSubmissionOboSites))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "UpdateEnrolleePaperSubmissionSelfDeclarations",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/paper-submissions/self-declarations",
+          "line": 241,
+          "evidence": "[HttpPut(\"{enrolleeId}/paper-submissions/self-declarations\", Name = nameof(UpdateEnrolleePaperSubmissionSelfDeclarations))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "UpdateEnrolleePaperSubmissionDocuments",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/paper-submissions/documents",
+          "line": 262,
+          "evidence": "[HttpPut(\"{enrolleeId}/paper-submissions/documents\", Name = nameof(UpdateEnrolleePaperSubmissionDocuments))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "SetEnrolleePaperSubmissionProfileCompleted",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/paper-submissions/profile-completed",
+          "line": 285,
+          "evidence": "[HttpPut(\"{enrolleeId}/paper-submissions/profile-completed\", Name = nameof(SetEnrolleePaperSubmissionProfileCompleted))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "GetAdjudicationDocuments",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/paper-submissions/documents",
+          "line": 308,
+          "evidence": "[HttpGet(\"{enrolleeId}/paper-submissions/documents\", Name = nameof(GetAdjudicationDocuments))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "FinalizeEnrolleePaperSubmission",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/paper-submissions/finalize",
+          "line": 329,
+          "evidence": "[HttpPost(\"{enrolleeId}/paper-submissions/finalize\", Name = nameof(FinalizeEnrolleePaperSubmission))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "CheckForMatchingPaperSubmission",
+          "httpMethod": "ANY",
+          "path": "/api/enrollees/paper-submissions",
+          "line": 355,
+          "evidence": "[HttpHead(\"paper-submissions\", Name = nameof(CheckForMatchingPaperSubmission))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "CreateOrUpdateLinkedGpid",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/linked-gpid",
+          "line": 376,
+          "evidence": "[HttpPut(\"{enrolleeId}/linked-gpid\", Name = nameof(CreateOrUpdateLinkedGpid))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "GetLinkedGpid",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/linked-gpid",
+          "line": 407,
+          "evidence": "[HttpGet(\"{enrolleeId}/linked-gpid\", Name = nameof(GetLinkedGpid))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleePaperSubmissionsController",
+          "methodName": "UpdatePaperEnrolleeDateOfBirth",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/date-of-birth",
+          "line": 434,
+          "evidence": "[HttpPut(\"{enrolleeId}/date-of-birth\", Name = nameof(UpdatePaperEnrolleeDateOfBirth))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/EnrolleesController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "EnrolleesController",
+          "methodName": "GetEnrollees",
+          "httpMethod": "GET",
+          "path": "/api/Enrollees",
+          "line": 53,
+          "evidence": "[HttpGet(Name = nameof(GetEnrollees))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "CreateEnrollee",
+          "httpMethod": "POST",
+          "path": "/api/Enrollees",
+          "line": 75,
+          "evidence": "[HttpPost(Name = nameof(CreateEnrollee))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "GetEnrolleeById",
+          "httpMethod": "GET",
+          "path": "/api/Enrollees/{enrolleeId:int}",
+          "line": 137,
+          "evidence": "[HttpGet(\"{enrolleeId:int}\", Name = nameof(GetEnrolleeById))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "UpdateEnrollee",
+          "httpMethod": "PUT",
+          "path": "/api/Enrollees/{enrolleeId}",
+          "line": 200,
+          "evidence": "[HttpPut(\"{enrolleeId}\", Name = nameof(UpdateEnrollee))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "DeleteEnrollee",
+          "httpMethod": "DELETE",
+          "path": "/api/Enrollees/{enrolleeId}",
+          "line": 247,
+          "evidence": "[HttpDelete(\"{enrolleeId}\", Name = nameof(DeleteEnrollee))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "GetAccessAgreementNote",
+          "httpMethod": "GET",
+          "path": "/api/Enrollees/{enrolleeId}/access-agreement-notes",
+          "line": 269,
+          "evidence": "[HttpGet(\"{enrolleeId}/access-agreement-notes\", Name = nameof(GetAccessAgreementNote))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "GetCareSettingCodes",
+          "httpMethod": "GET",
+          "path": "/api/Enrollees/{enrolleeId}/care-settings",
+          "line": 290,
+          "evidence": "[HttpGet(\"{enrolleeId}/care-settings\", Name = nameof(GetCareSettingCodes))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "GetCertifications",
+          "httpMethod": "GET",
+          "path": "/api/Enrollees/{enrolleeId}/certifications",
+          "line": 315,
+          "evidence": "[HttpGet(\"{enrolleeId}/certifications\", Name = nameof(GetCertifications))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "GetEnrolleeRemoteUsers",
+          "httpMethod": "GET",
+          "path": "/api/Enrollees/{enrolleeId}/remote-users",
+          "line": 340,
+          "evidence": "[HttpGet(\"{enrolleeId}/remote-users\", Name = nameof(GetEnrolleeRemoteUsers))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "GetOboSites",
+          "httpMethod": "GET",
+          "path": "/api/Enrollees/{enrolleeId}/obo-sites",
+          "line": 365,
+          "evidence": "[HttpGet(\"{enrolleeId}/obo-sites\", Name = nameof(GetOboSites))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "GetRemoteAccessLocations",
+          "httpMethod": "GET",
+          "path": "/api/Enrollees/{enrolleeId}/remote-locations",
+          "line": 390,
+          "evidence": "[HttpGet(\"{enrolleeId}/remote-locations\", Name = nameof(GetRemoteAccessLocations))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "GetRemoteAccessSites",
+          "httpMethod": "GET",
+          "path": "/api/Enrollees/{enrolleeId}/remote-sites",
+          "line": 415,
+          "evidence": "[HttpGet(\"{enrolleeId}/remote-sites\", Name = nameof(GetRemoteAccessSites))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "GetSelfDeclarations",
+          "httpMethod": "GET",
+          "path": "/api/Enrollees/{enrolleeId}/self-declarations",
+          "line": 440,
+          "evidence": "[HttpGet(\"{enrolleeId}/self-declarations\", Name = nameof(GetSelfDeclarations))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "GetSelfDeclarationDocuments",
+          "httpMethod": "GET",
+          "path": "/api/Enrollees/{enrolleeId}/self-declarations/documents",
+          "line": 466,
+          "evidence": "[HttpGet(\"{enrolleeId}/self-declarations/documents\", Name = nameof(GetSelfDeclarationDocuments))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "CreateEnrolleeAbsence",
+          "httpMethod": "POST",
+          "path": "/api/Enrollees/{enrolleeId}/absences",
+          "line": 492,
+          "evidence": "[HttpPost(\"{enrolleeId}/absences\", Name = nameof(CreateEnrolleeAbsence))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "GetAbsences",
+          "httpMethod": "GET",
+          "path": "/api/Enrollees/{enrolleeId}/absences",
+          "line": 528,
+          "evidence": "[HttpGet(\"{enrolleeId}/absences\", Name = nameof(GetAbsences))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "GetCurrentAbsence",
+          "httpMethod": "GET",
+          "path": "/api/Enrollees/{enrolleeId}/absences/current",
+          "line": 556,
+          "evidence": "[HttpGet(\"{enrolleeId}/absences/current\", Name = nameof(GetCurrentAbsence))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "EndCurrentEnrolleeAbsence",
+          "httpMethod": "PUT",
+          "path": "/api/Enrollees/{enrolleeId}/absences/current/end",
+          "line": 582,
+          "evidence": "[HttpPut(\"{enrolleeId}/absences/current/end\", Name = nameof(EndCurrentEnrolleeAbsence))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "DeleteFutureEnrolleeAbsence",
+          "httpMethod": "DELETE",
+          "path": "/api/Enrollees/{enrolleeId}/absences/{absenceId}",
+          "line": 611,
+          "evidence": "[HttpDelete(\"{enrolleeId}/absences/{absenceId}\", Name = nameof(DeleteFutureEnrolleeAbsence))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesController",
+          "methodName": "SendEnrolleeAbsenceEmail",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/absences/email",
+          "line": 640,
+          "evidence": "[HttpPost(\"/api/enrollees/{enrolleeId}/absences/email\", Name = nameof(SendEnrolleeAbsenceEmail))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/EnrolleesExtendedController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetAdjacentEnrolleeId",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/adjacent",
+          "line": 52,
+          "evidence": "[HttpGet(\"{enrolleeId}/adjacent\", Name = nameof(GetAdjacentEnrolleeId))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetEnrolmentStatuses",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/statuses",
+          "line": 68,
+          "evidence": "[HttpGet(\"{enrolleeId}/statuses\", Name = nameof(GetEnrolmentStatuses))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetAdjudicatorNotes",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/adjudicator-notes",
+          "line": 96,
+          "evidence": "[HttpGet(\"{enrolleeId}/adjudicator-notes\", Name = nameof(GetAdjudicatorNotes))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "CreateAdjudicatorNote",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/adjudicator-notes",
+          "line": 121,
+          "evidence": "[HttpPost(\"{enrolleeId}/adjudicator-notes\", Name = nameof(CreateAdjudicatorNote))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "CreateEnrolmentReference",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/status-reference",
+          "line": 160,
+          "evidence": "[HttpPost(\"{enrolleeId}/status-reference\", Name = nameof(CreateEnrolmentReference))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "UpdateAccessAgreementNote",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/access-agreement-notes",
+          "line": 190,
+          "evidence": "[HttpPut(\"{enrolleeId}/access-agreement-notes\", Name = nameof(UpdateAccessAgreementNote))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "SetEnrolleeAdjudicator",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/adjudicator",
+          "line": 226,
+          "evidence": "[HttpPut(\"{enrolleeId}/adjudicator\", Name = nameof(SetEnrolleeAdjudicator))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetAdjudicatorIdir",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/adjudicator-idir",
+          "line": 256,
+          "evidence": "[HttpGet(\"{enrolleeId}/adjudicator-idir\", Name = nameof(GetAdjudicatorIdir))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "RemoveEnrolleeAdjudicator",
+          "httpMethod": "DELETE",
+          "path": "/api/enrollees/{enrolleeId}/adjudicator",
+          "line": 278,
+          "evidence": "[HttpDelete(\"{enrolleeId}/adjudicator\", Name = nameof(RemoveEnrolleeAdjudicator))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetEnrolleeBusinessEvents",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/events",
+          "line": 303,
+          "evidence": "[HttpGet(\"{enrolleeId}/events\", Name = nameof(GetEnrolleeBusinessEvents))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "SendEnrolleeReminderEmail",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/reminder",
+          "line": 327,
+          "evidence": "[HttpPost(\"{enrolleeId}/reminder\", Name = nameof(SendEnrolleeReminderEmail))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "CreateInitiatedEnrolleeEmailEvent",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/events/email-initiated",
+          "line": 354,
+          "evidence": "[HttpPost(\"{enrolleeId}/events/email-initiated\", Name = nameof(CreateInitiatedEnrolleeEmailEvent))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "CreateSelfDeclarationDocument",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/self-declaration-document",
+          "line": 381,
+          "evidence": "[HttpPost(\"{enrolleeId}/self-declaration-document\", Name = nameof(CreateSelfDeclarationDocument))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetSelfDeclarationDocument",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/self-declaration-document/{selfDeclarationDocumentId}",
+          "line": 411,
+          "evidence": "[HttpGet(\"{enrolleeId}/self-declaration-document/{selfDeclarationDocumentId}\", Name = nameof(GetSelfDeclarationDocument))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetIdentificationDocument",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/identification-document/{identificationDocumentId}",
+          "line": 440,
+          "evidence": "[HttpGet(\"{enrolleeId}/identification-document/{identificationDocumentId}\", Name = nameof(GetIdentificationDocument))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "CreateEnrolleeAdjudicationDocument",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/adjudication-documents",
+          "line": 470,
+          "evidence": "[HttpPost(\"{enrolleeId}/adjudication-documents\", Name = nameof(CreateEnrolleeAdjudicationDocument))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetEnrolleeAdjudicationDocuments",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/adjudication-documents",
+          "line": 498,
+          "evidence": "[HttpGet(\"{enrolleeId}/adjudication-documents\", Name = nameof(GetEnrolleeAdjudicationDocuments))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetEnrolleeAdjudicationDocument",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/adjudication-documents/{documentId}",
+          "line": 522,
+          "evidence": "[HttpGet(\"{enrolleeId}/adjudication-documents/{documentId}\", Name = nameof(GetEnrolleeAdjudicationDocument))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "DeleteEnrolleeAdjudicationDocument",
+          "httpMethod": "DELETE",
+          "path": "/api/enrollees/{enrolleeId}/adjudication-documents/{documentId}",
+          "line": 546,
+          "evidence": "[HttpDelete(\"{enrolleeId}/adjudication-documents/{documentId}\", Name = nameof(DeleteEnrolleeAdjudicationDocument))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetEnrolleeCurrentStatus",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/current-status",
+          "line": 570,
+          "evidence": "[HttpGet(\"{enrolleeId}/current-status\", Name = nameof(GetEnrolleeCurrentStatus))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "CreateEnrolleeNotification",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/adjudicator-notes/{adjudicatorNoteId}/notification",
+          "line": 596,
+          "evidence": "[HttpPost(\"{enrolleeId}/adjudicator-notes/{adjudicatorNoteId}/notification\", Name = nameof(CreateEnrolleeNotification))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "DeleteEnrolleeNotification",
+          "httpMethod": "DELETE",
+          "path": "/api/enrollees/{enrolleeId}/adjudicator-notes/{adjudicatorNoteId}/notification",
+          "line": 626,
+          "evidence": "[HttpDelete(\"{enrolleeId}/adjudicator-notes/{adjudicatorNoteId}/notification\", Name = nameof(DeleteEnrolleeNotification))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetNotifications",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/notifications",
+          "line": 654,
+          "evidence": "[HttpGet(\"{enrolleeId}/notifications\", Name = nameof(GetNotifications))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "DeleteEnrolleeNotifications",
+          "httpMethod": "DELETE",
+          "path": "/api/enrollees/{enrolleeId}/notifications",
+          "line": 679,
+          "evidence": "[HttpDelete(\"{enrolleeId}/notifications\", Name = nameof(DeleteEnrolleeNotifications))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetEnrolleeEmails",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/emails",
+          "line": 702,
+          "evidence": "[HttpGet(\"emails\", Name = nameof(GetEnrolleeEmails))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetQrCode",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/qrcode",
+          "line": 717,
+          "evidence": "[HttpGet(\"{enrolleeId}/qrcode\", Name = nameof(GetQrCode))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "EnrolleesExtendedController",
+          "methodName": "GetPlrData",
+          "httpMethod": "GET",
+          "path": "/api/enrollees/{enrolleeId}/plrs",
+          "line": 732,
+          "evidence": "[HttpGet(\"{enrolleeId}/plrs\", Name = nameof(GetPlrData))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/GisController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "GisController",
+          "methodName": "CreateGisParty",
+          "httpMethod": "POST",
+          "path": "/api/parties/Gis",
+          "line": 30,
+          "evidence": "[HttpPost(Name = nameof(CreateGisParty))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "GisController",
+          "methodName": "UpdateGisEnrollee",
+          "httpMethod": "PUT",
+          "path": "/api/parties/Gis/{gisId}",
+          "line": 63,
+          "evidence": "[HttpPut(\"{gisId}\", Name = nameof(UpdateGisEnrollee))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "GisController",
+          "methodName": "GetGisEnrolmentById",
+          "httpMethod": "GET",
+          "path": "/api/parties/Gis/{gisId}",
+          "line": 101,
+          "evidence": "[HttpGet(\"{gisId}\", Name = nameof(GetGisEnrolmentById))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "GisController",
+          "methodName": "LdapLogin",
+          "httpMethod": "POST",
+          "path": "/api/parties/Gis/{gisId}/ldap/login",
+          "line": 155,
+          "evidence": "[HttpPost(\"{gisId}/ldap/login\", Name = nameof(LdapLogin))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "GisController",
+          "methodName": "SubmitGis",
+          "httpMethod": "POST",
+          "path": "/api/parties/Gis/{gisId}/submission",
+          "line": 193,
+          "evidence": "[HttpPost(\"{gisId}/submission\", Name = nameof(SubmitGis))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/HealthAuthoritiesController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "GetHealthAuthorities",
+          "httpMethod": "GET",
+          "path": "/api/health-authorities",
+          "line": 50,
+          "evidence": "[HttpGet(Name = nameof(GetHealthAuthorities))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "GetHealthAuthorityById",
+          "httpMethod": "GET",
+          "path": "/api/health-authorities/{healthAuthorityId:int}",
+          "line": 65,
+          "evidence": "[HttpGet(\"{healthAuthorityId:int}\", Name = nameof(GetHealthAuthorityById))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "GetAuthorizedUsers",
+          "httpMethod": "GET",
+          "path": "/api/health-authorities/{healthAuthorityId}/authorized-users",
+          "line": 87,
+          "evidence": "[HttpGet(\"{healthAuthorityId}/authorized-users\", Name = nameof(GetAuthorizedUsers))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "GetAllHealthAuthoritySites",
+          "httpMethod": "GET",
+          "path": "/api/health-authorities/sites",
+          "line": 108,
+          "evidence": "[HttpGet(\"sites\", Name = nameof(GetAllHealthAuthoritySites))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "UpdateCareTypes",
+          "httpMethod": "PUT",
+          "path": "/api/health-authorities/{healthAuthorityId}/care-types",
+          "line": 132,
+          "evidence": "[HttpPut(\"{healthAuthorityId}/care-types\", Name = nameof(UpdateCareTypes))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "UpdateVendors",
+          "httpMethod": "PUT",
+          "path": "/api/health-authorities/{healthAuthorityId}/vendors",
+          "line": 170,
+          "evidence": "[HttpPut(\"{healthAuthorityId}/vendors\", Name = nameof(UpdateVendors))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "UpdatePrivacyOffice",
+          "httpMethod": "PUT",
+          "path": "/api/health-authorities/{healthAuthorityId}/privacy-office",
+          "line": 208,
+          "evidence": "[HttpPut(\"{healthAuthorityId}/privacy-office\", Name = nameof(UpdatePrivacyOffice))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "UpdatePrivacyOfficerContacts",
+          "httpMethod": "PUT",
+          "path": "/api/health-authorities/{healthAuthorityId}/privacy-officers",
+          "line": 225,
+          "evidence": "[HttpPut(\"{healthAuthorityId}/privacy-officers\", Name = nameof(UpdatePrivacyOfficerContacts))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "UpdateTechnicalSupportContacts",
+          "httpMethod": "PUT",
+          "path": "/api/health-authorities/{healthAuthorityId}/technical-supports",
+          "line": 242,
+          "evidence": "[HttpPut(\"{healthAuthorityId}/technical-supports\", Name = nameof(UpdateTechnicalSupportContacts))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "UpdatePharmanetAdministratorContacts",
+          "httpMethod": "PUT",
+          "path": "/api/health-authorities/{healthAuthorityId}/pharmanet-administrators",
+          "line": 259,
+          "evidence": "[HttpPut(\"{healthAuthorityId}/pharmanet-administrators\", Name = nameof(UpdatePharmanetAdministratorContacts))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "GetSitesByVendor",
+          "httpMethod": "GET",
+          "path": "/api/health-authorities/{healthAuthorityId}/vendors/{healthAuthorityVendorId}/sites",
+          "line": 276,
+          "evidence": "[HttpGet(\"{healthAuthorityId}/vendors/{healthAuthorityVendorId}/sites\", Name = nameof(GetSitesByVendor))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "GetSitesByCareType",
+          "httpMethod": "GET",
+          "path": "/api/health-authorities/{healthAuthorityId}/care-types/{healthAuthorityCareTypeId}/sites",
+          "line": 301,
+          "evidence": "[HttpGet(\"{healthAuthorityId}/care-types/{healthAuthorityCareTypeId}/sites\", Name = nameof(GetSitesByCareType))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "CreateOrUpdateOgranizationAgreement",
+          "httpMethod": "PUT",
+          "path": "/api/health-authorities/{healthAuthorityId}/organization-agreement",
+          "line": 325,
+          "evidence": "[HttpPut(\"{healthAuthorityId}/organization-agreement\", Name = nameof(CreateOrUpdateOgranizationAgreement))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritiesController",
+          "methodName": "GetOgranizationAgreementDocumentToken",
+          "httpMethod": "GET",
+          "path": "/api/health-authorities/{healthAuthorityId}/organization-agreement/token",
+          "line": 355,
+          "evidence": "[HttpGet(\"{healthAuthorityId}/organization-agreement/token\", Name = nameof(GetOgranizationAgreementDocumentToken))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/HealthAuthoritySitesController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "HealthAuthoritySitesController",
+          "methodName": "CreateHealthAuthoritySite",
+          "httpMethod": "POST",
+          "path": "/api/health-authorities/{healthAuthorityId}/sites",
+          "line": 50,
+          "evidence": "[HttpPost(Name = nameof(CreateHealthAuthoritySite))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritySitesController",
+          "methodName": "GetHealthAuthoritySites",
+          "httpMethod": "GET",
+          "path": "/api/health-authorities/{healthAuthorityId}/sites",
+          "line": 82,
+          "evidence": "[HttpGet(Name = nameof(GetHealthAuthoritySites))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritySitesController",
+          "methodName": "GetHealthAuthoritySite",
+          "httpMethod": "GET",
+          "path": "/api/health-authorities/{healthAuthorityId}/sites/{siteId}",
+          "line": 105,
+          "evidence": "[HttpGet(\"{siteId}\", Name = nameof(GetHealthAuthoritySite))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritySitesController",
+          "methodName": "GetHealthAuthorityAdminSite",
+          "httpMethod": "GET",
+          "path": "/api/health-authorities/{healthAuthorityId}/sites/{siteId}/admin-view",
+          "line": 128,
+          "evidence": "[HttpGet(\"{siteId}/admin-view\", Name = nameof(GetHealthAuthorityAdminSite))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritySitesController",
+          "methodName": "GetHoursOfOperation",
+          "httpMethod": "GET",
+          "path": "/api/health-authorities/{healthAuthorityId}/sites/{siteId}/hours-operation",
+          "line": 152,
+          "evidence": "[HttpGet(\"{siteId}/hours-operation\", Name = nameof(GetHoursOfOperation))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritySitesController",
+          "methodName": "UpdateHealthAuthoritySite",
+          "httpMethod": "PUT",
+          "path": "/api/health-authorities/{healthAuthorityId}/sites/{siteId}",
+          "line": 176,
+          "evidence": "[HttpPut(\"{siteId}\", Name = nameof(UpdateHealthAuthoritySite))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritySitesController",
+          "methodName": "SetHealthAuthoritySiteCompleted",
+          "httpMethod": "PUT",
+          "path": "/api/health-authorities/{healthAuthorityId}/sites/{siteId}/site-completed",
+          "line": 210,
+          "evidence": "[HttpPut(\"{siteId}/site-completed\", Name = nameof(SetHealthAuthoritySiteCompleted))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthAuthoritySitesController",
+          "methodName": "HealthAuthoritySiteSubmission",
+          "httpMethod": "POST",
+          "path": "/api/health-authorities/{healthAuthorityId}/sites/{siteId}/submissions",
+          "line": 239,
+          "evidence": "[HttpPost(\"{siteId}/submissions\", Name = nameof(HealthAuthoritySiteSubmission))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/HealthcheckController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "HealthcheckController",
+          "methodName": "GetHealthcheck",
+          "httpMethod": "GET",
+          "path": "/api/Healthcheck",
+          "line": 27,
+          "evidence": "[HttpGet]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthcheckController",
+          "methodName": "GetHealthcheck",
+          "httpMethod": "GET",
+          "path": "/api/Healthcheck/liveness",
+          "line": 28,
+          "evidence": "[HttpGet(\"liveness\")]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthcheckController",
+          "methodName": "GetHealthcheck",
+          "httpMethod": "GET",
+          "path": "/api/Healthcheck/readiness",
+          "line": 29,
+          "evidence": "[HttpGet(\"readiness\")]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "HealthcheckController",
+          "methodName": "GetHealthcheck",
+          "httpMethod": "GET",
+          "path": "/api/Healthcheck/startup",
+          "line": 30,
+          "evidence": "[HttpGet(\"startup\")]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/LookupsController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "LookupsController",
+          "methodName": "GetLookups",
+          "httpMethod": "GET",
+          "path": "/api/Lookups",
+          "line": 35,
+          "evidence": "[HttpGet]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "LookupsController",
+          "methodName": "LicenceCodeTest",
+          "httpMethod": "GET",
+          "path": "/api/Lookups/validate-licence",
+          "line": 48,
+          "evidence": "[HttpGet(\"validate-licence\", Name = nameof(LicenceCodeTest))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "LookupsController",
+          "methodName": "SelfDeclarationQuestions",
+          "httpMethod": "GET",
+          "path": "/api/Lookups/self-declaration-question",
+          "line": 62,
+          "evidence": "[HttpGet(\"self-declaration-question\", Name = nameof(SelfDeclarationQuestions))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/OrganizationsController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "OrganizationsController",
+          "methodName": "GetOrganizationById",
+          "httpMethod": "GET",
+          "path": "/api/Organizations/{organizationId}",
+          "line": 69,
+          "evidence": "[HttpGet(\"{organizationId}\", Name = nameof(GetOrganizationById))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "CreateOrganization",
+          "httpMethod": "POST",
+          "path": "/api/Organizations",
+          "line": 89,
+          "evidence": "[HttpPost(Name = nameof(CreateOrganization))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "ClaimOrganization",
+          "httpMethod": "POST",
+          "path": "/api/Organizations/claims",
+          "line": 115,
+          "evidence": "[HttpPost(\"claims\", Name = nameof(ClaimOrganization))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "OrganizationClaimExists",
+          "httpMethod": "GET",
+          "path": "/api/Organizations/claims",
+          "line": 154,
+          "evidence": "[HttpGet(\"claims\", Name = nameof(OrganizationClaimExists))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "GetOrganizationClaimByOrgId",
+          "httpMethod": "GET",
+          "path": "/api/Organizations/{organizationId}/claims",
+          "line": 169,
+          "evidence": "[HttpGet(\"{organizationId}/claims\", Name = nameof(GetOrganizationClaimByOrgId))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "ApproveOrganizationClaim",
+          "httpMethod": "POST",
+          "path": "/api/Organizations/{organizationId}/claims/{claimId}/approve",
+          "line": 188,
+          "evidence": "[HttpPost(\"{organizationId}/claims/{claimId}/approve\", Name = nameof(ApproveOrganizationClaim))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "UpdateOrganization",
+          "httpMethod": "PUT",
+          "path": "/api/Organizations/{organizationId}",
+          "line": 228,
+          "evidence": "[HttpPut(\"{organizationId}\", Name = nameof(UpdateOrganization))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "UpdateOrganizationCompleted",
+          "httpMethod": "PUT",
+          "path": "/api/Organizations/{organizationId}/completed",
+          "line": 254,
+          "evidence": "[HttpPut(\"{organizationId}/completed\", Name = nameof(UpdateOrganizationCompleted))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "DeleteOrganization",
+          "httpMethod": "DELETE",
+          "path": "/api/Organizations/{organizationId}",
+          "line": 280,
+          "evidence": "[HttpDelete(\"{organizationId}\", Name = nameof(DeleteOrganization))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "GetOrganizationAgreements",
+          "httpMethod": "GET",
+          "path": "/api/Organizations/{organizationId}/agreements",
+          "line": 309,
+          "evidence": "[HttpGet(\"{organizationId}/agreements\", Name = nameof(GetOrganizationAgreements))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "UpdateOrganizationAgreement",
+          "httpMethod": "POST",
+          "path": "/api/Organizations/{organizationId}/agreements/care-settings/{careSettingCode}",
+          "line": 328,
+          "evidence": "[HttpPost(\"{organizationId}/agreements/care-settings/{careSettingCode}\", Name = nameof(UpdateOrganizationAgreement))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "GetCareSettingForPendingTransferAgreements",
+          "httpMethod": "GET",
+          "path": "/api/Organizations/{organizationId}/care-settings/pending-transfer",
+          "line": 371,
+          "evidence": "[HttpGet(\"{organizationId}/care-settings/pending-transfer\", Name = nameof(GetCareSettingForPendingTransferAgreements))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "GetOrganizationAgreement",
+          "httpMethod": "GET",
+          "path": "/api/Organizations/{organizationId}/agreements/{agreementId}",
+          "line": 402,
+          "evidence": "[HttpGet(\"{organizationId}/agreements/{agreementId}\", Name = nameof(GetOrganizationAgreement))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "GetSignableOrganizationAgreement",
+          "httpMethod": "GET",
+          "path": "/api/Organizations/{organizationId}/signable",
+          "line": 431,
+          "evidence": "[HttpGet(\"{organizationId}/signable\", Name = nameof(GetSignableOrganizationAgreement))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "AcceptOrganizationAgreement",
+          "httpMethod": "PUT",
+          "path": "/api/Organizations/{organizationId}/agreements/{agreementId}",
+          "line": 461,
+          "evidence": "[HttpPut(\"{organizationId}/agreements/{agreementId}\", Name = nameof(AcceptOrganizationAgreement))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "OrganizationsController",
+          "methodName": "GetSignedAgreementToken",
+          "httpMethod": "GET",
+          "path": "/api/Organizations/{organizationId}/agreements/{agreementId}/signed",
+          "line": 520,
+          "evidence": "[HttpGet(\"{organizationId}/agreements/{agreementId}/signed\", Name = nameof(GetSignedAgreementToken))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/PhsaController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "PhsaController",
+          "methodName": "CreatePhsaParty",
+          "httpMethod": "POST",
+          "path": "/api/parties/Phsa",
+          "line": 37,
+          "evidence": "[HttpPost(Name = nameof(CreatePhsaParty))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "PhsaController",
+          "methodName": "GetPreApprovedRegistrations",
+          "httpMethod": "GET",
+          "path": "/api/parties/Phsa/pre-approved",
+          "line": 73,
+          "evidence": "[HttpGet(\"pre-approved\", Name = nameof(GetPreApprovedRegistrations))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/ProvisionerAccessController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "ProvisionerAccessController",
+          "methodName": "GetEnrolmentCertificate",
+          "httpMethod": "GET",
+          "path": "/api/provisioner-access/certificate/{accessTokenId}",
+          "line": 55,
+          "evidence": "[HttpGet(\"certificate/{accessTokenId}\", Name = nameof(GetEnrolmentCertificate))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "ProvisionerAccessController",
+          "methodName": "GetAccessTokens",
+          "httpMethod": "GET",
+          "path": "/api/provisioner-access/token",
+          "line": 74,
+          "evidence": "[HttpGet(\"token\", Name = nameof(GetAccessTokens))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "ProvisionerAccessController",
+          "methodName": "SendProvisionerLink",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/provisioner-access/send-link",
+          "line": 93,
+          "evidence": "[HttpPost(\"/api/enrollees/{enrolleeId}/provisioner-access/send-link\", Name = nameof(SendProvisionerLink))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "ProvisionerAccessController",
+          "methodName": "GetGpid",
+          "httpMethod": "GET",
+          "path": "/api/provisioner-access/gpid",
+          "line": 148,
+          "evidence": "[HttpGet(\"gpid\", Name = nameof(GetGpid))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "ProvisionerAccessController",
+          "methodName": "GetGpidDetail",
+          "httpMethod": "GET",
+          "path": "/api/provisioner-access/gpid-detail",
+          "line": 161,
+          "evidence": "[HttpGet(\"gpid-detail\", Name = nameof(GetGpidDetail))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "ProvisionerAccessController",
+          "methodName": "GpidLookup",
+          "httpMethod": "POST",
+          "path": "/api/provisioner-access/gpid-lookup",
+          "line": 182,
+          "evidence": "[HttpPost(\"gpid-lookup\", Name = nameof(GpidLookup))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "ProvisionerAccessController",
+          "methodName": "HpdidLookup",
+          "httpMethod": "GET",
+          "path": "/api/provisioner-access/gpids",
+          "line": 208,
+          "evidence": "[HttpGet(\"gpids\", Name = nameof(HpdidLookup))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "ProvisionerAccessController",
+          "methodName": "GetUpdatedGpids",
+          "httpMethod": "POST",
+          "path": "/api/provisioner-access/updated-gpids",
+          "line": 236,
+          "evidence": "[HttpPost(\"updated-gpids\", Name = nameof(GetUpdatedGpids))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "ProvisionerAccessController",
+          "methodName": "ValidateGpid",
+          "httpMethod": "POST",
+          "path": "/api/provisioner-access/gpids/{gpid}/validate",
+          "line": 263,
+          "evidence": "[HttpPost(\"gpids/{gpid}/validate\", Name = nameof(ValidateGpid))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/SatEnrolmentController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "SatEnrolmentController",
+          "methodName": "CreateSatEnrollee",
+          "httpMethod": "POST",
+          "path": "/api/parties/sat",
+          "line": 50,
+          "evidence": "[HttpPost(Name = nameof(CreateSatEnrollee))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SatEnrolmentController",
+          "methodName": "GetSatEnrolleeByUserId",
+          "httpMethod": "GET",
+          "path": "/api/parties/sat/{userId:guid}",
+          "line": 77,
+          "evidence": "[HttpGet(\"{userId:guid}\", Name = nameof(GetSatEnrolleeByUserId))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SatEnrolmentController",
+          "methodName": "UpdateSatEnrollee",
+          "httpMethod": "PUT",
+          "path": "/api/parties/sat/{satId}",
+          "line": 129,
+          "evidence": "[HttpPut(\"{satId}\", Name = nameof(UpdateSatEnrollee))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SatEnrolmentController",
+          "methodName": "UpdateSatEnrolleeCertifications",
+          "httpMethod": "PUT",
+          "path": "/api/parties/sat/{satId}/certifications",
+          "line": 159,
+          "evidence": "[HttpPut(\"{satId}/certifications\", Name = nameof(UpdateSatEnrolleeCertifications))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SatEnrolmentController",
+          "methodName": "SubmitSatEnrollee",
+          "httpMethod": "POST",
+          "path": "/api/parties/sat/{satId}/submissions",
+          "line": 185,
+          "evidence": "[HttpPost(\"{satId}/submissions\", Name = nameof(SubmitSatEnrollee))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/SigningAuthoritiesController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "SigningAuthorityController",
+          "methodName": "GetSigningAuthorityByUsername",
+          "httpMethod": "GET",
+          "path": "/api/parties/signing-authorities/{username}",
+          "line": 39,
+          "evidence": "[HttpGet(\"{username}\", Name = nameof(GetSigningAuthorityByUsername))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SigningAuthorityController",
+          "methodName": "CreateSigningAuthority",
+          "httpMethod": "POST",
+          "path": "/api/parties/signing-authorities",
+          "line": 82,
+          "evidence": "[HttpPost(Name = nameof(CreateSigningAuthority))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SigningAuthorityController",
+          "methodName": "UpdateSigningAuthority",
+          "httpMethod": "PUT",
+          "path": "/api/parties/signing-authorities/{partyId}",
+          "line": 110,
+          "evidence": "[HttpPut(\"{partyId}\", Name = nameof(UpdateSigningAuthority))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SigningAuthorityController",
+          "methodName": "GetSigningAuthorityOrganizationsByUsername",
+          "httpMethod": "GET",
+          "path": "/api/parties/signing-authorities/{username}/organizations",
+          "line": 133,
+          "evidence": "[HttpGet(\"{username}/organizations\", Name = nameof(GetSigningAuthorityOrganizationsByUsername))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/SigningAuthoritiesExtendedController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "SigningAuthoritiesExtendedController",
+          "methodName": "UpdatePartyHpdid",
+          "httpMethod": "POST",
+          "path": "/api/parties/signing-authorities/UpdateHpdid",
+          "line": 29,
+          "evidence": "[HttpPost(\"UpdateHpdid\", Name = nameof(UpdatePartyHpdid))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/SitesController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "SitesController",
+          "methodName": "GetSites",
+          "httpMethod": "GET",
+          "path": "/api/organizations/{organizationId:int}/sites",
+          "line": 61,
+          "evidence": "[HttpGet(\"/api/organizations/{organizationId:int}/sites\", Name = nameof(GetSites))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "GetAllSites",
+          "httpMethod": "GET",
+          "path": "/api/Sites",
+          "line": 88,
+          "evidence": "[HttpGet(Name = nameof(GetAllSites))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "GetSiteById",
+          "httpMethod": "GET",
+          "path": "/api/Sites/{siteId}",
+          "line": 111,
+          "evidence": "[HttpGet(\"{siteId}\", Name = nameof(GetSiteById))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "CreateSite",
+          "httpMethod": "POST",
+          "path": "/api/organizations/{organizationId:int}/sites",
+          "line": 137,
+          "evidence": "[HttpPost(\"/api/organizations/{organizationId:int}/sites\", Name = nameof(CreateSite))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "UpdateSite",
+          "httpMethod": "PUT",
+          "path": "/api/Sites/{siteId}",
+          "line": 166,
+          "evidence": "[HttpPut(\"{siteId}\", Name = nameof(UpdateSite))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "SetSiteCompleted",
+          "httpMethod": "PUT",
+          "path": "/api/Sites/{siteId}/completed",
+          "line": 198,
+          "evidence": "[HttpPut(\"{siteId}/completed\", Name = nameof(SetSiteCompleted))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "RemoveSiteCompleted",
+          "httpMethod": "DELETE",
+          "path": "/api/Sites/{siteId}/completed",
+          "line": 225,
+          "evidence": "[HttpDelete(\"{siteId}/completed\", Name = nameof(RemoveSiteCompleted))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "SetSiteAdjudicator",
+          "httpMethod": "PUT",
+          "path": "/api/Sites/{siteId}/adjudicator",
+          "line": 253,
+          "evidence": "[HttpPut(\"{siteId}/adjudicator\", Name = nameof(SetSiteAdjudicator))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "RemoveSiteAdjudicator",
+          "httpMethod": "DELETE",
+          "path": "/api/Sites/{siteId}/adjudicator",
+          "line": 286,
+          "evidence": "[HttpDelete(\"{siteId}/adjudicator\", Name = nameof(RemoveSiteAdjudicator))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "DeleteSite",
+          "httpMethod": "DELETE",
+          "path": "/api/Sites/{siteId}",
+          "line": 310,
+          "evidence": "[HttpDelete(\"{siteId}\", Name = nameof(DeleteSite))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "SubmitSiteRegistration",
+          "httpMethod": "POST",
+          "path": "/api/Sites/{siteId}/submissions",
+          "line": 334,
+          "evidence": "[HttpPost(\"{siteId}/submissions\", Name = nameof(SubmitSiteRegistration))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "CreateBusinessLicence",
+          "httpMethod": "POST",
+          "path": "/api/Sites/{siteId}/business-licences",
+          "line": 428,
+          "evidence": "[HttpPost(\"{siteId}/business-licences\", Name = nameof(CreateBusinessLicence))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "UpdateBusinessLicence",
+          "httpMethod": "PUT",
+          "path": "/api/Sites/{siteId}/business-licences/{businessLicenceId}",
+          "line": 463,
+          "evidence": "[HttpPut(\"{siteId}/business-licences/{businessLicenceId}\", Name = nameof(UpdateBusinessLicence))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "CreateBusinessLicenceDocument",
+          "httpMethod": "POST",
+          "path": "/api/Sites/{siteId}/business-licences/{businessLicenceId}/document",
+          "line": 494,
+          "evidence": "[HttpPost(\"{siteId}/business-licences/{businessLicenceId}/document\", Name = nameof(CreateBusinessLicenceDocument))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "RemoveBusinessLicenceDocument",
+          "httpMethod": "DELETE",
+          "path": "/api/Sites/{siteId}/business-licences/{businessLicenceId}/document",
+          "line": 555,
+          "evidence": "[HttpDelete(\"{siteId}/business-licences/{businessLicenceId}/document\", Name = nameof(RemoveBusinessLicenceDocument))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "GetBusinessLicence",
+          "httpMethod": "GET",
+          "path": "/api/Sites/{siteId}/business-licences",
+          "line": 593,
+          "evidence": "[HttpGet(\"{siteId}/business-licences\", Name = nameof(CreateBusinessLicence))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "CreateSiteAdjudicationDocument",
+          "httpMethod": "POST",
+          "path": "/api/Sites/{siteId}/adjudication-documents",
+          "line": 621,
+          "evidence": "[HttpPost(\"{siteId}/adjudication-documents\", Name = nameof(CreateSiteAdjudicationDocument))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "GetSiteAdjudicationDocuments",
+          "httpMethod": "GET",
+          "path": "/api/Sites/{siteId}/adjudication-documents",
+          "line": 650,
+          "evidence": "[HttpGet(\"{siteId}/adjudication-documents\", Name = nameof(GetSiteAdjudicationDocuments))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "GetSiteAdjudicationDocument",
+          "httpMethod": "GET",
+          "path": "/api/Sites/{siteId}/adjudication-documents/{documentId}",
+          "line": 674,
+          "evidence": "[HttpGet(\"{siteId}/adjudication-documents/{documentId}\", Name = nameof(GetSiteAdjudicationDocument))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "PecAssignable",
+          "httpMethod": "POST",
+          "path": "/api/Sites/{siteId}/pec/{pec}/assignable",
+          "line": 699,
+          "evidence": "[HttpPost(\"{siteId}/pec/{pec}/assignable\", Name = nameof(PecAssignable))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "UpdatePecCode",
+          "httpMethod": "PUT",
+          "path": "/api/Sites/{siteId}/pec",
+          "line": 732,
+          "evidence": "[HttpPut(\"{siteId}/pec\", Name = nameof(UpdatePecCode))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "GetBusinessLicenceDocumentToken",
+          "httpMethod": "GET",
+          "path": "/api/Sites/{siteId}/business-licences/{businessLicenceId}/document/token",
+          "line": 766,
+          "evidence": "[HttpGet(\"{siteId}/business-licences/{businessLicenceId}/document/token\", Name = nameof(GetBusinessLicenceDocumentToken))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "SendRemoteUsersEmailAdmin",
+          "httpMethod": "POST",
+          "path": "/api/Sites/{siteId}/remote-users-email-admin",
+          "line": 799,
+          "evidence": "[HttpPost(\"{siteId}/remote-users-email-admin\", Name = nameof(SendRemoteUsersEmailAdmin))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "SendSiteReviewedNotificationEmail",
+          "httpMethod": "POST",
+          "path": "/api/Sites/{siteId}/site-reviewed-email",
+          "line": 830,
+          "evidence": "[HttpPost(\"{siteId}/site-reviewed-email\", Name = nameof(SendSiteReviewedNotificationEmail))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "ApproveSite",
+          "httpMethod": "PUT",
+          "path": "/api/Sites/{siteId}/approve",
+          "line": 853,
+          "evidence": "[HttpPut(\"{siteId}/approve\", Name = nameof(ApproveSite))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "DeclineSite",
+          "httpMethod": "PUT",
+          "path": "/api/Sites/{siteId}/decline",
+          "line": 923,
+          "evidence": "[HttpPut(\"{siteId}/decline\", Name = nameof(DeclineSite))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "EnableEditingSite",
+          "httpMethod": "PUT",
+          "path": "/api/Sites/{siteId}/enable-editing",
+          "line": 951,
+          "evidence": "[HttpPut(\"{siteId}/enable-editing\", Name = nameof(EnableEditingSite))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "UnrejectSite",
+          "httpMethod": "PUT",
+          "path": "/api/Sites/{siteId}/unreject",
+          "line": 979,
+          "evidence": "[HttpPut(\"{siteId}/unreject\", Name = nameof(UnrejectSite))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "CreateSiteRegistrationNote",
+          "httpMethod": "POST",
+          "path": "/api/Sites/{siteId}/site-registration-notes",
+          "line": 1008,
+          "evidence": "[HttpPost(\"{siteId}/site-registration-notes\", Name = nameof(CreateSiteRegistrationNote))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "GetSiteRegistrationNotes",
+          "httpMethod": "GET",
+          "path": "/api/Sites/{siteId}/site-registration-notes",
+          "line": 1039,
+          "evidence": "[HttpGet(\"{siteId}/site-registration-notes\", Name = nameof(GetSiteRegistrationNotes))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "GetSitesByRemoteUserInfo",
+          "httpMethod": "POST",
+          "path": "/api/Sites/remote-users",
+          "line": 1062,
+          "evidence": "[HttpPost(\"remote-users\", Name = nameof(GetSitesByRemoteUserInfo))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "GetSiteBusinessEvents",
+          "httpMethod": "GET",
+          "path": "/api/Sites/{siteId}/events",
+          "line": 1078,
+          "evidence": "[HttpGet(\"{siteId}/events\", Name = nameof(GetSiteBusinessEvents))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "DeleteSiteAdjudicationDocument",
+          "httpMethod": "DELETE",
+          "path": "/api/Sites/{siteId}/adjudication-documents/{documentId}",
+          "line": 1101,
+          "evidence": "[HttpDelete(\"{siteId}/adjudication-documents/{documentId}\", Name = nameof(DeleteSiteAdjudicationDocument))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "CreateSiteNotification",
+          "httpMethod": "POST",
+          "path": "/api/Sites/{siteId}/site-registration-notes/{siteRegistrationNoteId}/notification",
+          "line": 1127,
+          "evidence": "[HttpPost(\"{siteId}/site-registration-notes/{siteRegistrationNoteId}/notification\", Name = nameof(CreateSiteNotification))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "DeleteSiteNotification",
+          "httpMethod": "DELETE",
+          "path": "/api/Sites/{siteId}/site-registration-notes/{siteRegistrationNoteId}/notification",
+          "line": 1158,
+          "evidence": "[HttpDelete(\"{siteId}/site-registration-notes/{siteRegistrationNoteId}/notification\", Name = nameof(DeleteSiteNotification))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "GetSiteNotifications",
+          "httpMethod": "GET",
+          "path": "/api/Sites/{siteId}/notifications",
+          "line": 1187,
+          "evidence": "[HttpGet(\"{siteId}/notifications\", Name = nameof(GetSiteNotifications))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "DeleteSiteNotifications",
+          "httpMethod": "DELETE",
+          "path": "/api/Sites/{siteId}/notifications",
+          "line": 1212,
+          "evidence": "[HttpDelete(\"{siteId}/notifications\", Name = nameof(DeleteSiteNotifications))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "FlagSite",
+          "httpMethod": "PUT",
+          "path": "/api/Sites/{siteId}/flag",
+          "line": 1237,
+          "evidence": "[HttpPut(\"{siteId}/flag\", Name = nameof(FlagSite))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SitesController",
+          "methodName": "GetIndividualDeviceProviders",
+          "httpMethod": "GET",
+          "path": "/api/Sites/{siteId}/individual-device-providers",
+          "line": 1259,
+          "evidence": "[HttpGet(\"{siteId}/individual-device-providers\", Name = nameof(GetIndividualDeviceProviders))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/SubmissionsController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "SubmissionsController",
+          "methodName": "Submit",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}",
+          "line": 45,
+          "evidence": "public async Task<ActionResult> Submit(int enrolleeId, EnrolleeUpdateModel updatedProfile)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "ApproveSubmission",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}/approve",
+          "line": 97,
+          "evidence": "public async Task<ActionResult> ApproveSubmission(int enrolleeId)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "AcceptToa",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}/accept-toa",
+          "line": 116,
+          "evidence": "public async Task<ActionResult> AcceptToa(int enrolleeId, [FromQuery] Guid? documentGuid = null)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "DeclineToa",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}/decline-toa",
+          "line": 133,
+          "evidence": "public async Task<ActionResult> DeclineToa(int enrolleeId)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "EnableEditing",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}/enable-editing",
+          "line": 150,
+          "evidence": "public async Task<ActionResult> EnableEditing(int enrolleeId)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "CancelToaAssignment",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}/cancel-toa-assignment",
+          "line": 167,
+          "evidence": "public async Task<ActionResult> CancelToaAssignment(int enrolleeId)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "LockProfile",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}/lock-profile",
+          "line": 184,
+          "evidence": "public async Task<ActionResult> LockProfile(int enrolleeId)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "DeclineProfile",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}/decline-profile",
+          "line": 201,
+          "evidence": "public async Task<ActionResult> DeclineProfile(int enrolleeId)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "RerunRules",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}/rerun-rules",
+          "line": 218,
+          "evidence": "public async Task<ActionResult> RerunRules(int enrolleeId)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "UnlockProfile",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}/unlock-profile",
+          "line": 235,
+          "evidence": "public async Task<ActionResult> UnlockProfile(int enrolleeId)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "RerunAutomaticAdjudicationRules",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/rerun-automatic-adjudication-rules",
+          "line": 248,
+          "evidence": "public async Task<ActionResult> RerunAutomaticAdjudicationRules()",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "AssignToaAgreementType",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}/assign-toa-agreement-type",
+          "line": 288,
+          "evidence": "public async Task<ActionResult> AssignToaAgreementType(int enrolleeId, [FromBody] AgreementType agreementType)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "SetEnrolleeManualFlag",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}/set-manual-flag",
+          "line": 331,
+          "evidence": "public async Task<ActionResult> SetEnrolleeManualFlag(int enrolleeId)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "RemoveEnrolleeManualFlag",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}/remove-manual-flag",
+          "line": 347,
+          "evidence": "public async Task<ActionResult> RemoveEnrolleeManualFlag(int enrolleeId)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "ConfirmLatestSubmission",
+          "httpMethod": "POST",
+          "path": "/api/Submissions/{enrolleeId}/confirm-latest-submission",
+          "line": 363,
+          "evidence": "public async Task<ActionResult> ConfirmLatestSubmission(int enrolleeId)",
+          "framework": "ASP.NET Core",
+          "confidence": "medium"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "Submit",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/submissions",
+          "line": 38,
+          "evidence": "[HttpPost(\"{enrolleeId}/submissions\", Name = nameof(Submit))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "ApproveSubmission",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/status-actions/approve",
+          "line": 90,
+          "evidence": "[HttpPost(\"{enrolleeId}/status-actions/approve\", Name = nameof(ApproveSubmission))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "AcceptToa",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/status-actions/accept-toa",
+          "line": 109,
+          "evidence": "[HttpPost(\"{enrolleeId}/status-actions/accept-toa\", Name = nameof(AcceptToa))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "DeclineToa",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/status-actions/decline-toa",
+          "line": 126,
+          "evidence": "[HttpPost(\"{enrolleeId}/status-actions/decline-toa\", Name = nameof(DeclineToa))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "EnableEditing",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/status-actions/enable-editing",
+          "line": 143,
+          "evidence": "[HttpPost(\"{enrolleeId}/status-actions/enable-editing\", Name = nameof(EnableEditing))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "CancelToaAssignment",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/status-actions/cancel-toa",
+          "line": 160,
+          "evidence": "[HttpPost(\"{enrolleeId}/status-actions/cancel-toa\", Name = nameof(CancelToaAssignment))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "LockProfile",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/status-actions/lock-profile",
+          "line": 177,
+          "evidence": "[HttpPost(\"{enrolleeId}/status-actions/lock-profile\", Name = nameof(LockProfile))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "DeclineProfile",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/status-actions/decline-profile",
+          "line": 194,
+          "evidence": "[HttpPost(\"{enrolleeId}/status-actions/decline-profile\", Name = nameof(DeclineProfile))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "RerunRules",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/status-actions/rerun-rules",
+          "line": 211,
+          "evidence": "[HttpPost(\"{enrolleeId}/status-actions/rerun-rules\", Name = nameof(RerunRules))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "UnlockProfile",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/{enrolleeId}/status-actions/unlock-profile",
+          "line": 228,
+          "evidence": "[HttpPost(\"{enrolleeId}/status-actions/unlock-profile\", Name = nameof(UnlockProfile))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "RerunAutomaticAdjudicationRules",
+          "httpMethod": "POST",
+          "path": "/api/enrollees/rerun-rules",
+          "line": 244,
+          "evidence": "[HttpPost(\"rerun-rules\", Name = nameof(RerunAutomaticAdjudicationRules))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "AssignToaAgreementType",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/submissions/latest/type",
+          "line": 282,
+          "evidence": "[HttpPut(\"{enrolleeId}/submissions/latest/type\", Name = nameof(AssignToaAgreementType))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "SetEnrolleeManualFlag",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/always-manual",
+          "line": 325,
+          "evidence": "[HttpPut(\"{enrolleeId}/always-manual\", Name = nameof(SetEnrolleeManualFlag))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "RemoveEnrolleeManualFlag",
+          "httpMethod": "DELETE",
+          "path": "/api/enrollees/{enrolleeId}/always-manual",
+          "line": 341,
+          "evidence": "[HttpDelete(\"{enrolleeId}/always-manual\", Name = nameof(RemoveEnrolleeManualFlag))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionsController",
+          "methodName": "ConfirmLatestSubmission",
+          "httpMethod": "PUT",
+          "path": "/api/enrollees/{enrolleeId}/submissions/latest/confirm",
+          "line": 357,
+          "evidence": "[HttpPut(\"{enrolleeId}/submissions/latest/confirm\", Name = nameof(ConfirmLatestSubmission))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/Controllers/WebhooksController.cs",
+      "service": "moh-prime-webapi",
+      "endpoints": [
+        {
+          "className": "WebhooksController",
+          "methodName": "Webhook",
+          "httpMethod": "POST",
+          "path": "/api/Webhooks/{apiKey}/topic/{topic}",
+          "line": 29,
+          "evidence": "[HttpPost(\"{apiKey}/topic/{topic}\", Name = nameof(Webhook))]",
+          "framework": "ASP.NET Core",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "GLM-5.3-Flash",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "default",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "prime-dotnet-webapi",
+    "commit": "2b60e19ef30c3eaec42cc797f98bf3e2c3a2791b",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 48,
+    "steps": 40,
+    "tool_calls": 81,
+    "rejected_entries": 7,
+    "no_call_replies": 0,
+    "input_tokens": 673872,
+    "cached_input_tokens": 492032,
+    "output_tokens": 74061,
+    "list_price_usd": 0.0791,
+    "wall_seconds": 412.2,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".dockerignore\n.editorconfig\n.gitignore\n.vscode/\nApiDbContext.cs\nConfiguration/\nControllers/\nDTOs/\nDockerfile\nEngines/\nExtensions/\nHelpers/\nHttpClients/\nInfrastructure/\nMigrations/\nModels/\nPrimeConfiguration.cs\nProgram.cs\nProperties/\nREADME.md\nResources/\nServices/\nStartup.cs\nViewModels/\nViews/\nappsettings.json\ndocker-compose.yml\nentrypoint.sh\nopenshift.dockerfile\nprime.csproj"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/Controllers"
+        },
+        "result_head": "AddressAutocompleteController.cs\nAdminsController.cs\nAgreementsController.cs\nAuthorizedUsersController.cs\nBannersController.cs\nClientLogsController.cs\nDiagnosticsController.cs\nDocumentAccessController.cs\nDocumentManagerController.cs\nEmailsController.cs\nEnrolleeAgreementsController.cs\nEnrolleePaperSubmissionsController.cs\nEnrolleesController.cs\nEnrolleesExtendedController.cs\nGisController.cs\nHealthAuthoritiesController.cs\nHealthAuthoritySitesController.cs\nHealthcheckController.cs\nLookupsController.cs\nOrganizationsController.cs\nPhsaController.cs\nPrimeControllerBase.cs\nProvisionerAccessController.cs\nSatEnrolmentController.cs\nSigningAuthoritiesController.cs\nSigningAuthoritiesExtendedController.cs\nSitesController.cs\nSubmissionsController.cs\nWebhooksController.cs"
+      },
+      {
+        "step": 2,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers",
+          "pattern": "class \\w+Controller|Route\\(|HttpGet|HttpPost|HttpPut|HttpDelete|HttpPatch"
+        },
+        "result_head": "/Controllers/AddressAutocompleteController.cs:14: [Route(\"api/[controller]\")]\n/Controllers/AddressAutocompleteController.cs:17: public class AddressAutocompleteController : PrimeControllerBase\n/Controllers/AddressAutocompleteController.cs:33: [HttpGet(\"find\", Name = nameof(Find))]\n/Controllers/AddressAutocompleteController.cs:53: [HttpGet(\"retrieve\", Name = nameof(Retrieve))]\n/Controllers/AdminsController.cs:13: [Route(\"api/[controller]\")]\n/Controllers/AdminsController.cs:16: public class AdminsController : PrimeControllerBase\n/Controllers/AdminsController.cs:31: [HttpPost(Name = nameof(CreateAdmin))]\n/Controllers/AdminsController.cs:67: [HttpGet(Name = nameof(GetAdmins))]\n/Controllers/AdminsController.cs:83: [HttpGet(\"{adminId}\", Name = nameof(GetAdminById))]\n/Controllers/AdminsController.cs:103: [HttpGet(\"embedded-metabase-url\", Name = nameof(GetMetabaseEmbeddedString))]\n/Controllers/AgreementsController.cs:15: [Route(\"api/[controller]\")]\n/Controllers/AgreementsController.cs:17: publ"
+      },
+      {
+        "step": 3,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/EnrolleePaperSubmissionsController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/EnrolleePaperSubmissionsController.cs:17: [Route(\"api/enrollees\")]\n/Controllers/EnrolleePaperSubmissionsController.cs:19: public class EnrolleePaperSubmissionsController : PrimeControllerBase\n/Controllers/EnrolleePaperSubmissionsController.cs:46: [HttpPost(\"paper-submissions\", Name = nameof(CreateEnrolleePaperSubmission))]\n/Controllers/EnrolleePaperSubmissionsController.cs:68: [HttpPut(\"{enrolleeId}/paper-submissions/agreement\", Name = nameof(UpdateEnrolleePaperSubmissionAgreement))]\n/Controllers/EnrolleePaperSubmissionsController.cs:89: [HttpPut(\"{enrolleeId}/paper-submissions/care-settings\", Name = nameof(UpdateEnrolleePaperSubmissionCareSettings))]\n/Controllers/EnrolleePaperSubmissionsController.cs:110: [HttpPut(\"{enrolleeId}/paper-submissions/certifications\", Name = nameof(UpdateEnrolleePaperSubmissionCertifications))]\n/Controllers/EnrolleePaperSubmissionsController.cs:131: [HttpPut(\"{enrolleeId}/paper-submissions/device-provider\", Name = nameof(UpdateEnrolleePaperSubm"
+      },
+      {
+        "step": 3,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/EnrolleesController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/EnrolleesController.cs:21: [Route(\"api/[controller]\")]\n/Controllers/EnrolleesController.cs:24: public class EnrolleesController : PrimeControllerBase\n/Controllers/EnrolleesController.cs:53: [HttpGet(Name = nameof(GetEnrollees))]\n/Controllers/EnrolleesController.cs:75: [HttpPost(Name = nameof(CreateEnrollee))]\n/Controllers/EnrolleesController.cs:137: [HttpGet(\"{enrolleeId:int}\", Name = nameof(GetEnrolleeById))]\n/Controllers/EnrolleesController.cs:173: [HttpGet(\"{username}\", Name = nameof(GetEnrolleeByUsername))]\n/Controllers/EnrolleesController.cs:200: [HttpPut(\"{enrolleeId}\", Name = nameof(UpdateEnrollee))]\n/Controllers/EnrolleesController.cs:247: [HttpDelete(\"{enrolleeId}\", Name = nameof(DeleteEnrollee))]\n/Controllers/EnrolleesController.cs:269: [HttpGet(\"{enrolleeId}/access-agreement-notes\", Name = nameof(GetAccessAgreementNote))]\n/Controllers/EnrolleesController.cs:290: [HttpGet(\"{enrolleeId}/care-settings\", Name = nameof(GetCareSettingCodes))]\n/Controllers/EnrolleesCon"
+      },
+      {
+        "step": 3,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/EnrolleesExtendedController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/EnrolleesExtendedController.cs:20: [Route(\"api/enrollees\")]\n/Controllers/EnrolleesExtendedController.cs:23: public class EnrolleesExtendedController : PrimeControllerBase\n/Controllers/EnrolleesExtendedController.cs:52: [HttpGet(\"{enrolleeId}/adjacent\", Name = nameof(GetAdjacentEnrolleeId))]\n/Controllers/EnrolleesExtendedController.cs:68: [HttpGet(\"{enrolleeId}/statuses\", Name = nameof(GetEnrolmentStatuses))]\n/Controllers/EnrolleesExtendedController.cs:96: [HttpGet(\"{enrolleeId}/adjudicator-notes\", Name = nameof(GetAdjudicatorNotes))]\n/Controllers/EnrolleesExtendedController.cs:121: [HttpPost(\"{enrolleeId}/adjudicator-notes\", Name = nameof(CreateAdjudicatorNote))]\n/Controllers/EnrolleesExtendedController.cs:160: [HttpPost(\"{enrolleeId}/status-reference\", Name = nameof(CreateEnrolmentReference))]\n/Controllers/EnrolleesExtendedController.cs:190: [HttpPut(\"{enrolleeId}/access-agreement-notes\", Name = nameof(UpdateAccessAgreementNote))]\n/Controllers/EnrolleesExtendedController."
+      },
+      {
+        "step": 3,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/GisController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/GisController.cs:16: [Route(\"api/parties/[controller]\")]\n/Controllers/GisController.cs:18: public class GisController : PrimeControllerBase\n/Controllers/GisController.cs:30: [HttpPost(Name = nameof(CreateGisParty))]\n/Controllers/GisController.cs:63: [HttpPut(\"{gisId}\", Name = nameof(UpdateGisEnrollee))]\n/Controllers/GisController.cs:101: [HttpGet(\"{gisId}\", Name = nameof(GetGisEnrolmentById))]\n/Controllers/GisController.cs:127: [HttpGet(\"{userId:guid}\", Name = nameof(GetGisEnrolmentByUserId))]\n/Controllers/GisController.cs:155: [HttpPost(\"{gisId}/ldap/login\", Name = nameof(LdapLogin))]\n/Controllers/GisController.cs:193: [HttpPost(\"{gisId}/submission\", Name = nameof(SubmitGis))]"
+      },
+      {
+        "step": 3,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/HealthAuthoritiesController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/HealthAuthoritiesController.cs:21: [Route(\"api/health-authorities\")]\n/Controllers/HealthAuthoritiesController.cs:23: public class HealthAuthoritiesController : PrimeControllerBase\n/Controllers/HealthAuthoritiesController.cs:50: [HttpGet(Name = nameof(GetHealthAuthorities))]\n/Controllers/HealthAuthoritiesController.cs:65: [HttpGet(\"{healthAuthorityId:int}\", Name = nameof(GetHealthAuthorityById))]\n/Controllers/HealthAuthoritiesController.cs:87: [HttpGet(\"{healthAuthorityId}/authorized-users\", Name = nameof(GetAuthorizedUsers))]\n/Controllers/HealthAuthoritiesController.cs:108: [HttpGet(\"sites\", Name = nameof(GetAllHealthAuthoritySites))]\n/Controllers/HealthAuthoritiesController.cs:132: [HttpPut(\"{healthAuthorityId}/care-types\", Name = nameof(UpdateCareTypes))]\n/Controllers/HealthAuthoritiesController.cs:170: [HttpPut(\"{healthAuthorityId}/vendors\", Name = nameof(UpdateVendors))]\n/Controllers/HealthAuthoritiesController.cs:208: [HttpPut(\"{healthAuthorityId}/privacy-office\", Nam"
+      },
+      {
+        "step": 3,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/HealthAuthoritySitesController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/HealthAuthoritySitesController.cs:18: [Route(\"api/health-authorities/{healthAuthorityId}/sites\")]\n/Controllers/HealthAuthoritySitesController.cs:21: public class HealthAuthoritySitesController : PrimeControllerBase\n/Controllers/HealthAuthoritySitesController.cs:50: [HttpPost(Name = nameof(CreateHealthAuthoritySite))]\n/Controllers/HealthAuthoritySitesController.cs:82: [HttpGet(Name = nameof(GetHealthAuthoritySites))]\n/Controllers/HealthAuthoritySitesController.cs:105: [HttpGet(\"{siteId}\", Name = nameof(GetHealthAuthoritySite))]\n/Controllers/HealthAuthoritySitesController.cs:128: [HttpGet(\"{siteId}/admin-view\", Name = nameof(GetHealthAuthorityAdminSite))]\n/Controllers/HealthAuthoritySitesController.cs:152: [HttpGet(\"{siteId}/hours-operation\", Name = nameof(GetHoursOfOperation))]\n/Controllers/HealthAuthoritySitesController.cs:176: [HttpPut(\"{siteId}\", Name = nameof(UpdateHealthAuthoritySite))]\n/Controllers/HealthAuthoritySitesController.cs:210: [HttpPut(\"{siteId}/site-complet"
+      },
+      {
+        "step": 3,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/HealthcheckController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/HealthcheckController.cs:11: [Route(\"api/[controller]\")]\n/Controllers/HealthcheckController.cs:14: public class HealthcheckController : PrimeControllerBase\n/Controllers/HealthcheckController.cs:27: [HttpGet]\n/Controllers/HealthcheckController.cs:28: [HttpGet(\"liveness\")]\n/Controllers/HealthcheckController.cs:29: [HttpGet(\"readiness\")]\n/Controllers/HealthcheckController.cs:30: [HttpGet(\"startup\")]"
+      },
+      {
+        "step": 3,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/LookupsController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/LookupsController.cs:18: [Route(\"api/[controller]\")]\n/Controllers/LookupsController.cs:20: public class LookupsController : PrimeControllerBase\n/Controllers/LookupsController.cs:35: [HttpGet]\n/Controllers/LookupsController.cs:48: [HttpGet(\"validate-licence\", Name = nameof(LicenceCodeTest))]\n/Controllers/LookupsController.cs:62: [HttpGet(\"self-declaration-question\", Name = nameof(SelfDeclarationQuestions))]"
+      },
+      {
+        "step": 4,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/OrganizationsController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/OrganizationsController.cs:20: [Route(\"api/[controller]\")]\n/Controllers/OrganizationsController.cs:23: public class OrganizationsController : PrimeControllerBase\n/Controllers/OrganizationsController.cs:69: [HttpGet(\"{organizationId}\", Name = nameof(GetOrganizationById))]\n/Controllers/OrganizationsController.cs:89: [HttpPost(Name = nameof(CreateOrganization))]\n/Controllers/OrganizationsController.cs:115: [HttpPost(\"claims\", Name = nameof(ClaimOrganization))]\n/Controllers/OrganizationsController.cs:154: [HttpGet(\"claims\", Name = nameof(OrganizationClaimExists))]\n/Controllers/OrganizationsController.cs:169: [HttpGet(\"{organizationId}/claims\", Name = nameof(GetOrganizationClaimByOrgId))]\n/Controllers/OrganizationsController.cs:188: [HttpPost(\"{organizationId}/claims/{claimId}/approve\", Name = nameof(ApproveOrganizationClaim))]\n/Controllers/OrganizationsController.cs:228: [HttpPut(\"{organizationId}\", Name = nameof(UpdateOrganization))]\n/Controllers/OrganizationsController.cs:25"
+      },
+      {
+        "step": 4,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/PhsaController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/PhsaController.cs:16: [Route(\"api/parties/[controller]\")]\n/Controllers/PhsaController.cs:19: public class PhsaController : PrimeControllerBase\n/Controllers/PhsaController.cs:37: [HttpPost(Name = nameof(CreatePhsaParty))]\n/Controllers/PhsaController.cs:73: [HttpGet(\"pre-approved\", Name = nameof(GetPreApprovedRegistrations))]"
+      },
+      {
+        "step": 4,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/ProvisionerAccessController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/ProvisionerAccessController.cs:21: [Route(\"api/provisioner-access\")]\n/Controllers/ProvisionerAccessController.cs:23: public class ProvisionerAccessController : PrimeControllerBase\n/Controllers/ProvisionerAccessController.cs:55: [HttpGet(\"certificate/{accessTokenId}\", Name = nameof(GetEnrolmentCertificate))]\n/Controllers/ProvisionerAccessController.cs:74: [HttpGet(\"token\", Name = nameof(GetAccessTokens))]\n/Controllers/ProvisionerAccessController.cs:93: [HttpPost(\"/api/enrollees/{enrolleeId}/provisioner-access/send-link\", Name = nameof(SendProvisionerLink))]\n/Controllers/ProvisionerAccessController.cs:148: [HttpGet(\"gpid\", Name = nameof(GetGpid))]\n/Controllers/ProvisionerAccessController.cs:161: [HttpGet(\"gpid-detail\", Name = nameof(GetGpidDetail))]\n/Controllers/ProvisionerAccessController.cs:182: [HttpPost(\"gpid-lookup\", Name = nameof(GpidLookup))]\n/Controllers/ProvisionerAccessController.cs:208: [HttpGet(\"gpids\", Name = nameof(HpdidLookup))]\n/Controllers/ProvisionerAccessC"
+      },
+      {
+        "step": 4,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SatEnrolmentController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/SatEnrolmentController.cs:23: [Route(\"api/parties/sat\")]\n/Controllers/SatEnrolmentController.cs:26: public class SatEnrolmentController : PrimeControllerBase\n/Controllers/SatEnrolmentController.cs:50: [HttpPost(Name = nameof(CreateSatEnrollee))]\n/Controllers/SatEnrolmentController.cs:77: [HttpGet(\"{userId:guid}\", Name = nameof(GetSatEnrolleeByUserId))]\n/Controllers/SatEnrolmentController.cs:104: [HttpGet(\"{satId}\", Name = nameof(GetSatEnrolleeById))]\n/Controllers/SatEnrolmentController.cs:129: [HttpPut(\"{satId}\", Name = nameof(UpdateSatEnrollee))]\n/Controllers/SatEnrolmentController.cs:159: [HttpPut(\"{satId}/certifications\", Name = nameof(UpdateSatEnrolleeCertifications))]\n/Controllers/SatEnrolmentController.cs:185: [HttpPost(\"{satId}/submissions\", Name = nameof(SubmitSatEnrollee))]"
+      },
+      {
+        "step": 4,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SigningAuthoritiesController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/SigningAuthoritiesController.cs:18: [Route(\"api/parties/signing-authorities\")]\n/Controllers/SigningAuthoritiesController.cs:21: public class SigningAuthorityController : PrimeControllerBase\n/Controllers/SigningAuthoritiesController.cs:39: [HttpGet(\"{username}\", Name = nameof(GetSigningAuthorityByUsername))]\n/Controllers/SigningAuthoritiesController.cs:61: [HttpGet(\"{partyId:int}\", Name = nameof(GetSigningAuthorityById))]\n/Controllers/SigningAuthoritiesController.cs:82: [HttpPost(Name = nameof(CreateSigningAuthority))]\n/Controllers/SigningAuthoritiesController.cs:110: [HttpPut(\"{partyId}\", Name = nameof(UpdateSigningAuthority))]\n/Controllers/SigningAuthoritiesController.cs:133: [HttpGet(\"{username}/organizations\", Name = nameof(GetSigningAuthorityOrganizationsByUsername))]"
+      },
+      {
+        "step": 4,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SigningAuthoritiesExtendedController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/SigningAuthoritiesExtendedController.cs:12: [Route(\"api/parties/signing-authorities\")]\n/Controllers/SigningAuthoritiesExtendedController.cs:14: public class SigningAuthoritiesExtendedController : PrimeControllerBase\n/Controllers/SigningAuthoritiesExtendedController.cs:29: [HttpPost(\"UpdateHpdid\", Name = nameof(UpdatePartyHpdid))]"
+      },
+      {
+        "step": 4,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SitesController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/SitesController.cs:21: [Route(\"api/[controller]\")]\n/Controllers/SitesController.cs:24: public class SitesController : PrimeControllerBase\n/Controllers/SitesController.cs:61: [HttpGet(\"/api/organizations/{organizationId:int}/sites\", Name = nameof(GetSites))]\n/Controllers/SitesController.cs:88: [HttpGet(Name = nameof(GetAllSites))]\n/Controllers/SitesController.cs:111: [HttpGet(\"{siteId}\", Name = nameof(GetSiteById))]\n/Controllers/SitesController.cs:137: [HttpPost(\"/api/organizations/{organizationId:int}/sites\", Name = nameof(CreateSite))]\n/Controllers/SitesController.cs:166: [HttpPut(\"{siteId}\", Name = nameof(UpdateSite))]\n/Controllers/SitesController.cs:198: [HttpPut(\"{siteId}/completed\", Name = nameof(SetSiteCompleted))]\n/Controllers/SitesController.cs:225: [HttpDelete(\"{siteId}/completed\", Name = nameof(RemoveSiteCompleted))]\n/Controllers/SitesController.cs:253: [HttpPut(\"{siteId}/adjudicator\", Name = nameof(SetSiteAdjudicator))]\n/Controllers/SitesController.cs:286: [Http"
+      },
+      {
+        "step": 4,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SubmissionsController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/SubmissionsController.cs:16: [Route(\"api/enrollees\")]\n/Controllers/SubmissionsController.cs:18: public class SubmissionsController : PrimeControllerBase\n/Controllers/SubmissionsController.cs:38: [HttpPost(\"{enrolleeId}/submissions\", Name = nameof(Submit))]\n/Controllers/SubmissionsController.cs:90: [HttpPost(\"{enrolleeId}/status-actions/approve\", Name = nameof(ApproveSubmission))]\n/Controllers/SubmissionsController.cs:109: [HttpPost(\"{enrolleeId}/status-actions/accept-toa\", Name = nameof(AcceptToa))]\n/Controllers/SubmissionsController.cs:126: [HttpPost(\"{enrolleeId}/status-actions/decline-toa\", Name = nameof(DeclineToa))]\n/Controllers/SubmissionsController.cs:143: [HttpPost(\"{enrolleeId}/status-actions/enable-editing\", Name = nameof(EnableEditing))]\n/Controllers/SubmissionsController.cs:160: [HttpPost(\"{enrolleeId}/status-actions/cancel-toa\", Name = nameof(CancelToaAssignment))]\n/Controllers/SubmissionsController.cs:177: [HttpPost(\"{enrolleeId}/status-actions/lock-profile\","
+      },
+      {
+        "step": 4,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/WebhooksController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class"
+        },
+        "result_head": "/Controllers/WebhooksController.cs:10: [Route(\"api/[controller]\")]\n/Controllers/WebhooksController.cs:12: public class WebhooksController : PrimeControllerBase\n/Controllers/WebhooksController.cs:29: [HttpPost(\"{apiKey}/topic/{topic}\", Name = nameof(Webhook))]"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/AddressAutocompleteController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/AddressAutocompleteController.cs:14: [Route(\"api/[controller]\")]\n/Controllers/AddressAutocompleteController.cs:17: public class AddressAutocompleteController : PrimeControllerBase\n/Controllers/AddressAutocompleteController.cs:33: [HttpGet(\"find\", Name = nameof(Find))]\n/Controllers/AddressAutocompleteController.cs:37: public async Task<ActionResult> Find([FromQuery] string searchTerm, [FromQuery] string lastId = null)\n/Controllers/AddressAutocompleteController.cs:53: [HttpGet(\"retrieve\", Name = nameof(Retrieve))]\n/Controllers/AddressAutocompleteController.cs:57: public async Task<ActionResult> Retrieve([FromQuery] string id)"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/AdminsController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/AdminsController.cs:13: [Route(\"api/[controller]\")]\n/Controllers/AdminsController.cs:16: public class AdminsController : PrimeControllerBase\n/Controllers/AdminsController.cs:31: [HttpPost(Name = nameof(CreateAdmin))]\n/Controllers/AdminsController.cs:37: public async Task<ActionResult> CreateAdmin(Admin admin)\n/Controllers/AdminsController.cs:67: [HttpGet(Name = nameof(GetAdmins))]\n/Controllers/AdminsController.cs:71: public async Task<ActionResult> GetAdmins()\n/Controllers/AdminsController.cs:83: [HttpGet(\"{adminId}\", Name = nameof(GetAdminById))]\n/Controllers/AdminsController.cs:88: public async Task<ActionResult> GetAdminById(int adminId)\n/Controllers/AdminsController.cs:103: [HttpGet(\"embedded-metabase-url\", Name = nameof(GetMetabaseEmbeddedString))]\n/Controllers/AdminsController.cs:107: public ActionResult GetMetabaseEmbeddedString()"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/AgreementsController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/AgreementsController.cs:15: [Route(\"api/[controller]\")]\n/Controllers/AgreementsController.cs:17: public class AgreementsController : PrimeControllerBase\n/Controllers/AgreementsController.cs:29: [HttpGet(Name = nameof(GetLatestAgreementVersions))]\n/Controllers/AgreementsController.cs:34: public async Task<ActionResult> GetLatestAgreementVersions([FromQuery] AgreementGroup? type)\n/Controllers/AgreementsController.cs:45: [HttpGet(\"{agreementVersionId}\", Name = nameof(GetAgreementVersionById))]\n/Controllers/AgreementsController.cs:50: public async Task<ActionResult> GetAgreementVersionById(int agreementVersionId)"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/AuthorizedUsersController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/AuthorizedUsersController.cs:18: [Route(\"api/parties/authorized-users\")]\n/Controllers/AuthorizedUsersController.cs:21: public class AuthorizedUsersController : PrimeControllerBase\n/Controllers/AuthorizedUsersController.cs:36: [HttpGet(\"{username}\", Name = nameof(GetAuthorizedUserByUsername))]\n/Controllers/AuthorizedUsersController.cs:41: public async Task<ActionResult> GetAuthorizedUserByUsername(string username)\n/Controllers/AuthorizedUsersController.cs:61: [HttpGet(\"{authorizedUserId:int}\", Name = nameof(GetAuthorizedUserById))]\n/Controllers/AuthorizedUsersController.cs:66: public async Task<ActionResult> GetAuthorizedUserById(int authorizedUserId)\n/Controllers/AuthorizedUsersController.cs:86: [HttpGet(\"{authorizedUserId:int}/sites\", Name = nameof(GetAuthorizedUserSites))]\n/Controllers/AuthorizedUsersController.cs:91: public async Task<ActionResult> GetAuthorizedUserSites(int authorizedUserId)\n/Controllers/AuthorizedUsersController.cs:112: [HttpPost(Name = nameof(CreateA"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/BannersController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/BannersController.cs:16: [Route(\"api/[controller]\")]\n/Controllers/BannersController.cs:18: public class BannersController : PrimeControllerBase\n/Controllers/BannersController.cs:33: [HttpPost(\"\", Name = nameof(CreateBanner))]\n/Controllers/BannersController.cs:38: public async Task<ActionResult> CreateBanner(BannerViewModel viewModel, [FromQuery] BannerLocationCode locationCode)\n/Controllers/BannersController.cs:50: [HttpPut(\"{bannerId}\", Name = nameof(UpdateBanner))]\n/Controllers/BannersController.cs:56: public async Task<ActionResult> UpdateBanner(int bannerId, BannerViewModel viewModel)\n/Controllers/BannersController.cs:72: [HttpDelete(\"{bannerId}\", Name = nameof(DeleteBanner))]\n/Controllers/BannersController.cs:77: public async Task<ActionResult> DeleteBanner(int bannerId)\n/Controllers/BannersController.cs:88: [HttpGet(\"{bannerId}\", Name = nameof(GetBannerById))]\n/Controllers/BannersController.cs:93: public async Task<ActionResult> GetBannerById(int bannerId)\n/Controlle"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/ClientLogsController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/ClientLogsController.cs:13: [Route(\"api/client-logs\")]\n/Controllers/ClientLogsController.cs:15: public class ClientLogsController : PrimeControllerBase\n/Controllers/ClientLogsController.cs:28: [HttpPost(\"\", Name = nameof(CreateLog))]\n/Controllers/ClientLogsController.cs:31: public async Task<ActionResult> CreateLog(ClientLogViewModel log)"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/DiagnosticsController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/DiagnosticsController.cs:13: [Route(\"api/[controller]\")]\n/Controllers/DiagnosticsController.cs:16: public class DiagnosticsController : PrimeControllerBase\n/Controllers/DiagnosticsController.cs:27: [HttpGet(Name = nameof(GetDiagnostics))]\n/Controllers/DiagnosticsController.cs:31: public ActionResult GetDiagnostics()\n/Controllers/DiagnosticsController.cs:88: [HttpPost(\"gc-collect\", Name = nameof(GCCollect))]\n/Controllers/DiagnosticsController.cs:92: public ActionResult GCCollect()"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/DocumentAccessController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/DocumentAccessController.cs:14: [Route(\"api/document-access\")]\n/Controllers/DocumentAccessController.cs:16: public class DocumentAccessController : PrimeControllerBase\n/Controllers/DocumentAccessController.cs:34: [HttpGet(\"{accessTokenId}\", Name = nameof(GetDocumentByAccessToken))]\n/Controllers/DocumentAccessController.cs:38: public async Task<ActionResult> GetDocumentByAccessToken(Guid accessTokenId)\n/Controllers/DocumentAccessController.cs:60: [HttpDelete(\"{accessTokenId}\", Name = nameof(DeleteDocumentAccessToken))]\n/Controllers/DocumentAccessController.cs:65: public async Task<ActionResult> DeleteDocumentAccessToken(Guid accessTokenId)"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/DocumentManagerController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/DocumentManagerController.cs:16: [Route(\"api/document\")]\n/Controllers/DocumentManagerController.cs:19: public class DocumentManagerController : PrimeControllerBase\n/Controllers/DocumentManagerController.cs:34: [HttpPost(Name = nameof(InitializeFileUploadWithDocumentManager))]\n/Controllers/DocumentManagerController.cs:36: public async Task<ActionResult> InitializeFileUploadWithDocumentManager()\n/Controllers/DocumentManagerController.cs:75: [HttpGet(\"{documentGuid}\", Name = nameof(GetFileFromDocumentManager))]\n/Controllers/DocumentManagerController.cs:77: public async Task<ActionResult> GetFileFromDocumentManager(Guid documentGuid)"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/EmailsController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/EmailsController.cs:15: [Route(\"api/[controller]\")]\n/Controllers/EmailsController.cs:17: public class EmailsController : PrimeControllerBase\n/Controllers/EmailsController.cs:38: [HttpPost(\"management/statuses\", Name = nameof(UpdateEmailLogStatuses))]\n/Controllers/EmailsController.cs:43: public async Task<ActionResult> UpdateEmailLogStatuses([FromQuery] int limit = 10)\n/Controllers/EmailsController.cs:54: [HttpPost(\"management/enrollees/renewal\", Name = nameof(SendEnrolleeRenewalEmails))]\n/Controllers/EmailsController.cs:59: public async Task<ActionResult> SendEnrolleeRenewalEmails()\n/Controllers/EmailsController.cs:76: [HttpPost(\"management/enrollees/unsigned-toa\", Name = nameof(SendEnrolleeUnsignedToaReminderEmails))]\n/Controllers/EmailsController.cs:81: public async Task<ActionResult> SendEnrolleeUnsignedToaReminderEmails()\n/Controllers/EmailsController.cs:99: [HttpGet(\"management/templates\", Name = nameof(GetEmailTemplates))]\n/Controllers/EmailsController.cs:104: public"
+      },
+      {
+        "step": 6,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"moh-prime-webapi\", \"dirs\": [\"/\"]}]}"
+        },
+        "result_head": "Recorded 1 new: service moh-prime-webapi\nTotal: 1 services, 0 endpoints in 0 files.\nServices with no endpoints recorded yet: moh-prime-webapi."
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/EnrolleeAgreementsController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public class|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/EnrolleeAgreementsController.cs:17: [Route(\"api/enrollees\")]\n/Controllers/EnrolleeAgreementsController.cs:20: public class EnrolleeAgreementsController : PrimeControllerBase\n/Controllers/EnrolleeAgreementsController.cs:55: [HttpGet(\"{enrolleeId}/agreements\", Name = nameof(GetEnrolleeAgreements))]\n/Controllers/EnrolleeAgreementsController.cs:60: public async Task<ActionResult> GetEnrolleeAgreements(int enrolleeId, [FromQuery] AgreementFilters filters)\n/Controllers/EnrolleeAgreementsController.cs:87: [HttpGet(\"{enrolleeId}/agreement\", Name = nameof(GetEnrolleeAcceptedAgreement))]\n/Controllers/EnrolleeAgreementsController.cs:92: public async Task<ActionResult> GetEnrolleeAcceptedAgreement(int enrolleeId)\n/Controllers/EnrolleeAgreementsController.cs:122: [HttpGet(\"{enrolleeId}/cards\", Name = nameof(GetEnrolleeEnrolmentCards))]\n/Controllers/EnrolleeAgreementsController.cs:127: public async Task<ActionResult> GetEnrolleeEnrolmentCards(int enrolleeId, [FromQuery] AgreementFilters"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/EnrolleesController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/EnrolleesController.cs:58: public async Task<ActionResult> GetEnrollees([FromQuery] EnrolleeSearchOptions searchOptions)\n/Controllers/EnrolleesController.cs:80: public async Task<ActionResult> CreateEnrollee(EnrolleeCreatePayload payload)\n/Controllers/EnrolleesController.cs:142: public async Task<ActionResult> GetEnrolleeById(int enrolleeId)\n/Controllers/EnrolleesController.cs:178: public async Task<ActionResult> GetEnrolleeByUsername(string username)\n/Controllers/EnrolleesController.cs:207: public async Task<ActionResult> UpdateEnrollee(int enrolleeId, EnrolleeUpdateModel enrollee, [FromQuery] bool beenThroughTheWizard)\n/Controllers/EnrolleesController.cs:252: public async Task<ActionResult> DeleteEnrollee(int enrolleeId)\n/Controllers/EnrolleesController.cs:275: public async Task<ActionResult> GetAccessAgreementNote(int enrolleeId)\n/Controllers/EnrolleesController.cs:295: public async Task<ActionResult> GetCareSettingCodes(int enrolleeId)\n/Controllers/EnrolleesController."
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/EnrolleesExtendedController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/EnrolleesExtendedController.cs:57: public async Task<ActionResult> GetAdjacentEnrolleeId(int enrolleeId)\n/Controllers/EnrolleesExtendedController.cs:74: public async Task<ActionResult> GetEnrolmentStatuses(int enrolleeId)\n/Controllers/EnrolleesExtendedController.cs:102: public async Task<ActionResult> GetAdjudicatorNotes(int enrolleeId)\n/Controllers/EnrolleesExtendedController.cs:127: public async Task<ActionResult> CreateAdjudicatorNote(int enrolleeId, FromBodyText note, [FromQuery] bool link)\n/Controllers/EnrolleesExtendedController.cs:166: public async Task<ActionResult> CreateEnrolmentReference(int enrolleeId)\n/Controllers/EnrolleesExtendedController.cs:197: public async Task<ActionResult> UpdateAccessAgreementNote(int enrolleeId, AccessAgreementNote accessAgreementNote)\n/Controllers/EnrolleesExtendedController.cs:232: public async Task<ActionResult> SetEnrolleeAdjudicator(int enrolleeId, [FromQuery] int adjudicatorId)\n/Controllers/EnrolleesExtendedController.cs:261: p"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/EnrolleePaperSubmissionsController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/EnrolleePaperSubmissionsController.cs:52: public async Task<ActionResult> CreateEnrolleePaperSubmission(PaperEnrolleeDemographicViewModel payload)\n/Controllers/EnrolleePaperSubmissionsController.cs:74: public async Task<ActionResult> UpdateEnrolleePaperSubmissionAgreement(int enrolleeId, PaperEnrolleeAgreementViewModel payload)\n/Controllers/EnrolleePaperSubmissionsController.cs:95: public async Task<ActionResult> UpdateEnrolleePaperSubmissionCareSettings(int enrolleeId, PaperEnrolleeCareSettingViewModel payload)\n/Controllers/EnrolleePaperSubmissionsController.cs:116: public async Task<ActionResult> UpdateEnrolleePaperSubmissionCertifications(int enrolleeId, ICollection<PaperEnrolleeCertificationViewModel> payload)\n/Controllers/EnrolleePaperSubmissionsController.cs:137: public async Task<ActionResult> UpdateEnrolleePaperSubmissionDeviceProvider(int enrolleeId, FromBodyText deviceProviderIdentifier)\n/Controllers/EnrolleePaperSubmissionsController.cs:158: public async Task<Ac"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/GisController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/GisController.cs:35: public async Task<ActionResult> CreateGisParty(GisChangeModel changeModel)\n/Controllers/GisController.cs:69: public async Task<ActionResult> UpdateGisEnrollee(int gisId, GisChangeModel changeModel)\n/Controllers/GisController.cs:107: public async Task<ActionResult> GetGisEnrolmentById(int gisId)\n/Controllers/GisController.cs:133: public async Task<ActionResult> GetGisEnrolmentByUserId(Guid userId)\n/Controllers/GisController.cs:161: public async Task<ActionResult> LdapLogin(int gisId, LdapLoginPayload payload)\n/Controllers/GisController.cs:199: public async Task<ActionResult> SubmitGis(int gisId)"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/HealthAuthoritiesController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/HealthAuthoritiesController.cs:55: public async Task<ActionResult> GetHealthAuthorities()\n/Controllers/HealthAuthoritiesController.cs:71: public async Task<ActionResult> GetHealthAuthorityById(int healthAuthorityId)\n/Controllers/HealthAuthoritiesController.cs:93: public async Task<ActionResult> GetAuthorizedUsers(int healthAuthorityId)\n/Controllers/HealthAuthoritiesController.cs:113: public async Task<ActionResult> GetAllHealthAuthoritySites()\n/Controllers/HealthAuthoritiesController.cs:139: public async Task<ActionResult> UpdateCareTypes(int healthAuthorityId, IEnumerable<string> careTypes)\n/Controllers/HealthAuthoritiesController.cs:177: public async Task<ActionResult> UpdateVendors(int healthAuthorityId, IEnumerable<int> vendors)\n/Controllers/HealthAuthoritiesController.cs:213: public async Task<ActionResult> UpdatePrivacyOffice(int healthAuthorityId, PrivacyOfficeViewModel privacyOffice)\n/Controllers/HealthAuthoritiesController.cs:230: public async Task<ActionResult> U"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/HealthAuthoritySitesController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/HealthAuthoritySitesController.cs:56: public async Task<ActionResult> CreateHealthAuthoritySite(int healthAuthorityId, HealthAuthoritySiteCreateModel payload)\n/Controllers/HealthAuthoritySitesController.cs:86: public async Task<ActionResult> GetHealthAuthoritySites(int healthAuthorityId, [FromQuery] int healthAuthoritySiteId)\n/Controllers/HealthAuthoritySitesController.cs:110: public async Task<ActionResult> GetHealthAuthoritySite(int healthAuthorityId, int siteId)\n/Controllers/HealthAuthoritySitesController.cs:134: public async Task<ActionResult> GetHealthAuthorityAdminSite(int healthAuthorityId, int siteId)\n/Controllers/HealthAuthoritySitesController.cs:157: public async Task<ActionResult> GetHoursOfOperation(int healthAuthorityId, int siteId)\n/Controllers/HealthAuthoritySitesController.cs:183: public async Task<ActionResult> UpdateHealthAuthoritySite(int healthAuthorityId, int siteId, HealthAuthoritySiteUpdateModel updateModel)\n/Controllers/HealthAuthoritySitesControlle"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/HealthcheckController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/HealthcheckController.cs:32: public async Task GetHealthcheck()"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/LookupsController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/LookupsController.cs:37: public async Task<ActionResult> GetLookups()\n/Controllers/LookupsController.cs:51: public async Task<ActionResult> LicenceCodeTest([FromQuery] string collegePrefix, [FromQuery] string licenceNumber)\n/Controllers/LookupsController.cs:64: public async Task<ActionResult> SelfDeclarationQuestions(DateTimeOffset targetDate)"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/OrganizationsController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/OrganizationsController.cs:73: public async Task<ActionResult> GetOrganizationById(int organizationId)\n/Controllers/OrganizationsController.cs:94: public async Task<ActionResult> CreateOrganization(CreateOrganizationViewModel createOrganization)\n/Controllers/OrganizationsController.cs:120: public async Task<ActionResult> ClaimOrganization(OrganizationClaimViewModel organizationClaim)\n/Controllers/OrganizationsController.cs:158: public async Task<ActionResult> OrganizationClaimExists([FromQuery] OrganizationClaimSearchOptions search)\n/Controllers/OrganizationsController.cs:174: public async Task<ActionResult> GetOrganizationClaimByOrgId(int organizationId)\n/Controllers/OrganizationsController.cs:194: public async Task<ActionResult> ApproveOrganizationClaim(int organizationId, int claimId)\n/Controllers/OrganizationsController.cs:234: public async Task<ActionResult> UpdateOrganization(int organizationId, OrganizationUpdateModel updatedOrganization)\n/Controllers/OrganizationsC"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/PhsaController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/PhsaController.cs:42: public async Task<ActionResult> CreatePhsaParty(PhsaChangeModel changeModel)\n/Controllers/PhsaController.cs:77: public async Task<ActionResult> GetPreApprovedRegistrations([FromQuery] string email)"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/ProvisionerAccessController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/ProvisionerAccessController.cs:59: public async Task<ActionResult> GetEnrolmentCertificate(Guid accessTokenId)\n/Controllers/ProvisionerAccessController.cs:79: public async Task<ActionResult> GetAccessTokens()\n/Controllers/ProvisionerAccessController.cs:99: public async Task<ActionResult> SendProvisionerLink(int enrolleeId, [FromBody] EmailsForCareSetting[] providedEmails)\n/Controllers/ProvisionerAccessController.cs:152: public async Task<ActionResult> GetGpid()\n/Controllers/ProvisionerAccessController.cs:165: public async Task<ActionResult> GetGpidDetail()\n/Controllers/ProvisionerAccessController.cs:187: public async Task<ActionResult> GpidLookup(GpidLookupOptions option)\n/Controllers/ProvisionerAccessController.cs:213: public async Task<ActionResult> HpdidLookup([FromQuery] string[] hpdids)\n/Controllers/ProvisionerAccessController.cs:241: public async Task<ActionResult> GetUpdatedGpids([FromForm] string[] hpdids, [FromForm] DateTimeOffset updatedSince)\n/Controllers/Provis"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SatEnrolmentController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/SatEnrolmentController.cs:55: public async Task<ActionResult> CreateSatEnrollee(SatEnrolleeDemographicChangeModel payload)\n/Controllers/SatEnrolmentController.cs:83: public async Task<ActionResult> GetSatEnrolleeByUserId(Guid userId)\n/Controllers/SatEnrolmentController.cs:110: public async Task<ActionResult> GetSatEnrolleeById(int satId)\n/Controllers/SatEnrolmentController.cs:135: public async Task<ActionResult> UpdateSatEnrollee(int satId, SatEnrolleeDemographicChangeModel payload)\n/Controllers/SatEnrolmentController.cs:164: public async Task<ActionResult> UpdateSatEnrolleeCertifications(int satId, ICollection<PartyCertificationViewModel> payload)\n/Controllers/SatEnrolmentController.cs:190: public async Task<ActionResult> SubmitSatEnrollee(int satId)"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SigningAuthoritiesController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/SigningAuthoritiesController.cs:45: public async Task<ActionResult> GetSigningAuthorityByUsername(string username)\n/Controllers/SigningAuthoritiesController.cs:67: public async Task<ActionResult> GetSigningAuthorityById(int partyId)\n/Controllers/SigningAuthoritiesController.cs:87: public async Task<ActionResult> CreateSigningAuthority(SigningAuthorityChangeModel signingAuthority)\n/Controllers/SigningAuthoritiesController.cs:116: public async Task<ActionResult> UpdateSigningAuthority(int partyId, SigningAuthorityChangeModel updatedSigningAuthority)\n/Controllers/SigningAuthoritiesController.cs:137: public async Task<ActionResult> GetSigningAuthorityOrganizationsByUsername(string username)"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SigningAuthoritiesExtendedController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/SigningAuthoritiesExtendedController.cs:34: public async Task<ActionResult> UpdatePartyHpdid([FromQuery] int limit = 1000)"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SitesController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/SitesController.cs:66: public async Task<ActionResult> GetSites(int organizationId, [FromQuery] bool verbose)\n/Controllers/SitesController.cs:93: public async Task<ActionResult> GetAllSites([FromQuery] OrganizationSearchOptions search)\n/Controllers/SitesController.cs:116: public async Task<ActionResult> GetSiteById(int siteId)\n/Controllers/SitesController.cs:142: public async Task<ActionResult> CreateSite(int organizationId)\n/Controllers/SitesController.cs:171: public async Task<ActionResult> UpdateSite(int siteId, CommunitySiteUpdateModel updatedSite)\n/Controllers/SitesController.cs:203: public async Task<ActionResult> SetSiteCompleted(int siteId)\n/Controllers/SitesController.cs:230: public async Task<ActionResult> RemoveSiteCompleted(int siteId)\n/Controllers/SitesController.cs:259: public async Task<ActionResult> SetSiteAdjudicator(int siteId, [FromQuery] int? adjudicatorId)\n/Controllers/SitesController.cs:292: public async Task<ActionResult> RemoveSiteAdjudicator(int si"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SubmissionsController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/SubmissionsController.cs:45: public async Task<ActionResult> Submit(int enrolleeId, EnrolleeUpdateModel updatedProfile)\n/Controllers/SubmissionsController.cs:97: public async Task<ActionResult> ApproveSubmission(int enrolleeId)\n/Controllers/SubmissionsController.cs:116: public async Task<ActionResult> AcceptToa(int enrolleeId, [FromQuery] Guid? documentGuid = null)\n/Controllers/SubmissionsController.cs:133: public async Task<ActionResult> DeclineToa(int enrolleeId)\n/Controllers/SubmissionsController.cs:150: public async Task<ActionResult> EnableEditing(int enrolleeId)\n/Controllers/SubmissionsController.cs:167: public async Task<ActionResult> CancelToaAssignment(int enrolleeId)\n/Controllers/SubmissionsController.cs:184: public async Task<ActionResult> LockProfile(int enrolleeId)\n/Controllers/SubmissionsController.cs:201: public async Task<ActionResult> DeclineProfile(int enrolleeId)\n/Controllers/SubmissionsController.cs:218: public async Task<ActionResult> RerunRules(int en"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/WebhooksController.cs",
+          "pattern": "public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/WebhooksController.cs:34: public async Task<ActionResult> Webhook(string apiKey, string topic, [FromBody] WebhookData data)"
+      },
+      {
+        "step": 9,
+        "tool": "read_file",
+        "args": {
+          "path": "/Controllers/EnrolleePaperSubmissionsController.cs",
+          "start": "350"
+        },
+        "result_head": "350:         // HEAD: api/enrollees/paper-submissions?dateOfBirth=1977-09-22\n351:         /// <summary>\n352:         /// Checks if there are any unclaimed paper Enrollees submissions with the supplied date of birth.\n353:         /// </summary>\n354:         /// <param name=\"dateOfBirth\"></param>\n355:         [HttpHead(\"paper-submissions\", Name = nameof(CheckForMatchingPaperSubmission))]\n356:         [Authorize(Roles = Roles.PrimeEnrollee)]\n357:         [ProducesResponseType(StatusCodes.Status401Unauthorized)]\n358:         [ProducesResponseType(StatusCodes.Status403Forbidden)]\n359:         [ProducesResponseType(StatusCodes.Status404NotFound)]\n360:         [ProducesResponseType(StatusCodes.Status200OK)]\n361:         public async Task<ActionResult> CheckForMatchingPaperSubmission([FromQuery] DateTime dateOfBirth)\n362:         {\n363:             if (await _enrolleePaperSubmissionService.MatchingSubmissionExistsAsync(dateOfBirth))\n364:             {\n365:                 return Ok();\n366:    "
+      },
+      {
+        "step": 10,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [\n{\"path\": \"/Controllers/AddressAutocompleteController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"AddressAutocompleteController\", \"methodName\": \"Find\", \"httpMethod\": \""
+        },
+        "result_head": "Recorded 34 new: GET /api/AddressAutocomplete/find, GET /api/AddressAutocomplete/retrieve, POST /api/Admins, GET /api/Admins, GET /api/Admins/{adminId}, GET /api/Admins/embedded-metabase-url, GET /api/Agreements, GET /api/Agreements/{agreementVersionId}, GET /api/parties/authorized-users/{username}, GET /api/parties/authorized-users/{authorizedUserId:int}/sites, POST /api/parties/authorized-users, PUT /api/parties/authorized-users/{authorizedUserId}, POST /api/parties/authorized-users/{authorizedUserId}/activate, POST /api/parties/authorized-users/{authorizedUserId}/approve, POST /api/Banners, PUT /api/Banners/{bannerId}, DELETE /api/Banners/{bannerId}, GET /api/Banners/{bannerId}, GET /api/Banners/enrolment-landing, GET /api/Banners/site-landing, GET /api/Banners/active, POST /api/client-logs, GET /api/Diagnostics, POST /api/Diagnostics/gc-collect, GET /api/document-access/{accessTokenId}, DELETE /api/document-access/{accessTokenId}, POST /api/document, GET /api/document/{documentGuid"
+      },
+      {
+        "step": 11,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [\n{\"path\": \"/Controllers/EnrolleeAgreementsController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"EnrolleeAgreementsController\", \"methodName\": \"GetEnrolleeAgreements\", "
+        },
+        "result_head": "Recorded 73 new: GET /api/enrollees/{enrolleeId}/agreements, GET /api/enrollees/{enrolleeId}/agreement, GET /api/enrollees/{enrolleeId}/cards, GET /api/enrollees/{enrolleeId}/agreements/{agreementId}, GET /api/enrollees/{enrolleeId}/agreements/{agreementId}/submission, GET /api/enrollees/{enrolleeId}/agreements/{agreementId}/signable, GET /api/enrollees/{enrolleeId}/agreements/current/obo-to-ru, GET /api/enrollees/{enrolleeId}/agreements/current/agreement-group, POST /api/enrollees/paper-submissions, PUT /api/enrollees/{enrolleeId}/paper-submissions/agreement, PUT /api/enrollees/{enrolleeId}/paper-submissions/care-settings, PUT /api/enrollees/{enrolleeId}/paper-submissions/certifications, PUT /api/enrollees/{enrolleeId}/paper-submissions/device-provider, PUT /api/enrollees/{enrolleeId}/paper-submissions/unlisted-certifications, GET /api/enrollees/{enrolleeId}/unlisted-certifications, PUT /api/enrollees/{enrolleeId}/paper-submissions/demographics, PUT /api/enrollees/{enrolleeId}/paper-s"
+      },
+      {
+        "step": 12,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [\n{\"path\": \"/Controllers/GisController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"GisController\", \"methodName\": \"CreateGisParty\", \"httpMethod\": \"POST\", \"path\": \"/api/p"
+        },
+        "result_head": "Recorded 34 new: POST /api/parties/Gis, PUT /api/parties/Gis/{gisId}, GET /api/parties/Gis/{gisId}, POST /api/parties/Gis/{gisId}/ldap/login, POST /api/parties/Gis/{gisId}/submission, GET /api/health-authorities, GET /api/health-authorities/{healthAuthorityId:int}, GET /api/health-authorities/{healthAuthorityId}/authorized-users, GET /api/health-authorities/sites, PUT /api/health-authorities/{healthAuthorityId}/care-types, PUT /api/health-authorities/{healthAuthorityId}/vendors, PUT /api/health-authorities/{healthAuthorityId}/privacy-office, PUT /api/health-authorities/{healthAuthorityId}/privacy-officers, PUT /api/health-authorities/{healthAuthorityId}/technical-supports, PUT /api/health-authorities/{healthAuthorityId}/pharmanet-administrators, GET /api/health-authorities/{healthAuthorityId}/vendors/{healthAuthorityVendorId}/sites, GET /api/health-authorities/{healthAuthorityId}/care-types/{healthAuthorityCareTypeId}/sites, PUT /api/health-authorities/{healthAuthorityId}/organization-"
+      },
+      {
+        "step": 13,
+        "tool": "record",
+        "args": {},
+        "result_head": "[REJECTED] not valid JSON (Expecting value: line 1 column 1 (char 0)). The json argument must be the document itself, {\"services\": [...]} and/or {\"files\": [...]} as in the task, not a summary or a tool result. You sent: ''"
+      },
+      {
+        "step": 14,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [\n{\"path\": \"/Controllers/OrganizationsController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"OrganizationsController\", \"methodName\": \"GetOrganizations\", \"httpMethod\": \""
+        },
+        "result_head": "[REJECTED] not valid JSON (Expecting value: line 226 column 214 (char 92790)). The json argument must be the document itself, {\"services\": [...]} and/or {\"files\": [...]} as in the task, not a summary or a tool result. You sent: '{\"files\": [\\n{\"path\": \"/Controllers/OrganizationsController.cs\", \"service\": \"moh-'"
+      },
+      {
+        "step": 15,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/OrganizationsController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/OrganizationsController.cs:20: [Route(\"api/[controller]\")]\n/Controllers/OrganizationsController.cs:69: [HttpGet(\"{organizationId}\", Name = nameof(GetOrganizationById))]\n/Controllers/OrganizationsController.cs:73: public async Task<ActionResult> GetOrganizationById(int organizationId)\n/Controllers/OrganizationsController.cs:89: [HttpPost(Name = nameof(CreateOrganization))]\n/Controllers/OrganizationsController.cs:94: public async Task<ActionResult> CreateOrganization(CreateOrganizationViewModel createOrganization)\n/Controllers/OrganizationsController.cs:115: [HttpPost(\"claims\", Name = nameof(ClaimOrganization))]\n/Controllers/OrganizationsController.cs:120: public async Task<ActionResult> ClaimOrganization(OrganizationClaimViewModel organizationClaim)\n/Controllers/OrganizationsController.cs:154: [HttpGet(\"claims\", Name = nameof(OrganizationClaimExists))]\n/Controllers/OrganizationsController.cs:158: public async Task<ActionResult> OrganizationClaimExists([FromQuery] Organizati"
+      },
+      {
+        "step": 16,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/Controllers/OrganizationsController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"OrganizationsController\", \"methodName\": \"GetOrganizationById\", \"httpMethod\":"
+        },
+        "result_head": "Recorded 16 new: GET /api/Organizations/{organizationId}, POST /api/Organizations, POST /api/Organizations/claims, GET /api/Organizations/claims, GET /api/Organizations/{organizationId}/claims, POST /api/Organizations/{organizationId}/claims/{claimId}/approve, PUT /api/Organizations/{organizationId}, PUT /api/Organizations/{organizationId}/completed, DELETE /api/Organizations/{organizationId}, GET /api/Organizations/{organizationId}/agreements, POST /api/Organizations/{organizationId}/agreements/care-settings/{careSettingCode}, GET /api/Organizations/{organizationId}/care-settings/pending-transfer, GET /api/Organizations/{organizationId}/agreements/{agreementId}, GET /api/Organizations/{organizationId}/signable, PUT /api/Organizations/{organizationId}/agreements/{agreementId}, GET /api/Organizations/{organizationId}/agreements/{agreementId}/signed\nTotal: 1 services, 157 endpoints in 20 files."
+      },
+      {
+        "step": 17,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/PhsaController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/PhsaController.cs:16: [Route(\"api/parties/[controller]\")]\n/Controllers/PhsaController.cs:37: [HttpPost(Name = nameof(CreatePhsaParty))]\n/Controllers/PhsaController.cs:42: public async Task<ActionResult> CreatePhsaParty(PhsaChangeModel changeModel)\n/Controllers/PhsaController.cs:73: [HttpGet(\"pre-approved\", Name = nameof(GetPreApprovedRegistrations))]\n/Controllers/PhsaController.cs:77: public async Task<ActionResult> GetPreApprovedRegistrations([FromQuery] string email)"
+      },
+      {
+        "step": 18,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/Controllers/PhsaController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"PhsaController\", \"methodName\": \"CreatePhsaParty\", \"httpMethod\": \"POST\", \"path\": \"/api"
+        },
+        "result_head": "Recorded 2 new: POST /api/parties/Phsa, GET /api/parties/Phsa/pre-approved\nTotal: 1 services, 159 endpoints in 21 files."
+      },
+      {
+        "step": 19,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/ProvisionerAccessController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/ProvisionerAccessController.cs:21: [Route(\"api/provisioner-access\")]\n/Controllers/ProvisionerAccessController.cs:55: [HttpGet(\"certificate/{accessTokenId}\", Name = nameof(GetEnrolmentCertificate))]\n/Controllers/ProvisionerAccessController.cs:59: public async Task<ActionResult> GetEnrolmentCertificate(Guid accessTokenId)\n/Controllers/ProvisionerAccessController.cs:74: [HttpGet(\"token\", Name = nameof(GetAccessTokens))]\n/Controllers/ProvisionerAccessController.cs:79: public async Task<ActionResult> GetAccessTokens()\n/Controllers/ProvisionerAccessController.cs:93: [HttpPost(\"/api/enrollees/{enrolleeId}/provisioner-access/send-link\", Name = nameof(SendProvisionerLink))]\n/Controllers/ProvisionerAccessController.cs:99: public async Task<ActionResult> SendProvisionerLink(int enrolleeId, [FromBody] EmailsForCareSetting[] providedEmails)\n/Controllers/ProvisionerAccessController.cs:148: [HttpGet(\"gpid\", Name = nameof(GetGpid))]\n/Controllers/ProvisionerAccessController.cs:152: public "
+      },
+      {
+        "step": 20,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/Controllers/ProvisionerAccessController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"ProvisionerAccessController\", \"methodName\": \"GetEnrolmentCertificate\", \""
+        },
+        "result_head": "Recorded 9 new: GET /api/provisioner-access/certificate/{accessTokenId}, GET /api/provisioner-access/token, POST /api/enrollees/{enrolleeId}/provisioner-access/send-link, GET /api/provisioner-access/gpid, GET /api/provisioner-access/gpid-detail, POST /api/provisioner-access/gpid-lookup, GET /api/provisioner-access/gpids, POST /api/provisioner-access/updated-gpids, POST /api/provisioner-access/gpids/{gpid}/validate\nTotal: 1 services, 168 endpoints in 22 files."
+      },
+      {
+        "step": 21,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SatEnrolmentController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/SatEnrolmentController.cs:23: [Route(\"api/parties/sat\")]\n/Controllers/SatEnrolmentController.cs:50: [HttpPost(Name = nameof(CreateSatEnrollee))]\n/Controllers/SatEnrolmentController.cs:55: public async Task<ActionResult> CreateSatEnrollee(SatEnrolleeDemographicChangeModel payload)\n/Controllers/SatEnrolmentController.cs:77: [HttpGet(\"{userId:guid}\", Name = nameof(GetSatEnrolleeByUserId))]\n/Controllers/SatEnrolmentController.cs:83: public async Task<ActionResult> GetSatEnrolleeByUserId(Guid userId)\n/Controllers/SatEnrolmentController.cs:104: [HttpGet(\"{satId}\", Name = nameof(GetSatEnrolleeById))]\n/Controllers/SatEnrolmentController.cs:110: public async Task<ActionResult> GetSatEnrolleeById(int satId)\n/Controllers/SatEnrolmentController.cs:129: [HttpPut(\"{satId}\", Name = nameof(UpdateSatEnrollee))]\n/Controllers/SatEnrolmentController.cs:135: public async Task<ActionResult> UpdateSatEnrollee(int satId, SatEnrolleeDemographicChangeModel payload)\n/Controllers/SatEnrolmentControll"
+      },
+      {
+        "step": 22,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/Controllers/SatEnrolmentController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"SatEnrolmentController\", \"methodName\": \"CreateSatEnrollee\", \"httpMethod\": \"PO"
+        },
+        "result_head": "Recorded 5 new: POST /api/parties/sat, GET /api/parties/sat/{userId:guid}, PUT /api/parties/sat/{satId}, PUT /api/parties/sat/{satId}/certifications, POST /api/parties/sat/{satId}/submissions\nTotal: 1 services, 173 endpoints in 23 files."
+      },
+      {
+        "step": 23,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SigningAuthoritiesController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public async|public \\w+ \\w+\\("
+        },
+        "result_head": "/Controllers/SigningAuthoritiesController.cs:18: [Route(\"api/parties/signing-authorities\")]\n/Controllers/SigningAuthoritiesController.cs:39: [HttpGet(\"{username}\", Name = nameof(GetSigningAuthorityByUsername))]\n/Controllers/SigningAuthoritiesController.cs:45: public async Task<ActionResult> GetSigningAuthorityByUsername(string username)\n/Controllers/SigningAuthoritiesController.cs:61: [HttpGet(\"{partyId:int}\", Name = nameof(GetSigningAuthorityById))]\n/Controllers/SigningAuthoritiesController.cs:67: public async Task<ActionResult> GetSigningAuthorityById(int partyId)\n/Controllers/SigningAuthoritiesController.cs:82: [HttpPost(Name = nameof(CreateSigningAuthority))]\n/Controllers/SigningAuthoritiesController.cs:87: public async Task<ActionResult> CreateSigningAuthority(SigningAuthorityChangeModel signingAuthority)\n/Controllers/SigningAuthoritiesController.cs:110: [HttpPut(\"{partyId}\", Name = nameof(UpdateSigningAuthority))]\n/Controllers/SigningAuthoritiesController.cs:116: public async Tas"
+      },
+      {
+        "step": 24,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/Controllers/SigningAuthoritiesController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"SigningAuthoritiesController\", \"methodName\": \"GetSigningAuthorityByUser"
+        },
+        "result_head": "Recorded 0 new: nothing\nTotal: 1 services, 173 endpoints in 23 files.\n[REJECTED 5] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0].endpoints[0] GET /api/parties/signing-authorities/{username} (SigningAuthoritiesController.GetSigningAuthorityByUsername): class SigningAuthoritiesController does not appear in this file\n- files[0].endpoints[1] GET /api/parties/signing-authorities/{partyId:int} (SigningAuthoritiesController.GetSigningAuthorityById): class SigningAuthoritiesController does not appear in this file\n- files[0].endpoints[2] POST /api/parties/signing-authorities (SigningAuthoritiesController.CreateSigningAuthority): class SigningAuthoritiesController does not appear in this file\n- files[0].endpoints[3] PUT /api/parties/signing-authorities/{partyId} (SigningAuthoritiesController.UpdateSigningAuthority): class SigningAuthoritiesController does not appear in this file\n- files[0].endpoints[4] GET /api/parties/signing-authorities/{username}/"
+      },
+      {
+        "step": 25,
+        "tool": "read_file",
+        "args": {
+          "path": "/Controllers/SigningAuthoritiesController.cs",
+          "start": "1"
+        },
+        "result_head": "1: using System;\n2: using System.Collections.Generic;\n3: using System.Linq;\n4: using System.Threading.Tasks;\n5: using Microsoft.AspNetCore.Authorization;\n6: using Microsoft.AspNetCore.Http;\n7: using Microsoft.AspNetCore.Mvc;\n8: \n9: using Prime.Configuration.Auth;\n10: using Prime.Models;\n11: using Prime.Services;\n12: using Prime.ViewModels;\n13: using Prime.ViewModels.Parties;\n14: \n15: namespace Prime.Controllers\n16: {\n17:     [Produces(\"application/json\")]\n18:     [Route(\"api/parties/signing-authorities\")]\n19:     [ApiController]\n20:     [Authorize(Roles = Roles.PrimeEnrollee + \",\" + Roles.ViewSite)]\n21:     public class SigningAuthorityController : PrimeControllerBase\n22:     {\n23:         private readonly IPartyService _partyService;\n24:         private readonly IOrganizationService _organizationService;\n25: \n26:         public SigningAuthorityController(\n27:             IPartyService partyService,\n28:             IOrganizationService organizationService)\n29:         {\n30:            "
+      },
+      {
+        "step": 26,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/Controllers/SigningAuthoritiesController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"SigningAuthorityController\", \"methodName\": \"GetSigningAuthorityByUserna"
+        },
+        "result_head": "Recorded 4 new: GET /api/parties/signing-authorities/{username}, POST /api/parties/signing-authorities, PUT /api/parties/signing-authorities/{partyId}, GET /api/parties/signing-authorities/{username}/organizations\nTotal: 1 services, 177 endpoints in 24 files."
+      },
+      {
+        "step": 27,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SigningAuthoritiesExtendedController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public async|public \\w+ \\w+\\(|class \\w+"
+        },
+        "result_head": "/Controllers/SigningAuthoritiesExtendedController.cs:12: [Route(\"api/parties/signing-authorities\")]\n/Controllers/SigningAuthoritiesExtendedController.cs:14: public class SigningAuthoritiesExtendedController : PrimeControllerBase\n/Controllers/SigningAuthoritiesExtendedController.cs:29: [HttpPost(\"UpdateHpdid\", Name = nameof(UpdatePartyHpdid))]\n/Controllers/SigningAuthoritiesExtendedController.cs:34: public async Task<ActionResult> UpdatePartyHpdid([FromQuery] int limit = 1000)"
+      },
+      {
+        "step": 28,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/Controllers/SigningAuthoritiesExtendedController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"SigningAuthoritiesExtendedController\", \"methodName\": \"UpdatePar"
+        },
+        "result_head": "Recorded 1 new: POST /api/parties/signing-authorities/UpdateHpdid\nTotal: 1 services, 178 endpoints in 25 files."
+      },
+      {
+        "step": 29,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SitesController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|public async|public \\w+ \\w+\\(|class \\w+"
+        },
+        "result_head": "/Controllers/SitesController.cs:21: [Route(\"api/[controller]\")]\n/Controllers/SitesController.cs:24: public class SitesController : PrimeControllerBase\n/Controllers/SitesController.cs:61: [HttpGet(\"/api/organizations/{organizationId:int}/sites\", Name = nameof(GetSites))]\n/Controllers/SitesController.cs:66: public async Task<ActionResult> GetSites(int organizationId, [FromQuery] bool verbose)\n/Controllers/SitesController.cs:88: [HttpGet(Name = nameof(GetAllSites))]\n/Controllers/SitesController.cs:93: public async Task<ActionResult> GetAllSites([FromQuery] OrganizationSearchOptions search)\n/Controllers/SitesController.cs:111: [HttpGet(\"{siteId}\", Name = nameof(GetSiteById))]\n/Controllers/SitesController.cs:116: public async Task<ActionResult> GetSiteById(int siteId)\n/Controllers/SitesController.cs:137: [HttpPost(\"/api/organizations/{organizationId:int}/sites\", Name = nameof(CreateSite))]\n/Controllers/SitesController.cs:142: public async Task<ActionResult> CreateSite(int organizationId)\n/C"
+      },
+      {
+        "step": 30,
+        "tool": "read_file",
+        "args": {
+          "path": "/Controllers/SitesController.cs",
+          "start": "830"
+        },
+        "result_head": "830:         [HttpPost(\"{siteId}/site-reviewed-email\", Name = nameof(SendSiteReviewedNotificationEmail))]\n831:         [Authorize(Roles = Roles.ViewSite)]\n832:         [ProducesResponseType(StatusCodes.Status401Unauthorized)]\n833:         [ProducesResponseType(StatusCodes.Status403Forbidden)]\n834:         [ProducesResponseType(typeof(ApiMessageResponse), StatusCodes.Status404NotFound)]\n835:         [ProducesResponseType(StatusCodes.Status204NoContent)]\n836:         public async Task<ActionResult> SendSiteReviewedNotificationEmail(int siteId, FromBodyText note)\n837:         {\n838:             if (!await _siteService.SiteExistsAsync(siteId))\n839:             {\n840:                 return NotFound($\"Site not found with id {siteId}\");\n841:             }\n842: \n843:             await _emailService.SendSiteReviewedNotificationAsync(siteId, note);\n844:             await _businessEventService.CreateSiteEmailEventAsync(siteId, \"Sent site reviewed notification\");\n845:             return NoContent"
+      },
+      {
+        "step": 31,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SitesController.cs",
+          "pattern": "Http(Get|Post|Put|Delete|Patch)"
+        },
+        "result_head": "/Controllers/SitesController.cs:61: [HttpGet(\"/api/organizations/{organizationId:int}/sites\", Name = nameof(GetSites))]\n/Controllers/SitesController.cs:88: [HttpGet(Name = nameof(GetAllSites))]\n/Controllers/SitesController.cs:111: [HttpGet(\"{siteId}\", Name = nameof(GetSiteById))]\n/Controllers/SitesController.cs:137: [HttpPost(\"/api/organizations/{organizationId:int}/sites\", Name = nameof(CreateSite))]\n/Controllers/SitesController.cs:166: [HttpPut(\"{siteId}\", Name = nameof(UpdateSite))]\n/Controllers/SitesController.cs:198: [HttpPut(\"{siteId}/completed\", Name = nameof(SetSiteCompleted))]\n/Controllers/SitesController.cs:225: [HttpDelete(\"{siteId}/completed\", Name = nameof(RemoveSiteCompleted))]\n/Controllers/SitesController.cs:253: [HttpPut(\"{siteId}/adjudicator\", Name = nameof(SetSiteAdjudicator))]\n/Controllers/SitesController.cs:286: [HttpDelete(\"{siteId}/adjudicator\", Name = nameof(RemoveSiteAdjudicator))]\n/Controllers/SitesController.cs:310: [HttpDelete(\"{siteId}\", Name = nameof(Delete"
+      },
+      {
+        "step": 32,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/Controllers/SitesController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"SitesController\", \"methodName\": \"GetSites\", \"httpMethod\": \"GET\", \"path\": \"/api/organ"
+        },
+        "result_head": "Recorded 39 new: GET /api/organizations/{organizationId:int}/sites, GET /api/Sites, GET /api/Sites/{siteId}, POST /api/organizations/{organizationId:int}/sites, PUT /api/Sites/{siteId}, PUT /api/Sites/{siteId}/completed, DELETE /api/Sites/{siteId}/completed, PUT /api/Sites/{siteId}/adjudicator, DELETE /api/Sites/{siteId}/adjudicator, DELETE /api/Sites/{siteId}, POST /api/Sites/{siteId}/submissions, POST /api/Sites/{siteId}/business-licences, PUT /api/Sites/{siteId}/business-licences/{businessLicenceId}, POST /api/Sites/{siteId}/business-licences/{businessLicenceId}/document, DELETE /api/Sites/{siteId}/business-licences/{businessLicenceId}/document, GET /api/Sites/{siteId}/business-licences, POST /api/Sites/{siteId}/adjudication-documents, GET /api/Sites/{siteId}/adjudication-documents, GET /api/Sites/{siteId}/adjudication-documents/{documentId}, POST /api/Sites/{siteId}/pec/{pec}/assignable, PUT /api/Sites/{siteId}/pec, GET /api/Sites/{siteId}/business-licences/{businessLicenceId}/docu"
+      },
+      {
+        "step": 33,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/Controllers/SubmissionsController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"SubmissionsController\", \"methodName\": \"Submit\", \"httpMethod\": \"POST\", \"path\": "
+        },
+        "result_head": "Recorded 15 new: POST /api/Submissions/{enrolleeId}, POST /api/Submissions/{enrolleeId}/approve, POST /api/Submissions/{enrolleeId}/accept-toa, POST /api/Submissions/{enrolleeId}/decline-toa, POST /api/Submissions/{enrolleeId}/enable-editing, POST /api/Submissions/{enrolleeId}/cancel-toa-assignment, POST /api/Submissions/{enrolleeId}/lock-profile, POST /api/Submissions/{enrolleeId}/decline-profile, POST /api/Submissions/{enrolleeId}/rerun-rules, POST /api/Submissions/{enrolleeId}/unlock-profile, POST /api/Submissions/rerun-automatic-adjudication-rules, POST /api/Submissions/{enrolleeId}/assign-toa-agreement-type, POST /api/Submissions/{enrolleeId}/set-manual-flag, POST /api/Submissions/{enrolleeId}/remove-manual-flag, POST /api/Submissions/{enrolleeId}/confirm-latest-submission\nTotal: 1 services, 232 endpoints in 27 files."
+      },
+      {
+        "step": 34,
+        "tool": "read_file",
+        "args": {
+          "path": "/Controllers/SubmissionsController.cs",
+          "start": "1"
+        },
+        "result_head": "1: using System;\n2: using System.Threading.Tasks;\n3: using Microsoft.AspNetCore.Authorization;\n4: using Microsoft.AspNetCore.Http;\n5: using Microsoft.AspNetCore.Mvc;\n6: \n7: using Prime.Configuration.Auth;\n8: using Prime.Models;\n9: using Prime.Services;\n10: using Prime.Models.Api;\n11: using Prime.ViewModels;\n12: \n13: namespace Prime.Controllers\n14: {\n15:     [Produces(\"application/json\")]\n16:     [Route(\"api/enrollees\")]\n17:     [ApiController]\n18:     public class SubmissionsController : PrimeControllerBase\n19:     {\n20:         private readonly ISubmissionService _submissionService;\n21:         private readonly IEnrolleeService _enrolleeService;\n22:         private readonly IBusinessEventService _businessEventService;\n23: \n24:         public SubmissionsController(\n25:             ISubmissionService submissionService,\n26:             IEnrolleeService enrolleeService,\n27:             IBusinessEventService businessEventService)\n28:         {\n29:             _submissionService = submissio"
+      },
+      {
+        "step": 35,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/SubmissionsController.cs",
+          "pattern": "Http(Get|Post|Put|Delete|Patch)"
+        },
+        "result_head": "/Controllers/SubmissionsController.cs:38: [HttpPost(\"{enrolleeId}/submissions\", Name = nameof(Submit))]\n/Controllers/SubmissionsController.cs:90: [HttpPost(\"{enrolleeId}/status-actions/approve\", Name = nameof(ApproveSubmission))]\n/Controllers/SubmissionsController.cs:109: [HttpPost(\"{enrolleeId}/status-actions/accept-toa\", Name = nameof(AcceptToa))]\n/Controllers/SubmissionsController.cs:126: [HttpPost(\"{enrolleeId}/status-actions/decline-toa\", Name = nameof(DeclineToa))]\n/Controllers/SubmissionsController.cs:143: [HttpPost(\"{enrolleeId}/status-actions/enable-editing\", Name = nameof(EnableEditing))]\n/Controllers/SubmissionsController.cs:160: [HttpPost(\"{enrolleeId}/status-actions/cancel-toa\", Name = nameof(CancelToaAssignment))]\n/Controllers/SubmissionsController.cs:177: [HttpPost(\"{enrolleeId}/status-actions/lock-profile\", Name = nameof(LockProfile))]\n/Controllers/SubmissionsController.cs:194: [HttpPost(\"{enrolleeId}/status-actions/decline-profile\", Name = nameof(DeclineProfile))]\n/Con"
+      },
+      {
+        "step": 36,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/Controllers/SubmissionsController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"SubmissionsController\", \"methodName\": \"Submit\", \"httpMethod\": \"POST\", \"path\": "
+        },
+        "result_head": "Recorded 15 new: POST /api/enrollees/{enrolleeId}/submissions, POST /api/enrollees/{enrolleeId}/status-actions/approve, POST /api/enrollees/{enrolleeId}/status-actions/accept-toa, POST /api/enrollees/{enrolleeId}/status-actions/decline-toa, POST /api/enrollees/{enrolleeId}/status-actions/enable-editing, POST /api/enrollees/{enrolleeId}/status-actions/cancel-toa, POST /api/enrollees/{enrolleeId}/status-actions/lock-profile, POST /api/enrollees/{enrolleeId}/status-actions/decline-profile, POST /api/enrollees/{enrolleeId}/status-actions/rerun-rules, POST /api/enrollees/{enrolleeId}/status-actions/unlock-profile, POST /api/enrollees/rerun-rules, PUT /api/enrollees/{enrolleeId}/submissions/latest/type, PUT /api/enrollees/{enrolleeId}/always-manual, DELETE /api/enrollees/{enrolleeId}/always-manual, PUT /api/enrollees/{enrolleeId}/submissions/latest/confirm\nTotal: 1 services, 247 endpoints in 27 files."
+      },
+      {
+        "step": 37,
+        "tool": "grep",
+        "args": {
+          "path": "/Controllers/WebhooksController.cs",
+          "pattern": "Route\\(|Http(Get|Post|Put|Delete|Patch)|class \\w+"
+        },
+        "result_head": "/Controllers/WebhooksController.cs:10: [Route(\"api/[controller]\")]\n/Controllers/WebhooksController.cs:12: public class WebhooksController : PrimeControllerBase\n/Controllers/WebhooksController.cs:29: [HttpPost(\"{apiKey}/topic/{topic}\", Name = nameof(Webhook))]"
+      },
+      {
+        "step": 38,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/Controllers/WebhooksController.cs\", \"service\": \"moh-prime-webapi\", \"endpoints\": [\n{\"className\": \"WebhooksController\", \"methodName\": \"Webhook\", \"httpMethod\": \"POST\", \"path\": \"/api"
+        },
+        "result_head": "Recorded 1 new: POST /api/Webhooks/{apiKey}/topic/{topic}\nTotal: 1 services, 248 endpoints in 28 files."
+      },
+      {
+        "step": 39,
+        "tool": "find",
+        "args": {
+          "pattern": "Controllers/*.cs"
+        },
+        "result_head": "/Controllers/AddressAutocompleteController.cs\n/Controllers/AdminsController.cs\n/Controllers/AgreementsController.cs\n/Controllers/AuthorizedUsersController.cs\n/Controllers/BannersController.cs\n/Controllers/ClientLogsController.cs\n/Controllers/DiagnosticsController.cs\n/Controllers/DocumentAccessController.cs\n/Controllers/DocumentManagerController.cs\n/Controllers/EmailsController.cs\n/Controllers/EnrolleeAgreementsController.cs\n/Controllers/EnrolleePaperSubmissionsController.cs\n/Controllers/EnrolleesController.cs\n/Controllers/EnrolleesExtendedController.cs\n/Controllers/GisController.cs\n/Controllers/HealthAuthoritiesController.cs\n/Controllers/HealthAuthoritySitesController.cs\n/Controllers/HealthcheckController.cs\n/Controllers/LookupsController.cs\n/Controllers/OrganizationsController.cs\n/Controllers/PhsaController.cs\n/Controllers/PrimeControllerBase.cs\n/Controllers/ProvisionerAccessController.cs\n/Controllers/SatEnrolmentController.cs\n/Controllers/SigningAuthoritiesController.cs\n/Controllers/"
+      },
+      {
+        "step": 40,
+        "tool": "submit",
+        "args": {},
+        "result_head": "[ACCEPTED] 1 services, 248 endpoints."
+      }
+    ]
+  }
+}

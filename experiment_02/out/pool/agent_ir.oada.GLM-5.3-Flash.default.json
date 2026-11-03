@@ -1,0 +1,953 @@
+{
+  "system": "oada",
+  "services": [
+    {
+      "name": "http-handler",
+      "dirs": [
+        "/http-handler"
+      ]
+    },
+    {
+      "name": "auth",
+      "dirs": [
+        "/auth"
+      ]
+    },
+    {
+      "name": "permissions-handler",
+      "dirs": [
+        "/permissions-handler"
+      ]
+    },
+    {
+      "name": "well-known",
+      "dirs": [
+        "/well-known"
+      ]
+    },
+    {
+      "name": "shares",
+      "dirs": [
+        "/shares"
+      ]
+    },
+    {
+      "name": "users",
+      "dirs": [
+        "/users"
+      ]
+    },
+    {
+      "name": "sync-handler",
+      "dirs": [
+        "/sync-handler"
+      ]
+    },
+    {
+      "name": "webhooks",
+      "dirs": [
+        "/webhooks"
+      ]
+    },
+    {
+      "name": "write-handler",
+      "dirs": [
+        "/write-handler"
+      ]
+    },
+    {
+      "name": "rev-graph-update",
+      "dirs": [
+        "/rev-graph-update"
+      ]
+    },
+    {
+      "name": "startup",
+      "dirs": [
+        "/startup"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/http-handler/src/server.ts",
+      "service": "http-handler",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "healthcheck",
+          "httpMethod": "GET",
+          "path": "/healthcheck",
+          "line": 228,
+          "evidence": "await fastify.register(fastifyHealthcheck, {",
+          "framework": "Fastify (fastify-healthcheck)",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/http-handler/src/resources.ts",
+      "service": "http-handler",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/resources/*",
+          "line": 267,
+          "evidence": "fastify.route({ url: '*', method: ['HEAD', 'GET'], ...",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "PUT",
+          "path": "/resources/*",
+          "line": 517,
+          "evidence": "fastify.route({ url: '*', method: ['PUT', 'POST'], ...",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "DELETE",
+          "path": "/resources/*",
+          "line": 638,
+          "evidence": "fastify.delete('*', async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/http-handler/src/users.ts",
+      "service": "http-handler",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/users",
+          "line": 89,
+          "evidence": "fastify.post('/', async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "PUT",
+          "path": "/users/:id",
+          "line": 110,
+          "evidence": "fastify.put('/:id', async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/users/username-index/:uname",
+          "line": 129,
+          "evidence": "fastify.get('/username-index/:uname', async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/users/me",
+          "line": 185,
+          "evidence": "fastify.get('/me', async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/users/:id",
+          "line": 190,
+          "evidence": "fastify.get('/:id', async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/http-handler/src/authorizations.ts",
+      "service": "http-handler",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/authorizations",
+          "line": 59,
+          "evidence": "fastify.get('/', async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/authorizations/:authId",
+          "line": 72,
+          "evidence": "fastify.get('/:authId', async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/authorizations",
+          "line": 107,
+          "evidence": "fastify.post('/', async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "DELETE",
+          "path": "/authorizations/:authId",
+          "line": 155,
+          "evidence": "fastify.delete('/:authId', async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/http-handler/src/websockets.ts",
+      "service": "http-handler",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/*",
+          "line": 129,
+          "evidence": "fastify.get('/*', { websocket: true }, ({ socket }) => {",
+          "framework": "Fastify (websocket)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/auth/src/index.ts",
+      "service": "auth",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "healthcheck",
+          "httpMethod": "GET",
+          "path": "/healthcheck",
+          "line": 173,
+          "evidence": "await fastify.register(fastifyHealthcheck, {",
+          "framework": "Fastify (fastify-healthcheck)",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/auth/src/login.ts",
+      "service": "auth",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/login",
+          "line": 53,
+          "evidence": "fastify.get(login, (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/login",
+          "line": 95,
+          "evidence": "fastify.post(\n    login,",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/logout",
+          "line": 107,
+          "evidence": "fastify.get(logout, async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/auth/src/dynReg.ts",
+      "service": "auth",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/register",
+          "line": 110,
+          "evidence": "fastify.post(\n    register,",
+          "framework": "Fastify",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/auth/src/oauth2.ts",
+      "service": "auth",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/auth",
+          "line": 292,
+          "evidence": "fastify.get(authorize, async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/decision",
+          "line": 374,
+          "evidence": "fastify.post(decision, async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/token",
+          "line": 394,
+          "evidence": "fastify.post(\n    token,",
+          "framework": "Fastify",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/auth/src/oidc.ts",
+      "service": "auth",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/oidc-login",
+          "line": 160,
+          "evidence": "fastify.post(oidcLogin, async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/oidc-redirect",
+          "line": 201,
+          "evidence": "fastify.all(oidcRedirect, async (request, reply) => {",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/certs",
+          "line": 276,
+          "evidence": "fastify.get(config.get('auth.endpoints.certs'), async () => jwks);",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/userinfo",
+          "line": 278,
+          "evidence": "fastify.get(\n    config.get('auth.endpoints.userinfo'),",
+          "framework": "Fastify",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/.well-known/openid-configuration",
+          "line": 297,
+          "evidence": "await fastify.register(wkj, { resources: { 'openid-configuration': ...",
+          "framework": "Fastify (well-known plugin)",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/well-known/src/index.ts",
+      "service": "well-known",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/.well-known/oada-configuration",
+          "line": 81,
+          "evidence": "'oada-configuration': config.get('wellKnown.oada-configuration'),",
+          "framework": "Fastify (@oada/well-known-json)",
+          "confidence": "medium"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/.well-known/openid-configuration",
+          "line": 82,
+          "evidence": "'openid-configuration': config.get('wellKnown.openid-configuration'),",
+          "framework": "Fastify (@oada/well-known-json)",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/startup/src/index.ts",
+      "service": "startup",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "ANY",
+          "path": "/",
+          "line": 42,
+          "evidence": "const server = http.createServer((request, response) => {",
+          "framework": "node:http",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "GLM-5.3-Flash",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "default",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "services",
+    "commit": "4d37e981a2624b2924fea6c071b5f79b032b38b7",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 41,
+    "tool_calls": 56,
+    "rejected_entries": 1,
+    "no_call_replies": 0,
+    "input_tokens": 780802,
+    "cached_input_tokens": 688832,
+    "output_tokens": 6292,
+    "list_price_usd": 0.0376,
+    "wall_seconds": 157.1,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": "auth/\nhttp-handler/\npermissions-handler/\nrev-graph-update/\nshares/\nstartup/\nsync-handler/\nusers/\nwebhooks/\nwell-known/\nwrite-handler/"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/startup"
+        },
+        "result_head": ".vim/\nLICENSE\npackage.json\nsrc/\ntsconfig.json"
+      },
+      {
+        "step": 2,
+        "tool": "find",
+        "args": {
+          "pattern": "Dockerfile"
+        },
+        "result_head": "(no files)"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/startup/src"
+        },
+        "result_head": "index.ts"
+      },
+      {
+        "step": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "/package.json"
+        },
+        "result_head": "[ERROR] not a readable text file: /package.json"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/startup/package.json"
+        },
+        "result_head": "1: {\n2:   \"name\": \"@oada/startup\",\n3:   \"version\": \"3.9.1\",\n4:   \"type\": \"module\",\n5:   \"description\": \"Handles startup of services for docker in OADA docker implementation.\",\n6:   \"main\": \"dist/index.js\",\n7:   \"engines\": {\n8:     \"node\": \">=16.0.0\"\n9:   },\n10:   \"files\": [\n11:     \"src/**/*\",\n12:     \"dist/**/*\"\n13:   ],\n14:   \"scripts\": {\n15:     \"build\": \"yarn g:tsc\",\n16:     \"clean\": \"yarn run build --clean\",\n17:     \"start\": \"node ${INSPECT} --enable-source-maps --unhandled-rejections=strict dist/index.js\",\n18:     \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n19:   },\n20:   \"repository\": {\n21:     \"type\": \"git\",\n22:     \"url\": \"git+https://github.com/oada/oada-srvc-startup.git\"\n23:   },\n24:   \"keywords\": [\n25:     \"oada\",\n26:     \"startup\",\n27:     \"docker\"\n28:   ],\n29:   \"author\": \"Aaron Ault\",\n30:   \"license\": \"Apache-2.0\",\n31:   \"bugs\": {\n32:     \"url\": \"https://github.com/oada/oada-srvc-startup/issues\"\n33:   },\n34:   \"homepage\": \"https://github.com/oada/oada-srvc-star"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/startup/src/index.ts"
+        },
+        "result_head": "1: /**\n2:  * @license\n3:  * Copyright 2017-2021 Open Ag Data Alliance\n4:  *\n5:  * Licensed under the Apache License, Version 2.0 (the \"License\");\n6:  * you may not use this file except in compliance with the License.\n7:  * You may obtain a copy of the License at\n8:  *\n9:  *     http://www.apache.org/licenses/LICENSE-2.0\n10:  *\n11:  * Unless required by applicable law or agreed to in writing, software\n12:  * distributed under the License is distributed on an \"AS IS\" BASIS,\n13:  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n14:  * See the License for the specific language governing permissions and\n15:  * limitations under the License.\n16:  */\n17: \n18: import '@oada/pino-debug';\n19: \n20: import http from 'node:http';\n21: \n22: import { init as initArangoDB } from '@oada/lib-arangodb';\n23: import { init as initKafka } from '@oada/lib-kafka';\n24: \n25: import debug from 'debug';\n26: \n27: const trace = debug('startup:trace');\n28: const info = debug('startup:info');"
+      },
+      {
+        "step": 5,
+        "tool": "list_dir",
+        "args": {
+          "path": "/http-handler"
+        },
+        "result_head": ".gitignore\n.vim/\nLICENSE\npackage.json\nsrc/\ntsconfig.json"
+      },
+      {
+        "step": 5,
+        "tool": "list_dir",
+        "args": {
+          "path": "/auth"
+        },
+        "result_head": ".vim/\nLICENSE\nREADME.md\ndomains/\npackage.json\npublic/\nsign/\nsrc/\ntest/\ntsconfig.json\nviews/"
+      },
+      {
+        "step": 6,
+        "tool": "list_dir",
+        "args": {
+          "path": "/http-handler/src"
+        },
+        "result_head": "authorizations.ts\nconfig.ts\nhealthcheck.ts\nrequester.ts\nresources.ts\nserver.ts\ntokenLookup.ts\ntypes.d.ts\nusers.ts\nwebsockets.ts"
+      },
+      {
+        "step": 6,
+        "tool": "list_dir",
+        "args": {
+          "path": "/auth/src"
+        },
+        "result_head": "auth.ts\nconfig.ts\ndb/\ndynReg.ts\nindex.ts\ninit.ts\nlogin.ts\noauth2.ts\noidc.ts\ntoken.ts\ntypes.d.ts\nutils.ts"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/http-handler/src/server.ts"
+        },
+        "result_head": "1: /**\n2:  * @license\n3:  * Copyright 2017-2021 Open Ag Data Alliance\n4:  *\n5:  * Licensed under the Apache License, Version 2.0 (the \"License\");\n6:  * you may not use this file except in compliance with the License.\n7:  * You may obtain a copy of the License at\n8:  *\n9:  *     http://www.apache.org/licenses/LICENSE-2.0\n10:  *\n11:  * Unless required by applicable law or agreed to in writing, software\n12:  * distributed under the License is distributed on an \"AS IS\" BASIS,\n13:  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n14:  * See the License for the specific language governing permissions and\n15:  * limitations under the License.\n16:  */\n17: \n18: import { mixins, pino } from '@oada/pino-debug';\n19: \n20: import { config } from './config.js';\n21: \n22: import { KafkaError } from '@oada/lib-kafka';\n23: import { nstats } from '@oada/lib-prom';\n24: \n25: import { plugin as formats } from '@oada/formats-server';\n26: \n27: import tokenLookup, { type TokenResponse "
+      },
+      {
+        "step": 8,
+        "tool": "read_file",
+        "args": {
+          "path": "/http-handler/src/server.ts",
+          "start": "183"
+        },
+        "result_head": "183:       const mode = ['PUT', 'POST', 'DELETE'].includes(request.method)\n184:         ? 'write'\n185:         : 'read';\n186:       return `${request.ip}-${mode}`;\n187:     },\n188:     async max(request) {\n189:       return ['PUT', 'POST', 'DELETE'].includes(request.method)\n190:         ? maxRequests.write\n191:         : maxRequests.read;\n192:     },\n193:     timeWindow,\n194:     redis: redis ? await makeRedis(redis) : null,\n195:     enableDraftSpec: useDraftSpec,\n196:     addHeaders: {\n197:       // Disable bugged retry-after header until it is fixed\n198:       'retry-after': false,\n199:     },\n200:   };\n201:   const { default: plugin } = await import('@fastify/rate-limit');\n202:   await fastify.register<RateLimitPluginOptions>(\n203:     // @ts-expect-error broken types\n204:     plugin,\n205:     options\n206:   );\n207: }\n208: \n209: await fastify.register(fastifyRequestContext, {\n210:   hook: 'onRequest',\n211: });\n212: \n213: // Add id to request context\n214: fastify.addHook('onRequest',"
+      },
+      {
+        "step": 9,
+        "tool": "read_file",
+        "args": {
+          "path": "/http-handler/src/resources.ts"
+        },
+        "result_head": "1: /**\n2:  * @license\n3:  * Copyright 2017-2021 Open Ag Data Alliance\n4:  *\n5:  * Licensed under the Apache License, Version 2.0 (the \"License\");\n6:  * you may not use this file except in compliance with the License.\n7:  * You may obtain a copy of the License at\n8:  *\n9:  *     http://www.apache.org/licenses/LICENSE-2.0\n10:  *\n11:  * Unless required by applicable law or agreed to in writing, software\n12:  * distributed under the License is distributed on an \"AS IS\" BASIS,\n13:  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n14:  * See the License for the specific language governing permissions and\n15:  * limitations under the License.\n16:  */\n17: \n18: import { join } from 'node:path';\n19: import { pipeline } from 'node:stream/promises';\n20: \n21: import { changes, putBodies, resources } from '@oada/lib-arangodb';\n22: \n23: import type { WriteRequest, WriteResponse } from '@oada/write-handler';\n24: import type { Scope } from '@oada/permissions-handler';\n25: impo"
+      },
+      {
+        "step": 10,
+        "tool": "grep",
+        "args": {
+          "path": "/http-handler/src",
+          "pattern": "\\.(get|post|put|delete|head|patch|all)\\("
+        },
+        "result_head": "/http-handler/src/authorizations.ts:59: fastify.get('/', async (request, reply) => {\n/http-handler/src/authorizations.ts:72: fastify.get('/:authId', async (request, reply) => {\n/http-handler/src/authorizations.ts:107: fastify.post('/', async (request, reply) => {\n/http-handler/src/authorizations.ts:155: fastify.delete('/:authId', async (request, reply) => {\n/http-handler/src/requester.ts:24: consumeTopic: config.get('kafka.topics.httpResponse'),\n/http-handler/src/resources.ts:40: const CACHE_PATH = config.get('storage.binary.cacache');\n/http-handler/src/resources.ts:581: config.get('kafka.topics.writeRequest')\n/http-handler/src/resources.ts:638: fastify.delete('*', async (request, reply) => {\n/http-handler/src/resources.ts:693: config.get('kafka.topics.writeRequest')\n/http-handler/src/server.ts:94: reqId: requestContext.get('id'),\n/http-handler/src/server.ts:97: const trustProxy = config.get('trustProxy');\n/http-handler/src/server.ts:110: return handlers.get(key) ?? handlers.get(true) "
+      },
+      {
+        "step": 11,
+        "tool": "grep",
+        "args": {
+          "path": "/http-handler/src/resources.ts",
+          "pattern": "fastify\\.(get|post|put|head|route)|method:"
+        },
+        "result_head": "/http-handler/src/resources.ts:267: fastify.route({\n/http-handler/src/resources.ts:269: method: ['HEAD', 'GET'],\n/http-handler/src/resources.ts:450: method: 'post',\n/http-handler/src/resources.ts:460: method: 'put',\n/http-handler/src/resources.ts:472: fastify.route({\n/http-handler/src/resources.ts:477: method: ['HEAD', 'GET', 'DELETE'],\n/http-handler/src/resources.ts:483: fastify.route({\n/http-handler/src/resources.ts:488: method: ['PUT', 'POST'],\n/http-handler/src/resources.ts:493: fastify.route({\n/http-handler/src/resources.ts:498: method: ['PUT', 'POST'],\n/http-handler/src/resources.ts:503: fastify.route({\n/http-handler/src/resources.ts:508: method: ['PUT', 'POST'],\n/http-handler/src/resources.ts:517: fastify.route({\n/http-handler/src/resources.ts:519: method: ['PUT', 'POST'],"
+      },
+      {
+        "step": 12,
+        "tool": "read_file",
+        "args": {
+          "path": "/http-handler/src/resources.ts",
+          "start": "260"
+        },
+        "result_head": "260:    */\n261:   fastify.addHook('preHandler', async ({ oadaGraph, oadaPath }, reply) => {\n262:     // ? Better header name?\n263:     void reply.header('X-OADA-Path-Leftover', oadaGraph.path_leftover);\n264:     void reply.header('Content-Location', `/${oadaPath}`);\n265:   });\n266: \n267:   fastify.route({\n268:     url: '*',\n269:     method: ['HEAD', 'GET'],\n270:     async handler(request, reply) {\n271:       const isMeta = request.oadaGraph.path_leftover.startsWith('/_meta');\n272:       // ???: Should _meta have parent's type as a media type parameter?\n273:       const type = isMeta\n274:         ? 'application/vnd.oada.meta+json'\n275:         : request.oadaGraph.type ?? 'application/json';\n276:       void reply.type(type);\n277:       // TODO: Why does this not work as a fastify plugin??\n278:       const headers = handleResponse(type);\n279:       // TODO: Why does fastify strip content-type params??\n280:       void reply.headers(headers);\n281: \n282:       const key = request.oadaGraph.r"
+      },
+      {
+        "step": 13,
+        "tool": "read_file",
+        "args": {
+          "path": "/http-handler/src/resources.ts",
+          "start": "428"
+        },
+        "result_head": "428:     done(null);\n429:   });\n430: \n431:   /**\n432:    * @todo Fix for PUT (POST works fine)\n433:    */\n434:   async function ensureLink(\n435:     {\n436:       headers: { 'x-oada-ensure-link': _, 'content-length': _cl, ...headers },\n437:       body,\n438:       raw,\n439:       log,\n440:       oadaPath: path,\n441:     }: FastifyRequest,\n442:     reply: FastifyReply,\n443:     versioned = true\n444:   ) {\n445:     // Create a new resource?\n446:     log.trace('EnsureLink: creating new resource');\n447:     const {\n448:       headers: { 'content-location': location },\n449:     } = await fastify.inject({\n450:       method: 'post',\n451:       path: '/resources',\n452:       headers,\n453:       // FIXME: Better way to pick between body or raw?\n454:       payload: typeof body === 'string' ? body : raw,\n455:     });\n456: \n457:     // Link resource at original path\n458:     log.trace('EnsureLink: linking %s at %s', location, path);\n459:     const response = await fastify.inject({\n460:       method:"
+      },
+      {
+        "step": 14,
+        "tool": "grep",
+        "args": {
+          "path": "/http-handler/src",
+          "pattern": "fastifyHealthcheck|/healthcheck|url:"
+        },
+        "result_head": "/http-handler/src/healthcheck.ts:24: import 'fastify-healthcheck/src/healthcheck';\n/http-handler/src/resources.ts:268: url: '*',\n/http-handler/src/resources.ts:476: url: '*',\n/http-handler/src/resources.ts:487: url: '*',\n/http-handler/src/resources.ts:497: url: '*',\n/http-handler/src/resources.ts:507: url: '*',\n/http-handler/src/resources.ts:518: url: '*',\n/http-handler/src/server.ts:47: import fastifyHealthcheck from 'fastify-healthcheck';\n/http-handler/src/server.ts:71: url: request.url,\n/http-handler/src/server.ts:228: await fastify.register(fastifyHealthcheck, {\n/http-handler/src/websockets.ts:220: url: message.path,"
+      },
+      {
+        "step": 14,
+        "tool": "read_file",
+        "args": {
+          "path": "/http-handler/src/users.ts",
+          "start": "80"
+        },
+        "result_head": "80:       try {\n81:         const json: unknown = JSON.parse(body as string);\n82:         done(null, json);\n83:       } catch (error: unknown) {\n84:         done(error as Error);\n85:       }\n86:     }\n87:   );\n88: \n89:   fastify.post('/', async (request, reply) => {\n90:     request.log.trace({ body: request.body }, 'Users POST');\n91:     // Note: if the username already exists, the ksuid() below will end up\n92:     // silently discarded and replaced in the response with the real one.\n93:     const { string: newID } = await ksuid.random(); // Generate a random string for ID\n94:     // generate an ID for this particular request\n95:     if (!request.id) {\n96:       const { string: rid } = await ksuid.random();\n97:       request.id = rid;\n98:     }\n99: \n100:     const resp = await requestUserWrite(request, newID);\n101:     // TODO: Better status code choices?\n102:     // if db didn't send back a user, it was an update so use id from URL\n103:     const id = resp?.user?._id?.replace(/^users\\"
+      },
+      {
+        "step": 15,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"http-handler\", \"dirs\": [\"/http-handler\"]}], \"files\": [\n{\"path\": \"/http-handler/src/server.ts\", \"service\": \"http-handler\", \"endpoints\": [\n{\"className\": \"\", \"methodName\": \"health"
+        },
+        "result_head": "Recorded 14 new: service http-handler, GET /healthcheck, GET /resources/*, PUT /resources/*, DELETE /resources/*, POST /users, PUT /users/:id, GET /users/username-index/:uname, GET /users/me, GET /users/:id, GET /authorizations, GET /authorizations/:authId, POST /authorizations, DELETE /authorizations/:authId\nTotal: 1 services, 13 endpoints in 4 files.\n[REJECTED 1] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[4].endpoints[0] GET /* (websocket upgrade) (.(inline)): path /* (websocket upgrade) does not end with the route in the evidence (/*); join the prefixes with it"
+      },
+      {
+        "step": 16,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/http-handler/src/websockets.ts\", \"service\": \"http-handler\", \"endpoints\": [{\"className\": \"\", \"methodName\": \"(inline)\", \"httpMethod\": \"GET\", \"path\": \"/*\", \"line\": 129, \"evidence\": "
+        },
+        "result_head": "Recorded 1 new: GET /*\nTotal: 1 services, 14 endpoints in 5 files."
+      },
+      {
+        "step": 17,
+        "tool": "read_file",
+        "args": {
+          "path": "/auth/src/index.ts"
+        },
+        "result_head": "1: /**\n2:  * @license\n3:  * Copyright 2017-2023 Open Ag Data Alliance\n4:  *\n5:  * Licensed under the Apache License, Version 2.0 (the \"License\");\n6:  * you may not use this file except in compliance with the License.\n7:  * You may obtain a copy of the License at\n8:  *\n9:  *     http://www.apache.org/licenses/LICENSE-2.0\n10:  *\n11:  * Unless required by applicable law or agreed to in writing, software\n12:  * distributed under the License is distributed on an \"AS IS\" BASIS,\n13:  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n14:  * See the License for the specific language governing permissions and\n15:  * limitations under the License.\n16:  */\n17: \n18: import { mixins, pino } from '@oada/pino-debug';\n19: \n20: import { config, domainConfigs } from './config.js';\n21: \n22: import '@oada/lib-prom';\n23: \n24: import path from 'node:path';\n25: import { randomBytes } from 'node:crypto';\n26: import url from 'node:url';\n27: \n28: import {\n29:   fastify as Fastify,\n30:   "
+      },
+      {
+        "step": 17,
+        "tool": "grep",
+        "args": {
+          "path": "/auth/src",
+          "pattern": "router\\.(get|post|use|all)|app\\.(get|post|use)|\\.get\\(['\"]|\\.post\\(['\"]"
+        },
+        "result_head": "/auth/src/config.ts:348: if (config.get('auth.server.port') === null) {\n/auth/src/config.ts:349: switch (config.get('auth.server.mode')) {\n/auth/src/config.ts:361: throw new TypeError(`Unknown mode: ${config.get('auth.server.mode')}`);\n/auth/src/config.ts:368: const domainsDirectory = config.get('domainsDir');\n/auth/src/config.ts:409: const publicUri = config.get('auth.server.publicUri')\n/auth/src/config.ts:411: new URI(config.get('auth.server.publicUri')).normalize().toString()\n/auth/src/config.ts:414: .hostname(config.get('auth.server.domain'))\n/auth/src/config.ts:415: .port(`${config.get('auth.server.port')}`)\n/auth/src/config.ts:416: .protocol(config.get('auth.server.mode'))\n/auth/src/db/arango/init.ts:31: config.get('bcrypt.saltRounds') || config.get('bcrypt.salt');\n/auth/src/db/arango/init.ts:35: const systemDatabase = new Database(config.get('arangodb.connectionString'));\n/auth/src/db/arango/init.ts:36: const databaseName = config.get('arangodb.database');\n/auth/src/db/arango/in"
+      },
+      {
+        "step": 18,
+        "tool": "read_file",
+        "args": {
+          "path": "/auth/src/index.ts",
+          "start": "191"
+        },
+        "result_head": "191:   await fastify.register(cors, {\n192:     strictPreflight: false,\n193:     exposedHeaders: ['location', 'content-location'],\n194:   });\n195: \n196:   await fastify.register(fastifyView, {\n197:     engine: { ejs },\n198:     root: views.basedir,\n199:   });\n200: \n201:   if (process.env.NODE_ENV !== 'production') {\n202:     // Add request id header for debugging purposes\n203:     fastify.addHook('onSend', async (request, reply, payload) => {\n204:       void reply.header('X-Request-Id', request.id);\n205:       return payload;\n206:     });\n207:   }\n208: \n209:   await fastify.register(fastifyStatic, {\n210:     root: path.join(\n211:       path.dirname(url.fileURLToPath(import.meta.url)),\n212:       '..',\n213:       'public'\n214:     ),\n215:   });\n216:   // Statically serve all the domains-enabled/*/auth-www folders:\n217:   for await (const domain of domainConfigs.keys()) {\n218:     const onDisk = `${config.get('domainsDir')}/${domain}/auth-www`;\n219:     const webpath = `domains/${domain}`"
+      },
+      {
+        "step": 19,
+        "tool": "grep",
+        "args": {
+          "path": "/auth/src",
+          "pattern": "fastify\\.(get|post|put|delete|route)|endpoints\\."
+        },
+        "result_head": "/auth/src/dynReg.ts:110: fastify.post(\n/auth/src/index.ts:246: return reply.redirect(endpoints.login);\n/auth/src/login.ts:53: fastify.get(login, (request, reply) => {\n/auth/src/login.ts:95: fastify.post(\n/auth/src/login.ts:107: fastify.get(logout, async (request, reply) => {\n/auth/src/oauth2.ts:292: fastify.get(authorize, async (request, reply) => {\n/auth/src/oauth2.ts:323: logout: config.get('auth.endpoints.logout'),\n/auth/src/oauth2.ts:374: fastify.post(decision, async (request, reply) => {\n/auth/src/oauth2.ts:394: fastify.post(\n/auth/src/oauth2.ts:408: 'auth.endpoints.token'\n/auth/src/oidc.ts:160: fastify.post(oidcLogin, async (request, reply) => {\n/auth/src/oidc.ts:276: fastify.get(config.get('auth.endpoints.certs'), async () => jwks);\n/auth/src/oidc.ts:278: fastify.get(\n/auth/src/oidc.ts:279: config.get('auth.endpoints.userinfo'),\n/auth/src/oidc.ts:301: registration_endpoint: `./${config.get('auth.endpoints.register')}`,\n/auth/src/oidc.ts:302: authorization_endpoint: `./${config.g"
+      },
+      {
+        "step": 20,
+        "tool": "grep",
+        "args": {
+          "path": "/auth/src/config.ts",
+          "pattern": "endpoints"
+        },
+        "result_head": "/auth/src/config.ts:153: endpointsPrefix: {\n/auth/src/config.ts:158: endpoints: {"
+      },
+      {
+        "step": 21,
+        "tool": "read_file",
+        "args": {
+          "path": "/auth/src/config.ts",
+          "start": "140"
+        },
+        "result_head": "140:       'publicUri': {\n141:         format: 'url',\n142:         default: null as null | string,\n143:       },\n144:       'proxy': {\n145:         description: 'Whether to trust reverse-proxy headers',\n146:         formats: Boolean,\n147:         default: false,\n148:       },\n149:     },\n150:     wkj: {\n151:       default: null,\n152:     },\n153:     endpointsPrefix: {\n154:       doc: 'So you can place this under a sub-path in your domain',\n155:       format: String,\n156:       default: '',\n157:     },\n158:     endpoints: {\n159:       register: {\n160:         format: String,\n161:         default: 'register',\n162:       },\n163:       authorize: {\n164:         format: String,\n165:         default: 'auth',\n166:       },\n167:       token: {\n168:         format: String,\n169:         default: 'token',\n170:       },\n171:       decision: {\n172:         format: String,\n173:         default: 'decision',\n174:       },\n175:       login: {\n176:         format: String,\n177:         default: 'login',\n"
+      },
+      {
+        "step": 22,
+        "tool": "read_file",
+        "args": {
+          "path": "/auth/src/login.ts",
+          "start": "40"
+        },
+        "result_head": "40:     endpoints: {\n41:       login = 'login',\n42:       oidcLogin = 'oidc-login',\n43:       logout = 'logout',\n44:     } = {},\n45:     views: { loginPage = 'login' } = {},\n46:   }\n47: ) => {\n48:   // --------------------------------------------------------------------------\n49:   // Login page: someone has navigated or been redirected to the login page.\n50:   // Populate based on the domain.\n51:   // If session already has a userid, then just use that.\n52:   // Deepcode ignore NoRateLimitingForExpensiveWebOperation: This runs behind a reverse-proxy\n53:   fastify.get(login, (request, reply) => {\n54:     request.log.trace(\n55:       `GET ${login}: setting X-Frame-Options=SAMEORIGIN before rendering login`\n56:     );\n57:     request.log.trace(request.session, 'login endpoint');\n58:     void reply.header('X-Frame-Options', 'SAMEORIGIN');\n59:     // @ts-expect-error TODO: make types for auth bodies/queries\n60:     const isError = Boolean(request.query.error ?? request.session.errormsg);\n6"
+      },
+      {
+        "step": 22,
+        "tool": "read_file",
+        "args": {
+          "path": "/auth/src/dynReg.ts",
+          "start": "100"
+        },
+        "result_head": "100: }\n101: \n102: /**\n103:  * Plugin for handling dynamic client registration\n104:  * @see {@link https://datatracker.ietf.org/doc/html/rfc7591}\n105:  */\n106: const plugin: FastifyPluginAsync<Options> = async (\n107:   fastify,\n108:   { endpoints: { register = 'register' } = {} }\n109: ) => {\n110:   fastify.post(\n111:     register,\n112:     { schema: { body: schema } },\n113:     async (request, reply) => {\n114:       try {\n115:         // TODO: Make fastify type provider work\n116:         const metadata = request.body as Metadata;\n117: \n118:         const softwareStatement = await getSoftwareStatement(metadata);\n119: \n120:         if (requireSS && !softwareStatement) {\n121:           request.log.error(\n122:             metadata,\n123:             'Request body does not have software_statement key. Did you remember content-type=application/json?'\n124:           );\n125:           throw new RegistrationError(\n126:             // FIXME: What is the correct code here??\n127:             Registr"
+      },
+      {
+        "step": 23,
+        "tool": "read_file",
+        "args": {
+          "path": "/auth/src/oauth2.ts",
+          "start": "280"
+        },
+        "result_head": "280:           redirectURI,\n281:           client.redirect_uris\n282:         );\n283:         done(null, false);\n284:         return;\n285:       } catch (error: unknown) {\n286:         done(error as Error);\n287:         // eslint-disable-next-line no-useless-return\n288:         return;\n289:       }\n290:     }) as ValidateFunctionArity2)\n291:   );\n292:   fastify.get(authorize, async (request, reply) => {\n293:     try {\n294:       /* ???\n295:       trace('oauth2#authorize: checking for domain_hint');\n296:       if (request?.query?.domain_hint) {\n297:         request.session.domain_hint = `${request.query.domain_hint}`;\n298:       }\n299:       */\n300:       // TODO: Is this needed? void reply.hijack():\n301:       await doAuthorize(\n302:         request as unknown as MiddlewareRequest,\n303:         reply as unknown as ServerResponse\n304:       );\n305:       const { oauth2, user } = request as unknown as OAuth2Request;\n306: \n307:       await trustedCDP();\n308:       // Load the login info fo"
+      },
+      {
+        "step": 23,
+        "tool": "read_file",
+        "args": {
+          "path": "/auth/src/oidc.ts",
+          "start": "150"
+        },
+        "result_head": "150:       issueToken,\n151:       issueCode,\n152:       issueIdToken\n153:     )\n154:   );\n155: \n156:   await fastify.register(fastifyAccepts);\n157: \n158:   // -----------------------------------------------------------------\n159:   // Handle the POST from clicking the \"login with OADA/trellisfw\" button\n160:   fastify.post(oidcLogin, async (request, reply) => {\n161:     // First, get domain entered in the posted form\n162:     // and strip protocol if they used it\n163:     // @ts-expect-error TODO: make types for auth bodies\n164:     const destinationDomain = `${request.body?.dest_domain}`.replace(\n165:       /^https?:\\/\\//,\n166:       ''\n167:     );\n168: \n169:     // @ts-expect-error TODO: make types for auth bodies\n170:     request.body.dest_domain = destinationDomain;\n171:     request.log.info(\n172:       `${oidcLogin}: OpenIDConnect request to redirect from domain ${request.hostname} to domain ${destinationDomain}`\n173:     );\n174: \n175:     // Next, get the info for the id client mi"
+      },
+      {
+        "step": 24,
+        "tool": "read_file",
+        "args": {
+          "path": "/auth/src/oidc.ts",
+          "start": "296"
+        },
+        "result_head": "296: \n297:   await fastify.register(wkj, {\n298:     resources: {\n299:       'openid-configuration': {\n300:         issuer: './', // Config.get('auth.server.publicUri'),\n301:         registration_endpoint: `./${config.get('auth.endpoints.register')}`,\n302:         authorization_endpoint: `./${config.get('auth.endpoints.authorize')}`,\n303:         token_endpoint: `./${config.get('auth.endpoints.token')}`,\n304:         userinfo_endpoint: `./${config.get('auth.endpoints.userinfo')}`,\n305:         jwks_uri: `./${config.get('auth.endpoints.certs')}`,\n306:         response_types_supported: [\n307:           'code',\n308:           'token',\n309:           'id_token',\n310:           'code token',\n311:           'code id_token',\n312:           'id_token token',\n313:           'code id_token token',\n314:         ],\n315:         subject_types_supported: ['public'],\n316:         id_token_signing_alg_values_supported: ['RS256'],\n317:         token_endpoint_auth_methods_supported: ['client_secret_post'"
+      },
+      {
+        "step": 25,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"auth\", \"dirs\": [\"/auth\"]}], \"files\": [\n{\"path\": \"/auth/src/index.ts\", \"service\": \"auth\", \"endpoints\": [\n{\"className\": \"\", \"methodName\": \"healthcheck\", \"httpMethod\": \"GET\", \"pat"
+        },
+        "result_head": "Recorded 14 new: service auth, GET /healthcheck, GET /login, POST /login, GET /logout, POST /register, GET /auth, POST /decision, POST /token, POST /oidc-login, ANY /oidc-redirect, GET /certs, GET /userinfo, GET /.well-known/openid-configuration\nTotal: 2 services, 27 endpoints in 10 files."
+      },
+      {
+        "step": 26,
+        "tool": "grep",
+        "args": {
+          "pattern": "esMain\\(import\\.meta\\)"
+        },
+        "result_head": "/auth/src/index.ts:326: if (esMain(import.meta)) {\n/http-handler/src/server.ts:368: if (esMain(import.meta)) {\n/permissions-handler/src/server.ts:46: if (esMain(import.meta)) {"
+      },
+      {
+        "step": 27,
+        "tool": "read_file",
+        "args": {
+          "path": "/permissions-handler/src/server.ts"
+        },
+        "result_head": "1: /**\n2:  * @license\n3:  * Copyright 2017-2021 Open Ag Data Alliance\n4:  *\n5:  * Licensed under the Apache License, Version 2.0 (the \"License\");\n6:  * you may not use this file except in compliance with the License.\n7:  * You may obtain a copy of the License at\n8:  *\n9:  *     http://www.apache.org/licenses/LICENSE-2.0\n10:  *\n11:  * Unless required by applicable law or agreed to in writing, software\n12:  * distributed under the License is distributed on an \"AS IS\" BASIS,\n13:  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n14:  * See the License for the specific language governing permissions and\n15:  * limitations under the License.\n16:  */\n17: \n18: import '@oada/pino-debug';\n19: \n20: import { config } from './config.js';\n21: \n22: import '@oada/lib-prom';\n23: \n24: import { URL } from 'node:url';\n25: import fs from 'node:fs';\n26: \n27: import { Responder } from '@oada/lib-kafka';\n28: \n29: import scopeTypes from './scopes.js';\n30: \n31: import debug from 'debug"
+      },
+      {
+        "step": 28,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"permissions-handler\", \"dirs\": [\"/permissions-handler\"]}]}"
+        },
+        "result_head": "Recorded 1 new: service permissions-handler\nTotal: 3 services, 27 endpoints in 10 files.\nServices with no endpoints recorded yet: permissions-handler."
+      },
+      {
+        "step": 28,
+        "tool": "grep",
+        "args": {
+          "pattern": "esMain|createServer|fastify\\(|listen\\(",
+          "path": "/rev-graph-update"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 29,
+        "tool": "grep",
+        "args": {
+          "pattern": "esMain|createServer|fastify\\(|\\.listen\\(|http\\.create"
+        },
+        "result_head": "/auth/src/index.ts:41: import { createServer } from 'oauth2orize';\n/auth/src/index.ts:51: import esMain from 'es-main';\n/auth/src/index.ts:117: const oauth2server = createServer();\n/auth/src/index.ts:312: await fastify.listen({\n/auth/src/index.ts:326: if (esMain(import.meta)) {\n/auth/src/oauth2.ts:163: oauth2server = oauth2orize.createServer(),\n/auth/src/oidc.ts:26: import { type OAuth2Server, createServer } from 'oauth2orize';\n/auth/src/oidc.ts:115: oauth2server = createServer(),\n/auth/src/types.d.ts:19: function esMain(meta: unknown): boolean;\n/auth/src/types.d.ts:20: export = esMain;\n/http-handler/src/server.ts:52: import esMain from 'es-main';\n/http-handler/src/server.ts:148: await fastify.listen({\n/http-handler/src/server.ts:364: const plugin = stats.fastify();\n/http-handler/src/server.ts:368: if (esMain(import.meta)) {\n/http-handler/src/types.d.ts:19: function esMain(meta: unknown): boolean;\n/http-handler/src/types.d.ts:20: export = esMain;\n/http-handler/src/types.d.ts:30: fastif"
+      },
+      {
+        "step": 30,
+        "tool": "read_file",
+        "args": {
+          "path": "/well-known/src/index.ts"
+        },
+        "result_head": "1: /**\n2:  * @license\n3:  * Copyright 2017-2021 Open Ag Data Alliance\n4:  *\n5:  * Licensed under the Apache License, Version 2.0 (the \"License\");\n6:  * you may not use this file except in compliance with the License.\n7:  * You may obtain a copy of the License at\n8:  *\n9:  *     http://www.apache.org/licenses/LICENSE-2.0\n10:  *\n11:  * Unless required by applicable law or agreed to in writing, software\n12:  * distributed under the License is distributed on an \"AS IS\" BASIS,\n13:  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n14:  * See the License for the specific language governing permissions and\n15:  * limitations under the License.\n16:  */\n17: \n18: // -----------------------------------------------------------------------\n19: // This service will provide a cohesive \"/.well-known/oada-configuration\"\n20: // and \"/.well-known/openid-configuration\" which is built from any\n21: // global settings merged with the well-known documents of any internal\n22: // micros"
+      },
+      {
+        "step": 31,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"well-known\", \"dirs\": [\"/well-known\"]}], \"files\": [{\"path\": \"/well-known/src/index.ts\", \"service\": \"well-known\", \"endpoints\": [\n{\"className\": \"\", \"methodName\": \"(inline)\", \"http"
+        },
+        "result_head": "Recorded 3 new: service well-known, GET /.well-known/oada-configuration, GET /.well-known/openid-configuration\nTotal: 4 services, 29 endpoints in 11 files.\nServices with no endpoints recorded yet: permissions-handler."
+      },
+      {
+        "step": 32,
+        "tool": "grep",
+        "args": {
+          "pattern": "esMain|\\.listen\\(|createServer|fastify",
+          "path": "/shares"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 32,
+        "tool": "grep",
+        "args": {
+          "pattern": "esMain|\\.listen\\(|createServer|fastify",
+          "path": "/webhooks"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 33,
+        "tool": "grep",
+        "args": {
+          "pattern": "esMain|\\.listen\\(|createServer|fastify",
+          "path": "/users"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 33,
+        "tool": "grep",
+        "args": {
+          "pattern": "esMain|\\.listen\\(|createServer|fastify",
+          "path": "/write-handler"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 34,
+        "tool": "grep",
+        "args": {
+          "pattern": "esMain|\\.listen\\(|createServer|fastify",
+          "path": "/sync-handler"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 34,
+        "tool": "grep",
+        "args": {
+          "pattern": "esMain|\\.listen\\(|createServer|fastify",
+          "path": "/http-handler/src/healthcheck.ts"
+        },
+        "result_head": "/http-handler/src/healthcheck.ts:24: import 'fastify-healthcheck/src/healthcheck';"
+      },
+      {
+        "step": 35,
+        "tool": "find",
+        "args": {
+          "pattern": "*/src/index.ts"
+        },
+        "result_head": "/auth/src/index.ts\n/rev-graph-update/src/index.ts\n/startup/src/index.ts\n/well-known/src/index.ts\n/write-handler/src/index.ts"
+      },
+      {
+        "step": 36,
+        "tool": "grep",
+        "args": {
+          "path": "/write-handler/src/index.ts",
+          "pattern": "Responder|consumeTopic|http"
+        },
+        "result_head": "/write-handler/src/index.ts:9: *     http://www.apache.org/licenses/LICENSE-2.0\n/write-handler/src/index.ts:32: import { Responder } from '@oada/lib-kafka';\n/write-handler/src/index.ts:76: const responder = new Responder<WriteRequest>({\n/write-handler/src/index.ts:77: consumeTopic: config.get('kafka.topics.writeRequest'),\n/write-handler/src/index.ts:78: produceTopic: config.get('kafka.topics.httpResponse'),"
+      },
+      {
+        "step": 36,
+        "tool": "grep",
+        "args": {
+          "path": "/rev-graph-update/src/index.ts",
+          "pattern": "Responder|consumeTopic|http|listen"
+        },
+        "result_head": "/rev-graph-update/src/index.ts:9: *     http://www.apache.org/licenses/LICENSE-2.0\n/rev-graph-update/src/index.ts:24: import { Requester, Responder } from '@oada/lib-kafka';\n/rev-graph-update/src/index.ts:50: const responder = new Responder<WriteResponse>({\n/rev-graph-update/src/index.ts:51: consumeTopic: config.get('kafka.topics.httpResponse'),\n/rev-graph-update/src/index.ts:55: consumeTopic: config.get('kafka.topics.httpResponse'),\n/rev-graph-update/src/index.ts:88: `Invalid http_response: keys resource_id or _rev are missing: ${JSON.stringify("
+      },
+      {
+        "step": 37,
+        "tool": "grep",
+        "args": {
+          "path": "/shares/src",
+          "pattern": "Responder|consumeTopic|listen|index"
+        },
+        "result_head": "/shares/src/server.ts:26: import { ReResponder } from '@oada/lib-kafka';\n/shares/src/server.ts:37: const responder = new ReResponder({\n/shares/src/server.ts:38: consumeTopic: config.get('kafka.topics.httpResponse'),"
+      },
+      {
+        "step": 37,
+        "tool": "grep",
+        "args": {
+          "path": "/users/src",
+          "pattern": "Responder|consumeTopic|listen"
+        },
+        "result_head": "/users/src/server.ts:25: import { ResponderRequester } from '@oada/lib-kafka';\n/users/src/server.ts:40: const responder = new ResponderRequester({\n/users/src/server.ts:43: consumeTopic: config.get('kafka.topics.httpResponse'),\n/users/src/server.ts:46: consumeTopic: config.get('kafka.topics.userRequest'),\n/users/src/useradd.ts:65: consumeTopic: config.get('kafka.topics.httpResponse'),"
+      },
+      {
+        "step": 38,
+        "tool": "grep",
+        "args": {
+          "path": "/sync-handler/src",
+          "pattern": "Responder|consumeTopic|listen|Confluent|Consumer"
+        },
+        "result_head": "/sync-handler/src/server.ts:30: import { Responder } from '@oada/lib-kafka';\n/sync-handler/src/server.ts:47: const responder = new Responder({\n/sync-handler/src/server.ts:48: consumeTopic: config.get('kafka.topics.httpResponse'),"
+      },
+      {
+        "step": 39,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [\n{\"name\": \"shares\", \"dirs\": [\"/shares\"]},\n{\"name\": \"users\", \"dirs\": [\"/users\"]},\n{\"name\": \"sync-handler\", \"dirs\": [\"/sync-handler\"]},\n{\"name\": \"webhooks\", \"dirs\": [\"/webhooks\"]},\n{\"name\""
+        },
+        "result_head": "Recorded 8 new: service shares, service users, service sync-handler, service webhooks, service write-handler, service rev-graph-update, service startup, ANY /\nTotal: 11 services, 30 endpoints in 12 files.\nServices with no endpoints recorded yet: permissions-handler, shares, users, sync-handler, webhooks, write-handler, rev-graph-update."
+      },
+      {
+        "step": 40,
+        "tool": "grep",
+        "args": {
+          "path": "/webhooks/src",
+          "pattern": "http|listen|server"
+        },
+        "result_head": "/webhooks/src/config.ts:9: *     http://www.apache.org/licenses/LICENSE-2.0\n/webhooks/src/config.ts:23: httpResponse: {\n/webhooks/src/config.ts:25: default: 'http_response',\n/webhooks/src/server.ts:9: *     http://www.apache.org/licenses/LICENSE-2.0\n/webhooks/src/server.ts:40: consumeTopic: config.get('kafka.topics.httpResponse'),\n/webhooks/src/server.ts:78: * https://localhost webhooks should be directed to the proxy server."
+      },
+      {
+        "step": 41,
+        "tool": "submit",
+        "args": {
+          "json": "{\"services\": [\n{\"name\": \"http-handler\", \"dirs\": [\"/http-handler\"]},\n{\"name\": \"auth\", \"dirs\": [\"/auth\"]},\n{\"name\": \"permissions-handler\", \"dirs\": [\"/permissions-handler\"]},\n{\"name\": \"well-known\", \"dirs"
+        },
+        "result_head": "Recorded 11 new: service http-handler, service auth, service permissions-handler, service well-known, service shares, service users, service sync-handler, service webhooks, service write-handler, service rev-graph-update, service startup\nTotal: 11 services, 30 endpoints in 12 files.\nServices with no endpoints recorded yet: permissions-handler, shares, users, sync-handler, webhooks, write-handler, rev-graph-update.\n[ACCEPTED] 11 services, 30 endpoints."
+      }
+    ]
+  }
+}

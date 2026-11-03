@@ -1,0 +1,364 @@
+{
+  "system": "tuc-dataanalysis",
+  "services": [
+    {
+      "name": "tuc-dataanalysis",
+      "dirs": [
+        "/src/TradeUnionCommittee.DataAnalysis.Api"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/HomeController.py",
+      "service": "tuc-dataanalysis",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/",
+          "line": 6,
+          "evidence": "@app.route('/', methods=['GET'])",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "favicon",
+          "httpMethod": "GET",
+          "path": "/favicon.ico",
+          "line": 10,
+          "evidence": "@app.route('/favicon.ico', methods=['GET'])",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "healt_check",
+          "httpMethod": "GET",
+          "path": "/health/live",
+          "line": 16,
+          "evidence": "@app.route('/health/live', methods=['GET'])",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "test_post_json",
+          "httpMethod": "POST",
+          "path": "/api/Home/PostJson",
+          "line": 22,
+          "evidence": "@app.route('/api/Home/PostJson', methods=['POST'])",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "test_post_csv",
+          "httpMethod": "POST",
+          "path": "/api/Home/PostCsv",
+          "line": 27,
+          "evidence": "@app.route('/api/Home/PostCsv', methods=['POST'])",
+          "framework": "Flask",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/CheckingController.py",
+      "service": "tuc-dataanalysis",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "checking_relevance_wellness_trips_task1",
+          "httpMethod": "POST",
+          "path": "/api/Checking/RelevanceWellnessTrips/Task1",
+          "line": 9,
+          "evidence": "@app.route('/api/Checking/RelevanceWellnessTrips/Task1', methods=['POST'])",
+          "framework": "Flask",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/DeterminingController.py",
+      "service": "tuc-dataanalysis",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "determining_probable_pastime_task1",
+          "httpMethod": "POST",
+          "path": "/api/Determining/ProbablePastime/MultiCorrelationCoefficient",
+          "line": 9,
+          "evidence": "@app.route('/api/Determining/ProbablePastime/MultiCorrelationCoefficient', methods=['POST'])",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "determining_probable_pastime_task2",
+          "httpMethod": "POST",
+          "path": "/api/Determining/ProbablePastime/MultiFactorModel",
+          "line": 17,
+          "evidence": "@app.route('/api/Determining/ProbablePastime/MultiFactorModel', methods=['POST'])",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "determining_probable_pastime_task5",
+          "httpMethod": "POST",
+          "path": "/api/Determining/ProbablePastime/PrincipalComponentAnalysis",
+          "line": 25,
+          "evidence": "@app.route('/api/Determining/ProbablePastime/PrincipalComponentAnalysis', methods=['POST'])",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "determining_unpopular_pastime_task1",
+          "httpMethod": "POST",
+          "path": "/api/Determining/UnpopularPastime/Task1",
+          "line": 35,
+          "evidence": "@app.route('/api/Determining/UnpopularPastime/Task1', methods=['POST'])",
+          "framework": "Flask",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/ForecastingController.py",
+      "service": "tuc-dataanalysis",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "forecasting_actualing_trips_task1",
+          "httpMethod": "POST",
+          "path": "/api/Forecasting/ActualingTrips/CorrelationAnalysis",
+          "line": 8,
+          "evidence": "@app.route('/api/Forecasting/ActualingTrips/CorrelationAnalysis', methods=['POST'])",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "forecasting_actualing_trips_task3",
+          "httpMethod": "POST",
+          "path": "/api/Forecasting/ActualingTrips/CheckingSignificanceCoefficients",
+          "line": 16,
+          "evidence": "@app.route('/api/Forecasting/ActualingTrips/CheckingSignificanceCoefficients', methods=['POST'])",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "forecasting_actualing_trips_task4",
+          "httpMethod": "POST",
+          "path": "/api/Forecasting/ActualingTrips/ClusterAnalysis",
+          "line": 24,
+          "evidence": "@app.route('/api/Forecasting/ActualingTrips/ClusterAnalysis', methods=['POST'])",
+          "framework": "Flask",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/OptimizationController.py",
+      "service": "tuc-dataanalysis",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "optimization_premiums_task1",
+          "httpMethod": "POST",
+          "path": "/api/Optimization/Premiums/Task1",
+          "line": 9,
+          "evidence": "@app.route('/api/Optimization/Premiums/Task1', methods=['POST'])",
+          "framework": "Flask",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "DeepSeek-V4.1-Flash-1017",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "low",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "TradeUnionCommittee.DataAnalysis.Api",
+    "commit": "13184c0e62eea32c51985cb0fbf778531da10c68",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 9,
+    "tool_calls": 19,
+    "rejected_entries": 0,
+    "no_call_replies": 0,
+    "input_tokens": 24515,
+    "cached_input_tokens": 16512,
+    "output_tokens": 2012,
+    "list_price_usd": 0.0025,
+    "wall_seconds": 14.6,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": "TradeUnionCommittee.DataAnalysis.Api.sln\nsrc/\ntests/"
+      },
+      {
+        "step": 1,
+        "tool": "find",
+        "args": {
+          "pattern": "Dockerfile"
+        },
+        "result_head": "(no files)"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/src"
+        },
+        "result_head": "TradeUnionCommittee.DataAnalysis.Api/"
+      },
+      {
+        "step": 2,
+        "tool": "find",
+        "args": {
+          "pattern": "*.csproj"
+        },
+        "result_head": "(no files)"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/src/TradeUnionCommittee.DataAnalysis.Api"
+        },
+        "result_head": "Controllers/\nModels/\nServices/\nTradeUnionCommittee.DataAnalysis.Api.pyproj\nrequirements.txt\nrunserver.py\nstatic/"
+      },
+      {
+        "step": 3,
+        "tool": "find",
+        "args": {
+          "pattern": "*.cs"
+        },
+        "result_head": "(no files)"
+      },
+      {
+        "step": 4,
+        "tool": "list_dir",
+        "args": {
+          "path": "/src/TradeUnionCommittee.DataAnalysis.Api/Controllers"
+        },
+        "result_head": "CheckingController.py\nDeterminingController.py\nForecastingController.py\nHomeController.py\nOptimizationController.py\n__init__.py"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/src/TradeUnionCommittee.DataAnalysis.Api/runserver.py"
+        },
+        "result_head": "1: from os import environ\n2: from Controllers import app\n3: \n4: if __name__ == '__main__':\n5:     HOST = environ.get('SERVER_HOST', '0.0.0.0')\n6:     try:\n7:         PORT = 5000\n8:     except ValueError:\n9:         PORT = 5000\n10:     app.run(HOST, PORT)"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/src/TradeUnionCommittee.DataAnalysis.Api/requirements.txt"
+        },
+        "result_head": "1: flask==1.1.1\n2: numpy==1.17.2\n3: pandas==0.25.1\n4: seaborn==0.9.0\n5: scipy==1.3.1\n6: json-tricks==3.13.2\n7: scikit-learn==0.21.3\n8: sklearn==0.0\n9: joblib==0.13.2"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/__init__.py"
+        },
+        "result_head": "1: from flask import Flask\n2: app = Flask(__name__)\n3: \n4: import Controllers.HomeController\n5: import Controllers.ForecastingController\n6: import Controllers.DeterminingController\n7: import Controllers.OptimizationController\n8: import Controllers.CheckingController"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/HomeController.py"
+        },
+        "result_head": "1: from Controllers import app\n2: import os\n3: from flask import Flask, request, send_from_directory, make_response, jsonify, json\n4: import Services.HomeService as service\n5: \n6: @app.route('/', methods=['GET'])\n7: def index():\n8:     return \"<html><head><title>Trade Union Committee – Data Analysis Service</title></head><body></br></br></br></br></br><center><h1>Trade Union Committee – Data Analysis Service – Works</h1></center></body></html>\"\n9: \n10: @app.route('/favicon.ico', methods=['GET'])\n11: def favicon():\n12:     root_path = os.path.abspath(app.root_path + \"/../\")\n13:     favicon_path = os.path.join(root_path, 'static')\n14:     return send_from_directory(favicon_path, 'favicon.ico', mimetype='image/x-icon')\n15: \n16: @app.route('/health/live', methods=['GET'])\n17: def healt_check():\n18:     response = make_response('Healthy', 200)\n19:     response.mimetype = \"text/plain\"\n20:     return response\n21: \n22: @app.route('/api/Home/PostJson', methods=['POST'])\n23: def test_post_json()"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/CheckingController.py"
+        },
+        "result_head": "1: from Controllers import app\n2: from flask import Flask, request, jsonify, json\n3: import Services.CheckingService as service\n4: \n5: #------------------------------------------------------------------------------\n6: # 5.1\n7: # Return C#/.NET type => ''\n8: #------------------------------------------------------------------------------\n9: @app.route('/api/Checking/RelevanceWellnessTrips/Task1', methods=['POST'])\n10: def checking_relevance_wellness_trips_task1():\n11:     input_json = request.get_json(force=True)\n12:     return service.checking_relevance_wellness_trips_task1(input_json)"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/DeterminingController.py"
+        },
+        "result_head": "1: from Controllers import app\n2: from flask import Flask, request, jsonify, json\n3: import Services.ForecastingService as forecastingService\n4: import Services.DeterminingService as determiningService\n5: \n6: #------------------------------------------------------------------------------\n7: # 2.1\n8: #------------------------------------------------------------------------------\n9: @app.route('/api/Determining/ProbablePastime/MultiCorrelationCoefficient', methods=['POST'])\n10: def determining_probable_pastime_task1():\n11:     input_json = request.get_json(force=True)\n12:     return determiningService.multi_coeff(input_json)\n13: \n14: #------------------------------------------------------------------------------\n15: # 2.4 - 2.6\n16: #------------------------------------------------------------------------------\n17: @app.route('/api/Determining/ProbablePastime/MultiFactorModel', methods=['POST'])\n18: def determining_probable_pastime_task2():\n19:     input_json = request.get_json(force=True"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/ForecastingController.py"
+        },
+        "result_head": "1: from Controllers import app\n2: from flask import Flask, request, jsonify, json\n3: import Services.ForecastingService as service\n4: \n5: #------------------------------------------------------------------------------\n6: # 1.1\n7: #------------------------------------------------------------------------------\n8: @app.route('/api/Forecasting/ActualingTrips/CorrelationAnalysis', methods=['POST'])\n9: def forecasting_actualing_trips_task1():\n10:     input_json = request.get_json(force=True)\n11:     return service.correlation_analysis(input_json)\n12: \n13: #------------------------------------------------------------------------------\n14: # 1.2\n15: #------------------------------------------------------------------------------\n16: @app.route('/api/Forecasting/ActualingTrips/CheckingSignificanceCoefficients', methods=['POST'])\n17: def forecasting_actualing_trips_task3():\n18:     input_json = request.get_json(force=True)\n19:     return service.checking_significance_coefficients(input_json)\n20: "
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/OptimizationController.py"
+        },
+        "result_head": "1: from Controllers import app\n2: from flask import Flask, request, jsonify, json\n3: import Services.OptimizationService as service\n4: \n5: #------------------------------------------------------------------------------\n6: # 4.1\n7: # Return C#/.NET type => ''\n8: #------------------------------------------------------------------------------\n9: @app.route('/api/Optimization/Premiums/Task1', methods=['POST'])\n10: def optimization_premiums_task1():\n11:     input_json = request.get_json(force=True)\n12:     return service.optimization_premiums_task1(input_json)"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "pattern": "@app\\.(route|get|post|put|delete)|add_url_rule|Blueprint",
+          "path": "/"
+        },
+        "result_head": "/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/CheckingController.py:9: @app.route('/api/Checking/RelevanceWellnessTrips/Task1', methods=['POST'])\n/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/DeterminingController.py:9: @app.route('/api/Determining/ProbablePastime/MultiCorrelationCoefficient', methods=['POST'])\n/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/DeterminingController.py:17: @app.route('/api/Determining/ProbablePastime/MultiFactorModel', methods=['POST'])\n/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/DeterminingController.py:25: @app.route('/api/Determining/ProbablePastime/PrincipalComponentAnalysis', methods=['POST'])\n/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/DeterminingController.py:35: @app.route('/api/Determining/UnpopularPastime/Task1', methods=['POST'])\n/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/ForecastingController.py:8: @app.route('/api/Forecasting/ActualingTrips/CorrelationAnalysis', methods=['POST'])\n/src/Trade"
+      },
+      {
+        "step": 7,
+        "tool": "list_dir",
+        "args": {
+          "path": "/tests"
+        },
+        "result_head": "README.txt"
+      },
+      {
+        "step": 8,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\":[{\"name\":\"tuc-dataanalysis\",\"dirs\":[\"/src/TradeUnionCommittee.DataAnalysis.Api\"]}],\"files\":[\n{\"path\":\"/src/TradeUnionCommittee.DataAnalysis.Api/Controllers/HomeController.py\",\"service\":\"tu"
+        },
+        "result_head": "Recorded 15 new: service tuc-dataanalysis, GET /, GET /favicon.ico, GET /health/live, POST /api/Home/PostJson, POST /api/Home/PostCsv, POST /api/Checking/RelevanceWellnessTrips/Task1, POST /api/Determining/ProbablePastime/MultiCorrelationCoefficient, POST /api/Determining/ProbablePastime/MultiFactorModel, POST /api/Determining/ProbablePastime/PrincipalComponentAnalysis, POST /api/Determining/UnpopularPastime/Task1, POST /api/Forecasting/ActualingTrips/CorrelationAnalysis, POST /api/Forecasting/ActualingTrips/CheckingSignificanceCoefficients, POST /api/Forecasting/ActualingTrips/ClusterAnalysis, POST /api/Optimization/Premiums/Task1\nTotal: 1 services, 14 endpoints in 5 files."
+      },
+      {
+        "step": 9,
+        "tool": "submit",
+        "args": {},
+        "result_head": "[ACCEPTED] 1 services, 14 endpoints."
+      }
+    ]
+  }
+}

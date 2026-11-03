@@ -1,0 +1,280 @@
+{
+  "system": "moh-prime-docmanager",
+  "services": [
+    {
+      "name": "moh-prime-docmanager",
+      "dirs": [
+        "/"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/app/docman/resources/document.py",
+      "service": "moh-prime-docmanager",
+      "endpoints": [
+        {
+          "className": "DocumentUploadResource",
+          "methodName": "post",
+          "httpMethod": "POST",
+          "path": "/documents/uploads",
+          "line": 55,
+          "evidence": "def post(self):",
+          "framework": "Flask-RESTPlus",
+          "confidence": "high"
+        },
+        {
+          "className": "DocumentUploadResource",
+          "methodName": "delete",
+          "httpMethod": "DELETE",
+          "path": "/documents/uploads",
+          "line": 100,
+          "evidence": "def delete(self):",
+          "framework": "Flask-RESTPlus",
+          "confidence": "high"
+        },
+        {
+          "className": "DocumentUploadResource",
+          "methodName": "get",
+          "httpMethod": "GET",
+          "path": "/documents/uploads",
+          "line": 125,
+          "evidence": "def get(self):",
+          "framework": "Flask-RESTPlus",
+          "confidence": "high"
+        },
+        {
+          "className": "DocumentUploadManagementResource",
+          "methodName": "patch",
+          "httpMethod": "PATCH",
+          "path": "/documents/uploads/{document_guid}",
+          "line": 145,
+          "evidence": "def patch(self, document_guid):",
+          "framework": "Flask-RESTPlus",
+          "confidence": "high"
+        },
+        {
+          "className": "DocumentUploadManagementResource",
+          "methodName": "head",
+          "httpMethod": "ANY",
+          "path": "/documents/uploads/{document_guid}",
+          "line": 194,
+          "evidence": "def head(self, document_guid):",
+          "framework": "Flask-RESTPlus",
+          "confidence": "high"
+        },
+        {
+          "className": "DocumentUploadSubmissionResource",
+          "methodName": "post",
+          "httpMethod": "POST",
+          "path": "/documents/uploads/{document_guid}/submit",
+          "line": 231,
+          "evidence": "def post(self, document_guid):",
+          "framework": "Flask-RESTPlus",
+          "confidence": "high"
+        },
+        {
+          "className": "DocumentListResource",
+          "methodName": "post",
+          "httpMethod": "POST",
+          "path": "/documents",
+          "line": 265,
+          "evidence": "def post(self):",
+          "framework": "Flask-RESTPlus",
+          "confidence": "high"
+        },
+        {
+          "className": "DocumentResource",
+          "methodName": "get",
+          "httpMethod": "GET",
+          "path": "/documents/{document_guid}",
+          "line": 302,
+          "evidence": "def get(self, document_guid):",
+          "framework": "Flask-RESTPlus",
+          "confidence": "high"
+        },
+        {
+          "className": "DownloadTokenCreationResource",
+          "methodName": "post",
+          "httpMethod": "POST",
+          "path": "/documents/{document_guid}/download-token",
+          "line": 318,
+          "evidence": "def post(self, document_guid):",
+          "framework": "Flask-RESTPlus",
+          "confidence": "high"
+        },
+        {
+          "className": "DocumentDownloadResource",
+          "methodName": "get",
+          "httpMethod": "GET",
+          "path": "/documents/downloads/{token}",
+          "line": 337,
+          "evidence": "def get(self, token):",
+          "framework": "Flask-RESTPlus",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/app/routes.py",
+      "service": "moh-prime-docmanager",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "healthcheck",
+          "httpMethod": "GET",
+          "path": "/healthcheck",
+          "line": 33,
+          "evidence": "app.add_url_rule(\"/healthcheck\", endpoint=\"healthcheck\", view_func=docman_healthcheck.run)",
+          "framework": "Flask",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "GLM-5.3-Flash",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "default",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "backend",
+    "commit": "2b60e19ef30c3eaec42cc797f98bf3e2c3a2791b",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 11,
+    "tool_calls": 14,
+    "rejected_entries": 0,
+    "no_call_replies": 0,
+    "input_tokens": 41716,
+    "cached_input_tokens": 17216,
+    "output_tokens": 2074,
+    "list_price_usd": 0.0052,
+    "wall_seconds": 21.5,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".dockerignore\n.env-local\n.gitignore\nDockerfile\nDockerfile.migrate\nREADME.md\napp.sh\napp/\ninit-backend.sh\ninit-migrate.sh\nmigrations/\nopenshift.dockerfile\nrequirements.txt\nrun_tests.sh\nsonar-project.properties\ntests/\nuwsgi.ini"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app"
+        },
+        "result_head": "__init__.py\ncommands.py\nconfig.py\nconstants.py\ndocman/\nextensions.py\nhealthcheck.py\nhelper.py\nroutes.py\nutils/"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/uwsgi.ini"
+        },
+        "result_head": "1: [uwsgi]\n2: # Module settings\n3: callable = create_app()\n4: module = app\n5: \n6: # Curl this address for statistics\n7: stats = 127.0.0.1:9191\n8: \n9: # Server settings\n10: http-socket = 0.0.0.0:5001\n11: http-auto-gzip = true\n12: post-buffering = 8192\n13: buffer-size = 12288\n14: \n15: # UWSGI settings\n16: master = true\n17: harakiri = 90\n18: processes = $(UWSGI_PROCESSES)\n19: threads = $(UWSGI_THREADS)\n20: threaded-logger = true\n21: enable-threads = true\n22: vacuum = true\n23: disable-logging = True\n24: \n25: # Uncomment line below for using venv\n26: #virtualenv = .venv"
+      },
+      {
+        "step": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/routes.py"
+        },
+        "result_head": "1: from app.extensions import api\n2: from .config import Config\n3: from .healthcheck import *\n4: \n5: from flask_jwt_oidc.exceptions import AuthError\n6: from flask_restplus import Resource\n7: from healthcheck import HealthCheck\n8: \n9: \n10: def run_healthcheck():\n11:     \"\"\"Execute healthcheck function for Document Manager to verify if it is healthy.\n12: \n13:     Document Manager relies on two services being available for it to function as designed: Redis and PostgreSQL. If\n14:     one is not available, or if neither are, then a ConnectionError is thrown.\n15: \n16:     Successful calls will return a successful attempt at connection.\n17:     \"\"\"\n18:     healthcheck = HealthCheck()\n19: \n20:     # Verify PostgreSQL and Redis status checks\n21:     healthcheck.add_check(postgres_healthcheck)\n22:     healthcheck.add_check(redis_healthcheck)\n23: \n24:     return healthcheck\n25: \n26: \n27: def register_routes(app):\n28:     # Create py-healthcheck object for healthcheck endpoint\n29:     docman_healt"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/__init__.py"
+        },
+        "result_head": "1: import sys\n2: import json\n3: import os\n4: \n5: from flask import Flask, current_app, request\n6: from flask_cors import CORS\n7: from flask_restplus import Resource\n8: from flask_restplus.apidoc import apidoc\n9: from flask_migrate import MigrateCommand\n10: \n11: from flask_jwt_oidc.exceptions import AuthError\n12: from sqlalchemy.exc import SQLAlchemyError\n13: \n14: from app.docman.models import *\n15: from app.docman.resources import *\n16: \n17: from app.commands import register_commands\n18: from app.routes import register_routes\n19: from app.extensions import api, cache, db, jwt, migrate\n20: \n21: from .config import Config\n22: \n23: \n24: def create_app(config_object=None):\n25:     \"\"\"Create and configure an instance of the Flask application.\"\"\"\n26:     app = Flask(__name__)\n27: \n28:     config = config_object if config_object else Config\n29:     app.config.from_object(config)\n30: \n31:     register_extensions(app)\n32:     register_routes(app)\n33:     register_commands(app)\n34: \n35:     @api"
+      },
+      {
+        "step": 4,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app/docman"
+        },
+        "result_head": "__init__.py\nmodels/\nresources/"
+      },
+      {
+        "step": 5,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app/docman/resources"
+        },
+        "result_head": "__init__.py\ndocument.py"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "path": "/app",
+          "pattern": "BASE_PATH"
+        },
+        "result_head": "/app/__init__.py:52: apidoc.static_url_path = f'{Config.BASE_PATH}/swaggerui'\n/app/config.py:7: BASE_PATH = os.environ.get('BASE_PATH', '')\n/app/extensions.py:15: api = Api(prefix=f'{Config.BASE_PATH}',\n/app/extensions.py:16: doc=f'{Config.BASE_PATH}/',"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/docman/resources/document.py"
+        },
+        "result_head": "1: import magic\n2: import uuid\n3: import os\n4: from datetime import datetime\n5: \n6: from werkzeug.exceptions import BadRequest, NotFound, Conflict, RequestEntityTooLarge, InternalServerError\n7: from flask import request, current_app, send_file, make_response, jsonify\n8: from flask_restplus import Resource, reqparse\n9: \n10: from app.docman.models.document import Document\n11: from app.extensions import api, cache, jwt\n12: from app.constants import FILE_UPLOAD_SIZE, FILE_UPLOAD_OFFSET, FILE_UPLOAD_PATH, DOWNLOAD_TOKEN, TIMEOUT_5_MINUTES, TIMEOUT_24_HOURS, TUS_API_VERSION, TUS_API_SUPPORTED_VERSIONS, FORBIDDEN_FILETYPES\n13: \n14: \n15: def validate_filename(filename):\n16:     if not filename:\n17:         raise BadRequest('File name is required')\n18:     if filename.endswith(FORBIDDEN_FILETYPES):\n19:         raise BadRequest('File type is forbidden')\n20: \n21:     return filename\n22: \n23: \n24: def to_absolute_folder(folder):\n25:     if not folder:\n26:         raise BadRequest('Folder is requir"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/docman/resources/document.py",
+          "start": "132"
+        },
+        "result_head": "132:             raise NotFound(f'Upload not found with GUID {document_guid}')\n133: \n134:         response = make_response(\"\", 200)\n135:         response.headers['Access-Control-Expose-Headers'] = 'Content-Disposition, Content-Length, X-Content-Transfer-Id'\n136:         response.headers['Content-Disposition'] = f'inline; filename=\"{doc.filename}\"'\n137:         response.headers['Content-Length'] = os.stat(doc.full_storage_path).st_size\n138:         response.headers['Content-Type'] = magic.from_file(doc.full_storage_path, mime=True)\n139:         response.headers['X-Content-Transfer-Id'] = document_guid\n140:         return response\n141: \n142: \n143: @api.route('/documents/uploads/<string:document_guid>')\n144: class DocumentUploadManagementResource(Resource):\n145:     def patch(self, document_guid):\n146:         file_path = cache.get(FILE_UPLOAD_PATH(document_guid))\n147:         if file_path is None or not os.path.lexists(file_path):\n148:             raise NotFound('PATCH sent for an upload"
+      },
+      {
+        "step": 8,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/docman/resources/document.py",
+          "start": "247"
+        },
+        "result_head": "247:         try:\n248:             if not os.path.exists(destination_folder):\n249:                 os.makedirs(destination_folder)\n250:             os.rename(doc.full_storage_path, destination_path)\n251:         except IOError as e:\n252:             raise InternalServerError('Unable to write to file')\n253: \n254:         doc.full_storage_path = destination_path\n255:         doc.submitted = True\n256:         doc.save()\n257: \n258:         return make_response(doc.filename, 200)\n259: \n260: \n261: @api.route('/documents')\n262: class DocumentListResource(Resource):\n263:     # Direct file upload from PRIME API\n264:     @jwt.requires_auth\n265:     def post(self):\n266:         parser = reqparse.RequestParser(trim=True)\n267:         parser.add_argument('folder', type=str, location='args', required=True, help='The sub folder path to store the document in.')\n268:         parser.add_argument('filename', type=str, location='args', required=True, help='File name + extension of the document.')\n269:    "
+      },
+      {
+        "step": 9,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/healthcheck.py"
+        },
+        "result_head": "1: from .config import Config\n2: import psycopg2\n3: from flask import current_app\n4: from psycopg2 import OperationalError\n5: from redis import Redis, ConnectionError\n6: \n7: \n8: def postgres_healthcheck():\n9:     \"\"\"\n10:     Verify that the PRIME PostgreSQL database is available for connection requests.\n11:     If successful, return True. Otherwise, return False.\n12:     \"\"\"\n13: \n14:     try:\n15:         db = psycopg2.connect(\"\")\n16:         \n17:     except OperationalError:\n18:         return False, \"Document Manager is unhealthy because the PostgreSQL database cannot be reached.\"\n19:     \n20:     return True, \"Document Manager is able to connect to the PostgreSQL database.\"\n21: \n22: \n23: def redis_healthcheck():\n24:     \"\"\"\n25:     Verify Redis is available for connection requests.\n26:     \"\"\"\n27:     REDIS_HOST = Config.CACHE_REDIS_HOST\n28:     REDIS_PORT = Config.CACHE_REDIS_PORT\n29:     REDIS_PASS = Config.CACHE_REDIS_PASS\n30: \n31:     redis_connect = Redis(host=REDIS_HOST, port=R"
+      },
+      {
+        "step": 10,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"moh-prime-docmanager\", \"dirs\": [\"/\"]}], \"files\": [{\"path\": \"/app/docman/resources/document.py\", \"service\": \"moh-prime-docmanager\", \"endpoints\": [{\"className\": \"DocumentUploadRe"
+        },
+        "result_head": "Recorded 13 new: service moh-prime-docmanager, POST /documents/uploads, DELETE /documents/uploads, GET /documents/uploads, PATCH /documents/uploads/{document_guid}, ANY /documents/uploads/{document_guid}, POST /documents/uploads/{document_guid}/submit, POST /documents, GET /documents/{document_guid}, POST /documents/{document_guid}/download-token, GET /documents/downloads/{token}, GET /, GET /healthcheck (replaces /)\nTotal: 1 services, 11 endpoints in 2 files."
+      },
+      {
+        "step": 11,
+        "tool": "submit",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"moh-prime-docmanager\", \"dirs\": [\"/\"]}], \"files\": [{\"path\": \"/app/docman/resources/document.py\", \"service\": \"moh-prime-docmanager\", \"endpoints\": [{\"className\": \"DocumentUploadRe"
+        },
+        "result_head": "Recorded 1 new: service moh-prime-docmanager\nTotal: 1 services, 11 endpoints in 2 files.\n[ACCEPTED] 1 services, 11 endpoints."
+      }
+    ]
+  }
+}

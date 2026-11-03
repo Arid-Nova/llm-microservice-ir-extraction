@@ -1,0 +1,1946 @@
+{
+  "system": "remp-mailer",
+  "services": [
+    {
+      "name": "remp-mailer",
+      "dirs": [
+        "/app",
+        "/www",
+        "/bin",
+        "/extensions/mailer-module",
+        "/extensions/newrelic-module"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/SubscribeHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "SubscribeHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/users/subscribe",
+          "line": 39,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/UnSubscribeHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "UnSubscribeHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/users/un-subscribe",
+          "line": 37,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/BulkSubscribeHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "BulkSubscribeHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/users/bulk-subscribe",
+          "line": 24,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/CheckTokenHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "CheckTokenHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/users/check-token",
+          "line": 35,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/EmailChangedHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "EmailChangedHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/users/email-changed",
+          "line": 32,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/UserPreferencesHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "UserPreferencesHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/users/user-preferences",
+          "line": 41,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/UserRegisteredHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "UserRegisteredHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/users/user-registered",
+          "line": 42,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/BulkUserRegisteredHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "BulkUserRegisteredHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/users/bulk-user-registered",
+          "line": 43,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/IsSubscribedHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "IsSubscribedHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/users/is-subscribed",
+          "line": 33,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/IsUnsubscribedHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "IsUnsubscribedHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/users/is-unsubscribed",
+          "line": 31,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/LogsHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "LogsHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/users/logs",
+          "line": 39,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/LogsCountPerStatusHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "LogsCountPerStatusHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/users/logs-count-per-status",
+          "line": 36,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/UserDeleteApiHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "UserDeleteApiHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/users/delete",
+          "line": 40,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailgunEventsHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailgunEventsHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/mailers/mailgun",
+          "line": 42,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailGeneratorHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailGeneratorHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/mailers/generate-mail",
+          "line": 35,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailGeneratorPreprocessHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailGeneratorPreprocessHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/mailers/preprocess-generator-parameters",
+          "line": 31,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorTemplatesListingHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "GeneratorTemplatesListingHandler",
+          "methodName": "handle",
+          "httpMethod": "GET",
+          "path": "/api/v1/mailers/generator-templates",
+          "line": 34,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailCreateTemplateHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailCreateTemplateHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/mailers/templates",
+          "line": 54,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailJobCreateApiHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailJobCreateApiHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/mailers/jobs",
+          "line": 56,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v2/Handlers/Mailers/MailJobCreateApiHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailJobCreateApiHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v2/mailers/jobs",
+          "line": 39,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTypesListingHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailTypesListingHandler",
+          "methodName": "handle",
+          "httpMethod": "GET",
+          "path": "/api/v1/mailers/mail-types",
+          "line": 34,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v2/Handlers/Mailers/MailTypesListingHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailTypesListingHandler",
+          "methodName": "handle",
+          "httpMethod": "GET",
+          "path": "/api/v2/mailers/mail-types",
+          "line": 35,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v3/Handlers/Mailers/MailTypesListingHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailTypesListingHandler",
+          "methodName": "handle",
+          "httpMethod": "GET",
+          "path": "/api/v3/mailers/mail-types",
+          "line": 35,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTypeCategoriesHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailTypeCategoriesHandler",
+          "methodName": "handle",
+          "httpMethod": "GET",
+          "path": "/api/v1/mailers/mail-type-categories",
+          "line": 19,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTypeUpsertHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailTypeUpsertHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/mailers/mail-type-upsert",
+          "line": 45,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTemplatesListingHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailTemplatesListingHandler",
+          "methodName": "handle",
+          "httpMethod": "GET",
+          "path": "/api/v1/mailers/templates",
+          "line": 35,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Segments/SegmentsListingHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "SegmentsListingHandler",
+          "methodName": "handle",
+          "httpMethod": "GET",
+          "path": "/api/v1/segments/list",
+          "line": 21,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v2/Handlers/Mailers/MailgunEventsHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailgunEventsHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v2/mailers/mailgun",
+          "line": 52,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/SendEmailHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "SendEmailHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/mailers/send-email",
+          "line": 51,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTypeVariantCreateApiHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailTypeVariantCreateApiHandler",
+          "methodName": "handle",
+          "httpMethod": "POST",
+          "path": "/api/v1/mailers/mail-type-variants",
+          "line": 39,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/RenderTemplateApiHandler.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "RenderTemplateApiHandler",
+          "methodName": "handle",
+          "httpMethod": "GET",
+          "path": "/api/v1/mailers/render-template",
+          "line": 39,
+          "evidence": "public function handle(array $params): ResponseInterface",
+          "framework": "Nette (tomaj/nette-api)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/DashboardPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "DashboardPresenter",
+          "methodName": "renderDefault",
+          "httpMethod": "GET",
+          "path": "/mailer/dashboard/default",
+          "line": 49,
+          "evidence": "public function renderDefault(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/HealthPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "HealthPresenter",
+          "methodName": "renderDefault",
+          "httpMethod": "GET",
+          "path": "/mailer/health/default",
+          "line": 50,
+          "evidence": "public function renderDefault(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/GeneratorPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "GeneratorPresenter",
+          "methodName": "renderDefaultJsonData",
+          "httpMethod": "GET",
+          "path": "/mailer/generator/default-json-data",
+          "line": 70,
+          "evidence": "public function renderDefaultJsonData(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "GeneratorPresenter",
+          "methodName": "renderEdit",
+          "httpMethod": "GET",
+          "path": "/mailer/generator/edit",
+          "line": 113,
+          "evidence": "public function renderEdit($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "GeneratorPresenter",
+          "methodName": "renderGenerate",
+          "httpMethod": "GET",
+          "path": "/mailer/generator/generate",
+          "line": 122,
+          "evidence": "public function renderGenerate($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "GeneratorPresenter",
+          "methodName": "handleRenderSorting",
+          "httpMethod": "GET",
+          "path": "/mailer/generator/render-sorting",
+          "line": 142,
+          "evidence": "public function handleRenderSorting($sortingValue): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "GeneratorPresenter",
+          "methodName": "handleDelete",
+          "httpMethod": "GET",
+          "path": "/mailer/generator/delete",
+          "line": 152,
+          "evidence": "public function handleDelete($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/JobPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "JobPresenter",
+          "methodName": "renderDefaultJsonData",
+          "httpMethod": "GET",
+          "path": "/mailer/job/default-json-data",
+          "line": 120,
+          "evidence": "public function renderDefaultJsonData()",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "JobPresenter",
+          "methodName": "renderShow",
+          "httpMethod": "GET",
+          "path": "/mailer/job/show",
+          "line": 206,
+          "evidence": "public function renderShow($id)",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "JobPresenter",
+          "methodName": "renderEditJob",
+          "httpMethod": "GET",
+          "path": "/mailer/job/edit-job",
+          "line": 262,
+          "evidence": "public function renderEditJob($id)",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "JobPresenter",
+          "methodName": "renderEditBatch",
+          "httpMethod": "GET",
+          "path": "/mailer/job/edit-batch",
+          "line": 281,
+          "evidence": "public function renderEditBatch($id)",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "JobPresenter",
+          "methodName": "handleRemoveTemplate",
+          "httpMethod": "GET",
+          "path": "/mailer/job/remove-template",
+          "line": 287,
+          "evidence": "public function handleRemoveTemplate($id)",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "JobPresenter",
+          "methodName": "handleSetBatchReadyToSend",
+          "httpMethod": "GET",
+          "path": "/mailer/job/set-batch-ready-to-send",
+          "line": 296,
+          "evidence": "public function handleSetBatchReadyToSend($id)",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "JobPresenter",
+          "methodName": "handleSetBatchSend",
+          "httpMethod": "GET",
+          "path": "/mailer/job/set-batch-send",
+          "line": 320,
+          "evidence": "public function handleSetBatchSend($id)",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "JobPresenter",
+          "methodName": "handleSetBatchUserStop",
+          "httpMethod": "GET",
+          "path": "/mailer/job/set-batch-user-stop",
+          "line": 340,
+          "evidence": "public function handleSetBatchUserStop($id)",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "JobPresenter",
+          "methodName": "handleSetBatchCreated",
+          "httpMethod": "GET",
+          "path": "/mailer/job/set-batch-created",
+          "line": 355,
+          "evidence": "public function handleSetBatchCreated($id)",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "JobPresenter",
+          "methodName": "handleRemoveBatch",
+          "httpMethod": "GET",
+          "path": "/mailer/job/remove-batch",
+          "line": 364,
+          "evidence": "public function handleRemoveBatch($id)",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "JobPresenter",
+          "methodName": "handleSetBatchReadyToProcess",
+          "httpMethod": "GET",
+          "path": "/mailer/job/set-batch-ready-to-process",
+          "line": 385,
+          "evidence": "public function handleSetBatchReadyToProcess($id)",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "JobPresenter",
+          "methodName": "actionMailTypeTemplates",
+          "httpMethod": "GET",
+          "path": "/mailer/job/mail-type-templates",
+          "line": 400,
+          "evidence": "public function actionMailTypeTemplates($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "JobPresenter",
+          "methodName": "actionMailTypeVariants",
+          "httpMethod": "GET",
+          "path": "/mailer/job/mail-type-variants",
+          "line": 406,
+          "evidence": "public function actionMailTypeVariants($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "JobPresenter",
+          "methodName": "actionMailTypeCodeVariants",
+          "httpMethod": "GET",
+          "path": "/mailer/job/mail-type-code-variants",
+          "line": 418,
+          "evidence": "public function actionMailTypeCodeVariants($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/LayoutPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "LayoutPresenter",
+          "methodName": "renderDefaultJsonData",
+          "httpMethod": "GET",
+          "path": "/mailer/layout/default-json-data",
+          "line": 56,
+          "evidence": "public function renderDefaultJsonData(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "LayoutPresenter",
+          "methodName": "renderEdit",
+          "httpMethod": "GET",
+          "path": "/mailer/layout/edit",
+          "line": 93,
+          "evidence": "public function renderEdit($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "LayoutPresenter",
+          "methodName": "handleDelete",
+          "httpMethod": "GET",
+          "path": "/mailer/layout/delete",
+          "line": 125,
+          "evidence": "public function handleDelete($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/LogPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "LogPresenter",
+          "methodName": "renderDefaultJsonData",
+          "httpMethod": "GET",
+          "path": "/mailer/log/default-json-data",
+          "line": 116,
+          "evidence": "public function renderDefaultJsonData(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/MailGeneratorPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "MailGeneratorPresenter",
+          "methodName": "renderDefault",
+          "httpMethod": "GET",
+          "path": "/mailer/mail-generator/default",
+          "line": 33,
+          "evidence": "public function renderDefault(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "MailGeneratorPresenter",
+          "methodName": "renderPreview",
+          "httpMethod": "GET",
+          "path": "/mailer/mail-generator/preview",
+          "line": 38,
+          "evidence": "public function renderPreview($isLocked): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "MailGeneratorPresenter",
+          "methodName": "handleSourceTemplateChange",
+          "httpMethod": "GET",
+          "path": "/mailer/mail-generator/source-template-change",
+          "line": 72,
+          "evidence": "public function handleSourceTemplateChange($sourceTemplateId): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/PreviewPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "PreviewPresenter",
+          "methodName": "renderPublic",
+          "httpMethod": "GET",
+          "path": "/mailer/preview/public",
+          "line": 23,
+          "evidence": "public function renderPublic(string $id, ?string $lang = null): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/SearchPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "SearchPresenter",
+          "methodName": "actionDefault",
+          "httpMethod": "GET",
+          "path": "/mailer/search/default",
+          "line": 36,
+          "evidence": "public function actionDefault($term): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/SettingsPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "SettingsPresenter",
+          "methodName": "renderDefault",
+          "httpMethod": "GET",
+          "path": "/mailer/settings/default",
+          "line": 28,
+          "evidence": "public function renderDefault(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/SignPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "SignPresenter",
+          "methodName": "renderIn",
+          "httpMethod": "GET",
+          "path": "/mailer/sign/in",
+          "line": 21,
+          "evidence": "public function renderIn(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "SignPresenter",
+          "methodName": "actionOut",
+          "httpMethod": "GET",
+          "path": "/mailer/sign/out",
+          "line": 28,
+          "evidence": "public function actionOut(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "SignPresenter",
+          "methodName": "renderError",
+          "httpMethod": "GET",
+          "path": "/mailer/sign/error",
+          "line": 35,
+          "evidence": "public function renderError(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/SnippetPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "SnippetPresenter",
+          "methodName": "renderDefaultJsonData",
+          "httpMethod": "GET",
+          "path": "/mailer/snippet/default-json-data",
+          "line": 65,
+          "evidence": "public function renderDefaultJsonData(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "SnippetPresenter",
+          "methodName": "renderEdit",
+          "httpMethod": "GET",
+          "path": "/mailer/snippet/edit",
+          "line": 106,
+          "evidence": "public function renderEdit($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "SnippetPresenter",
+          "methodName": "handleDelete",
+          "httpMethod": "GET",
+          "path": "/mailer/snippet/delete",
+          "line": 116,
+          "evidence": "public function handleDelete($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/TemplatePresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "TemplatePresenter",
+          "methodName": "renderDefaultJsonData",
+          "httpMethod": "GET",
+          "path": "/mailer/template/default-json-data",
+          "line": 106,
+          "evidence": "public function renderDefaultJsonData(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "TemplatePresenter",
+          "methodName": "renderShow",
+          "httpMethod": "GET",
+          "path": "/mailer/template/show",
+          "line": 170,
+          "evidence": "public function renderShow($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "TemplatePresenter",
+          "methodName": "actionShowByCode",
+          "httpMethod": "GET",
+          "path": "/mailer/template/show-by-code",
+          "line": 181,
+          "evidence": "public function actionShowByCode($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "TemplatePresenter",
+          "methodName": "renderLogJsonData",
+          "httpMethod": "GET",
+          "path": "/mailer/template/log-json-data",
+          "line": 220,
+          "evidence": "public function renderLogJsonData(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "TemplatePresenter",
+          "methodName": "renderNew",
+          "httpMethod": "GET",
+          "path": "/mailer/template/new",
+          "line": 257,
+          "evidence": "public function renderNew(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "TemplatePresenter",
+          "methodName": "renderEdit",
+          "httpMethod": "GET",
+          "path": "/mailer/template/edit",
+          "line": 270,
+          "evidence": "public function renderEdit($id, string $editedLocale = null): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "TemplatePresenter",
+          "methodName": "renderPreview",
+          "httpMethod": "GET",
+          "path": "/mailer/template/preview",
+          "line": 298,
+          "evidence": "public function renderPreview($id, $type = 'html', $lang = null): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "TemplatePresenter",
+          "methodName": "handleDuplicate",
+          "httpMethod": "GET",
+          "path": "/mailer/template/duplicate",
+          "line": 311,
+          "evidence": "public function handleDuplicate($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "TemplatePresenter",
+          "methodName": "handleDelete",
+          "httpMethod": "GET",
+          "path": "/mailer/template/delete",
+          "line": 384,
+          "evidence": "public function handleDelete($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/ListPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "ListPresenter",
+          "methodName": "renderDefaultJsonData",
+          "httpMethod": "GET",
+          "path": "/mailer/list/default-json-data",
+          "line": 125,
+          "evidence": "public function renderDefaultJsonData(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "ListPresenter",
+          "methodName": "renderShow",
+          "httpMethod": "GET",
+          "path": "/mailer/list/show",
+          "line": 165,
+          "evidence": "public function renderShow($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "ListPresenter",
+          "methodName": "renderEdit",
+          "httpMethod": "GET",
+          "path": "/mailer/list/edit",
+          "line": 253,
+          "evidence": "public function renderEdit($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "ListPresenter",
+          "methodName": "renderTemplateJsonData",
+          "httpMethod": "GET",
+          "path": "/mailer/list/template-json-data",
+          "line": 290,
+          "evidence": "public function renderTemplateJsonData(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "ListPresenter",
+          "methodName": "renderVariantsJsonData",
+          "httpMethod": "GET",
+          "path": "/mailer/list/variants-json-data",
+          "line": 354,
+          "evidence": "public function renderVariantsJsonData(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "ListPresenter",
+          "methodName": "handleRenderSorting",
+          "httpMethod": "GET",
+          "path": "/mailer/list/render-sorting",
+          "line": 429,
+          "evidence": "public function handleRenderSorting($categoryId, $sorting): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "ListPresenter",
+          "methodName": "renderSentEmailsDetail",
+          "httpMethod": "GET",
+          "path": "/mailer/list/sent-emails-detail",
+          "line": 452,
+          "evidence": "public function renderSentEmailsDetail($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "ListPresenter",
+          "methodName": "handleFilterChanged",
+          "httpMethod": "GET",
+          "path": "/mailer/list/filter-changed",
+          "line": 616,
+          "evidence": "public function handleFilterChanged($id, $from, $to, $groupBy, $tz)",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "ListPresenter",
+          "methodName": "renderSubscriberEmailsJsonData",
+          "httpMethod": "GET",
+          "path": "/mailer/list/subscriber-emails-json-data",
+          "line": 654,
+          "evidence": "public function renderSubscriberEmailsJsonData(): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        },
+        {
+          "className": "ListPresenter",
+          "methodName": "handleDelete",
+          "httpMethod": "GET",
+          "path": "/mailer/list/delete",
+          "line": 682,
+          "evidence": "public function handleDelete($id): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "path": "/extensions/mailer-module/src/Presenters/Error4xxPresenter.php",
+      "service": "remp-mailer",
+      "endpoints": [
+        {
+          "className": "Error4xxPresenter",
+          "methodName": "renderDefault",
+          "httpMethod": "GET",
+          "path": "/mailer/error4xx/default",
+          "line": 25,
+          "evidence": "public function renderDefault(Nette\\Application\\BadRequestException $exception): void",
+          "framework": "Nette",
+          "confidence": "medium"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "DeepSeek-V4.1-Flash-1017",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "low",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "Mailer",
+    "commit": "b4ff30913bcf770c67cf072fd2a5991c60966fae",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 2,
+    "elided_results": 39,
+    "steps": 51,
+    "tool_calls": 88,
+    "rejected_entries": 31,
+    "no_call_replies": 0,
+    "input_tokens": 1031551,
+    "cached_input_tokens": 958976,
+    "output_tokens": 21001,
+    "list_price_usd": 0.0264,
+    "wall_seconds": 131.4,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".env.example\n.env.test\n.gitignore\n.htaccess\n.phpcs_ruleset.xml\n.phpstan.neon\nMakefile\nREADME.md\napp/\nbin/\ncomposer.json\ncomposer.lock\nextensions/\nlog/\npackage.json\nphpunit.xml\ntemp/\ntests/\nwww/\nyarn.lock"
+      },
+      {
+        "step": 1,
+        "tool": "find",
+        "args": {
+          "pattern": "Dockerfile"
+        },
+        "result_head": "(no files)"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app"
+        },
+        "result_head": "Bootstrap.php\nComponents/\nForms/\nHermes/\nModels/\nconfig/"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/www"
+        },
+        "result_head": ".htaccess\n.maintenance.php\nfavicon.ico\nindex.php\nrobots.txt"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/bin"
+        },
+        "result_head": "command.php\nlatte-lint.php"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/composer.json"
+        },
+        "result_head": "1: {\n2:     \"name\": \"remp-mailer/mail-module\",\n3:     \"description\": \"REMP Mailer\",\n4:     \"type\": \"project\",\n5:     \"license\": [\"MIT\"],\n6:     \"config\": {\n7:         \"sort-packages\": true,\n8:         \"allow-plugins\": {\n9:             \"phpstan/extension-installer\": true,\n10:             \"php-http/discovery\": true\n11:         }\n12:     },\n13:     \"repositories\": [\n14:         {\n15:             \"type\": \"path\",\n16:             \"url\": \"../Composer/*\",\n17:             \"options\": {\n18:                 \"symlink\": false\n19:             }\n20:         },\n21:         {\n22:           \"type\": \"path\",\n23:           \"url\": \"extensions/*\",\n24:           \"options\": {\n25:             \"symlink\": true\n26:           }\n27:         }\n28:     ],\n29: \n30:     \"require\": {\n31:         \"php\": \"^8.1\",\n32:         \"remp/mailer-module\": \"@dev\",\n33:         \"remp/mailer-newrelic-module\": \"@dev\"\n34:     },\n35:     \"require-dev\": {\n36:         \"friendsofphp/php-cs-fixer\": \"^3.13\",\n37:         \"mockery/mockery\": \"^1.5\""
+      },
+      {
+        "step": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "/www/index.php"
+        },
+        "result_head": "1: <?php\n2: \n3: require_once __DIR__ . '/../vendor/autoload.php';\n4: require_once __DIR__ . '/../app/Bootstrap.php';\n5: \n6: Remp\\Mailer\\Bootstrap::boot()\n7:     ->createContainer()\n8:     ->getByType(Nette\\Application\\Application::class)\n9:     ->run();"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app/config"
+        },
+        "result_head": "config.local.neon.example\nconfig.neon\nconfig.test.neon"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app/Components"
+        },
+        "result_head": "GeneratorWidgets/"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app/Hermes"
+        },
+        "result_head": "MailgunBotTrackerHandler.php"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/config/config.neon"
+        },
+        "result_head": "1: services:\n2: \t- Remp\\Mailer\\Forms\\NovydenikNewsfilterTemplateFormFactory('users_with_any_subscriptions', 'users-without-subscription')\n3: \t- Remp\\Mailer\\Forms\\NewsfilterTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n4: \t- Remp\\Mailer\\Forms\\MediaBriefingTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n5: \t- Remp\\Mailer\\Forms\\DennikeTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n6: \t- Remp\\Mailer\\Forms\\TldrTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n7: \t- Remp\\Mailer\\Forms\\MMSTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n8: \t- Remp\\Mailer\\Forms\\GrafdnaTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n9: \t- Remp\\Mailer\\Forms\\DailyMinuteTemplateFormFactory('minuta-daily-digest')\n10: \tarticleUrlParserTemplateFormFacto"
+      },
+      {
+        "step": 4,
+        "tool": "find",
+        "args": {
+          "pattern": "*Presenter.php"
+        },
+        "result_head": "/extensions/mailer-module/src/Presenters/BasePresenter.php\n/extensions/mailer-module/src/Presenters/DashboardPresenter.php\n/extensions/mailer-module/src/Presenters/Error4xxPresenter.php\n/extensions/mailer-module/src/Presenters/ErrorPresenter.php\n/extensions/mailer-module/src/Presenters/GeneratorPresenter.php\n/extensions/mailer-module/src/Presenters/HealthPresenter.php\n/extensions/mailer-module/src/Presenters/JobPresenter.php\n/extensions/mailer-module/src/Presenters/LayoutPresenter.php\n/extensions/mailer-module/src/Presenters/ListPresenter.php\n/extensions/mailer-module/src/Presenters/LogPresenter.php\n/extensions/mailer-module/src/Presenters/MailGeneratorPresenter.php\n/extensions/mailer-module/src/Presenters/PreviewPresenter.php\n/extensions/mailer-module/src/Presenters/SearchPresenter.php\n/extensions/mailer-module/src/Presenters/SettingsPresenter.php\n/extensions/mailer-module/src/Presenters/SignPresenter.php\n/extensions/mailer-module/src/Presenters/SnippetPresenter.php\n/extensions/mailer"
+      },
+      {
+        "step": 5,
+        "tool": "list_dir",
+        "args": {
+          "path": "/extensions"
+        },
+        "result_head": "mailer-module/\nnewrelic-module/"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/extensions/mailer-module/src/Presenters/BasePresenter.php"
+        },
+        "result_head": "1: <?php\n2: declare(strict_types=1);\n3: \n4: namespace Remp\\MailerModule\\Presenters;\n5: \n6: use Nette\\Application\\UI\\Presenter;\n7: use Remp\\MailerModule\\Components\\ApplicationStatus\\ApplicationStatus;\n8: use Remp\\MailerModule\\Components\\ApplicationStatus\\IApplicationStatusFactory;\n9: use Remp\\MailerModule\\Forms\\IFormFactory;\n10: use Remp\\MailerModule\\Models\\Auth\\PermissionManager;\n11: use Remp\\MailerModule\\Models\\Config\\LocalizationConfig;\n12: use Remp\\MailerModule\\Models\\EnvironmentConfig;\n13: \n14: abstract class BasePresenter extends Presenter\n15: {\n16:     /** @var EnvironmentConfig @inject */\n17:     public $environmentConfig;\n18: \n19:     /** @var IApplicationStatusFactory @inject */\n20:     public $applicationStatusFactory;\n21: \n22:     /** @var PermissionManager @inject */\n23:     public $permissionManager;\n24: \n25:     /** @var LocalizationConfig @inject */\n26:     public $localizationConfig;\n27:     \n28:     public function startup(): void\n29:     {\n30:         parent::startup("
+      },
+      {
+        "step": 6,
+        "tool": "grep",
+        "args": {
+          "pattern": "Router|route\\(|addRoute",
+          "path": "/extensions/mailer-module"
+        },
+        "result_head": "/extensions/mailer-module/src/Models/RouterFactory.php:7: use Nette\\Application\\Routers\\Route;\n/extensions/mailer-module/src/Models/RouterFactory.php:8: use Nette\\Application\\Routers\\RouteList;\n/extensions/mailer-module/src/Models/RouterFactory.php:10: class RouterFactory\n/extensions/mailer-module/src/Models/RouterFactory.php:14: public static function createRouter(): RouteList\n/extensions/mailer-module/src/config/config.neon:2: router: Remp\\MailerModule\\Models\\RouterFactory::createRouter"
+      },
+      {
+        "step": 6,
+        "tool": "find",
+        "args": {
+          "pattern": "*.neon",
+          "path": "/extensions"
+        },
+        "result_head": "/extensions/mailer-module/src/config/config.neon\n/extensions/mailer-module/src/config/config.root.neon"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/extensions/mailer-module/src/Models/RouterFactory.php"
+        },
+        "result_head": "1: <?php\n2: declare(strict_types=1);\n3: \n4: namespace Remp\\MailerModule\\Models;\n5: \n6: use Nette;\n7: use Nette\\Application\\Routers\\Route;\n8: use Nette\\Application\\Routers\\RouteList;\n9: \n10: class RouterFactory\n11: {\n12:     use Nette\\StaticClass;\n13: \n14:     public static function createRouter(): RouteList\n15:     {\n16:         $router = new RouteList;\n17: \n18:         $router[] = new Route('/api/v<version>/<package>[/<apiAction>][/<params>]', 'Api:Api:default');\n19:         $router[] = new Route('<module>/<presenter>/<action>[/<id>]', [\n20:             'module' => 'Mailer',\n21:             'presenter' => 'Dashboard',\n22:             'action' => 'default',\n23:             'id' => null,\n24:         ]);\n25: \n26:         return $router;\n27:     }\n28: }"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/extensions/mailer-module/src/config/config.neon"
+        },
+        "result_head": "1: services:\n2: \trouter: Remp\\MailerModule\\Models\\RouterFactory::createRouter\n3: \tenvironmentConfig:\n4: \t\tfactory: Remp\\MailerModule\\Models\\EnvironmentConfig\n5: \t\tsetup:\n6: \t\t\t- linkService(beam, %remp.beam.web_addr%, album)\n7: \t\t\t- linkService(campaign, %remp.campaign.web_addr%, trending-up)\n8: \t\t\t- linkService(mailer, /, email)\n9: \t\t\t- setParam(locale, %locale%)\n10: \t\t\t- setParam(max_result_count, %max_result_count%)\n11: \t\t\t- setParam(template_editor, %template_editor%)\n12: \n13: \tlocalizationConfig:\n14: \t\tfactory: Remp\\MailerModule\\Models\\Config\\LocalizationConfig(@environmentConfig::get('LOCALE'))\n15: \n16: \tpermissionManager:\n17: \t\tfactory: Remp\\MailerModule\\Models\\Auth\\PermissionManager\n18: \n19: \t# Latte filters\n20: \tfilterLoader:\n21: \t\tfactory: Remp\\MailerModule\\Filters\\FilterLoader\n22: \t\tsetup:\n23: \t\t\t- register('yesNo', [Remp\\MailerModule\\Filters\\YesNoFilter(), process])\n24: \n25: \tnette.latteFactory:\n26: \t\tsetup:\n27: \t\t\t- addFilterLoader([@filterLoader, 'load'])\n28: \n29: \tmailWo"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/extensions/mailer-module/src/config/config.root.neon"
+        },
+        "result_head": "1: # Should be loaded from Bootstrap class as first configuration.file\n2: parameters:\n3: \tlocale: @environmentConfig::get('LOCALE')\n4: \ttimezone: @environmentConfig::get('TIMEZONE')\n5: \tsso_addr: @environmentConfig::get('SSO_ADDR')\n6: \tsso_error_url: @environmentConfig::get('SSO_ERROR_URL')\n7: \tmax_result_count: @environmentConfig::get('SEARCH_MAX_RESULT_COUNT')\n8: \tredis:\n9: \t\thost: @environmentConfig::get('REDIS_HOST')\n10: \t\tport: @environmentConfig::getInt('REDIS_PORT')\n11: \t\tdb: @environmentConfig::getInt('REDIS_DB')\n12: \t\tpassword: @environmentConfig::get('REDIS_PASSWORD')\n13: \tremp:\n14: \t\tbeam:\n15: \t\t\tweb_addr: @environmentConfig::get('REMP_BEAM_ADDR')\n16: \t\t\ttoken: @environmentConfig::get('REMP_BEAM_API_TOKEN')\n17: \t\t\ttracker_addr: @environmentConfig::get('REMP_BEAM_TRACKER_ADDR')\n18: \t\t\ttracker_property_token: @environmentConfig::get('REMP_BEAM_TRACKER_PROPERTY_TOKEN')\n19: \t\t\tsegments_addr: @environmentConfig::get('REMP_BEAM_SEGMENTS_ADDR')\n20: \t\tpythia:\n21: \t\t\tsegments_addr: @"
+      },
+      {
+        "step": 8,
+        "tool": "find",
+        "args": {
+          "pattern": "*Handler.php",
+          "path": "/extensions/mailer-module/src"
+        },
+        "result_head": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorTemplatesListingHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailCreateTemplateHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailGeneratorHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailGeneratorPreprocessHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailJobCreateApiHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTemplatesListingHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTypeCategoriesHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTypeUpsertHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTypeVariantCreateApiHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTypesListingHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailgunEventsHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/RenderTemplateApiHan"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "pattern": "Api\\\\|ApiHandler|NetteApi",
+          "path": "/extensions/mailer-module/src"
+        },
+        "result_head": "/extensions/mailer-module/src/Api/JsonValidationTrait.php:10: use Tomaj\\NetteApi\\Response\\JsonApiResponse;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorParamsProcessor.php:4: namespace Remp\\MailerModule\\Api\\v1\\Handlers\\Mailers;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorParamsProcessor.php:6: use Tomaj\\NetteApi\\Params\\ParamInterface;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorTemplatesListingHandler.php:4: namespace Remp\\MailerModule\\Api\\v1\\Handlers\\Mailers;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorTemplatesListingHandler.php:8: use Tomaj\\NetteApi\\Handlers\\BaseHandler;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorTemplatesListingHandler.php:9: use Tomaj\\NetteApi\\Params\\GetInputParam;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorTemplatesListingHandler.php:10: use Tomaj\\NetteApi\\Params\\InputParam;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorTemplatesList"
+      },
+      {
+        "step": 9,
+        "tool": "read_file",
+        "args": {
+          "path": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailJobCreateApiHandler.php"
+        },
+        "result_head": "1: <?php\n2: declare(strict_types=1);\n3: \n4: namespace Remp\\MailerModule\\Api\\v1\\Handlers\\Mailers;\n5: \n6: use Nette\\Http\\IResponse;\n7: use Remp\\MailerModule\\Models\\Job\\JobSegmentsManager;\n8: use Remp\\MailerModule\\Models\\Segment\\Aggregator;\n9: use Remp\\MailerModule\\Repositories\\BatchesRepository;\n10: use Remp\\MailerModule\\Repositories\\JobsRepository;\n11: use Remp\\MailerModule\\Repositories\\ListVariantsRepository;\n12: use Remp\\MailerModule\\Repositories\\TemplatesRepository;\n13: use Tomaj\\NetteApi\\Handlers\\BaseHandler;\n14: use Tomaj\\NetteApi\\Params\\PostInputParam;\n15: use Tomaj\\NetteApi\\Response\\JsonApiResponse;\n16: use Tomaj\\NetteApi\\Response\\ResponseInterface;\n17: \n18: class MailJobCreateApiHandler extends BaseHandler\n19: {\n20:     private $jobsRepository;\n21: \n22:     private $batchesRepository;\n23: \n24:     private $templatesRepository;\n25: \n26:     private $aggregator;\n27: \n28:     private $listVariantsRepository;\n29: \n30:     public function __construct(\n31:         JobsRepository $jobs"
+      },
+      {
+        "step": 9,
+        "tool": "read_file",
+        "args": {
+          "path": "/extensions/mailer-module/src/Api/v1/Handlers/Users/SubscribeHandler.php"
+        },
+        "result_head": "1: <?php\n2: declare(strict_types=1);\n3: \n4: namespace Remp\\MailerModule\\Api\\v1\\Handlers\\Users;\n5: \n6: use Nette\\Utils\\Strings;\n7: use Remp\\MailerModule\\Api\\InvalidApiInputParamException;\n8: use Remp\\MailerModule\\Api\\JsonValidationTrait;\n9: use Remp\\MailerModule\\Repositories\\ActiveRow;\n10: use Remp\\MailerModule\\Repositories\\ListsRepository;\n11: use Remp\\MailerModule\\Repositories\\ListVariantsRepository;\n12: use Remp\\MailerModule\\Repositories\\UserSubscriptionsRepository;\n13: use Remp\\MailerModule\\Repositories\\UserSubscriptionVariantsRepository;\n14: use Tomaj\\NetteApi\\Handlers\\BaseHandler;\n15: use Tomaj\\NetteApi\\Params\\RawInputParam;\n16: use Tomaj\\NetteApi\\Response\\JsonApiResponse;\n17: use Tomaj\\NetteApi\\Response\\ResponseInterface;\n18: \n19: class SubscribeHandler extends BaseHandler\n20: {\n21:     use JsonValidationTrait;\n22: \n23:     public function __construct(\n24:         protected UserSubscriptionsRepository $userSubscriptionsRepository,\n25:         private ListsRepository $listsReposit"
+      },
+      {
+        "step": 10,
+        "tool": "grep",
+        "args": {
+          "path": "/extensions/mailer-module",
+          "pattern": "apiHandlers|handlers:|method:|path:"
+        },
+        "result_head": "/extensions/mailer-module/src/Models/Sender.php:110: throw new MailerBatchException(sprintf(\"attempted to send batch via send() method: please use single recipient: %s\", Json::encode($this->recipients)));"
+      },
+      {
+        "step": 11,
+        "tool": "find",
+        "args": {
+          "path": "/extensions/mailer-module/src/DI",
+          "pattern": "*.php"
+        },
+        "result_head": "/extensions/mailer-module/src/DI/MailerModuleExtension.php"
+      },
+      {
+        "step": 11,
+        "tool": "grep",
+        "args": {
+          "path": "/extensions/mailer-module/src",
+          "pattern": "Handlers\\\\|ApiDefinition|apiDefinition|addHandler"
+        },
+        "result_head": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorParamsProcessor.php:4: namespace Remp\\MailerModule\\Api\\v1\\Handlers\\Mailers;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorTemplatesListingHandler.php:4: namespace Remp\\MailerModule\\Api\\v1\\Handlers\\Mailers;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorTemplatesListingHandler.php:8: use Tomaj\\NetteApi\\Handlers\\BaseHandler;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailCreateTemplateHandler.php:4: namespace Remp\\MailerModule\\Api\\v1\\Handlers\\Mailers;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailCreateTemplateHandler.php:12: use Tomaj\\NetteApi\\Handlers\\BaseHandler;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailGeneratorHandler.php:4: namespace Remp\\MailerModule\\Api\\v1\\Handlers\\Mailers;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailGeneratorHandler.php:9: use Tomaj\\NetteApi\\Handlers\\BaseHandler;\n/extensions/mailer-module/src/Api/v1/Handlers/Mailer"
+      },
+      {
+        "step": 12,
+        "tool": "read_file",
+        "args": {
+          "path": "/extensions/mailer-module/src/DI/MailerModuleExtension.php"
+        },
+        "result_head": "1: <?php\n2: \n3: declare(strict_types=1);\n4: \n5: namespace Remp\\MailerModule\\DI;\n6: \n7: use Nette\\DI\\CompilerExtension;\n8: use Nette\\DI\\Definitions\\FactoryDefinition;\n9: use Nette\\DI\\InvalidConfigurationException;\n10: use Nette\\Schema\\Expect;\n11: use Nette\\Schema\\Schema;\n12: use Remp\\MailerModule\\Latte\\PermissionMacros;\n13: \n14: final class MailerModuleExtension extends CompilerExtension\n15: {\n16:     public function getConfigSchema(): Schema\n17:     {\n18:         return Expect::structure([\n19:             'redis_client_factory' => Expect::structure([\n20:                 'prefix' => Expect::string(),\n21:                 'replication' => Expect::structure([\n22:                     'service' => Expect::string(),\n23:                     'sentinels' => Expect::arrayOf(Expect::string())\n24:                 ])\n25:             ]),\n26:         ]);\n27:     }\n28: \n29:     public function beforeCompile()\n30:     {\n31:         parent::beforeCompile();\n32: \n33:         $builder = $this->getContainer"
+      },
+      {
+        "step": 13,
+        "tool": "grep",
+        "args": {
+          "path": "/app",
+          "pattern": "Api|Handler"
+        },
+        "result_head": "/app/Hermes/MailgunBotTrackerHandler.php:9: use Tomaj\\Hermes\\Handler\\HandlerInterface;\n/app/Hermes/MailgunBotTrackerHandler.php:12: class MailgunBotTrackerHandler implements HandlerInterface\n/app/Models/Generators/DailyMinuteGenerator.php:15: use Tomaj\\NetteApi\\Params\\PostInputParam;\n/app/Models/Generators/DailyNewsletterGenerator.php:14: use Tomaj\\NetteApi\\Params\\PostInputParam;\n/app/Models/Generators/DennikNBestPerformingArticlesGenerator.php:12: use Tomaj\\NetteApi\\Params\\PostInputParam;\n/app/Models/Generators/DennikeGenerator.php:18: use Tomaj\\NetteApi\\Params\\PostInputParam;\n/app/Models/Generators/GrafdnaGenerator.php:21: use Tomaj\\NetteApi\\Params\\PostInputParam;\n/app/Models/Generators/MMSGenerator.php:17: use Tomaj\\NetteApi\\Params\\PostInputParam;\n/app/Models/Generators/MediaBriefingGenerator.php:18: use Tomaj\\NetteApi\\Params\\PostInputParam;\n/app/Models/Generators/MinutaAlertGenerator.php:14: use Tomaj\\NetteApi\\Params\\PostInputParam;\n/app/Models/Generators/MinutaDigestGenerator.php:"
+      },
+      {
+        "step": 13,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/Bootstrap.php"
+        },
+        "result_head": "1: <?php\n2: declare(strict_types=1);\n3: \n4: namespace Remp\\Mailer;\n5: \n6: use Dotenv\\Dotenv;\n7: use Nette\\Configurator;\n8: \n9: final class Bootstrap\n10: {\n11:     public static function boot(): Configurator\n12:     {\n13:         // attempt to fix access rights issues in writable folders caused by different web/cli users writing to logs\n14:         umask(0);\n15: \n16:         (Dotenv::createImmutable(__DIR__ . '/../'))->load();\n17: \n18:         $configurator = new Configurator;\n19:         $environment = $_ENV['ENV'];\n20: \n21:         if ($_ENV['FORCE_HTTPS'] === 'true') {\n22:             $_SERVER['HTTPS'] = 'on';\n23:             $_SERVER['HTTP_X_FORWARDED_PROTO'] = 'https';\n24:             $_SERVER['SERVER_PORT'] = 443;\n25:         }\n26:         if ($environment === 'local') {\n27:             $configurator->setDebugMode(true);\n28:         } else {\n29:             $configurator->setDebugMode(false);\n30:         }\n31: \n32:         $configurator->enableTracy(__DIR__ . '/../log');\n33: \n34: "
+      },
+      {
+        "step": 14,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/config/config.test.neon"
+        },
+        "result_head": "1: parameters:\n2: \tcrm:\n3: \t\taddr: @environmentConfig::get('CRM_ADDR')\n4: \t\tapi_token: @environmentConfig::get('CRM_API_TOKEN')\n5: \terrbit:\n6: \t\tsend_errors: false\n7: \t\tapi_key: 63420e9df1e3f24dc30a29bffea1d016\n8: \t\thost: errbit.tomaj.sk\n9: \t\tport: 443\n10: \t\tsecure: true\n11: \t\tenvironment_name: mailer/production\n12: \t\tproject_root: /data/web/remp2020.com/app/Mailer/current\n13: \n14: services:\n15: \t- Remp\\MailerModule\\Models\\Users\\Dummy\n16: \thermesMemoryDriver:\n17: \t\tfactory: Remp\\MailerModule\\Hermes\\MemoryDriver\n18: \thermesDispatcher:\n19: \t\tfactory: Tomaj\\Hermes\\Dispatcher(@hermesMemoryDriver, @hermesLogger, @hermesShutdown)\n20: \thermesEmitter:\n21: \t\tfactory: Tomaj\\Hermes\\Emitter(@hermesMemoryDriver, @hermesLogger)\n22: \tsegmentAgreggator:\n23: \t\tsetup:\n24: \t\t\t- register(Remp\\MailerModule\\Models\\Segment\\Dummy())\n25: \tapiTokenRepository:\n26: \t\tfactory: Tomaj\\NetteApi\\Misc\\StaticTokenRepository(['test': '*'])\n27: \tmailFactory:\n28: \t\tsetup:\n29: \t\t\t- addMailer(Tests\\Feature\\Mails\\TestMailer()"
+      },
+      {
+        "step": 14,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/config/config.local.neon.example"
+        },
+        "result_head": "1: php:\n2: \tintl.default_locale: sk_SK\n3: \n4: extensions:\n5: #\tnewrelic: Remp\\NewrelicModule\\DI\\NewrelicModuleExtension\n6: \n7: #parameters:\n8: #\tcrm:\n9: #\t\taddr: @environmentConfig::get('CRM_ADDR')\n10: #\t\tapi_token: @environmentConfig::get('CRM_API_TOKEN')\n11: \n12: services:\n13:     # All console commands you need to use should be registered here\n14:     # This is a set that we recommend to use\n15:     console:\n16:         setup:\n17:             - add(Remp\\MailerModule\\Commands\\SyncUserSubscriptionsCommand())\n18:             # - add(Remp\\MailerModule\\Commands\\SyncDeletedUsersCommand())\n19:             - add(Remp\\MailerModule\\Commands\\MailgunEventsCommand())\n20:             # If you're using Beam, you can enable this command to pull conversions from there\n21:             # - add(Remp\\MailerModule\\Commands\\ProcessConversionStatsCommand())\n22: \n23: #\t# Internal CRM system. For more details contact Tomas Bella.\n24: #\tauthenticator:\n25: #\t\tfactory: Remp\\MailerModule\\Models\\Auth\\Authenticato"
+      },
+      {
+        "step": 15,
+        "tool": "find",
+        "args": {
+          "path": "/extensions/mailer-module/src",
+          "pattern": "*Presenter.php"
+        },
+        "result_head": "/extensions/mailer-module/src/Presenters/BasePresenter.php\n/extensions/mailer-module/src/Presenters/DashboardPresenter.php\n/extensions/mailer-module/src/Presenters/Error4xxPresenter.php\n/extensions/mailer-module/src/Presenters/ErrorPresenter.php\n/extensions/mailer-module/src/Presenters/GeneratorPresenter.php\n/extensions/mailer-module/src/Presenters/HealthPresenter.php\n/extensions/mailer-module/src/Presenters/JobPresenter.php\n/extensions/mailer-module/src/Presenters/LayoutPresenter.php\n/extensions/mailer-module/src/Presenters/ListPresenter.php\n/extensions/mailer-module/src/Presenters/LogPresenter.php\n/extensions/mailer-module/src/Presenters/MailGeneratorPresenter.php\n/extensions/mailer-module/src/Presenters/PreviewPresenter.php\n/extensions/mailer-module/src/Presenters/SearchPresenter.php\n/extensions/mailer-module/src/Presenters/SettingsPresenter.php\n/extensions/mailer-module/src/Presenters/SignPresenter.php\n/extensions/mailer-module/src/Presenters/SnippetPresenter.php\n/extensions/mailer"
+      },
+      {
+        "step": 15,
+        "tool": "grep",
+        "args": {
+          "path": "/extensions/mailer-module/src",
+          "pattern": "netteApi|NetteApi\\\\DI|api:"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 16,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\":[{\"name\":\"remp-mailer\",\"dirs\":[\"/app\",\"/www\",\"/bin\",\"/extensions/mailer-module\",\"/extensions/newrelic-module\"]}]}"
+        },
+        "result_head": "Recorded 1 new: service remp-mailer\nTotal: 1 services, 0 endpoints in 0 files.\nServices with no endpoints recorded yet: remp-mailer."
+      },
+      {
+        "step": 16,
+        "tool": "find",
+        "args": {
+          "path": "/extensions/mailer-module/src/Api",
+          "pattern": "*.php"
+        },
+        "result_head": "/extensions/mailer-module/src/Api/InvalidApiInputParamException.php\n/extensions/mailer-module/src/Api/JsonValidationTrait.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorParamsProcessor.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorTemplatesListingHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailCreateTemplateHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailGeneratorHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailGeneratorPreprocessHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailJobCreateApiHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTemplatesListingHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTypeCategoriesHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTypeUpsertHandler.php\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTypeVariantCreateApiHandler.php\n/extensions/mailer-module/"
+      },
+      {
+        "step": 17,
+        "tool": "grep",
+        "args": {
+          "pattern": "apiAction|package:|version:|apiHandlers"
+        },
+        "result_head": "/extensions/mailer-module/README.md:8: Use composer to install the package:\n/extensions/mailer-module/src/Models/RouterFactory.php:18: $router[] = new Route('/api/v<version>/<package>[/<apiAction>][/<params>]', 'Api:Api:default');\n/extensions/newrelic-module/src/Listener/NewrelicRequestListener.php:46: $params['apiAction'] ?? '',"
+      },
+      {
+        "step": 17,
+        "tool": "list_dir",
+        "args": {
+          "path": "/extensions/mailer-module"
+        },
+        "result_head": "LICENSE.md\nREADME.md\nassets/\ncomposer.json\npackage.json\nresources/\nsrc/\nwebpack.mix.js"
+      },
+      {
+        "step": 18,
+        "tool": "grep",
+        "args": {
+          "pattern": "MailJobCreateApiHandler|SubscribeHandler|MailTypesListingHandler"
+        },
+        "result_head": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailJobCreateApiHandler.php:18: class MailJobCreateApiHandler extends BaseHandler\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTypesListingHandler.php:15: class MailTypesListingHandler extends BaseHandler\n/extensions/mailer-module/src/Api/v1/Handlers/Users/BulkSubscribeHandler.php:13: class BulkSubscribeHandler extends SubscribeHandler\n/extensions/mailer-module/src/Api/v1/Handlers/Users/SubscribeHandler.php:19: class SubscribeHandler extends BaseHandler\n/extensions/mailer-module/src/Api/v1/Handlers/Users/UnSubscribeHandler.php:18: class UnSubscribeHandler extends BaseHandler\n/extensions/mailer-module/src/Api/v2/Handlers/Mailers/MailJobCreateApiHandler.php:18: class MailJobCreateApiHandler extends BaseHandler\n/extensions/mailer-module/src/Api/v2/Handlers/Mailers/MailTypesListingHandler.php:15: class MailTypesListingHandler extends BaseHandler\n/extensions/mailer-module/src/Api/v3/Handlers/Mailers/MailTypesListingHandler.p"
+      },
+      {
+        "step": 19,
+        "tool": "read_file",
+        "args": {
+          "path": "/extensions/mailer-module/src/config/config.neon",
+          "start": "160"
+        },
+        "result_head": "160: \n161: \tconfig: Remp\\MailerModule\\Models\\Config\\Config\n162: \t- Remp\\MailerModule\\Models\\Sender\n163: \t- Remp\\MailerModule\\Models\\Job\\BatchEmailGenerator(@mailProcessLogger)\n164: \t- Remp\\MailerModule\\Models\\Job\\MailCache\n165: \t- Remp\\MailerModule\\Models\\Job\\JobSegmentsManager\n166: \t- Remp\\MailerModule\\Models\\Auth\\AutoLogin\n167: \n168: \t- Remp\\MailerModule\\Models\\HealthChecker\n169: \n170: \t- Remp\\MailerModule\\Models\\Users\\UserManager\n171: \n172: \t- Remp\\MailerModule\\Models\\MailTranslator\n173: \n174: \t# API\n175: \t- Tomaj\\NetteApi\\Link\\ApiLink\n176: \t- Tomaj\\NetteApi\\Misc\\IpDetector\n177: \n178: \tapiDecider:\n179: \t\tfactory: Tomaj\\NetteApi\\ApiDecider\n180: \t\tsetup:\n181: \t\t\t- enableGlobalPreflight(Tomaj\\NetteApi\\Handlers\\CorsPreflightHandler(Nette\\Http\\Response(), %preflight.headers%))\n182: \t\t\t- addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('POST', 1, 'users', 'subscribe'), \\Remp\\MailerModule\\Api\\v1\\Handlers\\Users\\SubscribeHandler(), \\Tomaj\\NetteApi\\Authorization\\BearerTokenAuthorization())\n183: \t\t\t-"
+      },
+      {
+        "step": 20,
+        "tool": "read_file",
+        "args": {
+          "path": "/extensions/mailer-module/src/config/config.neon",
+          "start": "205"
+        },
+        "result_head": "205: \t\t\t- addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('GET', 1, 'mailers', 'mail-type-categories'), \\Remp\\MailerModule\\Api\\v1\\Handlers\\Mailers\\MailTypeCategoriesHandler(), \\Tomaj\\NetteApi\\Authorization\\BearerTokenAuthorization())\n206: \t\t\t- addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('POST', 1, 'mailers', 'mail-type-upsert'), \\Remp\\MailerModule\\Api\\v1\\Handlers\\Mailers\\MailTypeUpsertHandler(), \\Tomaj\\NetteApi\\Authorization\\BearerTokenAuthorization())\n207: \t\t\t- addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('GET', 1, 'mailers', 'templates'), \\Remp\\MailerModule\\Api\\v1\\Handlers\\Mailers\\MailTemplatesListingHandler(), \\Tomaj\\NetteApi\\Authorization\\BearerTokenAuthorization())\n208: \t\t\t- addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('GET', 1, 'segments', 'list'), \\Remp\\MailerModule\\Api\\v1\\Handlers\\Segments\\SegmentsListingHandler(), \\Tomaj\\NetteApi\\Authorization\\BearerTokenAuthorization())\n209: \t\t\t- addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('POST', 2, 'mailers', 'mailgun'), \\Remp\\MailerModule\\Api\\v2\\Handlers\\"
+      },
+      {
+        "step": 21,
+        "tool": "grep",
+        "args": {
+          "path": "/extensions/mailer-module/src/Presenters",
+          "pattern": "public function (action|render|handle)\\w+"
+        },
+        "result_head": "/extensions/mailer-module/src/Presenters/DashboardPresenter.php:49: public function renderDefault(): void\n/extensions/mailer-module/src/Presenters/Error4xxPresenter.php:25: public function renderDefault(Nette\\Application\\BadRequestException $exception): void\n/extensions/mailer-module/src/Presenters/GeneratorPresenter.php:70: public function renderDefaultJsonData(): void\n/extensions/mailer-module/src/Presenters/GeneratorPresenter.php:113: public function renderEdit($id): void\n/extensions/mailer-module/src/Presenters/GeneratorPresenter.php:122: public function renderGenerate($id): void\n/extensions/mailer-module/src/Presenters/GeneratorPresenter.php:142: public function handleRenderSorting($sortingValue): void\n/extensions/mailer-module/src/Presenters/GeneratorPresenter.php:152: public function handleDelete($id): void\n/extensions/mailer-module/src/Presenters/HealthPresenter.php:50: public function renderDefault(): void\n/extensions/mailer-module/src/Presenters/JobPresenter.php:120: public f"
+      },
+      {
+        "step": 22,
+        "tool": "grep",
+        "args": {
+          "path": "/extensions/mailer-module/src/Presenters/TemplatePresenter.php",
+          "pattern": "public function (action|render|handle)\\w+"
+        },
+        "result_head": "/extensions/mailer-module/src/Presenters/TemplatePresenter.php:106: public function renderDefaultJsonData(): void\n/extensions/mailer-module/src/Presenters/TemplatePresenter.php:170: public function renderShow($id): void\n/extensions/mailer-module/src/Presenters/TemplatePresenter.php:181: public function actionShowByCode($id): void\n/extensions/mailer-module/src/Presenters/TemplatePresenter.php:220: public function renderLogJsonData(): void\n/extensions/mailer-module/src/Presenters/TemplatePresenter.php:257: public function renderNew(): void\n/extensions/mailer-module/src/Presenters/TemplatePresenter.php:270: public function renderEdit($id, string $editedLocale = null): void\n/extensions/mailer-module/src/Presenters/TemplatePresenter.php:298: public function renderPreview($id, $type = 'html', $lang = null): void\n/extensions/mailer-module/src/Presenters/TemplatePresenter.php:311: public function handleDuplicate($id): void\n/extensions/mailer-module/src/Presenters/TemplatePresenter.php:384: pub"
+      },
+      {
+        "step": 22,
+        "tool": "grep",
+        "args": {
+          "path": "/extensions/mailer-module/src/Presenters",
+          "pattern": "class \\w+Presenter"
+        },
+        "result_head": "/extensions/mailer-module/src/Presenters/BasePresenter.php:14: abstract class BasePresenter extends Presenter\n/extensions/mailer-module/src/Presenters/DashboardPresenter.php:15: final class DashboardPresenter extends BasePresenter\n/extensions/mailer-module/src/Presenters/Error4xxPresenter.php:11: class Error4xxPresenter extends BasePresenter\n/extensions/mailer-module/src/Presenters/ErrorPresenter.php:12: class ErrorPresenter implements Nette\\Application\\IPresenter\n/extensions/mailer-module/src/Presenters/GeneratorPresenter.php:15: final class GeneratorPresenter extends BasePresenter\n/extensions/mailer-module/src/Presenters/HealthPresenter.php:24: final class HealthPresenter extends Presenter\n/extensions/mailer-module/src/Presenters/JobPresenter.php:36: final class JobPresenter extends BasePresenter\n/extensions/mailer-module/src/Presenters/LayoutPresenter.php:13: final class LayoutPresenter extends BasePresenter\n/extensions/mailer-module/src/Presenters/ListPresenter.php:28: final class "
+      },
+      {
+        "step": 23,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\":[{\"path\":\"/extensions/mailer-module/src/config/config.neon\",\"service\":\"remp-mailer\",\"endpoints\":[\n{\"className\":\"SubscribeHandler\",\"methodName\":\"handle\",\"httpMethod\":\"POST\",\"path\":\"/api/v1/use"
+        },
+        "result_head": "Recorded 0 new: nothing\nTotal: 1 services, 0 endpoints in 0 files.\nServices with no endpoints recorded yet: remp-mailer.\n[REJECTED 31] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0].endpoints[0] POST /api/v1/users/subscribe (SubscribeHandler.handle): method handle does not appear in this file\n- files[0].endpoints[1] POST /api/v1/users/un-subscribe (UnSubscribeHandler.handle): method handle does not appear in this file\n- files[0].endpoints[2] POST /api/v1/users/bulk-subscribe (BulkSubscribeHandler.handle): method handle does not appear in this file\n- files[0].endpoints[3] POST /api/v1/users/check-token (CheckTokenHandler.handle): method handle does not appear in this file\n- files[0].endpoints[4] POST /api/v1/users/email-changed (EmailChangedHandler.handle): method handle does not appear in this file\n- files[0].endpoints[5] POST /api/v1/users/user-preferences (UserPreferencesHandler.handle): method handle does not appear in this file\n- files[0"
+      },
+      {
+        "step": 24,
+        "tool": "grep",
+        "args": {
+          "path": "/extensions/mailer-module/src/Api",
+          "pattern": "public function handle"
+        },
+        "result_head": "/extensions/mailer-module/src/Api/v1/Handlers/Mailers/GeneratorTemplatesListingHandler.php:34: public function handle(array $params): ResponseInterface\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailCreateTemplateHandler.php:54: public function handle(array $params): ResponseInterface\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailGeneratorHandler.php:35: public function handle(array $params): ResponseInterface\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailGeneratorPreprocessHandler.php:31: public function handle(array $params): ResponseInterface\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailJobCreateApiHandler.php:56: public function handle(array $params): ResponseInterface\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTemplatesListingHandler.php:35: public function handle(array $params): ResponseInterface\n/extensions/mailer-module/src/Api/v1/Handlers/Mailers/MailTypeCategoriesHandler.php:19: public function handle(array $param"
+      },
+      {
+        "step": 25,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\":[\n{\"path\":\"/extensions/mailer-module/src/Api/v1/Handlers/Users/SubscribeHandler.php\",\"service\":\"remp-mailer\",\"endpoints\":[{\"className\":\"SubscribeHandler\",\"methodName\":\"handle\",\"httpMethod\":\"P"
+        },
+        "result_head": "Recorded 31 new: POST /api/v1/users/subscribe, POST /api/v1/users/un-subscribe, POST /api/v1/users/bulk-subscribe, POST /api/v1/users/check-token, POST /api/v1/users/email-changed, POST /api/v1/users/user-preferences, POST /api/v1/users/user-registered, POST /api/v1/users/bulk-user-registered, POST /api/v1/users/is-subscribed, POST /api/v1/users/is-unsubscribed, POST /api/v1/users/logs, POST /api/v1/users/logs-count-per-status, POST /api/v1/users/delete, POST /api/v1/mailers/mailgun, POST /api/v1/mailers/generate-mail, POST /api/v1/mailers/preprocess-generator-parameters, GET /api/v1/mailers/generator-templates, POST /api/v1/mailers/templates, POST /api/v1/mailers/jobs, POST /api/v2/mailers/jobs, GET /api/v1/mailers/mail-types, GET /api/v2/mailers/mail-types, GET /api/v3/mailers/mail-types, GET /api/v1/mailers/mail-type-categories, POST /api/v1/mailers/mail-type-upsert, GET /api/v1/mailers/templates, GET /api/v1/segments/list, POST /api/v2/mailers/mailgun, POST /api/v1/mailers/send-ema"
+      },
+      {
+        "step": 26,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\":[\n{\"path\":\"/extensions/mailer-module/src/Presenters/DashboardPresenter.php\",\"service\":\"remp-mailer\",\"endpoints\":[{\"className\":\"DashboardPresenter\",\"methodName\":\"renderDefault\",\"httpMethod\":\"G"
+        },
+        "result_head": "Recorded 46 new: GET /mailer/dashboard/default, GET /mailer/health/default, GET /mailer/generator/default-json-data, GET /mailer/generator/edit, GET /mailer/generator/generate, GET /mailer/generator/render-sorting, GET /mailer/generator/delete, GET /mailer/job/default-json-data, GET /mailer/job/show, GET /mailer/job/edit-job, GET /mailer/job/edit-batch, GET /mailer/job/remove-template, GET /mailer/job/set-batch-ready-to-send, GET /mailer/job/set-batch-send, GET /mailer/job/set-batch-user-stop, GET /mailer/job/set-batch-created, GET /mailer/job/remove-batch, GET /mailer/job/set-batch-ready-to-process, GET /mailer/job/mail-type-templates, GET /mailer/job/mail-type-variants, GET /mailer/job/mail-type-code-variants, GET /mailer/layout/default-json-data, GET /mailer/layout/edit, GET /mailer/layout/delete, GET /mailer/log/default-json-data, GET /mailer/mail-generator/default, GET /mailer/mail-generator/preview, GET /mailer/mail-generator/source-template-change, GET /mailer/preview/public, GE"
+      },
+      {
+        "step": 27,
+        "tool": "grep",
+        "args": {
+          "path": "/extensions/mailer-module/src/Presenters/ListPresenter.php",
+          "pattern": "public function (action|render|handle)\\w+"
+        },
+        "result_head": "/extensions/mailer-module/src/Presenters/ListPresenter.php:125: public function renderDefaultJsonData(): void\n/extensions/mailer-module/src/Presenters/ListPresenter.php:165: public function renderShow($id): void\n/extensions/mailer-module/src/Presenters/ListPresenter.php:253: public function renderEdit($id): void\n/extensions/mailer-module/src/Presenters/ListPresenter.php:290: public function renderTemplateJsonData(): void\n/extensions/mailer-module/src/Presenters/ListPresenter.php:354: public function renderVariantsJsonData(): void\n/extensions/mailer-module/src/Presenters/ListPresenter.php:429: public function handleRenderSorting($categoryId, $sorting): void\n/extensions/mailer-module/src/Presenters/ListPresenter.php:452: public function renderSentEmailsDetail($id): void\n/extensions/mailer-module/src/Presenters/ListPresenter.php:616: public function handleFilterChanged($id, $from, $to, $groupBy, $tz)\n/extensions/mailer-module/src/Presenters/ListPresenter.php:654: public function renderSub"
+      },
+      {
+        "step": 27,
+        "tool": "find",
+        "args": {
+          "pattern": "Dockerfile*"
+        },
+        "result_head": "(no files)"
+      },
+      {
+        "step": 28,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\":[{\"path\":\"/extensions/mailer-module/src/Presenters/ListPresenter.php\",\"service\":\"remp-mailer\",\"endpoints\":[\n{\"className\":\"ListPresenter\",\"methodName\":\"renderDefaultJsonData\",\"httpMethod\":\"GET"
+        },
+        "result_head": "Recorded 10 new: GET /mailer/list/default-json-data, GET /mailer/list/show, GET /mailer/list/edit, GET /mailer/list/template-json-data, GET /mailer/list/variants-json-data, GET /mailer/list/render-sorting, GET /mailer/list/sent-emails-detail, GET /mailer/list/filter-changed, GET /mailer/list/subscriber-emails-json-data, GET /mailer/list/delete\nTotal: 1 services, 87 endpoints in 45 files."
+      },
+      {
+        "step": 28,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".env.example\n.env.test\n.gitignore\n.htaccess\n.phpcs_ruleset.xml\n.phpstan.neon\nMakefile\nREADME.md\napp/\nbin/\ncomposer.json\ncomposer.lock\nextensions/\nlog/\npackage.json\nphpunit.xml\ntemp/\ntests/\nwww/\nyarn.lock"
+      },
+      {
+        "step": 29,
+        "tool": "grep",
+        "args": {
+          "pattern": "router|Router|routes",
+          "path": "/app/config/config.neon"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 29,
+        "tool": "list_dir",
+        "args": {
+          "path": "/bin"
+        },
+        "result_head": "command.php\nlatte-lint.php"
+      },
+      {
+        "step": 30,
+        "tool": "grep",
+        "args": {
+          "pattern": "RouterFactory|addRoute|routeList",
+          "path": "/app"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 30,
+        "tool": "grep",
+        "args": {
+          "pattern": "RouterFactory|addRoute",
+          "path": "/extensions"
+        },
+        "result_head": "/extensions/mailer-module/src/Models/RouterFactory.php:10: class RouterFactory\n/extensions/mailer-module/src/config/config.neon:2: router: Remp\\MailerModule\\Models\\RouterFactory::createRouter"
+      },
+      {
+        "step": 31,
+        "tool": "read_file",
+        "args": {
+          "path": "/extensions/mailer-module/src/Models/RouterFactory.php"
+        },
+        "result_head": "1: <?php\n2: declare(strict_types=1);\n3: \n4: namespace Remp\\MailerModule\\Models;\n5: \n6: use Nette;\n7: use Nette\\Application\\Routers\\Route;\n8: use Nette\\Application\\Routers\\RouteList;\n9: \n10: class RouterFactory\n11: {\n12:     use Nette\\StaticClass;\n13: \n14:     public static function createRouter(): RouteList\n15:     {\n16:         $router = new RouteList;\n17: \n18:         $router[] = new Route('/api/v<version>/<package>[/<apiAction>][/<params>]', 'Api:Api:default');\n19:         $router[] = new Route('<module>/<presenter>/<action>[/<id>]', [\n20:             'module' => 'Mailer',\n21:             'presenter' => 'Dashboard',\n22:             'action' => 'default',\n23:             'id' => null,\n24:         ]);\n25: \n26:         return $router;\n27:     }\n28: }"
+      },
+      {
+        "step": 32,
+        "tool": "list_dir",
+        "args": {
+          "path": "/extensions"
+        },
+        "result_head": "mailer-module/\nnewrelic-module/"
+      },
+      {
+        "step": 32,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app"
+        },
+        "result_head": "Bootstrap.php\nComponents/\nForms/\nHermes/\nModels/\nconfig/"
+      },
+      {
+        "step": 33,
+        "tool": "find",
+        "args": {
+          "path": "/www",
+          "pattern": "*.php"
+        },
+        "result_head": "/www/.maintenance.php\n/www/index.php"
+      },
+      {
+        "step": 33,
+        "tool": "grep",
+        "args": {
+          "path": "/extensions/mailer-module/src",
+          "pattern": "class ApiPresenter"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 34,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app/Hermes"
+        },
+        "result_head": "MailgunBotTrackerHandler.php"
+      },
+      {
+        "step": 34,
+        "tool": "read_file",
+        "args": {
+          "path": "/www/index.php"
+        },
+        "result_head": "1: <?php\n2: \n3: require_once __DIR__ . '/../vendor/autoload.php';\n4: require_once __DIR__ . '/../app/Bootstrap.php';\n5: \n6: Remp\\Mailer\\Bootstrap::boot()\n7:     ->createContainer()\n8:     ->getByType(Nette\\Application\\Application::class)\n9:     ->run();"
+      },
+      {
+        "step": 35,
+        "tool": "grep",
+        "args": {
+          "path": "/extensions/mailer-module/src",
+          "pattern": "ApiPresenter|class Api"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 35,
+        "tool": "grep",
+        "args": {
+          "path": "/extensions/newrelic-module",
+          "pattern": "Route|Presenter|handle"
+        },
+        "result_head": "/extensions/newrelic-module/src/Listener/NewrelicRequestListener.php:39: $name = $request->getPresenterName() . (isset($params['action']) ? ':' . $params['action'] : '');"
+      },
+      {
+        "step": 36,
+        "tool": "grep",
+        "args": {
+          "path": "/README.md",
+          "pattern": "service|docker|port|api"
+        },
+        "result_head": "/README.md:20: # !. use extra switch if your system doesn't support symlinks (Windows; can be enabled)"
+      },
+      {
+        "step": 36,
+        "tool": "grep",
+        "args": {
+          "path": "/app/Components",
+          "pattern": "handle\\w+\\(|action\\w+\\("
+        },
+        "result_head": "/app/Components/GeneratorWidgets/Widgets/ArticleUrlParserWidget/ArticleUrlParserWidget.php:66: public function handlePreview(): void\n/app/Components/GeneratorWidgets/Widgets/DailyMinuteWidget/DailyMinuteWidget.php:64: public function handleDailyMinutePreview(): void\n/app/Components/GeneratorWidgets/Widgets/DennikeWidget/DennikeWidget.php:64: public function handleDennikePreview(): void\n/app/Components/GeneratorWidgets/Widgets/GrafdnaWidget/GrafdnaWidget.php:63: public function handleGrafdnaPreview(): void\n/app/Components/GeneratorWidgets/Widgets/MMSWidget/MMSWidget.php:64: public function handleMMSPreview(): void\n/app/Components/GeneratorWidgets/Widgets/MediaBriefingWidget/MediaBriefingWidget.php:64: public function handleMediaBriefingPreview(): void\n/app/Components/GeneratorWidgets/Widgets/NewsfilterWidget/NewsfilterWidget.php:64: public function handleNewsfilterPreview(): void\n/app/Components/GeneratorWidgets/Widgets/NovydenikNewsfilterWidget/NovydenikNewsfilterWidget.php:64: public "
+      },
+      {
+        "step": 37,
+        "tool": "read_file",
+        "args": {
+          "path": "/bin/command.php"
+        },
+        "result_head": "1: <?php\n2: declare(strict_types=1);\n3: \n4: require_once __DIR__ . '/../vendor/autoload.php';\n5: require_once __DIR__ . '/../app/Bootstrap.php';\n6: \n7: use Nette\\Database\\DriverException;\n8: use Remp\\MailerModule\\Models\\PhinxRegistrator;\n9: use Remp\\MailerModule\\Models\\EnvironmentConfig;\n10: use Symfony\\Component\\Console\\Application;\n11: use Symfony\\Component\\Console\\Input\\ArgvInput;\n12: use Symfony\\Component\\Console\\Output\\ConsoleOutput;\n13: \n14: $container = Remp\\Mailer\\Bootstrap::boot()\n15:     ->createContainer();\n16: \n17: $input = new ArgvInput();\n18: $output = new ConsoleOutput();\n19: \n20: try {\n21:     $application = $container->getByType(Application::class);\n22: } catch (DriverException | InvalidArgumentException $e) {\n23:     $output->getErrorOutput()->writeln(\"<question>NOTICE:</question> Looks like the new fresh install - or wrong configuration - '{$e->getMessage()}'.\");\n24:     $output->getErrorOutput()->writeln(\"<question>NOTICE:</question> Commands limited to migrations.\""
+      },
+      {
+        "step": 37,
+        "tool": "grep",
+        "args": {
+          "path": "/app/config/config.neon",
+          "pattern": "module|Hermes|Mailer"
+        },
+        "result_head": "/app/config/config.neon:2: - Remp\\Mailer\\Forms\\NovydenikNewsfilterTemplateFormFactory('users_with_any_subscriptions', 'users-without-subscription')\n/app/config/config.neon:3: - Remp\\Mailer\\Forms\\NewsfilterTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n/app/config/config.neon:4: - Remp\\Mailer\\Forms\\MediaBriefingTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n/app/config/config.neon:5: - Remp\\Mailer\\Forms\\DennikeTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n/app/config/config.neon:6: - Remp\\Mailer\\Forms\\TldrTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n/app/config/config.neon:7: - Remp\\Mailer\\Forms\\MMSTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n/app/config/config.neon:8: - Remp\\Mailer\\Forms\\GrafdnaTemplateFormFactory('users_with_active_subscriptions', 'users"
+      },
+      {
+        "step": 38,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/Hermes/MailgunBotTrackerHandler.php"
+        },
+        "result_head": "1: <?php\n2: declare(strict_types=1);\n3: \n4: namespace Remp\\Mailer\\Hermes;\n5: \n6: use Remp\\MailerModule\\Hermes\\HermesException;\n7: use Remp\\MailerModule\\Models\\RedisClientFactory;\n8: use Remp\\MailerModule\\Models\\RedisClientTrait;\n9: use Tomaj\\Hermes\\Handler\\HandlerInterface;\n10: use Tomaj\\Hermes\\MessageInterface;\n11: \n12: class MailgunBotTrackerHandler implements HandlerInterface\n13: {\n14:     private const APPLE_BOT_EMAILS = 'apple_bot_emails';\n15: \n16:     use RedisClientTrait;\n17: \n18:     public function __construct(protected RedisClientFactory $redisClientFactory)\n19:     {\n20:     }\n21: \n22:     public function handle(MessageInterface $message): bool\n23:     {\n24:         $payload = $message->getPayload();\n25: \n26:         if (!isset($payload['mail_sender_id'])) {\n27:             // email sent via mailgun and not sent via mailer (e.g. CMS)\n28:             return true;\n29:         }\n30: \n31:         if (!isset($payload['event'])) {\n32:             throw new HermesException('unable "
+      },
+      {
+        "step": 39,
+        "tool": "read_file",
+        "args": {
+          "path": "/extensions/mailer-module/src/config/config.neon",
+          "start": "180"
+        },
+        "result_head": "180: \t\tsetup:\n181: \t\t\t- enableGlobalPreflight(Tomaj\\NetteApi\\Handlers\\CorsPreflightHandler(Nette\\Http\\Response(), %preflight.headers%))\n182: \t\t\t- addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('POST', 1, 'users', 'subscribe'), \\Remp\\MailerModule\\Api\\v1\\Handlers\\Users\\SubscribeHandler(), \\Tomaj\\NetteApi\\Authorization\\BearerTokenAuthorization())\n183: \t\t\t- addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('POST', 1, 'users', 'un-subscribe'), \\Remp\\MailerModule\\Api\\v1\\Handlers\\Users\\UnSubscribeHandler(), \\Tomaj\\NetteApi\\Authorization\\BearerTokenAuthorization())\n184: \t\t\t- addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('POST', 1, 'users', 'bulk-subscribe'), \\Remp\\MailerModule\\Api\\v1\\Handlers\\Users\\BulkSubscribeHandler(), \\Tomaj\\NetteApi\\Authorization\\BearerTokenAuthorization())\n185: \t\t\t- addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('POST', 1, 'users', 'check-token'), \\Remp\\MailerModule\\Api\\v1\\Handlers\\Users\\CheckTokenHandler(), \\Tomaj\\NetteApi\\Authorization\\NoAuthorization())\n186: \t\t\t- addApi(\\Tomaj\\NetteApi\\End"
+      },
+      {
+        "step": 40,
+        "tool": "grep",
+        "args": {
+          "pattern": "extends (BasePresenter|Presenter|Nette\\\\\\\\Application\\\\\\\\UI\\\\\\\\Presenter)"
+        },
+        "result_head": "/extensions/mailer-module/src/Presenters/BasePresenter.php:14: abstract class BasePresenter extends Presenter\n/extensions/mailer-module/src/Presenters/DashboardPresenter.php:15: final class DashboardPresenter extends BasePresenter\n/extensions/mailer-module/src/Presenters/Error4xxPresenter.php:11: class Error4xxPresenter extends BasePresenter\n/extensions/mailer-module/src/Presenters/GeneratorPresenter.php:15: final class GeneratorPresenter extends BasePresenter\n/extensions/mailer-module/src/Presenters/HealthPresenter.php:24: final class HealthPresenter extends Presenter\n/extensions/mailer-module/src/Presenters/JobPresenter.php:36: final class JobPresenter extends BasePresenter\n/extensions/mailer-module/src/Presenters/LayoutPresenter.php:13: final class LayoutPresenter extends BasePresenter\n/extensions/mailer-module/src/Presenters/ListPresenter.php:28: final class ListPresenter extends BasePresenter\n/extensions/mailer-module/src/Presenters/LogPresenter.php:16: final class LogPresenter ex"
+      },
+      {
+        "step": 40,
+        "tool": "grep",
+        "args": {
+          "path": "/composer.json",
+          "pattern": "bin|scripts"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 41,
+        "tool": "grep",
+        "args": {
+          "pattern": "class \\w+Presenter",
+          "path": "/app"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 41,
+        "tool": "grep",
+        "args": {
+          "pattern": "Api:Api|ApiPresenter",
+          "path": "/extensions/mailer-module/src/config"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 42,
+        "tool": "read_file",
+        "args": {
+          "path": "/composer.json"
+        },
+        "result_head": "1: {\n2:     \"name\": \"remp-mailer/mail-module\",\n3:     \"description\": \"REMP Mailer\",\n4:     \"type\": \"project\",\n5:     \"license\": [\"MIT\"],\n6:     \"config\": {\n7:         \"sort-packages\": true,\n8:         \"allow-plugins\": {\n9:             \"phpstan/extension-installer\": true,\n10:             \"php-http/discovery\": true\n11:         }\n12:     },\n13:     \"repositories\": [\n14:         {\n15:             \"type\": \"path\",\n16:             \"url\": \"../Composer/*\",\n17:             \"options\": {\n18:                 \"symlink\": false\n19:             }\n20:         },\n21:         {\n22:           \"type\": \"path\",\n23:           \"url\": \"extensions/*\",\n24:           \"options\": {\n25:             \"symlink\": true\n26:           }\n27:         }\n28:     ],\n29: \n30:     \"require\": {\n31:         \"php\": \"^8.1\",\n32:         \"remp/mailer-module\": \"@dev\",\n33:         \"remp/mailer-newrelic-module\": \"@dev\"\n34:     },\n35:     \"require-dev\": {\n36:         \"friendsofphp/php-cs-fixer\": \"^3.13\",\n37:         \"mockery/mockery\": \"^1.5\""
+      },
+      {
+        "step": 42,
+        "tool": "grep",
+        "args": {
+          "path": "/Makefile",
+          "pattern": "php|bin/|worker"
+        },
+        "result_head": "/Makefile:1: #! /usr/bin/make\n/Makefile:8: php bin/command.php migrate:migrate\n/Makefile:9: php bin/command.php db:seed\n/Makefile:31: php vendor/bin/phpcs --standard=.phpcs_ruleset.xml ${PHP_FOLDERS} -n -p\n/Makefile:34: php vendor/bin/phpcbf --standard=.phpcs_ruleset.xml ${PHP_FOLDERS} -n\n/Makefile:37: find ${PHP_FOLDERS} -name \"*.php\" -print0 | xargs -0 -n1 -P8 php -l\n/Makefile:39: phpstan:\n/Makefile:40: php vendor/bin/phpstan analyse --configuration=.phpstan.neon --memory-limit=1G app tests extensions\n/Makefile:43: php bin/latte-lint.php app\n/Makefile:44: php bin/latte-lint.php extensions"
+      },
+      {
+        "step": 43,
+        "tool": "grep",
+        "args": {
+          "pattern": "Hermes\\\\Worker|new Worker|hermes:worker|Worker\\("
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 44,
+        "tool": "grep",
+        "args": {
+          "path": "/extensions/mailer-module/src/Presenters/ErrorPresenter.php",
+          "pattern": "function"
+        },
+        "result_head": "/extensions/mailer-module/src/Presenters/ErrorPresenter.php:18: public function __construct(IApplicationStatusFactory $applicationStatusFactory)\n/extensions/mailer-module/src/Presenters/ErrorPresenter.php:23: public function run(Nette\\Application\\Request $request): Nette\\Application\\Response\n/extensions/mailer-module/src/Presenters/ErrorPresenter.php:33: return new Responses\\CallbackResponse(function () {\n/extensions/mailer-module/src/Presenters/ErrorPresenter.php:38: public function createComponentApplicationStatus(): ApplicationStatus"
+      },
+      {
+        "step": 44,
+        "tool": "grep",
+        "args": {
+          "path": "/extensions/mailer-module/src/Presenters/Error4xxPresenter.php",
+          "pattern": "function"
+        },
+        "result_head": "/extensions/mailer-module/src/Presenters/Error4xxPresenter.php:16: public function startup(): void\n/extensions/mailer-module/src/Presenters/Error4xxPresenter.php:25: public function renderDefault(Nette\\Application\\BadRequestException $exception): void"
+      },
+      {
+        "step": 45,
+        "tool": "grep",
+        "args": {
+          "pattern": "hermes|Hermes",
+          "path": "/app/config/config.neon"
+        },
+        "result_head": "/app/config/config.neon:29: hermesWorker:\n/app/config/config.neon:31: #\t\t\t- add('mail-sent', Remp\\MailerModule\\Hermes\\MailSentHandler())\n/app/config/config.neon:32: - add('user-subscribed', Remp\\MailerModule\\Hermes\\TrackSubscribeUnsubscribeHandler())\n/app/config/config.neon:33: - add('user-unsubscribed', Remp\\MailerModule\\Hermes\\TrackSubscribeUnsubscribeHandler())"
+      },
+      {
+        "step": 45,
+        "tool": "find",
+        "args": {
+          "pattern": "*.php",
+          "path": "/extensions/mailer-module/bin"
+        },
+        "result_head": "(no files)"
+      },
+      {
+        "step": 46,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\":[{\"path\":\"/extensions/mailer-module/src/Presenters/Error4xxPresenter.php\",\"service\":\"remp-mailer\",\"endpoints\":[{\"className\":\"Error4xxPresenter\",\"methodName\":\"renderDefault\",\"httpMethod\":\"GET\""
+        },
+        "result_head": "Recorded 1 new: GET /mailer/error4xx/default\nTotal: 1 services, 88 endpoints in 46 files."
+      },
+      {
+        "step": 47,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/config/config.neon"
+        },
+        "result_head": "1: services:\n2: \t- Remp\\Mailer\\Forms\\NovydenikNewsfilterTemplateFormFactory('users_with_any_subscriptions', 'users-without-subscription')\n3: \t- Remp\\Mailer\\Forms\\NewsfilterTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n4: \t- Remp\\Mailer\\Forms\\MediaBriefingTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n5: \t- Remp\\Mailer\\Forms\\DennikeTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n6: \t- Remp\\Mailer\\Forms\\TldrTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n7: \t- Remp\\Mailer\\Forms\\MMSTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n8: \t- Remp\\Mailer\\Forms\\GrafdnaTemplateFormFactory('users_with_active_subscriptions', 'users_without_actual_subscriptions')\n9: \t- Remp\\Mailer\\Forms\\DailyMinuteTemplateFormFactory('minuta-daily-digest')\n10: \tarticleUrlParserTemplateFormFacto"
+      },
+      {
+        "step": 48,
+        "tool": "grep",
+        "args": {
+          "pattern": "hermesWorker|HermesWorker|Worker",
+          "path": "/extensions/mailer-module/src"
+        },
+        "result_head": "/extensions/mailer-module/src/Commands/HermesWorkerCommand.php:13: class HermesWorkerCommand extends Command\n/extensions/mailer-module/src/Commands/HermesWorkerWaitCallback.php:9: class HermesWorkerWaitCallback implements RedisDriverWaitCallbackInterface\n/extensions/mailer-module/src/Commands/HermesWorkerWaitCallback.php:20: $this->healthChecker->ping(HermesWorkerCommand::COMMAND_NAME);\n/extensions/mailer-module/src/Commands/MailWorkerCommand.php:32: class MailWorkerCommand extends Command\n/extensions/mailer-module/src/Components/ApplicationStatus/ApplicationStatus.php:7: use Remp\\MailerModule\\Commands\\HermesWorkerCommand;\n/extensions/mailer-module/src/Components/ApplicationStatus/ApplicationStatus.php:8: use Remp\\MailerModule\\Commands\\MailWorkerCommand;\n/extensions/mailer-module/src/Components/ApplicationStatus/ApplicationStatus.php:46: HermesWorkerCommand::COMMAND_NAME,\n/extensions/mailer-module/src/Components/ApplicationStatus/ApplicationStatus.php:47: MailWorkerCommand::COMMAND_NAM"
+      },
+      {
+        "step": 48,
+        "tool": "grep",
+        "args": {
+          "pattern": "Hermes|hermes",
+          "path": "/extensions/mailer-module/src/Commands"
+        },
+        "result_head": "/extensions/mailer-module/src/Commands/HeartbeatCommand.php:6: use Remp\\MailerModule\\Hermes\\RedisDriver;\n/extensions/mailer-module/src/Commands/HeartbeatCommand.php:10: use Tomaj\\Hermes\\Emitter;\n/extensions/mailer-module/src/Commands/HeartbeatCommand.php:11: use Tomaj\\Hermes\\Message;\n/extensions/mailer-module/src/Commands/HeartbeatCommand.php:26: ->setDescription('Run heartbeat hermes worker')\n/extensions/mailer-module/src/Commands/HermesWorkerCommand.php:10: use Tomaj\\Hermes\\Dispatcher;\n/extensions/mailer-module/src/Commands/HermesWorkerCommand.php:11: use Tomaj\\Hermes\\Handler\\HandlerInterface;\n/extensions/mailer-module/src/Commands/HermesWorkerCommand.php:13: class HermesWorkerCommand extends Command\n/extensions/mailer-module/src/Commands/HermesWorkerCommand.php:15: public const COMMAND_NAME = \"worker:hermes\";\n/extensions/mailer-module/src/Commands/HermesWorkerCommand.php:39: ->setDescription('Start hermes offline worker')\n/extensions/mailer-module/src/Commands/HermesWorkerWaitCallba"
+      },
+      {
+        "step": 49,
+        "tool": "grep",
+        "args": {
+          "pattern": "@RequestMapping|@GetMapping|@PostMapping|app\\.(get|post)\\(|router\\.(get|post)"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 50,
+        "tool": "grep",
+        "args": {
+          "pattern": "addApi\\("
+        },
+        "result_head": "/extensions/mailer-module/src/config/config.neon:182: - addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('POST', 1, 'users', 'subscribe'), \\Remp\\MailerModule\\Api\\v1\\Handlers\\Users\\SubscribeHandler(), \\Tomaj\\NetteApi\\Authorization\\BearerTokenAuthorization())\n/extensions/mailer-module/src/config/config.neon:183: - addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('POST', 1, 'users', 'un-subscribe'), \\Remp\\MailerModule\\Api\\v1\\Handlers\\Users\\UnSubscribeHandler(), \\Tomaj\\NetteApi\\Authorization\\BearerTokenAuthorization()\n/extensions/mailer-module/src/config/config.neon:184: - addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('POST', 1, 'users', 'bulk-subscribe'), \\Remp\\MailerModule\\Api\\v1\\Handlers\\Users\\BulkSubscribeHandler(), \\Tomaj\\NetteApi\\Authorization\\BearerTokenAuthorizati\n/extensions/mailer-module/src/config/config.neon:185: - addApi(\\Tomaj\\NetteApi\\EndpointIdentifier('POST', 1, 'users', 'check-token'), \\Remp\\MailerModule\\Api\\v1\\Handlers\\Users\\CheckTokenHandler(), \\Tomaj\\NetteApi\\Authorization\\NoAuthorizati"
+      },
+      {
+        "step": 51,
+        "tool": "submit",
+        "args": {
+          "json": "{\"services\":[{\"name\":\"remp-mailer\",\"dirs\":[\"/app\",\"/www\",\"/bin\",\"/extensions/mailer-module\",\"/extensions/newrelic-module\"]}]}"
+        },
+        "result_head": "Recorded 1 new: service remp-mailer\nTotal: 1 services, 88 endpoints in 46 files.\n[ACCEPTED] 1 services, 88 endpoints."
+      }
+    ]
+  }
+}

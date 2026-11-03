@@ -1,0 +1,535 @@
+{
+  "system": "remp-sso",
+  "services": [
+    {
+      "name": "remp-sso",
+      "dirs": [
+        "/app",
+        "/routes",
+        "/public",
+        "/config",
+        "/bootstrap",
+        "/database",
+        "/resources",
+        "/storage"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/routes/web.php",
+      "service": "remp-sso",
+      "endpoints": [
+        {
+          "className": "ApiTokenController",
+          "methodName": "json",
+          "httpMethod": "GET",
+          "path": "/api-tokens/json",
+          "line": 23,
+          "evidence": "Route::get('api-tokens/json', [ApiTokenController::class, 'json'])->name('api-tokens.json');",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ApiTokenController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/api-tokens",
+          "line": 24,
+          "evidence": "Route::resource('api-tokens', ApiTokenController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ApiTokenController",
+          "methodName": "create",
+          "httpMethod": "GET",
+          "path": "/api-tokens/create",
+          "line": 24,
+          "evidence": "Route::resource('api-tokens', ApiTokenController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthController",
+          "methodName": "logoutWeb",
+          "httpMethod": "GET",
+          "path": "/auth/logout-web",
+          "line": 25,
+          "evidence": "Route::get('auth/logout-web', [AuthController::class, 'logoutWeb'])->name('auth.logout-web');",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SettingsController",
+          "methodName": "jwtwhitelist",
+          "httpMethod": "GET",
+          "path": "/settings/jwtwhitelist",
+          "line": 26,
+          "evidence": "Route::get('settings/jwtwhitelist', [SettingsController::class, 'jwtwhitelist'])->name('settings.jwtwhitelist');",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthController",
+          "methodName": "login",
+          "httpMethod": "GET",
+          "path": "/auth/login",
+          "line": 29,
+          "evidence": "Route::get('auth/login', [AuthController::class, 'login'])->name('auth.login');",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthController",
+          "methodName": "logout",
+          "httpMethod": "GET",
+          "path": "/auth/logout",
+          "line": 30,
+          "evidence": "Route::get('auth/logout', [AuthController::class, 'logout'])->name('auth.logout');",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "GoogleController",
+          "methodName": "redirect",
+          "httpMethod": "GET",
+          "path": "/auth/google",
+          "line": 31,
+          "evidence": "Route::get('auth/google', [GoogleController::class, 'redirect'])->name('auth.google');",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "GoogleController",
+          "methodName": "callback",
+          "httpMethod": "GET",
+          "path": "/auth/google/callback",
+          "line": 32,
+          "evidence": "Route::get('auth/google/callback', [GoogleController::class, 'callback']);",
+          "framework": "Laravel",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/routes/api.php",
+      "service": "remp-sso",
+      "endpoints": [
+        {
+          "className": "AuthController",
+          "methodName": "introspect",
+          "httpMethod": "GET",
+          "path": "/api/auth/introspect",
+          "line": 17,
+          "evidence": "Route::get('auth/introspect', [AuthController::class, 'introspect'])->name('auth.introspect');",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthController",
+          "methodName": "refresh",
+          "httpMethod": "POST",
+          "path": "/api/auth/refresh",
+          "line": 21,
+          "evidence": "Route::post('auth/refresh', [AuthController::class, 'refresh'])->name('auth.refresh');",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthController",
+          "methodName": "invalidate",
+          "httpMethod": "POST",
+          "path": "/api/auth/invalidate",
+          "line": 22,
+          "evidence": "Route::post('auth/invalidate', [AuthController::class, 'invalidate'])->name('auth.invalidate');",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthController",
+          "methodName": "apiToken",
+          "httpMethod": "GET",
+          "path": "/api/auth/check-token",
+          "line": 23,
+          "evidence": "Route::get('auth/check-token', [AuthController::class, 'apiToken'])->name('auth.check-token');",
+          "framework": "Laravel",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/app/Http/Controllers/ApiTokenController.php",
+      "service": "remp-sso",
+      "endpoints": [
+        {
+          "className": "ApiTokenController",
+          "methodName": "store",
+          "httpMethod": "POST",
+          "path": "/api-tokens",
+          "line": 49,
+          "evidence": "public function store(ApiTokenRequest $request)",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ApiTokenController",
+          "methodName": "show",
+          "httpMethod": "GET",
+          "path": "/api-tokens/{api_token}",
+          "line": 68,
+          "evidence": "public function show(ApiToken $apiToken)",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ApiTokenController",
+          "methodName": "edit",
+          "httpMethod": "GET",
+          "path": "/api-tokens/{api_token}/edit",
+          "line": 78,
+          "evidence": "public function edit(ApiToken $apiToken)",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ApiTokenController",
+          "methodName": "update",
+          "httpMethod": "PUT",
+          "path": "/api-tokens/{api_token}",
+          "line": 87,
+          "evidence": "public function update(ApiTokenRequest $request, ApiToken $apiToken)",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ApiTokenController",
+          "methodName": "update",
+          "httpMethod": "PATCH",
+          "path": "/api-tokens/{api_token}",
+          "line": 87,
+          "evidence": "public function update(ApiTokenRequest $request, ApiToken $apiToken)",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ApiTokenController",
+          "methodName": "destroy",
+          "httpMethod": "DELETE",
+          "path": "/api-tokens/{api_token}",
+          "line": 105,
+          "evidence": "public function destroy(ApiToken $apiToken)",
+          "framework": "Laravel",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "DeepSeek-V4.1-Flash-1017",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "low",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "Sso",
+    "commit": "b4ff30913bcf770c67cf072fd2a5991c60966fae",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 16,
+    "tool_calls": 34,
+    "rejected_entries": 6,
+    "no_call_replies": 0,
+    "input_tokens": 118791,
+    "cached_input_tokens": 104960,
+    "output_tokens": 4455,
+    "list_price_usd": 0.0051,
+    "wall_seconds": 30.3,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".env.example\n.gitattributes\n.gitignore\nMakefile\nREADME.md\napp/\nartisan\nbootstrap/\ncomposer.json\ncomposer.lock\nconfig/\ndatabase/\npackage.json\nphpunit.xml\npublic/\nresources/\nroutes/\nserver.php\nstorage/\ntests/\nwebpack.mix.js\nyarn.lock"
+      },
+      {
+        "step": 1,
+        "tool": "find",
+        "args": {
+          "pattern": "Dockerfile"
+        },
+        "result_head": "(no files)"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/routes"
+        },
+        "result_head": "api.php\nchannels.php\nconsole.php\nweb.php"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app"
+        },
+        "result_head": "AirbrakeLogger.php\nConsole/\nContracts/\nEmailWhitelist.php\nExceptions/\nHttp/\nModels/\nProviders/\nUrlHelper.php\nUser.php"
+      },
+      {
+        "step": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "/routes/web.php"
+        },
+        "result_head": "1: <?php\n2: \n3: /*\n4: |--------------------------------------------------------------------------\n5: | Web Routes\n6: |--------------------------------------------------------------------------\n7: |\n8: | Here is where you can register web routes for your application. These\n9: | routes are loaded by the RouteServiceProvider within a group which\n10: | contains the \"web\" middleware group. Now create something great!\n11: |\n12: */\n13: \n14: use App\\Http\\Controllers\\ApiTokenController;\n15: use App\\Http\\Controllers\\Auth\\GoogleController;\n16: use App\\Http\\Controllers\\AuthController;\n17: use App\\Http\\Controllers\\SettingsController;\n18: \n19: Route::get('/error', [AuthController::class, 'error'])->name('sso.error');\n20: \n21: Route::middleware('auth.jwt')->group(function () {\n22:     Route::get('/', [ApiTokenController::class, 'index']);\n23:     Route::get('api-tokens/json', [ApiTokenController::class, 'json'])->name('api-tokens.json');\n24:     Route::resource('api-tokens', ApiTokenController::class"
+      },
+      {
+        "step": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "/routes/api.php"
+        },
+        "result_head": "1: <?php\n2: \n3: use App\\Http\\Controllers\\AuthController;\n4: \n5: /*\n6: |--------------------------------------------------------------------------\n7: | API Routes\n8: |--------------------------------------------------------------------------\n9: |\n10: | Here is where you can register API routes for your application. These\n11: | routes are loaded by the RouteServiceProvider within a group which\n12: | is assigned the \"api\" middleware group. Enjoy building your API!\n13: |\n14: */\n15: \n16: Route::middleware('app.jwt.auth')->group(function() {\n17:     Route::get('auth/introspect', [AuthController::class, 'introspect'])->name('auth.introspect');\n18: });\n19: \n20: \n21: Route::post('auth/refresh', [AuthController::class, 'refresh'])->name('auth.refresh');\n22: Route::post('auth/invalidate', [AuthController::class, 'invalidate'])->name('auth.invalidate');\n23: Route::get('auth/check-token', [AuthController::class, 'apiToken'])->name('auth.check-token');"
+      },
+      {
+        "step": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "/routes/channels.php"
+        },
+        "result_head": "1: <?php\n2: \n3: /*\n4: |--------------------------------------------------------------------------\n5: | Broadcast Channels\n6: |--------------------------------------------------------------------------\n7: |\n8: | Here you may register all of the event broadcasting channels that your\n9: | application supports. The given channel authorization callbacks are\n10: | used to check if an authenticated user can listen to the channel.\n11: |\n12: */\n13: \n14: Broadcast::channel('App.User.{id}', function ($user, $id) {\n15:     return (int) $user->id === (int) $id;\n16: });"
+      },
+      {
+        "step": 4,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app/Http"
+        },
+        "result_head": "Controllers/\nKernel.php\nMiddleware/\nRequests/\nResources/"
+      },
+      {
+        "step": 4,
+        "tool": "find",
+        "args": {
+          "pattern": "RouteServiceProvider.php"
+        },
+        "result_head": "/app/Providers/RouteServiceProvider.php"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/routes/console.php"
+        },
+        "result_head": "1: <?php\n2: \n3: use Illuminate\\Foundation\\Inspiring;\n4: use Illuminate\\Support\\Facades\\Artisan;\n5: \n6: /*\n7: |--------------------------------------------------------------------------\n8: | Console Routes\n9: |--------------------------------------------------------------------------\n10: |\n11: | This file is where you may define all of your Closure based console\n12: | commands. Each Closure is bound to a command instance allowing a\n13: | simple approach to interacting with each command's IO methods.\n14: |\n15: */\n16: \n17: Artisan::command('inspire', function () {\n18:     $this->comment(Inspiring::quote());\n19: })->purpose('Display an inspiring quote');"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/Providers/RouteServiceProvider.php"
+        },
+        "result_head": "1: <?php\n2: \n3: namespace App\\Providers;\n4: \n5: use Illuminate\\Cache\\RateLimiting\\Limit;\n6: use Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider as ServiceProvider;\n7: use Illuminate\\Http\\Request;\n8: use Illuminate\\Support\\Facades\\RateLimiter;\n9: use Illuminate\\Support\\Facades\\Route;\n10: use Illuminate\\Support\\Facades\\URL;\n11: \n12: class RouteServiceProvider extends ServiceProvider\n13: {\n14:     /**\n15:      * The path to the \"home\" route for your application.\n16:      *\n17:      * This is used by Laravel authentication to redirect users after login.\n18:      *\n19:      * @var string\n20:      */\n21:     public const HOME = '/';\n22: \n23:     /**\n24:      * Define your route model bindings, pattern filters, etc.\n25:      *\n26:      * @return void\n27:      */\n28:     public function boot()\n29:     {\n30:         if (config('app.force_https')) {\n31:             URL::forceScheme('https');\n32:         }\n33: \n34:         // TODO: enable carefully with testing\n35:         //$this->c"
+      },
+      {
+        "step": 5,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app/Http/Controllers"
+        },
+        "result_head": "ApiTokenController.php\nAuth/\nAuthController.php\nController.php\nDashboardController.php\nSettingsController.php"
+      },
+      {
+        "step": 6,
+        "tool": "grep",
+        "args": {
+          "pattern": "Route::(get|post|put|delete|patch|any|resource|match|apiResource)",
+          "path": "/app"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/Http/Controllers/AuthController.php"
+        },
+        "result_head": "1: <?php\n2: \n3: namespace App\\Http\\Controllers;\n4: \n5: use App\\Models\\ApiToken;\n6: use App\\UrlHelper;\n7: use App\\Models\\User;\n8: use Auth;\n9: use Carbon\\Carbon;\n10: use Illuminate\\Http\\Request;\n11: use Illuminate\\Support\\Facades\\Route;\n12: use JWTAuth;\n13: use Illuminate\\Support\\Facades\\Redis;\n14: use Symfony\\Component\\HttpKernel\\Exception\\BadRequestHttpException;\n15: use Tymon\\JWTAuth\\Exceptions\\JWTException;\n16: use Tymon\\JWTAuth\\Exceptions\\TokenExpiredException;\n17: \n18: class AuthController extends Controller\n19: {\n20:     public function login(Request $request, UrlHelper $urlHelper, \\Tymon\\JWTAuth\\JWTAuth $auth)\n21:     {\n22:         $successUrl = $request->input('successUrl');\n23:         if (!$successUrl) {\n24:             throw new BadRequestHttpException('missing successUrl query param');\n25:         }\n26:         $errorUrl = $request->input('errorUrl');\n27:         if (!$errorUrl) {\n28:             throw new BadRequestHttpException('missing errorUrl query param');\n29:        "
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/Http/Controllers/ApiTokenController.php"
+        },
+        "result_head": "1: <?php\n2: \n3: namespace App\\Http\\Controllers;\n4: \n5: use App\\Models\\ApiToken;\n6: use App\\Http\\Requests\\ApiTokenRequest;\n7: use App\\Http\\Resources\\ApiTokenResource;\n8: use Yajra\\DataTables\\DataTables;\n9: \n10: class ApiTokenController extends Controller\n11: {\n12:     public function index()\n13:     {\n14:         return response()->format([\n15:             'html' => view('api_tokens.index'),\n16:             'json' => ApiTokenResource::collection(ApiToken::paginate()),\n17:         ]);\n18:     }\n19: \n20:     public function json(Datatables $dataTables)\n21:     {\n22:         $apiTokens = ApiToken::select()->get();\n23: \n24:         return $dataTables->of($apiTokens)\n25:             ->addColumn('actions', function (ApiToken $apiToken) {\n26:                 return [\n27:                     'edit' => route('api-tokens.edit', $apiToken),\n28:                     'destroy' => route('api-tokens.destroy', $apiToken),\n29:                 ];\n30:             })\n31:             ->addColumn('action_meth"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/Http/Controllers/SettingsController.php"
+        },
+        "result_head": "1: <?php\n2: \n3: namespace App\\Http\\Controllers;\n4: \n5: class SettingsController extends Controller\n6: {\n7:     public function jwtwhitelist()\n8:     {\n9:         return response()->format([\n10:             'html' => view('settings.jwtwhitelist', [\n11:                 'jwtwhitelist' => env('JWT_EMAIL_PATTERN_WHITELIST')\n12:             ])\n13:         ]);\n14:     }\n15: }"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/Http/Controllers/DashboardController.php"
+        },
+        "result_head": "1: <?php\n2: \n3: namespace App\\Http\\Controllers;\n4: \n5: class DashboardController extends Controller\n6: {\n7:     /**\n8:      * Display a listing of the resource.\n9:      *\n10:      * @return \\Illuminate\\Http\\Response\n11:      */\n12:     public function index()\n13:     {\n14:         return view('welcome');\n15:     }\n16: }"
+      },
+      {
+        "step": 7,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app/Http/Controllers/Auth"
+        },
+        "result_head": "GoogleController.php"
+      },
+      {
+        "step": 8,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/Http/Controllers/Auth/GoogleController.php"
+        },
+        "result_head": "1: <?php\n2: \n3: namespace App\\Http\\Controllers\\Auth;\n4: \n5: use App\\EmailWhitelist;\n6: use App\\Models\\GoogleUser;\n7: use App\\Http\\Controllers\\Controller;\n8: use App\\UrlHelper;\n9: use App\\Models\\User;\n10: use Illuminate\\Http\\Request;\n11: use Symfony\\Component\\HttpFoundation\\Response;\n12: use JWTAuth;\n13: use Socialite;\n14: use Session;\n15: use Tymon\\JWTAuth\\JWT;\n16: \n17: class GoogleController extends Controller\n18: {\n19:     const SUCCESS_URL_KEY = 'url.success';\n20: \n21:     const ERROR_URL_KEY = 'url.error';\n22: \n23:     const SUCCESS_URL_QUERY_PARAM = 'successUrl';\n24: \n25:     const ERROR_URL_QUERY_PARAM = 'errorUrl';\n26: \n27:     /**\n28:      * Redirect the user to the GitHub authentication page.\n29:      *\n30:      * @param Request $request\n31:      * @return Response\n32:      */\n33:     public function redirect(Request $request)\n34:     {\n35:         Session::put(self::SUCCESS_URL_KEY, $request->input(self::SUCCESS_URL_QUERY_PARAM, '/'));\n36:         Session::put(self::ERROR_URL"
+      },
+      {
+        "step": 8,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/Http/Controllers/Controller.php"
+        },
+        "result_head": "1: <?php\n2: \n3: namespace App\\Http\\Controllers;\n4: \n5: use Illuminate\\Foundation\\Bus\\DispatchesJobs;\n6: use Illuminate\\Routing\\Controller as BaseController;\n7: use Illuminate\\Foundation\\Validation\\ValidatesRequests;\n8: use Illuminate\\Foundation\\Auth\\Access\\AuthorizesRequests;\n9: \n10: class Controller extends BaseController\n11: {\n12:     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;\n13: \n14:     const FORM_ACTION_SAVE_CLOSE = 'save_close';\n15:     const FORM_ACTION_SAVE = 'save';\n16: \n17: \n18:     /**\n19:      * Decide where to redirect based on form action.\n20:      *\n21:      * Array $formActionRoutes should contain at least route for FORM_ACTION_SAVE action. Format:\n22:      *\n23:      * [\n24:      *    self::FORM_ACTION_SAVE_CLOSE => 'resource.index',\n25:      *    self::FORM_ACTION_SAVE => 'resource.edit',\n26:      * ]\n27:      *\n28:      * @param string $action\n29:      * @param array $formActionRoutes\n30:      * @return \\Illuminate\\Routing\\Redirector|\\Illuminate\\Http"
+      },
+      {
+        "step": 8,
+        "tool": "read_file",
+        "args": {
+          "path": "/app/Http/Controllers/AuthController.php",
+          "start": "148"
+        },
+        "result_head": "148:     public function invalidate(\\Tymon\\JWTAuth\\JWTAuth $auth, Request $request)\n149:     {\n150:         $auth = $auth->setRequest($request)->parseToken();\n151:         Redis::hset(User::USER_LAST_LOGOUT_KEY, $auth->payload()->get('id'), time());\n152: \n153:         try {\n154:             $auth->invalidate();\n155:         } catch (\\Exception $e) {\n156:             // no token found or token blacklisted, we're fine\n157:         }\n158: \n159:         return response()->json([\n160:             'redirect' => route('auth.logout'),\n161:         ], 200);\n162:     }\n163: \n164:     public function error(Request $request)\n165:     {\n166:         $message = $request->get('error');\n167:         return response()->format([\n168:             'html' => view('auth.error', [\n169:                 'message' => $message,\n170:             ]),\n171:             'json' => [\n172:                 'message' => $message,\n173:             ],\n174:         ]);\n175:     }\n176: }"
+      },
+      {
+        "step": 9,
+        "tool": "grep",
+        "args": {
+          "pattern": "Route::(get|post|put|delete|patch|any|resource|match|apiResource|redirect|view)",
+          "path": "/"
+        },
+        "result_head": "/routes/api.php:17: Route::get('auth/introspect', [AuthController::class, 'introspect'])->name('auth.introspect');\n/routes/api.php:21: Route::post('auth/refresh', [AuthController::class, 'refresh'])->name('auth.refresh');\n/routes/api.php:22: Route::post('auth/invalidate', [AuthController::class, 'invalidate'])->name('auth.invalidate');\n/routes/api.php:23: Route::get('auth/check-token', [AuthController::class, 'apiToken'])->name('auth.check-token');\n/routes/web.php:19: Route::get('/error', [AuthController::class, 'error'])->name('sso.error');\n/routes/web.php:22: Route::get('/', [ApiTokenController::class, 'index']);\n/routes/web.php:23: Route::get('api-tokens/json', [ApiTokenController::class, 'json'])->name('api-tokens.json');\n/routes/web.php:24: Route::resource('api-tokens', ApiTokenController::class);\n/routes/web.php:25: Route::get('auth/logout-web', [AuthController::class, 'logoutWeb'])->name('auth.logout-web');\n/routes/web.php:26: Route::get('settings/jwtwhitelist', [SettingsControl"
+      },
+      {
+        "step": 9,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app/Providers"
+        },
+        "result_head": "AppServiceProvider.php\nAuthServiceProvider.php\nBroadcastServiceProvider.php\nEventServiceProvider.php\nRouteServiceProvider.php"
+      },
+      {
+        "step": 10,
+        "tool": "read_file",
+        "args": {
+          "path": "/composer.json"
+        },
+        "result_head": "1: {\n2:     \"name\": \"remp/sso\",\n3:     \"description\": \"REMP SSO\",\n4:     \"keywords\": [\n5:         \"remp\",\n6:         \"sso\"\n7:     ],\n8:     \"license\": \"MIT\",\n9:     \"type\": \"project\",\n10:     \"minimum-stability\": \"dev\",\n11:     \"prefer-stable\": true,\n12:     \"repositories\": [\n13:         {\n14:             \"type\": \"path\",\n15:             \"url\": \"../Composer/laravel-sso\",\n16:             \"options\": {\n17:                 \"symlink\": false\n18:             }\n19:         },\n20:         {\n21:             \"type\": \"path\",\n22:             \"url\": \"../Composer/laravel-widgets\",\n23:             \"options\": {\n24:                 \"symlink\": false\n25:             }\n26:         },\n27:         {\n28:             \"type\": \"path\",\n29:             \"url\": \"../Composer/laravel-helpers\",\n30:             \"options\": {\n31:                 \"symlink\": false\n32:             }\n33:         }\n34:     ],\n35:     \"require\": {\n36:         \"php\": \"^8.1\",\n37:         \"ext-json\": \"*\",\n38:         \"arrilot/laravel-widgets\": \"3.1"
+      },
+      {
+        "step": 10,
+        "tool": "list_dir",
+        "args": {
+          "path": "/public"
+        },
+        "result_head": ".htaccess\nassets/\nfavicon.ico\nindex.php\nrobots.txt"
+      },
+      {
+        "step": 10,
+        "tool": "grep",
+        "args": {
+          "pattern": "routes\\(|loadRoutesFrom|Route::",
+          "path": "/app/Providers"
+        },
+        "result_head": "/app/Providers/BroadcastServiceProvider.php:17: Broadcast::routes();\n/app/Providers/RouteServiceProvider.php:37: $this->routes(function () {\n/app/Providers/RouteServiceProvider.php:38: Route::prefix('api')\n/app/Providers/RouteServiceProvider.php:43: Route::middleware('web')"
+      },
+      {
+        "step": 11,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\":[{\"name\":\"remp-sso\",\"dirs\":[\"/app\",\"/routes\",\"/public\",\"/config\",\"/bootstrap\",\"/database\",\"/resources\",\"/storage\"]}],\"files\":[{\"path\":\"/routes/web.php\",\"service\":\"remp-sso\",\"endpoints\":[{\""
+        },
+        "result_head": "Recorded 16 new: service remp-sso, GET /error, GET / (replaces /error), GET /api-tokens/json (replaces /), GET /api-tokens, GET /api-tokens/create, GET /auth/logout-web, GET /settings/jwtwhitelist, GET /auth/login, GET /auth/logout, GET /auth/google, GET /auth/google/callback, GET /api/auth/introspect, POST /api/auth/refresh, POST /api/auth/invalidate, GET /api/auth/check-token\nTotal: 1 services, 13 endpoints in 2 files.\n[REJECTED 6] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0].endpoints[5] POST /api-tokens (ApiTokenController.store): method store does not appear in this file\n- files[0].endpoints[6] GET /api-tokens/{api_token} (ApiTokenController.show): method show does not appear in this file\n- files[0].endpoints[7] GET /api-tokens/{api_token}/edit (ApiTokenController.edit): method edit does not appear in this file\n- files[0].endpoints[8] PUT /api-tokens/{api_token} (ApiTokenController.update): method update does not appear in this file\n-"
+      },
+      {
+        "step": 12,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\":[{\"path\":\"/app/Http/Controllers/ApiTokenController.php\",\"service\":\"remp-sso\",\"endpoints\":[{\"className\":\"ApiTokenController\",\"methodName\":\"store\",\"httpMethod\":\"POST\",\"path\":\"/api-tokens\",\"line"
+        },
+        "result_head": "Recorded 6 new: POST /api-tokens, GET /api-tokens/{api_token}, GET /api-tokens/{api_token}/edit, PUT /api-tokens/{api_token}, PATCH /api-tokens/{api_token}, DELETE /api-tokens/{api_token}\nTotal: 1 services, 19 endpoints in 3 files."
+      },
+      {
+        "step": 13,
+        "tool": "grep",
+        "args": {
+          "path": "/config",
+          "pattern": "health|route"
+        },
+        "result_head": "/config/healthcheck.php:5: * Base path for the health check endpoints, by default will use /\n/config/healthcheck.php:10: * List of health checks to run when determining the health\n/config/healthcheck.php:21: * A list of middleware to run on the health-check route\n/config/healthcheck.php:50: * context of the healthcheck\n/config/healthcheck.php:56: * monitor when running the HTTP health check\n/config/healthcheck.php:63: * Default response code for HTTP health check. Will be used\n/config/healthcheck.php:69: * Default timeout for cURL requests for HTTP health check.\n/config/healthcheck.php:74: * An array of other services that use the health check package\n/config/healthcheck.php:76: * for example: https://api.example.com/health\n/config/healthcheck.php:81: * A list of stores to be checked by the Cache health check\n/config/healthcheck.php:90: * A list of disks to be checked by the Storage health check\n/config/healthcheck.php:99: * Additional config can be put here. For example, a health chec"
+      },
+      {
+        "step": 13,
+        "tool": "find",
+        "args": {
+          "pattern": "*.php",
+          "path": "/bootstrap"
+        },
+        "result_head": "/bootstrap/app.php\n/bootstrap/autoload.php"
+      },
+      {
+        "step": 14,
+        "tool": "read_file",
+        "args": {
+          "path": "/config/healthcheck.php",
+          "start": "1"
+        },
+        "result_head": "1: <?php\n2: \n3: return [\n4:     /**\n5:      * Base path for the health check endpoints, by default will use /\n6:      */\n7:     'base-path' => '',\n8: \n9:     /**\n10:      * List of health checks to run when determining the health\n11:      * of the service\n12:      */\n13:     'checks' => [\n14:         UKFast\\HealthCheck\\Checks\\DatabaseHealthCheck::class,\n15:         UKFast\\HealthCheck\\Checks\\LogHealthCheck::class,\n16:         UKFast\\HealthCheck\\Checks\\RedisHealthCheck::class,\n17:         UKFast\\HealthCheck\\Checks\\StorageHealthCheck::class\n18:     ],\n19: \n20:     /**\n21:      * A list of middleware to run on the health-check route\n22:      * It's recommended that you have a middleware that only\n23:      * allows admin consumers to see the endpoint.\n24:      *\n25:      * See UKFast\\HealthCheck\\BasicAuth for a one-size-fits all\n26:      * solution\n27:      */\n28:     'middleware' => [],\n29: \n30:     /**\n31:      * Used by the basic auth middleware\n32:      */\n33:     'auth' => [\n34:       "
+      },
+      {
+        "step": 15,
+        "tool": "find",
+        "args": {
+          "pattern": "*HealthCheck*"
+        },
+        "result_head": "/config/healthcheck.php"
+      },
+      {
+        "step": 15,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".env.example\n.gitattributes\n.gitignore\nMakefile\nREADME.md\napp/\nartisan\nbootstrap/\ncomposer.json\ncomposer.lock\nconfig/\ndatabase/\npackage.json\nphpunit.xml\npublic/\nresources/\nroutes/\nserver.php\nstorage/\ntests/\nwebpack.mix.js\nyarn.lock"
+      },
+      {
+        "step": 16,
+        "tool": "submit",
+        "args": {},
+        "result_head": "[ACCEPTED] 1 services, 19 endpoints."
+      }
+    ]
+  }
+}

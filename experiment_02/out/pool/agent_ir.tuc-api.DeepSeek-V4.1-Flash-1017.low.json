@@ -1,0 +1,1211 @@
+{
+  "system": "tuc-api",
+  "services": [
+    {
+      "name": "tuc-api",
+      "dirs": [
+        "/src/TradeUnionCommittee.Api"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "AccountController",
+          "methodName": "Token",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Account/Token",
+          "line": 34,
+          "evidence": "[Route(\"Token\", Name = \"Token\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "AccountController",
+          "methodName": "RefreshToken",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Account/RefreshToken",
+          "line": 57,
+          "evidence": "[Route(\"RefreshToken\", Name = \"RefreshToken\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "ActivitiesController",
+          "methodName": "GetAll",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Activities/GetAll",
+          "line": 41,
+          "evidence": "[Route(\"GetAll\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "ActivitiesController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Activities/Get/{id}",
+          "line": 59,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetActivities\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "ActivitiesController",
+          "methodName": "Create",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Activities/Create",
+          "line": 77,
+          "evidence": "[Route(\"Create\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "ActivitiesController",
+          "methodName": "Update",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Activities/Update",
+          "line": 98,
+          "evidence": "[Route(\"Update\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "ActivitiesController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/Activities/Delete/{id}",
+          "line": 118,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/AwardController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "AwardController",
+          "methodName": "GetAll",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Award/GetAll",
+          "line": 41,
+          "evidence": "[Route(\"GetAll\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "AwardController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Award/Get/{id}",
+          "line": 60,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetAward\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "AwardController",
+          "methodName": "Create",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Award/Create",
+          "line": 79,
+          "evidence": "[Route(\"Create\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "AwardController",
+          "methodName": "Update",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Award/Update",
+          "line": 101,
+          "evidence": "[Route(\"Update\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "AwardController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/Award/Delete/{id}",
+          "line": 122,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/CulturalController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "CulturalController",
+          "methodName": "GetAll",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Cultural/GetAll",
+          "line": 41,
+          "evidence": "[Route(\"GetAll\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "CulturalController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Cultural/Get/{id}",
+          "line": 59,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetCultural\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "CulturalController",
+          "methodName": "Create",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Cultural/Create",
+          "line": 77,
+          "evidence": "[Route(\"Create\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "CulturalController",
+          "methodName": "Update",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Cultural/Update",
+          "line": 98,
+          "evidence": "[Route(\"Update\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "CulturalController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/Cultural/Delete/{id}",
+          "line": 118,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/DepartmentalController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "DepartmentalController",
+          "methodName": "GetAll",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Departmental/GetAll",
+          "line": 41,
+          "evidence": "[Route(\"GetAll\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "DepartmentalController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Departmental/Get/{id}",
+          "line": 60,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetDepartmental\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "DepartmentalController",
+          "methodName": "Create",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Departmental/Create",
+          "line": 79,
+          "evidence": "[Route(\"Create\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "DepartmentalController",
+          "methodName": "Update",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Departmental/Update",
+          "line": 101,
+          "evidence": "[Route(\"Update\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "DepartmentalController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/Departmental/Delete/{id}",
+          "line": 122,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/DormitoryController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "DormitoryController",
+          "methodName": "GetAll",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Dormitory/GetAll",
+          "line": 41,
+          "evidence": "[Route(\"GetAll\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "DormitoryController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Dormitory/Get/{id}",
+          "line": 60,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetDormitory\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "DormitoryController",
+          "methodName": "Create",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Dormitory/Create",
+          "line": 79,
+          "evidence": "[Route(\"Create\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "DormitoryController",
+          "methodName": "Update",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Dormitory/Update",
+          "line": 101,
+          "evidence": "[Route(\"Update\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "DormitoryController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/Dormitory/Delete/{id}",
+          "line": 122,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/HobbyController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "HobbyController",
+          "methodName": "GetAll",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Hobby/GetAll",
+          "line": 41,
+          "evidence": "[Route(\"GetAll\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "HobbyController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Hobby/Get/{id}",
+          "line": 59,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetHobby\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "HobbyController",
+          "methodName": "Create",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Hobby/Create",
+          "line": 77,
+          "evidence": "[Route(\"Create\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "HobbyController",
+          "methodName": "Update",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Hobby/Update",
+          "line": 98,
+          "evidence": "[Route(\"Update\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "HobbyController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/Hobby/Delete/{id}",
+          "line": 118,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/MaterialAidController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "MaterialAidController",
+          "methodName": "GetAll",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/MaterialAid/GetAll",
+          "line": 41,
+          "evidence": "[Route(\"GetAll\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "MaterialAidController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/MaterialAid/Get/{id}",
+          "line": 60,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetMaterialAid\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "MaterialAidController",
+          "methodName": "Create",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/MaterialAid/Create",
+          "line": 79,
+          "evidence": "[Route(\"Create\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "MaterialAidController",
+          "methodName": "Update",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/MaterialAid/Update",
+          "line": 101,
+          "evidence": "[Route(\"Update\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "MaterialAidController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/MaterialAid/Delete/{id}",
+          "line": 122,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/PositionController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "PositionController",
+          "methodName": "GetAll",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Position/GetAll",
+          "line": 41,
+          "evidence": "[Route(\"GetAll\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "PositionController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Position/Get/{id}",
+          "line": 60,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetPosition\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "PositionController",
+          "methodName": "Create",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Position/Create",
+          "line": 78,
+          "evidence": "[Route(\"Create\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "PositionController",
+          "methodName": "Update",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Position/Update",
+          "line": 99,
+          "evidence": "[Route(\"Update\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "PositionController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/Position/Delete/{id}",
+          "line": 119,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/PrivilegesController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "PrivilegesController",
+          "methodName": "GetAll",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Privileges/GetAll",
+          "line": 41,
+          "evidence": "[Route(\"GetAll\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "PrivilegesController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Privileges/Get/{id}",
+          "line": 60,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetPrivileges\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "PrivilegesController",
+          "methodName": "Create",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Privileges/Create",
+          "line": 79,
+          "evidence": "[Route(\"Create\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "PrivilegesController",
+          "methodName": "Update",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Privileges/Update",
+          "line": 101,
+          "evidence": "[Route(\"Update\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "PrivilegesController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/Privileges/Delete/{id}",
+          "line": 122,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "SocialActivityController",
+          "methodName": "GetAll",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/SocialActivity/GetAll",
+          "line": 41,
+          "evidence": "[Route(\"GetAll\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "SocialActivityController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/SocialActivity/Get/{id}",
+          "line": 59,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetSocialActivity\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "SocialActivityController",
+          "methodName": "Create",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/SocialActivity/Create",
+          "line": 77,
+          "evidence": "[Route(\"Create\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "SocialActivityController",
+          "methodName": "Update",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/SocialActivity/Update",
+          "line": 98,
+          "evidence": "[Route(\"Update\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "SocialActivityController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/SocialActivity/Delete/{id}",
+          "line": 118,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "SubdivisionController",
+          "methodName": "GetAllMainSubdivision",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Subdivision/GetAllMainSubdivision",
+          "line": 43,
+          "evidence": "[Route(\"GetAllMainSubdivision\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "SubdivisionController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Subdivision/Get/{id}",
+          "line": 61,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetSubdivision\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "SubdivisionController",
+          "methodName": "GetSubordinateSubdivisions",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Subdivision/GetSubordinateSubdivisions/{id}",
+          "line": 79,
+          "evidence": "[Route(\"GetSubordinateSubdivisions/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "SubdivisionController",
+          "methodName": "CreateMainSubdivision",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Subdivision/CreateMainSubdivision",
+          "line": 99,
+          "evidence": "[Route(\"CreateMainSubdivision\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "SubdivisionController",
+          "methodName": "CreateSubordinateSubdivision",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Subdivision/CreateSubordinateSubdivision",
+          "line": 120,
+          "evidence": "[Route(\"CreateSubordinateSubdivision\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "SubdivisionController",
+          "methodName": "UpdateName",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Subdivision/UpdateName",
+          "line": 143,
+          "evidence": "[Route(\"UpdateName\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "SubdivisionController",
+          "methodName": "UpdateAbbreviation",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Subdivision/UpdateAbbreviation",
+          "line": 163,
+          "evidence": "[Route(\"UpdateAbbreviation\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "SubdivisionController",
+          "methodName": "RestructuringUnits",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Subdivision/RestructuringUnits",
+          "line": 183,
+          "evidence": "[Route(\"RestructuringUnits\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "SubdivisionController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/Subdivision/Delete/{id}",
+          "line": 205,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "TourController",
+          "methodName": "GetAll",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Tour/GetAll",
+          "line": 41,
+          "evidence": "[Route(\"GetAll\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "TourController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Tour/Get/{id}",
+          "line": 60,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetTour\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "TourController",
+          "methodName": "Create",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Tour/Create",
+          "line": 79,
+          "evidence": "[Route(\"Create\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "TourController",
+          "methodName": "Update",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Tour/Update",
+          "line": 101,
+          "evidence": "[Route(\"Update\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "TourController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/Tour/Delete/{id}",
+          "line": 122,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "TravelController",
+          "methodName": "GetAll",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Travel/GetAll",
+          "line": 41,
+          "evidence": "[Route(\"GetAll\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "TravelController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Travel/Get/{id}",
+          "line": 59,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetTravel\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "TravelController",
+          "methodName": "Create",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Travel/Create",
+          "line": 77,
+          "evidence": "[Route(\"Create\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "TravelController",
+          "methodName": "Update",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Travel/Update",
+          "line": 98,
+          "evidence": "[Route(\"Update\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "TravelController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/Travel/Delete/{id}",
+          "line": 118,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs",
+      "service": "tuc-api",
+      "endpoints": [
+        {
+          "className": "WellnessController",
+          "methodName": "GetAll",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Wellness/GetAll",
+          "line": 41,
+          "evidence": "[Route(\"GetAll\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "WellnessController",
+          "methodName": "Get",
+          "httpMethod": "GET",
+          "path": "/api/v{version:apiVersion}/Wellness/Get/{id}",
+          "line": 59,
+          "evidence": "[Route(\"Get/{id}\", Name = \"GetWellness\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "WellnessController",
+          "methodName": "Create",
+          "httpMethod": "POST",
+          "path": "/api/v{version:apiVersion}/Wellness/Create",
+          "line": 77,
+          "evidence": "[Route(\"Create\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "WellnessController",
+          "methodName": "Update",
+          "httpMethod": "PUT",
+          "path": "/api/v{version:apiVersion}/Wellness/Update",
+          "line": 98,
+          "evidence": "[Route(\"Update\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        },
+        {
+          "className": "WellnessController",
+          "methodName": "Delete",
+          "httpMethod": "DELETE",
+          "path": "/api/v{version:apiVersion}/Wellness/Delete/{id}",
+          "line": 118,
+          "evidence": "[Route(\"Delete/{id}\")]",
+          "framework": "ASP.NET",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "DeepSeek-V4.1-Flash-1017",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "low",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "TradeUnionCommittee.Api",
+    "commit": "13184c0e62eea32c51985cb0fbf778531da10c68",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 18,
+    "tool_calls": 37,
+    "rejected_entries": 0,
+    "no_call_replies": 0,
+    "input_tokens": 227770,
+    "cached_input_tokens": 199552,
+    "output_tokens": 8024,
+    "list_price_usd": 0.0096,
+    "wall_seconds": 44.2,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": "TradeUnionCommittee.Api.sln\nsrc/\ntests/"
+      },
+      {
+        "step": 1,
+        "tool": "find",
+        "args": {
+          "pattern": "Dockerfile"
+        },
+        "result_head": "(no files)"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/src"
+        },
+        "result_head": "TradeUnionCommittee.Api/"
+      },
+      {
+        "step": 2,
+        "tool": "find",
+        "args": {
+          "pattern": "*.csproj"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/TradeUnionCommittee.Api.csproj\n/tests/TradeUnionCommittee.Api.UnitTests/TradeUnionCommittee.Api.UnitTests.csproj"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api"
+        },
+        "result_head": "Attributes/\nConfigurations/\nControllers/\nExtensions/\nFilters/\nMiddleware/\nModels/\nProgram.cs\nProperties/\nTradeUnionCommittee.Api.csproj\nappsettings.Development.json\nappsettings.Production.json\nappsettings.json"
+      },
+      {
+        "step": 3,
+        "tool": "find",
+        "args": {
+          "pattern": "*Controller*.cs"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs\n/src/TradeUnionCommittee.Api/Controllers/Directory/AwardController.cs\n/src/TradeUnionCommittee.Api/Controllers/Directory/CulturalController.cs\n/src/TradeUnionCommittee.Api/Controllers/Directory/DepartmentalController.cs\n/src/TradeUnionCommittee.Api/Controllers/Directory/DormitoryController.cs\n/src/TradeUnionCommittee.Api/Controllers/Directory/HobbyController.cs\n/src/TradeUnionCommittee.Api/Controllers/Directory/MaterialAidController.cs\n/src/TradeUnionCommittee.Api/Controllers/Directory/PositionController.cs\n/src/TradeUnionCommittee.Api/Controllers/Directory/PrivilegesController.cs\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs\n/src/TradeUnionCommittee.Api/Controllers/Di"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Program.cs"
+        },
+        "result_head": "1: using Microsoft.AspNetCore.Authentication.JwtBearer;\n2: using Microsoft.AspNetCore.HttpOverrides;\n3: using Microsoft.AspNetCore.Mvc;\n4: using Microsoft.AspNetCore.Mvc.ApiExplorer;\n5: using Microsoft.AspNetCore.ResponseCompression;\n6: using Microsoft.Extensions.Options;\n7: using Microsoft.IdentityModel.Tokens;\n8: using Serilog;\n9: using Serilog.Events;\n10: using Serilog.Sinks.Elasticsearch;\n11: using Swashbuckle.AspNetCore.SwaggerGen;\n12: using Swashbuckle.AspNetCore.SwaggerUI;\n13: using System.IO.Compression;\n14: using TradeUnionCommittee.Api.Configurations;\n15: using TradeUnionCommittee.Api.Extensions;\n16: using TradeUnionCommittee.Api.Filters;\n17: using TradeUnionCommittee.Api.Models;\n18: using TradeUnionCommittee.BLL.Configurations;\n19: using TradeUnionCommittee.BLL.Extensions;\n20: using TradeUnionCommittee.ViewModels.Extensions;\n21: \n22: var builder = WebApplication.CreateBuilder(args);\n23: \n24: #region Configuration\n25: \n26: builder.Configuration\n27:                .SetBasePath"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs"
+        },
+        "result_head": "1: using Microsoft.AspNetCore.Http;\n2: using Microsoft.AspNetCore.Mvc;\n3: using Microsoft.Extensions.Logging;\n4: using System.Collections.Generic;\n5: using System.Threading.Tasks;\n6: using TradeUnionCommittee.Api.Attributes;\n7: using TradeUnionCommittee.Api.Configurations;\n8: using TradeUnionCommittee.Api.Models;\n9: using TradeUnionCommittee.ViewModels.ViewModels;\n10: \n11: namespace TradeUnionCommittee.Api.Controllers.Account\n12: {\n13:     [ApiController]\n14:     [ApiVersion(\"1.0\")]\n15:     [Route(\"api/v{version:apiVersion}/[controller]\")]\n16:     public class AccountController : ControllerBase\n17:     {\n18:         private readonly IJwtBearerConfiguration _jwtBearer;\n19:         private readonly ILogger<AccountController> _logger;\n20: \n21:         public AccountController(IJwtBearerConfiguration jwtBearer, ILogger<AccountController> logger)\n22:         {\n23:             _jwtBearer = jwtBearer;\n24:             _logger = logger;\n25:         }\n26: \n27:         /// <summary>\n28:         /"
+      },
+      {
+        "step": 5,
+        "tool": "grep",
+        "args": {
+          "pattern": "\\[(HttpGet|HttpPost|HttpPut|HttpDelete|HttpPatch|Route)",
+          "path": "/src/TradeUnionCommittee.Api/Controllers"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs:15: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs:33: [HttpPost]\n/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs:34: [Route(\"Token\", Name = \"Token\")]\n/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs:56: [HttpPost]\n/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs:57: [Route(\"RefreshToken\", Name = \"RefreshToken\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:22: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:40: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:41: [Route(\"GetAll\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:58: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs"
+      },
+      {
+        "step": 6,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory",
+          "pattern": "\\[(HttpGet|HttpPost|HttpPut|HttpDelete|HttpPatch|Route)"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:22: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:40: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:41: [Route(\"GetAll\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:58: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:59: [Route(\"Get/{id}\", Name = \"GetActivities\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:76: [HttpPost]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:77: [Route(\"Create\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:97: [HttpPut]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:98: [Route(\"Update\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:117: [HttpDelete]\n/src/Tr"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory",
+          "pattern": "\\[Route\\("
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:22: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:41: [Route(\"GetAll\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:59: [Route(\"Get/{id}\", Name = \"GetActivities\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:77: [Route(\"Create\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:98: [Route(\"Update\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:118: [Route(\"Delete/{id}\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/AwardController.cs:22: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/AwardController.cs:41: [Route(\"GetAll\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/AwardController.cs:60: [Route(\"Get/{id}\", Name = \"GetAward\")]\n/src/TradeUnionCommittee."
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory",
+          "pattern": "\\[Route\\(\"(Get|Create|Update|Delete|api)"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:22: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:41: [Route(\"GetAll\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:59: [Route(\"Get/{id}\", Name = \"GetActivities\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:77: [Route(\"Create\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:98: [Route(\"Update\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:118: [Route(\"Delete/{id}\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/AwardController.cs:22: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/AwardController.cs:41: [Route(\"GetAll\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/AwardController.cs:60: [Route(\"Get/{id}\", Name = \"GetAward\")]\n/src/TradeUnionCommittee."
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "path": "/src",
+          "pattern": "class \\w+Controller"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs:16: public class AccountController : ControllerBase\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:23: public class ActivitiesController : ControllerBase\n/src/TradeUnionCommittee.Api/Controllers/Directory/AwardController.cs:23: public class AwardController : ControllerBase\n/src/TradeUnionCommittee.Api/Controllers/Directory/CulturalController.cs:23: public class CulturalController : ControllerBase\n/src/TradeUnionCommittee.Api/Controllers/Directory/DepartmentalController.cs:23: public class DepartmentalController : ControllerBase\n/src/TradeUnionCommittee.Api/Controllers/Directory/DormitoryController.cs:23: public class DormitoryController : ControllerBase\n/src/TradeUnionCommittee.Api/Controllers/Directory/HobbyController.cs:23: public class HobbyController : ControllerBase\n/src/TradeUnionCommittee.Api/Controllers/Directory/MaterialAidController.cs:23: public class MaterialAidController : Con"
+      },
+      {
+        "step": 9,
+        "tool": "read_file",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs",
+          "start": "20"
+        },
+        "result_head": "20:     [ApiController]\n21:     [ApiVersion(\"1.0\")]\n22:     [Route(\"api/v{version:apiVersion}/[controller]\")]\n23:     public class ActivitiesController : ControllerBase\n24:     {\n25:         private readonly IActivitiesService _services;\n26:         private readonly ISystemAuditService _systemAuditService;\n27:         private readonly IMapper _mapper;\n28:         private readonly IHttpContextAccessor _accessor;\n29:         private readonly ILogger<ActivitiesController> _logger;\n30: \n31:         public ActivitiesController(IActivitiesService services, ISystemAuditService systemAuditService, IMapper mapper, IHttpContextAccessor accessor, ILogger<ActivitiesController> logger)\n32:         {\n33:             _services = services;\n34:             _systemAuditService = systemAuditService;\n35:             _mapper = mapper;\n36:             _accessor = accessor;\n37:             _logger = logger;\n38:         }\n39: \n40:         [HttpGet]\n41:         [Route(\"GetAll\")]\n42:         [MapToApiVersion(\"1"
+      },
+      {
+        "step": 9,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory",
+          "pattern": "public async Task<IActionResult> \\w+"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:48: public async Task<IActionResult> GetAll()\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:66: public async Task<IActionResult> Get([Required] string id)\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:86: public async Task<IActionResult> Create([FromBody] CreateActivitiesViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:106: public async Task<IActionResult> Update([FromBody] UpdateActivitiesViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:126: public async Task<IActionResult> Delete([Required] string id)\n/src/TradeUnionCommittee.Api/Controllers/Directory/AwardController.cs:49: public async Task<IActionResult> GetAll()\n/src/TradeUnionCommittee.Api/Controllers/Directory/AwardController.cs:68: public async Task<IActionResult> Get([Required] string id)\n/src/TradeUnionCommittee.Api/"
+      },
+      {
+        "step": 10,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs",
+          "pattern": "\\[(Route|Http)"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:22: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:40: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:41: [Route(\"GetAll\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:58: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:59: [Route(\"Get/{id}\", Name = \"GetSocialActivity\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:76: [HttpPost]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:77: [Route(\"Create\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:97: [HttpPut]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:98: [Route(\"Update\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialAct"
+      },
+      {
+        "step": 10,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs",
+          "pattern": "\\[(Route|Http)"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:22: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:42: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:43: [Route(\"GetAllMainSubdivision\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:60: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:61: [Route(\"Get/{id}\", Name = \"GetSubdivision\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:78: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:79: [Route(\"GetSubordinateSubdivisions/{id}\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:98: [HttpPost]\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:99: [Route(\"CreateMainSubdivision\")]\n/src/TradeUnionCommittee.Api/Contro"
+      },
+      {
+        "step": 10,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs",
+          "pattern": "\\[(Route|Http)"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:22: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:40: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:41: [Route(\"GetAll\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:59: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:60: [Route(\"Get/{id}\", Name = \"GetTour\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:78: [HttpPost]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:79: [Route(\"Create\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:100: [HttpPut]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:101: [Route(\"Update\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:121: [HttpDelete]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:12"
+      },
+      {
+        "step": 10,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs",
+          "pattern": "\\[(Route|Http)"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:22: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:40: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:41: [Route(\"GetAll\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:58: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:59: [Route(\"Get/{id}\", Name = \"GetTravel\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:76: [HttpPost]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:77: [Route(\"Create\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:97: [HttpPut]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:98: [Route(\"Update\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:117: [HttpDelete]\n/src/TradeUnionCommittee.Api/Controllers/Directory/"
+      },
+      {
+        "step": 10,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs",
+          "pattern": "\\[(Route|Http)"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:22: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:40: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:41: [Route(\"GetAll\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:58: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:59: [Route(\"Get/{id}\", Name = \"GetWellness\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:76: [HttpPost]\n/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:77: [Route(\"Create\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:97: [HttpPut]\n/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:98: [Route(\"Update\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:117: [HttpDelete]\n/src/TradeUnionCommittee.Api/"
+      },
+      {
+        "step": 11,
+        "tool": "read_file",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/TradeUnionCommittee.Api.csproj"
+        },
+        "result_head": "1: <Project Sdk=\"Microsoft.NET.Sdk.Web\">\n2: \n3:   <PropertyGroup>\n4:     <TargetFramework>net6.0</TargetFramework>\n5: \t<ImplicitUsings>enable</ImplicitUsings>\n6:     <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>\n7:     <TieredCompilationQuickJit>true</TieredCompilationQuickJit>\n8:     <ServerGarbageCollection>true</ServerGarbageCollection>\n9:     <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>\n10:     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>\n11:     <DockerfileContext>..\\..</DockerfileContext>\n12:     <AssemblyVersion>1.0.0.6</AssemblyVersion>\n13:     <PackageVersion>1.0.0.6</PackageVersion>\n14:     <Version>1.0.0.6</Version>\n15:   </PropertyGroup>\n16: \n17:   <PropertyGroup>\n18:     <DocumentationFile>bin\\$(Configuration)\\TradeUnionCommittee.Api.xml</DocumentationFile>\n19:     <NoWarn>1701;1702;1591</NoWarn>\n20:   </PropertyGroup>\n21: \n22:   <ItemGroup>\n23:     <PackageReference Include=\"AutoMapper\" Version=\"11.0.1\" />\n24:     <PackageReference I"
+      },
+      {
+        "step": 11,
+        "tool": "grep",
+        "args": {
+          "pattern": "Map(Get|Post|Put|Delete|Controllers|ControllerRoute)",
+          "path": "/src"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Program.cs:170: endpoints.MapControllers();"
+      },
+      {
+        "step": 12,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\":[{\"name\":\"tuc-api\",\"dirs\":[\"/src/TradeUnionCommittee.Api\"]}]}"
+        },
+        "result_head": "Recorded 1 new: service tuc-api\nTotal: 1 services, 0 endpoints in 0 files.\nServices with no endpoints recorded yet: tuc-api."
+      },
+      {
+        "step": 13,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\":[\n{\"path\":\"/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs\",\"service\":\"tuc-api\",\"endpoints\":[\n{\"className\":\"AccountController\",\"methodName\":\"Token\",\"httpMethod\":\"POST\",\""
+        },
+        "result_head": "Recorded 27 new: POST /api/v{version:apiVersion}/Account/Token, POST /api/v{version:apiVersion}/Account/RefreshToken, GET /api/v{version:apiVersion}/Activities/GetAll, GET /api/v{version:apiVersion}/Activities/Get/{id}, POST /api/v{version:apiVersion}/Activities/Create, PUT /api/v{version:apiVersion}/Activities/Update, DELETE /api/v{version:apiVersion}/Activities/Delete/{id}, GET /api/v{version:apiVersion}/Award/GetAll, GET /api/v{version:apiVersion}/Award/Get/{id}, POST /api/v{version:apiVersion}/Award/Create, PUT /api/v{version:apiVersion}/Award/Update, DELETE /api/v{version:apiVersion}/Award/Delete/{id}, GET /api/v{version:apiVersion}/Cultural/GetAll, GET /api/v{version:apiVersion}/Cultural/Get/{id}, POST /api/v{version:apiVersion}/Cultural/Create, PUT /api/v{version:apiVersion}/Cultural/Update, DELETE /api/v{version:apiVersion}/Cultural/Delete/{id}, GET /api/v{version:apiVersion}/Departmental/GetAll, GET /api/v{version:apiVersion}/Departmental/Get/{id}, POST /api/v{version:apiVersi"
+      },
+      {
+        "step": 14,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs",
+          "pattern": "public async Task<IActionResult> \\w+"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:50: public async Task<IActionResult> GetAllMainSubdivision()\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:68: public async Task<IActionResult> Get([Required] string id)\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:86: public async Task<IActionResult> GetSubordinateSubdivisions([Required] string id)\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:108: public async Task<IActionResult> CreateMainSubdivision([FromBody] CreateMainSubdivisionViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:129: public async Task<IActionResult> CreateSubordinateSubdivision([FromBody] CreateSubordinateSubdivisionViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/SubdivisionController.cs:151: public async Task<IActionResult> UpdateName([FromBody] UpdateNameSubdivisionViewModel vm)\n/src/TradeUni"
+      },
+      {
+        "step": 14,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/HobbyController.cs",
+          "pattern": "public async Task<IActionResult> \\w+"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/HobbyController.cs:48: public async Task<IActionResult> GetAll()\n/src/TradeUnionCommittee.Api/Controllers/Directory/HobbyController.cs:66: public async Task<IActionResult> Get([Required] string id)\n/src/TradeUnionCommittee.Api/Controllers/Directory/HobbyController.cs:86: public async Task<IActionResult> Create([FromBody] CreateHobbyViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/HobbyController.cs:106: public async Task<IActionResult> Update([FromBody] UpdateHobbyViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/HobbyController.cs:126: public async Task<IActionResult> Delete([Required] string id)"
+      },
+      {
+        "step": 14,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/MaterialAidController.cs",
+          "pattern": "public async Task<IActionResult> \\w+"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/MaterialAidController.cs:49: public async Task<IActionResult> GetAll()\n/src/TradeUnionCommittee.Api/Controllers/Directory/MaterialAidController.cs:68: public async Task<IActionResult> Get([Required] string id)\n/src/TradeUnionCommittee.Api/Controllers/Directory/MaterialAidController.cs:89: public async Task<IActionResult> Create([FromBody] CreateMaterialAidViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/MaterialAidController.cs:110: public async Task<IActionResult> Update([FromBody] UpdateMaterialAidViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/MaterialAidController.cs:130: public async Task<IActionResult> Delete([Required] string id)"
+      },
+      {
+        "step": 14,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/PositionController.cs",
+          "pattern": "public async Task<IActionResult> \\w+"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/PositionController.cs:48: public async Task<IActionResult> GetAll()\n/src/TradeUnionCommittee.Api/Controllers/Directory/PositionController.cs:67: public async Task<IActionResult> Get([Required] string id)\n/src/TradeUnionCommittee.Api/Controllers/Directory/PositionController.cs:87: public async Task<IActionResult> Create([FromBody] CreatePositionViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/PositionController.cs:107: public async Task<IActionResult> Update([FromBody] UpdatePositionViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/PositionController.cs:127: public async Task<IActionResult> Delete([Required] string id)"
+      },
+      {
+        "step": 14,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/PrivilegesController.cs",
+          "pattern": "public async Task<IActionResult> \\w+"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/PrivilegesController.cs:49: public async Task<IActionResult> GetAll()\n/src/TradeUnionCommittee.Api/Controllers/Directory/PrivilegesController.cs:68: public async Task<IActionResult> Get([Required] string id)\n/src/TradeUnionCommittee.Api/Controllers/Directory/PrivilegesController.cs:89: public async Task<IActionResult> Create([FromBody] CreatePrivilegesViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/PrivilegesController.cs:110: public async Task<IActionResult> Update([FromBody] UpdatePrivilegesViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/PrivilegesController.cs:130: public async Task<IActionResult> Delete([Required] string id)"
+      },
+      {
+        "step": 14,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs",
+          "pattern": "public async Task<IActionResult> \\w+"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:48: public async Task<IActionResult> GetAll()\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:66: public async Task<IActionResult> Get([Required] string id)\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:86: public async Task<IActionResult> Create([FromBody] CreateSocialActivityViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:106: public async Task<IActionResult> Update([FromBody] UpdateSocialActivityViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/SocialActivityController.cs:126: public async Task<IActionResult> Delete([Required] string id)"
+      },
+      {
+        "step": 14,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs",
+          "pattern": "public async Task<IActionResult> \\w+"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:49: public async Task<IActionResult> GetAll()\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:68: public async Task<IActionResult> Get([Required] string id)\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:89: public async Task<IActionResult> Create([FromBody] CreateTourViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:110: public async Task<IActionResult> Update([FromBody] UpdateTourViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/TourController.cs:130: public async Task<IActionResult> Delete([Required] string id)"
+      },
+      {
+        "step": 14,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs",
+          "pattern": "public async Task<IActionResult> \\w+"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:48: public async Task<IActionResult> GetAll()\n/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:66: public async Task<IActionResult> Get([Required] string id)\n/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:86: public async Task<IActionResult> Create([FromBody] CreateTravelViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:106: public async Task<IActionResult> Update([FromBody] UpdateTravelViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/TravelController.cs:126: public async Task<IActionResult> Delete([Required] string id)"
+      },
+      {
+        "step": 14,
+        "tool": "grep",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs",
+          "pattern": "public async Task<IActionResult> \\w+"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:48: public async Task<IActionResult> GetAll()\n/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:66: public async Task<IActionResult> Get([Required] string id)\n/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:86: public async Task<IActionResult> Create([FromBody] CreateWellnessViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:106: public async Task<IActionResult> Update([FromBody] UpdateWellnessViewModel vm)\n/src/TradeUnionCommittee.Api/Controllers/Directory/WellnessController.cs:126: public async Task<IActionResult> Delete([Required] string id)"
+      },
+      {
+        "step": 15,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\":[\n{\"path\":\"/src/TradeUnionCommittee.Api/Controllers/Directory/HobbyController.cs\",\"service\":\"tuc-api\",\"endpoints\":[\n{\"className\":\"HobbyController\",\"methodName\":\"GetAll\",\"httpMethod\":\"GET\",\"pa"
+        },
+        "result_head": "Recorded 49 new: GET /api/v{version:apiVersion}/Hobby/GetAll, GET /api/v{version:apiVersion}/Hobby/Get/{id}, POST /api/v{version:apiVersion}/Hobby/Create, PUT /api/v{version:apiVersion}/Hobby/Update, DELETE /api/v{version:apiVersion}/Hobby/Delete/{id}, GET /api/v{version:apiVersion}/MaterialAid/GetAll, GET /api/v{version:apiVersion}/MaterialAid/Get/{id}, POST /api/v{version:apiVersion}/MaterialAid/Create, PUT /api/v{version:apiVersion}/MaterialAid/Update, DELETE /api/v{version:apiVersion}/MaterialAid/Delete/{id}, GET /api/v{version:apiVersion}/Position/GetAll, GET /api/v{version:apiVersion}/Position/Get/{id}, POST /api/v{version:apiVersion}/Position/Create, PUT /api/v{version:apiVersion}/Position/Update, DELETE /api/v{version:apiVersion}/Position/Delete/{id}, GET /api/v{version:apiVersion}/Privileges/GetAll, GET /api/v{version:apiVersion}/Privileges/Get/{id}, POST /api/v{version:apiVersion}/Privileges/Create, PUT /api/v{version:apiVersion}/Privileges/Update, DELETE /api/v{version:apiVe"
+      },
+      {
+        "step": 16,
+        "tool": "grep",
+        "args": {
+          "path": "/src",
+          "pattern": "\\[(HttpGet|HttpPost|HttpPut|HttpDelete|HttpPatch|Route)"
+        },
+        "result_head": "/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs:15: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs:33: [HttpPost]\n/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs:34: [Route(\"Token\", Name = \"Token\")]\n/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs:56: [HttpPost]\n/src/TradeUnionCommittee.Api/Controllers/Account/AccountController.cs:57: [Route(\"RefreshToken\", Name = \"RefreshToken\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:22: [Route(\"api/v{version:apiVersion}/[controller]\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:40: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:41: [Route(\"GetAll\")]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs:58: [HttpGet]\n/src/TradeUnionCommittee.Api/Controllers/Directory/ActivitiesController.cs"
+      },
+      {
+        "step": 17,
+        "tool": "read_file",
+        "args": {
+          "path": "/src/TradeUnionCommittee.Api/Program.cs",
+          "start": "155"
+        },
+        "result_head": "155: \n156: app.UseSwagger();\n157: app.UseSwaggerUI(c =>\n158: {\n159:     foreach (var description in apiVersionDescriptionProvider.ApiVersionDescriptions)\n160:     {\n161:         c.RoutePrefix = string.Empty;\n162:         c.SwaggerEndpoint($\"/swagger/{description.GroupName}/swagger.json\", description.GroupName.ToUpperInvariant());\n163:     }\n164:     c.DocExpansion(DocExpansion.None);\n165:     c.EnableValidator();\n166: });\n167: \n168: app.UseEndpoints(endpoints =>\n169: {\n170:     endpoints.MapControllers();\n171: });\n172: \n173: #endregion\n174: \n175: await app.RunAsync();"
+      },
+      {
+        "step": 18,
+        "tool": "submit",
+        "args": {},
+        "result_head": "[ACCEPTED] 1 services, 76 endpoints."
+      }
+    ]
+  }
+}

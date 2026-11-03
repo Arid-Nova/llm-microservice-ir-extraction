@@ -1,0 +1,397 @@
+{
+  "system": "caliopen-web",
+  "services": [
+    {
+      "name": "caliopen-web",
+      "dirs": [
+        "/"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/server/auth/router/signin.js",
+      "service": "caliopen-web",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/auth/signin",
+          "line": 9,
+          "evidence": "router.post(",
+          "framework": "Express",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/auth/signout",
+          "line": 29,
+          "evidence": "router.get('/signout', (req, res) => {",
+          "framework": "Express",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/server/auth/router/signup.ts",
+      "service": "caliopen-web",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/auth/signup",
+          "line": 9,
+          "evidence": "router.post('/signup', async (req, res, next) => {",
+          "framework": "Express",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/server/ssr/index.js",
+      "service": "caliopen-web",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "ssrMiddleware",
+          "httpMethod": "GET",
+          "path": "/*",
+          "line": 6,
+          "evidence": "app.get('*', ssrMiddleware);",
+          "framework": "Express",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "DeepSeek-V4.1-Flash-1017",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "low",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "web_application",
+    "commit": "7b4c692ab7cbdfe8f0ffd7e5ec58d3da11b7e938",
+    "dirty": true,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 12,
+    "tool_calls": 37,
+    "rejected_entries": 1,
+    "no_call_replies": 0,
+    "input_tokens": 90278,
+    "cached_input_tokens": 67968,
+    "output_tokens": 2762,
+    "list_price_usd": 0.0052,
+    "wall_seconds": 41.7,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".babelrc\n.dockerignore\n.eslintrc.json\n.gitignore\n.prettierignore\n.prettierrc.js\n.stylelintrc.yml\nCONTRIBUTING.md\nDockerfile\nDockerfile.caliopen-node\nREADME.md\n__mocks__/\nassets/\nbin/\nconfig/\nlingui.config.ts\nlocale/\npackage.json\npostcss.config.js\npublic/\nserver/\nsrc/\ntemplate/\ntest/\ntsconfig.json\nwebpack/\nyarn.lock"
+      },
+      {
+        "step": 1,
+        "tool": "find",
+        "args": {
+          "pattern": "Dockerfile"
+        },
+        "result_head": "/Dockerfile"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server"
+        },
+        "result_head": "api/\napp.ts\nassets/\nauth/\nconfig/\nerror/\nexpress-react/\nindex.js\nlogger/\nssr/"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/Dockerfile"
+        },
+        "result_head": "1: # This file creates a container that runs a {package} caliopen frontend\n2: # Important:\n3: # Author: Caliopen\n4: # Date: 2016-01-05\n5: \n6: FROM node:16 as builder\n7: MAINTAINER Caliopen\n8: \n9: ADD . /srv/caliopen/frontend/\n10: WORKDIR /srv/caliopen/frontend/\n11: RUN yarn install\n12: RUN yarn run release\n13: \n14: FROM node:16-alpine\n15: MAINTAINER Caliopen\n16: \n17: WORKDIR /srv/caliopen/frontend/\n18: COPY --from=builder /srv/caliopen/frontend/dist ./dist\n19: COPY --from=builder /srv/caliopen/frontend/bin ./bin\n20: COPY --from=builder /srv/caliopen/frontend/public ./public\n21: COPY --from=builder /srv/caliopen/frontend/package.json .\n22: COPY --from=builder /srv/caliopen/frontend/yarn.lock .\n23: ENV NODE_ENV=production\n24: RUN yarn install\n25: \n26: EXPOSE 4000\n27: \n28: CMD [\"yarn\", \"run\", \"start:prod\"]"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/package.json"
+        },
+        "result_head": "1: {\n2:   \"name\": \"@caliopen/frontend\",\n3:   \"version\": \"0.27.1\",\n4:   \"description\": \"CaliOpen UI is the user interface for CaliOpen.\",\n5:   \"homepage\": \"https://caliopen.org/\",\n6:   \"private\": true,\n7:   \"engines\": {\n8:     \"node\": \">=8.11.1\"\n9:   },\n10:   \"scripts\": {\n11:     \"start\": \"npm-run-all -l build:clean build:i18n --parallel --race start:dev:server start:dev:assets\",\n12:     \"start:hostname\": \"CALIOPEN_HOSTNAME=caliopen.local CALIOPEN_WEB_SERVER_HOSTNAME=caliopen.local npm-run-all start\",\n13:     \"start:dev\": \"CALIOPEN_API_HOSTNAME=localhost HAS_SSR=false npm-run-all -l build:clean build:i18n --parallel --race start:dev:server start:dev:assets\",\n14:     \"start:dev:server\": \"CALIOPEN_WEB_SERVER_PORT=4001 bin/dev-server\",\n15:     \"start:dev:assets\": \"NODE_ENV=development CALIOPEN_MOTD='credentials: dev / 123456' webpack serve --host 0.0.0.0 --progress --config webpack/webpack.config.browser.js --port 4000\",\n16:     \"start:prod\": \"NODE_ENV=production ./bin/server\",\n17:     \"st"
+      },
+      {
+        "step": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/app.ts"
+        },
+        "result_head": "1: import express from 'express';\n2: import applyAPI from './api';\n3: import applyAssets from './assets';\n4: import applyAuth from './auth';\n5: import applyError from './error';\n6: import { configure as applyExpressReact } from './express-react';\n7: import applySSR from './ssr';\n8: import { httpLog } from './logger';\n9: \n10: export default () => {\n11:   const app = express();\n12: \n13:   app.use('*', httpLog);\n14: \n15:   //-------\n16:   // assets always public\n17:   applyAssets(app);\n18:   applyAuth(app);\n19:   applyAPI(app);\n20:   applyExpressReact(app);\n21:   applySSR(app);\n22:   applyError(app);\n23: \n24:   return app;\n25: };"
+      },
+      {
+        "step": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/index.js"
+        },
+        "result_head": "1: import path from 'path';\n2: import fs from 'fs';\n3: import argv from 'argv';\n4: import http from 'http';\n5: import getApp from './app';\n6: import { getConfig, initConfig } from './config';\n7: import { version } from '../package.json';\n8: import { getLogger } from './logger';\n9: \n10: const logger = getLogger();\n11: \n12: const {\n13:   options: { config: configPath },\n14: } = argv\n15:   .option([\n16:     {\n17:       name: 'config',\n18:       type: 'path',\n19:       description:\n20:         'the file to set Caliopen options. See config/server.default.js for default options. This can be a regular js or a json file, cf. README.md.',\n21:       example: 'server --config=~/caliopen.webserver.json',\n22:     },\n23:   ])\n24:   .version(version)\n25:   .info('Run Caliopen web server')\n26:   .run();\n27: \n28: if (configPath) {\n29:   // read user's config file outside of webpack\n30:   const userOpts = JSON.parse(fs.readFileSync(path.join(configPath), 'utf8'));\n31: \n32:   initConfig(userOpts);\n33: }\n"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server/api"
+        },
+        "result_head": "index.js\nlib/"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server/auth"
+        },
+        "result_head": "index.js\nlib/\nmiddlewares/\nrouter/"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server/ssr"
+        },
+        "result_head": "components/\nindex.js\nssr-middleware.ts"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/api/index.js"
+        },
+        "result_head": "1: import proxy from 'express-http-proxy';\n2: import url from 'url';\n3: \n4: const { getConfig, getApiHost } = require('../config');\n5: \n6: export default (app) => {\n7:   const {\n8:     api: { checkCertificate },\n9:     maxBodySize,\n10:   } = getConfig();\n11:   const target = getApiHost();\n12: \n13:   app.use(\n14:     '/api',\n15:     proxy(target, {\n16:       limit: maxBodySize,\n17:       proxyReqPathResolver: (req) => url.parse(req.originalUrl).path,\n18:       proxyReqOptDecorator: (proxyReqOpts, srcReq) => {\n19:         const decoratedReqOpts = {\n20:           ...proxyReqOpts,\n21:           rejectUnauthorized: checkCertificate,\n22:         };\n23: \n24:         if (!srcReq.user) {\n25:           return decoratedReqOpts;\n26:         }\n27: \n28:         // TODO refactor in Auth library may be or ...\n29:         const bearer = new Buffer(\n30:           `${srcReq.user.user_id}:${srcReq.user.tokens.access_token}`\n31:         ).toString('base64');\n32: \n33:         return {\n34:           ...decor"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/auth/index.js"
+        },
+        "result_head": "1: import bodyParser from 'body-parser';\n2: import cookieParser from 'cookie-parser';\n3: import getRouter from './router';\n4: import { decodeCookieMiddleware } from './middlewares';\n5: import { getConfig } from '../config';\n6: \n7: export default (app) => {\n8:   const {\n9:     cookie: { secret },\n10:   } = getConfig();\n11:   app.use(cookieParser(secret));\n12:   app.use('/auth', bodyParser.json());\n13:   app.use('/auth', bodyParser.urlencoded({ extended: false }));\n14:   app.use('/auth', getRouter());\n15: \n16:   app.use(decodeCookieMiddleware);\n17: };"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/ssr/index.js"
+        },
+        "result_head": "1: import cookieParser from 'cookie-parser';\n2: import ssrMiddleware from './ssr-middleware';\n3: \n4: export default (app) => {\n5:   app.use(cookieParser());\n6:   app.get('*', ssrMiddleware);\n7: };"
+      },
+      {
+        "step": 4,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server/auth/router"
+        },
+        "result_head": "index.js\nsignin.js\nsignup.ts"
+      },
+      {
+        "step": 4,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server/api/lib"
+        },
+        "result_head": "api.ts\nsub-request-manager.js"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/auth/router/index.js"
+        },
+        "result_head": "1: import { Router as createRouter } from 'express';\n2: import createSigninRouting from './signin';\n3: import createSignupRouting from './signup';\n4: \n5: const getRouter = () => {\n6:   const router = createRouter();\n7:   createSigninRouting(router);\n8:   createSignupRouting(router);\n9: \n10:   return router;\n11: };\n12: \n13: export default getRouter;"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/auth/router/signin.js"
+        },
+        "result_head": "1: import proxy from 'express-http-proxy';\n2: import { getApiHost } from '../../config';\n3: \n4: const { authenticate, invalidate } = require('../lib/cookie');\n5: \n6: const createLoginRouting = (router) => {\n7:   const target = getApiHost();\n8: \n9:   router.post(\n10:     '/signin',\n11:     proxy(target, {\n12:       proxyReqPathResolver: () => '/api/v1/authentications',\n13:       userResDecorator: async (proxyRes, proxyResData, userReq, userRes) => {\n14:         if (proxyRes.statusCode >= 200 && proxyRes.statusCode < 400) {\n15:           const { device, ...user } = JSON.parse(proxyResData.toString('utf8'));\n16: \n17:           // according to the doc, cookie manipulation.should not be done in userResDecorator but\n18:           // possible since userRes is pass as a reference\n19:           await authenticate(userRes, { user });\n20: \n21:           return JSON.stringify({ device });\n22:         }\n23: \n24:         return proxyResData;\n25:       },\n26:     })\n27:   );\n28: \n29:   router.get('/s"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/auth/router/signup.ts"
+        },
+        "result_head": "1: import type { Router } from 'express';\n2: import { query } from '../../api/lib/api';\n3: import { authenticate } from '../lib/cookie';\n4: import { ServerError } from '../../error/consts';\n5: \n6: const CONTEXT_SAFE = 'safe';\n7: \n8: const createSignupRouting = (router: Router) => {\n9:   router.post('/signup', async (req, res, next) => {\n10:     try {\n11:       await query(\n12:         { path: '/api/v1/users', method: 'post', headers: req.headers },\n13:         { body: req.body }\n14:       );\n15:     } catch (err) {\n16:       const error = new ServerError(`Unable to signup: ${err.message}`);\n17:       error.status = 400;\n18: \n19:       return next(error);\n20:     }\n21: \n22:     const { username, password, device } = req.body;\n23: \n24:     try {\n25:       const user = await query(\n26:         {\n27:           path: '/api/v1/authentications',\n28:           method: 'post',\n29:         },\n30:         {\n31:           body: { username, password, device, context: CONTEXT_SAFE },\n32:         }\n3"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/ssr/ssr-middleware.ts"
+        },
+        "result_head": "1: import * as React from 'react';\n2: import { renderToString } from 'react-dom/server';\n3: import DocumentTitle from 'react-document-title';\n4: import serialize from 'serialize-javascript';\n5: import locale from 'locale';\n6: \n7: import { RootState } from 'src/store/reducer';\n8: import Bootstrap from './components/Bootstrap';\n9: import configureStore from '../../src/store/configure-store';\n10: import { getUserLocales } from '../../src/modules/i18n';\n11: import { getDefaultSettings } from '../../src/modules/settings';\n12: import { initConfig } from '../../src/services/config';\n13: // @ts-ignore\n14: import template from '../../dist/server/template.html';\n15: import { getConfig } from '../config';\n16: import { initialState as initialStateSettings } from '../../src/store/modules/settings';\n17: import { getLogger } from '../logger';\n18: \n19: declare global {\n20:   // eslint-disable-next-line @typescript-eslint/no-namespace\n21:   namespace NodeJS {\n22:     interface Global {\n23:       user: "
+      },
+      {
+        "step": 6,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server/assets"
+        },
+        "result_head": "index.js"
+      },
+      {
+        "step": 6,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server/express-react"
+        },
+        "result_head": "create-engine.js\nindex.js\nview.js"
+      },
+      {
+        "step": 6,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server/error"
+        },
+        "result_head": "components/\nconsts.ts\nindex.js\nmiddlewares/"
+      },
+      {
+        "step": 6,
+        "tool": "list_dir",
+        "args": {
+          "path": "/bin"
+        },
+        "result_head": "dev-server\nserver"
+      },
+      {
+        "step": 6,
+        "tool": "grep",
+        "args": {
+          "pattern": "app\\.(get|post|put|delete|patch|use|all)\\(|router\\.(get|post|put|delete|patch|use|all)\\(",
+          "path": "/server"
+        },
+        "result_head": "/server/api/index.js:13: app.use(\n/server/app.ts:13: app.use('*', httpLog);\n/server/assets/index.js:10: app.use(favicon(FAVICON_PATH));\n/server/assets/index.js:13: app.use(target, express.static(path));\n/server/auth/index.js:11: app.use(cookieParser(secret));\n/server/auth/index.js:12: app.use('/auth', bodyParser.json());\n/server/auth/index.js:13: app.use('/auth', bodyParser.urlencoded({ extended: false }));\n/server/auth/index.js:14: app.use('/auth', getRouter());\n/server/auth/index.js:16: app.use(decodeCookieMiddleware);\n/server/auth/router/signin.js:9: router.post(\n/server/auth/router/signin.js:29: router.get('/signout', (req, res) => {\n/server/auth/router/signup.ts:9: router.post('/signup', async (req, res, next) => {\n/server/error/index.js:4: app.use(catchError);\n/server/ssr/index.js:5: app.use(cookieParser());\n/server/ssr/index.js:6: app.get('*', ssrMiddleware);"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/assets/index.js"
+        },
+        "result_head": "1: import express from 'express';\n2: import favicon from 'serve-favicon';\n3: \n4: const PUBLIC_PATHS = {\n5:   '/': ['dist/server/public/', 'public/'],\n6: };\n7: const FAVICON_PATH = 'public/favicon.ico';\n8: \n9: export default (app) => {\n10:   app.use(favicon(FAVICON_PATH));\n11:   Object.keys(PUBLIC_PATHS).forEach((target) => {\n12:     PUBLIC_PATHS[target].forEach((path) => {\n13:       app.use(target, express.static(path));\n14:     });\n15:   });\n16: };"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/express-react/index.js"
+        },
+        "result_head": "1: import ErrorComponent from '../error/components/Error';\n2: import createEngine from './create-engine';\n3: import View from './view';\n4: \n5: export const configure = (app) => {\n6:   app.set('view', View);\n7:   app.set('view engine', 'component');\n8:   app.engine(\n9:     'component',\n10:     createEngine({\n11:       'error.component': ErrorComponent,\n12:     })\n13:   );\n14: };"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/bin/server"
+        },
+        "result_head": "1: #!/usr/bin/env node\n2: \n3: require('../dist/server');"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/bin/dev-server"
+        },
+        "result_head": "1: #!/usr/bin/env node\n2: \n3: const path = require('path');\n4: const fs = require('fs');\n5: const webpack = require('webpack');\n6: const winston = require('winston');\n7: const fork = require('child_process').fork;\n8: const config = require('../webpack/webpack.config.server');\n9: \n10: const logger = winston.createLogger({\n11:   format: winston.format.combine(\n12:     winston.format.colorize(),\n13:     winston.format.timestamp(),\n14:     winston.format.label({ label: 'webpack-server' }),\n15:     winston.format.align(),\n16:     winston.format.printf(info => `${info.timestamp} ${info.level} ${info.label} - ${info.message}`),\n17:   ),\n18:   transports: [\n19:     new winston.transports.Console(),\n20:   ],\n21: });\n22: \n23: let caliopen;\n24: const compiler = webpack(config);\n25: new webpack.ProgressPlugin({ profile: true }).apply(compiler)\n26: \n27: const start = () => {\n28:   const watching = compiler.watch({\n29:     aggregateTimeout: 300,\n30:     poll: undefined,\n31:   }, (err, stats) => {\n32"
+      },
+      {
+        "step": 8,
+        "tool": "read_file",
+        "args": {
+          "path": "/Dockerfile.caliopen-node"
+        },
+        "result_head": "1: # Image to do fonctionnal Selenium tests locally, with Chrome and Firefox\n2: # Author: Caliopen\n3: # Date: 2018-08-03\n4: \n5: FROM ubuntu:16.04\n6: \n7: RUN apt-get update && apt-get install -y curl wget unzip software-properties-common\n8: \n9: # node\n10: RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -\n11: \n12: # yarn\n13: RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \\\n14: echo \"deb https://dl.yarnpkg.com/debian/ stable main\" | tee /etc/apt/sources.list.d/yarn.list\n15: \n16: # Install chromedriver\n17: RUN wget -N http://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip -P ~/ && \\\n18: unzip ~/chromedriver_linux64.zip -d ~/ && \\\n19: rm ~/chromedriver_linux64.zip && \\\n20: mv -f ~/chromedriver /usr/local/bin/chromedriver && \\\n21: chmod 0755 /usr/local/bin/chromedriver\n22: \n23: # Install geckodriver\n24: RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckodriver-v0.21.0-linux64.tar.gz && \\\n25: tar -xvzf geckodriv"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "path": "/src",
+          "pattern": "express|createServer|app\\.(get|post|use)\\("
+        },
+        "result_head": "/src/modules/draftMessage/services/changeAuthorInParticipants.spec.js:11: identifier: 'leela@planet-express.tld',\n/src/modules/draftMessage/services/changeAuthorInParticipants.spec.js:16: address: 'fry@planet-express.tld',\n/src/modules/draftMessage/services/changeAuthorInParticipants.spec.js:22: address: 'zoidberg@planet-express.tld',\n/src/modules/draftMessage/services/changeAuthorInParticipants.spec.js:28: address: 'leela@planet-express.tld',\n/src/modules/draftMessage/services/changeAuthorInParticipants.spec.js:40: identifier: 'leela@planet-express.tld',\n/src/modules/draftMessage/services/changeAuthorInParticipants.spec.js:45: address: 'fry@planet-express.tld',\n/src/modules/draftMessage/services/changeAuthorInParticipants.spec.js:51: address: 'zoidberg@planet-express.tld',\n/src/modules/draftMessage/services/changeAuthorInParticipants.spec.js:56: { address: 'leela@planet-express.tld', protocol: 'email', type: 'To' },\n/src/modules/draftMessage/services/changeAuthorInParticipants.spec.js"
+      },
+      {
+        "step": 8,
+        "tool": "list_dir",
+        "args": {
+          "path": "/config"
+        },
+        "result_head": "client.default.js\nserver.default.js\nserver.env-var.js"
+      },
+      {
+        "step": 9,
+        "tool": "read_file",
+        "args": {
+          "path": "/server/error/index.js"
+        },
+        "result_head": "1: import catchError from './middlewares/catch-error';\n2: \n3: export default (app) => {\n4:   app.use(catchError);\n5: };"
+      },
+      {
+        "step": 9,
+        "tool": "list_dir",
+        "args": {
+          "path": "/server/auth/middlewares"
+        },
+        "result_head": "decode-cookie.ts\nindex.ts"
+      },
+      {
+        "step": 9,
+        "tool": "read_file",
+        "args": {
+          "path": "/config/server.default.js"
+        },
+        "result_head": "1: module.exports = {\n2:   // the public url of the instance\n3:   protocol: 'http',\n4:   hostname: 'localhost',\n5:   port: 80,\n6:   // the internal url of the expressjs server\n7:   webServer: {\n8:     port: 4000,\n9:     hostname: undefined,\n10:   },\n11:   // the internal url of the backend\n12:   api: {\n13:     protocol: 'http',\n14:     hostname: 'api.dev.caliopen.org',\n15:     port: 31415,\n16:     checkCertificate: true,\n17:   },\n18:   cookie: {\n19:     secret: '_4+%J;_F&?#!+mR&IsYq:Xg4A*wvse',\n20:   },\n21:   seal: {\n22:     secret: 'D}(2$5q)#_#yKX90,+0d5?4**a6ws8e`', // at least 32 chars\n23:   },\n24:   maxBodySize: '5mb',\n25:   enableSyslog: false,\n26: };"
+      },
+      {
+        "step": 10,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\":[{\"name\":\"caliopen-web\",\"dirs\":[\"/\"]}],\"files\":[{\"path\":\"/server/auth/router/signin.js\",\"service\":\"caliopen-web\",\"endpoints\":[{\"className\":\"\",\"methodName\":\"(inline)\",\"httpMethod\":\"POST\",\"p"
+        },
+        "result_head": "Recorded 4 new: service caliopen-web, POST /auth/signin, GET /auth/signout, POST /auth/signup\nTotal: 1 services, 3 endpoints in 2 files.\n[REJECTED 1] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[2].endpoints[0] GET * (.ssrMiddleware): path must be the full route, starting with /"
+      },
+      {
+        "step": 11,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\":[{\"path\":\"/server/ssr/index.js\",\"service\":\"caliopen-web\",\"endpoints\":[{\"className\":\"\",\"methodName\":\"ssrMiddleware\",\"httpMethod\":\"GET\",\"path\":\"/*\",\"line\":6,\"evidence\":\"app.get('*', ssrMiddlewa"
+        },
+        "result_head": "Recorded 1 new: GET /*\nTotal: 1 services, 4 endpoints in 3 files."
+      },
+      {
+        "step": 12,
+        "tool": "submit",
+        "args": {},
+        "result_head": "[ACCEPTED] 1 services, 4 endpoints."
+      }
+    ]
+  }
+}

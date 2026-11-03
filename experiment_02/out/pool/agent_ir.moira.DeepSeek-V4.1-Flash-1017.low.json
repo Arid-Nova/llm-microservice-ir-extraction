@@ -1,0 +1,1236 @@
+{
+  "system": "moira",
+  "services": [
+    {
+      "name": "api",
+      "dirs": [
+        "/cmd/api",
+        "/api",
+        "/pkg/api",
+        "/cmd"
+      ]
+    },
+    {
+      "name": "checker",
+      "dirs": [
+        "/cmd/checker",
+        "/checker",
+        "/pkg/checker"
+      ]
+    },
+    {
+      "name": "filter",
+      "dirs": [
+        "/cmd/filter",
+        "/filter",
+        "/pkg/filter"
+      ]
+    },
+    {
+      "name": "notifier",
+      "dirs": [
+        "/cmd/notifier",
+        "/notifier",
+        "/pkg/notifier"
+      ]
+    },
+    {
+      "name": "cli",
+      "dirs": [
+        "/cmd/cli",
+        "/pkg/cli"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/api/handler/handler.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getWebConfig",
+          "httpMethod": "GET",
+          "path": "/api/config",
+          "line": 38,
+          "evidence": "router.Get(\"/config\", getWebConfig(webConfigContent))",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/user.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getUserName",
+          "httpMethod": "GET",
+          "path": "/api/user/",
+          "line": 15,
+          "evidence": "router.Get(\"/\", getUserName)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "getUserSettings",
+          "httpMethod": "GET",
+          "path": "/api/user/settings",
+          "line": 16,
+          "evidence": "router.Get(\"/settings\", getUserSettings)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/triggers.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getAllTriggers",
+          "httpMethod": "GET",
+          "path": "/api/trigger/",
+          "line": 30,
+          "evidence": "router.Get(\"/\", getAllTriggers)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "createTrigger",
+          "httpMethod": "PUT",
+          "path": "/api/trigger/",
+          "line": 31,
+          "evidence": "router.Put(\"/\", createTrigger)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "triggerCheck",
+          "httpMethod": "PUT",
+          "path": "/api/trigger/check",
+          "line": 32,
+          "evidence": "router.Put(\"/check\", triggerCheck)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "searchTriggers",
+          "httpMethod": "GET",
+          "path": "/api/trigger/search",
+          "line": 34,
+          "evidence": "router.With(middleware.Paginate(0, 10)).With(middleware.Pager(false, \"\")).Get(\"/search\", searchTriggers)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "deletePager",
+          "httpMethod": "DELETE",
+          "path": "/api/trigger/search/pager",
+          "line": 35,
+          "evidence": "router.With(middleware.Pager(false, \"\")).Delete(\"/search/pager\", deletePager)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "searchTriggers",
+          "httpMethod": "GET",
+          "path": "/api/trigger/page",
+          "line": 37,
+          "evidence": "router.With(middleware.Paginate(0, 10)).With(middleware.Pager(false, \"\")).Get(\"/page\", searchTriggers)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/trigger.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "updateTrigger",
+          "httpMethod": "PUT",
+          "path": "/api/trigger/{triggerId}/",
+          "line": 19,
+          "evidence": "router.Put(\"/\", updateTrigger)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "getTrigger",
+          "httpMethod": "GET",
+          "path": "/api/trigger/{triggerId}/",
+          "line": 20,
+          "evidence": "router.With(middleware.TriggerContext, middleware.Populate(false)).Get(\"/\", getTrigger)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "removeTrigger",
+          "httpMethod": "DELETE",
+          "path": "/api/trigger/{triggerId}/",
+          "line": 21,
+          "evidence": "router.Delete(\"/\", removeTrigger)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "getTriggerState",
+          "httpMethod": "GET",
+          "path": "/api/trigger/{triggerId}/state",
+          "line": 22,
+          "evidence": "router.Get(\"/state\", getTriggerState)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "getTriggerThrottling",
+          "httpMethod": "GET",
+          "path": "/api/trigger/{triggerId}/throttling/",
+          "line": 24,
+          "evidence": "router.Get(\"/\", getTriggerThrottling)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "deleteThrottling",
+          "httpMethod": "DELETE",
+          "path": "/api/trigger/{triggerId}/throttling/",
+          "line": 25,
+          "evidence": "router.Delete(\"/\", deleteThrottling)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "setTriggerMaintenance",
+          "httpMethod": "PUT",
+          "path": "/api/trigger/{triggerId}/setMaintenance",
+          "line": 28,
+          "evidence": "router.Put(\"/setMaintenance\", setTriggerMaintenance)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "renderTrigger",
+          "httpMethod": "GET",
+          "path": "/api/trigger/{triggerId}/render",
+          "line": 29,
+          "evidence": "router.With(middleware.DateRange(\"-1hour\", \"now\")).With(middleware.TargetName(\"t1\")).Get(\"/render\", renderTrigger)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "triggerDump",
+          "httpMethod": "GET",
+          "path": "/api/trigger/{triggerId}/dump",
+          "line": 30,
+          "evidence": "router.Get(\"/dump\", triggerDump)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/trigger_metrics.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getTriggerMetrics",
+          "httpMethod": "GET",
+          "path": "/api/trigger/{triggerId}/metrics/",
+          "line": 18,
+          "evidence": "router.With(middleware.DateRange(\"-10minutes\", \"now\")).Get(\"/\", getTriggerMetrics)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "deleteTriggerMetric",
+          "httpMethod": "DELETE",
+          "path": "/api/trigger/{triggerId}/metrics/",
+          "line": 19,
+          "evidence": "router.Delete(\"/\", deleteTriggerMetric)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "deleteTriggerNodataMetrics",
+          "httpMethod": "DELETE",
+          "path": "/api/trigger/{triggerId}/metrics/nodata",
+          "line": 20,
+          "evidence": "router.Delete(\"/nodata\", deleteTriggerNodataMetrics)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/tag.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getAllTags",
+          "httpMethod": "GET",
+          "path": "/api/tag/",
+          "line": 14,
+          "evidence": "router.Get(\"/\", getAllTags)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "getAllTagsAndSubscriptions",
+          "httpMethod": "GET",
+          "path": "/api/tag/stats",
+          "line": 15,
+          "evidence": "router.Get(\"/stats\", getAllTagsAndSubscriptions)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "removeTag",
+          "httpMethod": "DELETE",
+          "path": "/api/tag/{tag}/",
+          "line": 18,
+          "evidence": "router.Delete(\"/\", removeTag)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/pattern.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getAllPatterns",
+          "httpMethod": "GET",
+          "path": "/api/pattern/",
+          "line": 15,
+          "evidence": "router.Get(\"/\", getAllPatterns)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "deletePattern",
+          "httpMethod": "DELETE",
+          "path": "/api/pattern/{pattern}",
+          "line": 16,
+          "evidence": "router.Delete(\"/{pattern}\", deletePattern)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/event.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getEventsList",
+          "httpMethod": "GET",
+          "path": "/api/event/{triggerId}",
+          "line": 14,
+          "evidence": "router.With(middleware.TriggerContext, middleware.Paginate(0, 100)).Get(\"/{triggerId}\", getEventsList)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "deleteAllEvents",
+          "httpMethod": "DELETE",
+          "path": "/api/event/all",
+          "line": 15,
+          "evidence": "router.Delete(\"/all\", deleteAllEvents)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/contact.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getAllContacts",
+          "httpMethod": "GET",
+          "path": "/api/contact/",
+          "line": 18,
+          "evidence": "router.Get(\"/\", getAllContacts)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "createNewContact",
+          "httpMethod": "PUT",
+          "path": "/api/contact/",
+          "line": 19,
+          "evidence": "router.Put(\"/\", createNewContact)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "updateContact",
+          "httpMethod": "PUT",
+          "path": "/api/contact/{contactId}/",
+          "line": 23,
+          "evidence": "router.Put(\"/\", updateContact)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "removeContact",
+          "httpMethod": "DELETE",
+          "path": "/api/contact/{contactId}/",
+          "line": 24,
+          "evidence": "router.Delete(\"/\", removeContact)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "sendTestContactNotification",
+          "httpMethod": "POST",
+          "path": "/api/contact/{contactId}/test",
+          "line": 25,
+          "evidence": "router.Post(\"/test\", sendTestContactNotification)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/subscription.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getUserSubscriptions",
+          "httpMethod": "GET",
+          "path": "/api/subscription/",
+          "line": 18,
+          "evidence": "router.Get(\"/\", getUserSubscriptions)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "createSubscription",
+          "httpMethod": "PUT",
+          "path": "/api/subscription/",
+          "line": 19,
+          "evidence": "router.Put(\"/\", createSubscription)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "updateSubscription",
+          "httpMethod": "PUT",
+          "path": "/api/subscription/{subscriptionId}/",
+          "line": 23,
+          "evidence": "router.Put(\"/\", updateSubscription)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "removeSubscription",
+          "httpMethod": "DELETE",
+          "path": "/api/subscription/{subscriptionId}/",
+          "line": 24,
+          "evidence": "router.Delete(\"/\", removeSubscription)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "sendTestNotification",
+          "httpMethod": "PUT",
+          "path": "/api/subscription/{subscriptionId}/test",
+          "line": 25,
+          "evidence": "router.Put(\"/test\", sendTestNotification)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/notification.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getNotification",
+          "httpMethod": "GET",
+          "path": "/api/notification/",
+          "line": 15,
+          "evidence": "router.Get(\"/\", getNotification)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "deleteNotification",
+          "httpMethod": "DELETE",
+          "path": "/api/notification/",
+          "line": 16,
+          "evidence": "router.Delete(\"/\", deleteNotification)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "deleteAllNotifications",
+          "httpMethod": "DELETE",
+          "path": "/api/notification/all",
+          "line": 17,
+          "evidence": "router.Delete(\"/all\", deleteAllNotifications)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/health.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getNotifierState",
+          "httpMethod": "GET",
+          "path": "/api/health/notifier",
+          "line": 14,
+          "evidence": "router.Get(\"/notifier\", getNotifierState)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "setNotifierState",
+          "httpMethod": "PUT",
+          "path": "/api/health/notifier",
+          "line": 15,
+          "evidence": "router.Put(\"/notifier\", setNotifierState)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/team.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "getAllTeams",
+          "httpMethod": "GET",
+          "path": "/api/teams/",
+          "line": 15,
+          "evidence": "router.Get(\"/\", getAllTeams)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "createTeam",
+          "httpMethod": "POST",
+          "path": "/api/teams/",
+          "line": 16,
+          "evidence": "router.Post(\"/\", createTeam)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "getTeam",
+          "httpMethod": "GET",
+          "path": "/api/teams/{teamId}/",
+          "line": 20,
+          "evidence": "router.Get(\"/\", getTeam)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "updateTeam",
+          "httpMethod": "PATCH",
+          "path": "/api/teams/{teamId}/",
+          "line": 21,
+          "evidence": "router.Patch(\"/\", updateTeam)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "deleteTeam",
+          "httpMethod": "DELETE",
+          "path": "/api/teams/{teamId}/",
+          "line": 22,
+          "evidence": "router.Delete(\"/\", deleteTeam)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "getTeamUsers",
+          "httpMethod": "GET",
+          "path": "/api/teams/{teamId}/users/",
+          "line": 24,
+          "evidence": "router.Get(\"/\", getTeamUsers)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "setTeamUsers",
+          "httpMethod": "PUT",
+          "path": "/api/teams/{teamId}/users/",
+          "line": 25,
+          "evidence": "router.Put(\"/\", setTeamUsers)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "addTeamUsers",
+          "httpMethod": "POST",
+          "path": "/api/teams/{teamId}/users/",
+          "line": 26,
+          "evidence": "router.Post(\"/\", addTeamUsers)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "deleteTeamUser",
+          "httpMethod": "DELETE",
+          "path": "/api/teams/{teamId}/users/{teamUserId}",
+          "line": 27,
+          "evidence": "router.With(middleware.TeamUserIDContext).Delete(\"/{teamUserId}\", deleteTeamUser)",
+          "framework": "go-chi",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "getTeamSettings",
+          "httpMethod": "GET",
+          "path": "/api/teams/{teamId}/settings",
+          "line": 29,
+          "evidence": "router.Get(\"/settings\", getTeamSettings)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/team_subscription.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "createTeamSubscription",
+          "httpMethod": "POST",
+          "path": "/api/teams/{teamId}/subscriptions/",
+          "line": 16,
+          "evidence": "router.Post(\"/\", createTeamSubscription)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/api/handler/team_contact.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "createNewTeamContact",
+          "httpMethod": "POST",
+          "path": "/api/teams/{teamId}/contacts/",
+          "line": 15,
+          "evidence": "router.Post(\"/\", createNewTeamContact)",
+          "framework": "go-chi",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/cmd/telemetry.go",
+      "service": "api",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "pprof.Index",
+          "httpMethod": "GET",
+          "path": "/pprof/",
+          "line": 47,
+          "evidence": "serverMux.HandleFunc(\"/pprof/\", pprof.Index)",
+          "framework": "net/http",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "pprof.Cmdline",
+          "httpMethod": "GET",
+          "path": "/pprof/cmdline",
+          "line": 48,
+          "evidence": "serverMux.HandleFunc(\"/pprof/cmdline\", pprof.Cmdline)",
+          "framework": "net/http",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "pprof.Profile",
+          "httpMethod": "GET",
+          "path": "/pprof/profile",
+          "line": 49,
+          "evidence": "serverMux.HandleFunc(\"/pprof/profile\", pprof.Profile)",
+          "framework": "net/http",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "pprof.Symbol",
+          "httpMethod": "GET",
+          "path": "/pprof/symbol",
+          "line": 50,
+          "evidence": "serverMux.HandleFunc(\"/pprof/symbol\", pprof.Symbol)",
+          "framework": "net/http",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "pprof.Trace",
+          "httpMethod": "GET",
+          "path": "/pprof/trace",
+          "line": 51,
+          "evidence": "serverMux.HandleFunc(\"/pprof/trace\", pprof.Trace)",
+          "framework": "net/http",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "pprof.Handler(\"heap\").ServeHTTP",
+          "httpMethod": "GET",
+          "path": "/pprof/heap",
+          "line": 52,
+          "evidence": "serverMux.HandleFunc(\"/pprof/heap\", pprof.Handler(\"heap\").ServeHTTP)",
+          "framework": "net/http",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "pprof.Handler(\"goroutine\").ServeHTTP",
+          "httpMethod": "GET",
+          "path": "/pprof/goroutine",
+          "line": 53,
+          "evidence": "serverMux.HandleFunc(\"/pprof/goroutine\", pprof.Handler(\"goroutine\").ServeHTTP)",
+          "framework": "net/http",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/metrics",
+          "line": 55,
+          "evidence": "serverMux.Handle(\"/metrics\", promhttp.InstrumentMetricHandler(prometheusRegistry, promhttp.HandlerFor(prometheusRegistry, promhttp.HandlerOpts{})))",
+          "framework": "net/http",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "DeepSeek-V4.1-Flash-1017",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "low",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "moira",
+    "commit": "f08a9c53b431c9ca9166121d3dd540845fb20462",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 17,
+    "tool_calls": 53,
+    "rejected_entries": 0,
+    "no_call_replies": 0,
+    "input_tokens": 353154,
+    "cached_input_tokens": 316800,
+    "output_tokens": 9224,
+    "list_price_usd": 0.0119,
+    "wall_seconds": 52.5,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".dockerignore\n.editorconfig\n.github/\n.gitignore\n.golangci.yml\n.run/\nAUTHORS.md\nDockerfile.api\nDockerfile.checker\nDockerfile.cli\nDockerfile.filter\nDockerfile.notifier\nLICENSE\nMakefile\nREADME.md\napi/\nchecker/\nclock/\ncmd/\ndatabase/\ndatatypes.go\ndatatypes_test.go\ndocker-compose.yml\nerrors.go\nexpression/\nfilter/\ngenerate_mocks.sh\ngo.mod\ngo.sum\nhelpers.go\nhelpers_test.go\nimage_store/\nindex/\nintegration_tests/\ninterfaces.go\nlocal/\nlog_fields.go\nlogging/\nmetric_source/\nmetrics/\nmock/\nnotifier/\nperfomance_tests/\npkg/\nplotting/\nsenders/\nstate.go\nstate_test.go\nsupport/\ntemplating/\nunsafe.go\nunsafe_test.go\nworker/"
+      },
+      {
+        "step": 1,
+        "tool": "find",
+        "args": {
+          "pattern": "Dockerfile"
+        },
+        "result_head": "(no files)"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/cmd"
+        },
+        "result_head": "api/\nchecker/\ncli/\nconfig.go\nfilter/\nimage_store.go\nnotifier/\ntelemetry.go"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/Dockerfile.api"
+        },
+        "result_head": "1: FROM golang:1.18 as builder\n2: \n3: COPY go.mod go.sum /go/src/github.com/moira-alert/moira/\n4: WORKDIR /go/src/github.com/moira-alert/moira\n5: RUN go mod download\n6: \n7: COPY . /go/src/github.com/moira-alert/moira/\n8: \n9: ARG GO_VERSION=\"GoVersion\"\n10: ARG GIT_COMMIT=\"git_Commit\"\n11: ARG MoiraVersion=\"MoiraVersion\"\n12: \n13: RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags \"-X main.MoiraVersion=${MoiraVersion} -X main.GoVersion=${GO_VERSION} -X main.GitCommit=${GIT_COMMIT}\" -o build/api github.com/moira-alert/moira/cmd/api\n14: \n15: \n16: FROM alpine:3.18.0\n17: \n18: RUN apk add --no-cache ca-certificates && update-ca-certificates\n19: \n20: COPY pkg/api/api.yml /etc/moira/api.yml\n21: \n22: COPY --from=builder /go/src/github.com/moira-alert/moira/build/api /usr/bin/api\n23: COPY --from=builder /usr/local/go/lib/time/zoneinfo.zip /usr/local/go/lib/time/\n24: \n25: EXPOSE 8081 8081\n26: \n27: ENTRYPOINT [\"/usr/bin/api\"]"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/Dockerfile.checker"
+        },
+        "result_head": "1: FROM golang:1.18 as builder\n2: \n3: COPY go.mod go.sum /go/src/github.com/moira-alert/moira/\n4: WORKDIR /go/src/github.com/moira-alert/moira\n5: RUN go mod download\n6: \n7: COPY . /go/src/github.com/moira-alert/moira/\n8: \n9: ARG GO_VERSION=\"GoVersion\"\n10: ARG GIT_COMMIT=\"git_Commit\"\n11: ARG MoiraVersion=\"MoiraVersion\"\n12: \n13: RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags \"-X main.MoiraVersion=${MoiraVersion} -X main.GoVersion=${GO_VERSION} -X main.GitCommit=${GIT_COMMIT}\" -o build/checker github.com/moira-alert/moira/cmd/checker\n14: \n15: \n16: FROM alpine:3.18.0\n17: \n18: RUN apk add --no-cache ca-certificates && update-ca-certificates\n19: \n20: COPY pkg/checker/checker.yml /etc/moira/checker.yml\n21: \n22: COPY --from=builder /go/src/github.com/moira-alert/moira/build/checker /usr/bin/checker\n23: \n24: ENTRYPOINT [\"/usr/bin/checker\"]"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/Dockerfile.filter"
+        },
+        "result_head": "1: FROM golang:1.18 as builder\n2: \n3: COPY go.mod go.sum /go/src/github.com/moira-alert/moira/\n4: WORKDIR /go/src/github.com/moira-alert/moira\n5: RUN go mod download\n6: \n7: COPY . /go/src/github.com/moira-alert/moira/\n8: \n9: ARG GO_VERSION=\"GoVersion\"\n10: ARG GIT_COMMIT=\"git_Commit\"\n11: ARG MoiraVersion=\"MoiraVersion\"\n12: \n13: RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags \"-X main.MoiraVersion=${MoiraVersion} -X main.GoVersion=${GO_VERSION} -X main.GitCommit=${GIT_COMMIT}\" -o build/filter github.com/moira-alert/moira/cmd/filter\n14: \n15: \n16: FROM alpine:3.18.0\n17: \n18: RUN apk add --no-cache ca-certificates && update-ca-certificates\n19: \n20: COPY pkg/filter/filter.yml /etc/moira/filter.yml\n21: COPY pkg/filter/storage-schemas.conf /etc/moira/storage-schemas.conf\n22: \n23: COPY --from=builder /go/src/github.com/moira-alert/moira/build/filter /usr/bin/filter\n24: \n25: EXPOSE 2003 2003\n26: \n27: ENTRYPOINT [\"/usr/bin/filter\"]"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/Dockerfile.notifier"
+        },
+        "result_head": "1: FROM golang:1.18 as builder\n2: \n3: COPY go.mod go.sum /go/src/github.com/moira-alert/moira/\n4: WORKDIR /go/src/github.com/moira-alert/moira\n5: RUN go mod download\n6: \n7: COPY . /go/src/github.com/moira-alert/moira/\n8: \n9: ARG GO_VERSION=\"GoVersion\"\n10: ARG GIT_COMMIT=\"git_Commit\"\n11: ARG MoiraVersion=\"MoiraVersion\"\n12: \n13: RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags \"-X main.MoiraVersion=${MoiraVersion} -X main.GoVersion=${GO_VERSION} -X main.GitCommit=${GIT_COMMIT}\" -o build/notifier github.com/moira-alert/moira/cmd/notifier\n14: \n15: \n16: FROM alpine:3.18.0\n17: \n18: RUN apk add --no-cache ca-certificates && update-ca-certificates\n19: \n20: COPY pkg/notifier/notifier.yml /etc/moira/notifier.yml\n21: \n22: COPY --from=builder /go/src/github.com/moira-alert/moira/build/notifier /usr/bin/notifier\n23: COPY --from=builder /usr/local/go/lib/time/zoneinfo.zip /usr/local/go/lib/time/\n24: \n25: ENTRYPOINT [\"/usr/bin/notifier\"]"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/Dockerfile.cli"
+        },
+        "result_head": "1: FROM golang:1.18 as builder\n2: \n3: COPY go.mod go.sum /go/src/github.com/moira-alert/moira/\n4: WORKDIR /go/src/github.com/moira-alert/moira\n5: RUN go mod download\n6: \n7: COPY . /go/src/github.com/moira-alert/moira/\n8: \n9: ARG GO_VERSION=\"GoVersion\"\n10: ARG GIT_COMMIT=\"git_Commit\"\n11: ARG MoiraVersion=\"MoiraVersion\"\n12: \n13: RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags \"-X main.MoiraVersion=${MoiraVersion} -X main.GoVersion=${GO_VERSION} -X main.GitCommit=${GIT_COMMIT}\" -o build/cli github.com/moira-alert/moira/cmd/cli\n14: \n15: \n16: FROM alpine:3.18.0\n17: \n18: RUN apk add --no-cache ca-certificates && update-ca-certificates\n19: \n20: COPY pkg/cli/cli.yml /etc/moira/cli.yml\n21: \n22: COPY --from=builder /go/src/github.com/moira-alert/moira/build/cli /usr/bin/cli\n23: COPY --from=builder /usr/local/go/lib/time/zoneinfo.zip /usr/local/go/lib/time/\n24: \n25: ENTRYPOINT [\"/usr/bin/cli\"]"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/cmd/api"
+        },
+        "result_head": "config.go\nmain.go"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/api"
+        },
+        "result_head": "config.go\ncontroller/\ndto/\nerror.go\nerror_response.go\nhandler/\nmiddleware/"
+      },
+      {
+        "step": 3,
+        "tool": "grep",
+        "args": {
+          "pattern": "HandleFunc|Handle\\(|router\\.|mux\\.|\\.GET\\(|\\.POST\\(|\\.PUT\\(|\\.DELETE\\(",
+          "path": "/api"
+        },
+        "result_head": "/api/handler/contact.go:18: router.Get(\"/\", getAllContacts)\n/api/handler/contact.go:19: router.Put(\"/\", createNewContact)\n/api/handler/contact.go:20: router.Route(\"/{contactId}\", func(router chi.Router) {\n/api/handler/contact.go:21: router.Use(middleware.ContactContext)\n/api/handler/contact.go:22: router.Use(contactFilter)\n/api/handler/contact.go:23: router.Put(\"/\", updateContact)\n/api/handler/contact.go:24: router.Delete(\"/\", removeContact)\n/api/handler/contact.go:25: router.Post(\"/test\", sendTestContactNotification)\n/api/handler/event.go:14: router.With(middleware.TriggerContext, middleware.Paginate(0, 100)).Get(\"/{triggerId}\", getEventsList)\n/api/handler/event.go:15: router.Delete(\"/all\", deleteAllEvents)\n/api/handler/handler.go:28: router.Use(render.SetContentType(render.ContentTypeJSON))\n/api/handler/handler.go:29: router.Use(moiramiddle.UserContext)\n/api/handler/handler.go:30: router.Use(moiramiddle.RequestLogger(log))\n/api/handler/handler.go:31: router.Use(middleware.NoCache)\n/a"
+      },
+      {
+        "step": 4,
+        "tool": "list_dir",
+        "args": {
+          "path": "/api/handler"
+        },
+        "result_head": "config.go\ncontact.go\nevent.go\nhandler.go\nhealth.go\nnotification.go\npattern.go\nsubscription.go\ntag.go\nteam.go\nteam_contact.go\nteam_subscription.go\ntrigger.go\ntrigger_metrics.go\ntrigger_render.go\ntrigger_test.go\ntriggers.go\ntriggers_test.go\nuser.go"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/handler.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"net/http\"\n5: \n6: \t\"github.com/go-chi/chi\"\n7: \t\"github.com/go-chi/chi/middleware\"\n8: \t\"github.com/go-chi/render\"\n9: \tmetricSource \"github.com/moira-alert/moira/metric_source\"\n10: \t\"github.com/rs/cors\"\n11: \n12: \t\"github.com/moira-alert/moira\"\n13: \t\"github.com/moira-alert/moira/api\"\n14: \tmoiramiddle \"github.com/moira-alert/moira/api/middleware\"\n15: )\n16: \n17: var database moira.Database\n18: var searchIndex moira.Searcher\n19: \n20: const contactKey moiramiddle.ContextKey = \"contact\"\n21: const subscriptionKey moiramiddle.ContextKey = \"subscription\"\n22: \n23: // NewHandler creates new api handler request uris based on github.com/go-chi/chi\n24: func NewHandler(db moira.Database, log moira.Logger, index moira.Searcher, config *api.Config, metricSourceProvider *metricSource.SourceProvider, webConfigContent []byte) http.Handler {\n25: \tdatabase = db\n26: \tsearchIndex = index\n27: \trouter := chi.NewRouter()\n28: \trouter.Use(render.SetContentType(render.ContentTyp"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/user.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"net/http\"\n5: \n6: \t\"github.com/go-chi/chi\"\n7: \t\"github.com/go-chi/render\"\n8: \t\"github.com/moira-alert/moira/api\"\n9: \t\"github.com/moira-alert/moira/api/controller\"\n10: \t\"github.com/moira-alert/moira/api/dto\"\n11: \t\"github.com/moira-alert/moira/api/middleware\"\n12: )\n13: \n14: func user(router chi.Router) {\n15: \trouter.Get(\"/\", getUserName)\n16: \trouter.Get(\"/settings\", getUserSettings)\n17: }\n18: \n19: func getUserName(writer http.ResponseWriter, request *http.Request) {\n20: \tuserLogin := middleware.GetLogin(request)\n21: \tif err := render.Render(writer, request, &dto.User{Login: userLogin}); err != nil {\n22: \t\trender.Render(writer, request, api.ErrorRender(err)) //nolint\n23: \t\treturn\n24: \t}\n25: }\n26: \n27: func getUserSettings(writer http.ResponseWriter, request *http.Request) {\n28: \tuserLogin := middleware.GetLogin(request)\n29: \tuserSettings, err := controller.GetUserSettings(database, userLogin)\n30: \tif err != nil {\n31: \t\trender.Render(writer, request, "
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/triggers.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"encoding/json\"\n5: \t\"fmt\"\n6: \t\"net/http\"\n7: \t\"net/url\"\n8: \t\"strconv\"\n9: \t\"strings\"\n10: \t\"time\"\n11: \n12: \t\"github.com/go-chi/chi\"\n13: \t\"github.com/go-chi/render\"\n14: \t\"github.com/moira-alert/moira\"\n15: \tmetricSource \"github.com/moira-alert/moira/metric_source\"\n16: \t\"github.com/moira-alert/moira/metric_source/local\"\n17: \t\"github.com/moira-alert/moira/metric_source/remote\"\n18: \n19: \t\"github.com/moira-alert/moira/api\"\n20: \t\"github.com/moira-alert/moira/api/controller\"\n21: \t\"github.com/moira-alert/moira/api/dto\"\n22: \t\"github.com/moira-alert/moira/api/middleware\"\n23: \t\"github.com/moira-alert/moira/expression\"\n24: )\n25: \n26: func triggers(metricSourceProvider *metricSource.SourceProvider, searcher moira.Searcher) func(chi.Router) {\n27: \treturn func(router chi.Router) {\n28: \t\trouter.Use(middleware.MetricSourceProvider(metricSourceProvider))\n29: \t\trouter.Use(middleware.SearchIndexContext(searcher))\n30: \t\trouter.Get(\"/\", getAllTriggers)\n31: \t\trouter.Put(\"/\""
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/trigger.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"net/http\"\n5: \t\"time\"\n6: \n7: \t\"github.com/go-chi/chi\"\n8: \t\"github.com/go-chi/render\"\n9: \n10: \t\"github.com/moira-alert/moira\"\n11: \t\"github.com/moira-alert/moira/api\"\n12: \t\"github.com/moira-alert/moira/api/controller\"\n13: \t\"github.com/moira-alert/moira/api/dto\"\n14: \t\"github.com/moira-alert/moira/api/middleware\"\n15: )\n16: \n17: func trigger(router chi.Router) {\n18: \trouter.Use(middleware.TriggerContext)\n19: \trouter.Put(\"/\", updateTrigger)\n20: \trouter.With(middleware.TriggerContext, middleware.Populate(false)).Get(\"/\", getTrigger)\n21: \trouter.Delete(\"/\", removeTrigger)\n22: \trouter.Get(\"/state\", getTriggerState)\n23: \trouter.Route(\"/throttling\", func(router chi.Router) {\n24: \t\trouter.Get(\"/\", getTriggerThrottling)\n25: \t\trouter.Delete(\"/\", deleteThrottling)\n26: \t})\n27: \trouter.Route(\"/metrics\", triggerMetrics)\n28: \trouter.Put(\"/setMaintenance\", setTriggerMaintenance)\n29: \trouter.With(middleware.DateRange(\"-1hour\", \"now\")).With(middleware.TargetName(\"t1\"))"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/trigger_metrics.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"fmt\"\n5: \t\"net/http\"\n6: \t\"time\"\n7: \n8: \t\"github.com/go-chi/chi\"\n9: \t\"github.com/go-chi/render\"\n10: \t\"github.com/go-graphite/carbonapi/date\"\n11: \n12: \t\"github.com/moira-alert/moira/api\"\n13: \t\"github.com/moira-alert/moira/api/controller\"\n14: \t\"github.com/moira-alert/moira/api/middleware\"\n15: )\n16: \n17: func triggerMetrics(router chi.Router) {\n18: \trouter.With(middleware.DateRange(\"-10minutes\", \"now\")).Get(\"/\", getTriggerMetrics)\n19: \trouter.Delete(\"/\", deleteTriggerMetric)\n20: \trouter.Delete(\"/nodata\", deleteTriggerNodataMetrics)\n21: }\n22: \n23: func getTriggerMetrics(writer http.ResponseWriter, request *http.Request) {\n24: \tmetricSourceProvider := middleware.GetTriggerTargetsSourceProvider(request)\n25: \ttriggerID := middleware.GetTriggerID(request)\n26: \tfromStr := middleware.GetFromStr(request)\n27: \ttoStr := middleware.GetToStr(request)\n28: \tfrom := date.DateParamToEpoch(fromStr, \"UTC\", 0, time.UTC)\n29: \tif from == 0 {\n30: \t\trender.Render(writer, re"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/trigger_render.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"fmt\"\n5: \t\"net/http\"\n6: \t\"strconv\"\n7: \t\"time\"\n8: \n9: \t\"github.com/go-chi/render\"\n10: \t\"github.com/go-graphite/carbonapi/date\"\n11: \t\"github.com/moira-alert/go-chart\"\n12: \t\"github.com/moira-alert/moira\"\n13: \t\"github.com/moira-alert/moira/api\"\n14: \t\"github.com/moira-alert/moira/api/controller\"\n15: \t\"github.com/moira-alert/moira/api/middleware\"\n16: \tmetricSource \"github.com/moira-alert/moira/metric_source\"\n17: \t\"github.com/moira-alert/moira/plotting\"\n18: )\n19: \n20: func renderTrigger(writer http.ResponseWriter, request *http.Request) {\n21: \tsourceProvider, targetName, from, to, triggerID, fetchRealtimeData, err := getEvaluationParameters(request)\n22: \tif err != nil {\n23: \t\trender.Render(writer, request, api.ErrorInvalidRequest(err)) //nolint\n24: \t\treturn\n25: \t}\n26: \tmetricsData, trigger, err := evaluateTargetMetrics(sourceProvider, from, to, triggerID, fetchRealtimeData)\n27: \tif err != nil {\n28: \t\tif trigger == nil {\n29: \t\t\trender.Render(writer, reque"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/team.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"net/http\"\n5: \n6: \t\"github.com/go-chi/chi\"\n7: \t\"github.com/go-chi/render\"\n8: \t\"github.com/moira-alert/moira/api\"\n9: \t\"github.com/moira-alert/moira/api/controller\"\n10: \t\"github.com/moira-alert/moira/api/dto\"\n11: \t\"github.com/moira-alert/moira/api/middleware\"\n12: )\n13: \n14: func teams(router chi.Router) {\n15: \trouter.Get(\"/\", getAllTeams)\n16: \trouter.Post(\"/\", createTeam)\n17: \trouter.Route(\"/{teamId}\", func(router chi.Router) {\n18: \t\trouter.Use(middleware.TeamContext)\n19: \t\trouter.Use(usersFilterForTeams)\n20: \t\trouter.Get(\"/\", getTeam)\n21: \t\trouter.Patch(\"/\", updateTeam)\n22: \t\trouter.Delete(\"/\", deleteTeam)\n23: \t\trouter.Route(\"/users\", func(router chi.Router) {\n24: \t\t\trouter.Get(\"/\", getTeamUsers)\n25: \t\t\trouter.Put(\"/\", setTeamUsers)\n26: \t\t\trouter.Post(\"/\", addTeamUsers)\n27: \t\t\trouter.With(middleware.TeamUserIDContext).Delete(\"/{teamUserId}\", deleteTeamUser)\n28: \t\t})\n29: \t\trouter.Get(\"/settings\", getTeamSettings)\n30: \t\trouter.Route(\"/subscriptions\","
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/team_contact.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"net/http\"\n5: \n6: \t\"github.com/go-chi/chi\"\n7: \t\"github.com/go-chi/render\"\n8: \t\"github.com/moira-alert/moira/api\"\n9: \t\"github.com/moira-alert/moira/api/controller\"\n10: \t\"github.com/moira-alert/moira/api/dto\"\n11: \t\"github.com/moira-alert/moira/api/middleware\"\n12: )\n13: \n14: func teamContact(router chi.Router) {\n15: \trouter.Post(\"/\", createNewTeamContact)\n16: }\n17: \n18: func createNewTeamContact(writer http.ResponseWriter, request *http.Request) {\n19: \tcontact := &dto.Contact{}\n20: \tif err := render.Bind(request, contact); err != nil {\n21: \t\trender.Render(writer, request, api.ErrorInvalidRequest(err)) //nolint:errcheck\n22: \t\treturn\n23: \t}\n24: \tteamID := middleware.GetTeamID(request)\n25: \n26: \tif err := controller.CreateContact(database, contact, \"\", teamID); err != nil {\n27: \t\trender.Render(writer, request, err) //nolint:errcheck\n28: \t\treturn\n29: \t}\n30: \n31: \tif err := render.Render(writer, request, contact); err != nil {\n32: \t\trender.Render(writer, "
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/team_subscription.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"errors\"\n5: \t\"net/http\"\n6: \n7: \t\"github.com/go-chi/chi\"\n8: \t\"github.com/go-chi/render\"\n9: \t\"github.com/moira-alert/moira/api\"\n10: \t\"github.com/moira-alert/moira/api/controller\"\n11: \t\"github.com/moira-alert/moira/api/dto\"\n12: \t\"github.com/moira-alert/moira/api/middleware\"\n13: )\n14: \n15: func teamSubscription(router chi.Router) {\n16: \trouter.Post(\"/\", createTeamSubscription)\n17: }\n18: \n19: func createTeamSubscription(writer http.ResponseWriter, request *http.Request) {\n20: \tsubscription := &dto.Subscription{}\n21: \tif err := render.Bind(request, subscription); err != nil {\n22: \t\trender.Render(writer, request, api.ErrorInvalidRequest(err)) //nolint:errcheck\n23: \t\treturn\n24: \t}\n25: \tteamID := middleware.GetTeamID(request)\n26: \n27: \tif subscription.AnyTags && len(subscription.Tags) > 0 {\n28: \t\twriter.WriteHeader(http.StatusBadRequest)\n29: \t\trender.Render(writer, request, api.ErrorInvalidRequest( //nolint:errcheck\n30: \t\t\terrors.New(\"if any_tags is true, "
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/contact.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"context\"\n5: \t\"net/http\"\n6: \n7: \t\"github.com/go-chi/chi\"\n8: \t\"github.com/go-chi/render\"\n9: \n10: \t\"github.com/moira-alert/moira\"\n11: \t\"github.com/moira-alert/moira/api\"\n12: \t\"github.com/moira-alert/moira/api/controller\"\n13: \t\"github.com/moira-alert/moira/api/dto\"\n14: \t\"github.com/moira-alert/moira/api/middleware\"\n15: )\n16: \n17: func contact(router chi.Router) {\n18: \trouter.Get(\"/\", getAllContacts)\n19: \trouter.Put(\"/\", createNewContact)\n20: \trouter.Route(\"/{contactId}\", func(router chi.Router) {\n21: \t\trouter.Use(middleware.ContactContext)\n22: \t\trouter.Use(contactFilter)\n23: \t\trouter.Put(\"/\", updateContact)\n24: \t\trouter.Delete(\"/\", removeContact)\n25: \t\trouter.Post(\"/test\", sendTestContactNotification)\n26: \t})\n27: }\n28: \n29: func getAllContacts(writer http.ResponseWriter, request *http.Request) {\n30: \tcontacts, err := controller.GetAllContacts(database)\n31: \tif err != nil {\n32: \t\trender.Render(writer, request, err) //nolint\n33: \t\treturn\n34: \t}\n35: \n36"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/event.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"net/http\"\n5: \n6: \t\"github.com/go-chi/chi\"\n7: \t\"github.com/go-chi/render\"\n8: \t\"github.com/moira-alert/moira/api\"\n9: \t\"github.com/moira-alert/moira/api/controller\"\n10: \t\"github.com/moira-alert/moira/api/middleware\"\n11: )\n12: \n13: func event(router chi.Router) {\n14: \trouter.With(middleware.TriggerContext, middleware.Paginate(0, 100)).Get(\"/{triggerId}\", getEventsList)\n15: \trouter.Delete(\"/all\", deleteAllEvents)\n16: }\n17: \n18: func getEventsList(writer http.ResponseWriter, request *http.Request) {\n19: \ttriggerID := middleware.GetTriggerID(request)\n20: \tsize := middleware.GetSize(request)\n21: \tpage := middleware.GetPage(request)\n22: \teventsList, err := controller.GetTriggerEvents(database, triggerID, page, size)\n23: \tif err != nil {\n24: \t\trender.Render(writer, request, err) //nolint\n25: \t\treturn\n26: \t}\n27: \tif err := render.Render(writer, request, eventsList); err != nil {\n28: \t\trender.Render(writer, request, api.ErrorRender(err)) //nolint\n29: \t}\n30: "
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/health.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"net/http\"\n5: \n6: \t\"github.com/go-chi/chi\"\n7: \t\"github.com/go-chi/render\"\n8: \t\"github.com/moira-alert/moira/api\"\n9: \t\"github.com/moira-alert/moira/api/controller\"\n10: \t\"github.com/moira-alert/moira/api/dto\"\n11: )\n12: \n13: func health(router chi.Router) {\n14: \trouter.Get(\"/notifier\", getNotifierState)\n15: \trouter.Put(\"/notifier\", setNotifierState)\n16: }\n17: \n18: func getNotifierState(writer http.ResponseWriter, request *http.Request) {\n19: \tstate, err := controller.GetNotifierState(database)\n20: \tif err != nil {\n21: \t\trender.Render(writer, request, err) //nolint\n22: \t\treturn\n23: \t}\n24: \n25: \tif err := render.Render(writer, request, state); err != nil {\n26: \t\trender.Render(writer, request, api.ErrorRender(err)) //nolint\n27: \t\treturn\n28: \t}\n29: }\n30: \n31: func setNotifierState(writer http.ResponseWriter, request *http.Request) {\n32: \tstate := &dto.NotifierState{}\n33: \tif err := render.Bind(request, state); err != nil {\n34: \t\trender.Render(writer, req"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/notification.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"fmt\"\n5: \t\"net/http\"\n6: \t\"strconv\"\n7: \n8: \t\"github.com/go-chi/chi\"\n9: \t\"github.com/go-chi/render\"\n10: \t\"github.com/moira-alert/moira/api\"\n11: \t\"github.com/moira-alert/moira/api/controller\"\n12: )\n13: \n14: func notification(router chi.Router) {\n15: \trouter.Get(\"/\", getNotification)\n16: \trouter.Delete(\"/\", deleteNotification)\n17: \trouter.Delete(\"/all\", deleteAllNotifications)\n18: }\n19: \n20: func getNotification(writer http.ResponseWriter, request *http.Request) {\n21: \tstart, err := strconv.ParseInt(request.URL.Query().Get(\"start\"), 10, 64)\n22: \tif err != nil {\n23: \t\tstart = 0\n24: \t}\n25: \tend, err := strconv.ParseInt(request.URL.Query().Get(\"end\"), 10, 64)\n26: \tif err != nil {\n27: \t\tend = -1\n28: \t}\n29: \n30: \tnotifications, errorResponse := controller.GetNotifications(database, start, end)\n31: \tif errorResponse != nil {\n32: \t\trender.Render(writer, request, errorResponse) //nolint\n33: \t\treturn\n34: \t}\n35: \tif err := render.Render(writer, request, notific"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/pattern.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"fmt\"\n5: \t\"net/http\"\n6: \n7: \t\"github.com/go-chi/chi\"\n8: \t\"github.com/go-chi/render\"\n9: \t\"github.com/moira-alert/moira/api\"\n10: \t\"github.com/moira-alert/moira/api/controller\"\n11: \t\"github.com/moira-alert/moira/api/middleware\"\n12: )\n13: \n14: func pattern(router chi.Router) {\n15: \trouter.Get(\"/\", getAllPatterns)\n16: \trouter.Delete(\"/{pattern}\", deletePattern)\n17: }\n18: \n19: func getAllPatterns(writer http.ResponseWriter, request *http.Request) {\n20: \tlogger := middleware.GetLoggerEntry(request)\n21: \tpatternsList, err := controller.GetAllPatterns(database, logger)\n22: \tif err != nil {\n23: \t\trender.Render(writer, request, err) //nolint\n24: \t\treturn\n25: \t}\n26: \tif err := render.Render(writer, request, patternsList); err != nil {\n27: \t\trender.Render(writer, request, api.ErrorRender(err)) //nolint\n28: \t}\n29: }\n30: \n31: func deletePattern(writer http.ResponseWriter, request *http.Request) {\n32: \tpattern := chi.URLParam(request, \"pattern\")\n33: \tif pattern ="
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/subscription.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"context\"\n5: \t\"errors\"\n6: \t\"net/http\"\n7: \n8: \t\"github.com/go-chi/chi\"\n9: \t\"github.com/go-chi/render\"\n10: \t\"github.com/moira-alert/moira\"\n11: \t\"github.com/moira-alert/moira/api\"\n12: \t\"github.com/moira-alert/moira/api/controller\"\n13: \t\"github.com/moira-alert/moira/api/dto\"\n14: \t\"github.com/moira-alert/moira/api/middleware\"\n15: )\n16: \n17: func subscription(router chi.Router) {\n18: \trouter.Get(\"/\", getUserSubscriptions)\n19: \trouter.Put(\"/\", createSubscription)\n20: \trouter.Route(\"/{subscriptionId}\", func(router chi.Router) {\n21: \t\trouter.Use(middleware.SubscriptionContext)\n22: \t\trouter.Use(subscriptionFilter)\n23: \t\trouter.Put(\"/\", updateSubscription)\n24: \t\trouter.Delete(\"/\", removeSubscription)\n25: \t\trouter.Put(\"/test\", sendTestNotification)\n26: \t})\n27: }\n28: \n29: func getUserSubscriptions(writer http.ResponseWriter, request *http.Request) {\n30: \tuserLogin := middleware.GetLogin(request)\n31: \tcontacts, err := controller.GetUserSubscriptions(database, u"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/tag.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import (\n4: \t\"net/http\"\n5: \n6: \t\"github.com/go-chi/chi\"\n7: \t\"github.com/go-chi/render\"\n8: \t\"github.com/moira-alert/moira/api\"\n9: \t\"github.com/moira-alert/moira/api/controller\"\n10: \t\"github.com/moira-alert/moira/api/middleware\"\n11: )\n12: \n13: func tag(router chi.Router) {\n14: \trouter.Get(\"/\", getAllTags)\n15: \trouter.Get(\"/stats\", getAllTagsAndSubscriptions)\n16: \trouter.Route(\"/{tag}\", func(router chi.Router) {\n17: \t\trouter.Use(middleware.TagContext)\n18: \t\trouter.Delete(\"/\", removeTag)\n19: \t})\n20: }\n21: \n22: func getAllTags(writer http.ResponseWriter, request *http.Request) {\n23: \ttagData, err := controller.GetAllTags(database)\n24: \tif err != nil {\n25: \t\trender.Render(writer, request, err) //nolint\n26: \t\treturn\n27: \t}\n28: \n29: \tif err := render.Render(writer, request, tagData); err != nil {\n30: \t\trender.Render(writer, request, api.ErrorRender(err)) //nolint\n31: \t\treturn\n32: \t}\n33: }\n34: \n35: func getAllTagsAndSubscriptions(writer http.ResponseWriter, request *ht"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/config.go"
+        },
+        "result_head": "1: package handler\n2: \n3: import \"net/http\"\n4: \n5: func getWebConfig(configContent []byte) http.HandlerFunc {\n6: \treturn http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {\n7: \t\twriter.Header().Set(\"Content-Type\", \"application/json\")\n8: \t\twriter.Write(configContent) //nolint\n9: \t})\n10: }"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "pattern": "ListenAndServe|http\\.Handle|NewServeMux|gin\\.|echo\\.New|fiber\\."
+        },
+        "result_head": "/api/dto/subscription_test.go:33: middleware.DatabaseContext(dataBase)(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n/api/dto/subscription_test.go:38: middleware.UserContext(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n/api/dto/subscription_test.go:59: middleware.DatabaseContext(dataBase)(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n/api/dto/subscription_test.go:63: middleware.UserContext(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n/api/dto/subscription_test.go:85: middleware.DatabaseContext(dataBase)(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n/api/dto/subscription_test.go:89: middleware.UserContext(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n/api/handler/config.go:5: func getWebConfig(configContent []byte) http.HandlerFunc {\n/api/handler/config.go:6: return http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {\n/api/handler/contact."
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/cmd/api/main.go"
+        },
+        "result_head": "1: package main\n2: \n3: import (\n4: \t\"context\"\n5: \t\"flag\"\n6: \t\"fmt\"\n7: \t\"net\"\n8: \t\"net/http\"\n9: \t\"os\"\n10: \t\"os/signal\"\n11: \t\"syscall\"\n12: \t\"time\"\n13: \n14: \t\"github.com/moira-alert/moira\"\n15: \t\"github.com/moira-alert/moira/api/handler\"\n16: \t\"github.com/moira-alert/moira/cmd\"\n17: \t\"github.com/moira-alert/moira/database/redis\"\n18: \t\"github.com/moira-alert/moira/index\"\n19: \tlogging \"github.com/moira-alert/moira/logging/zerolog_adapter\"\n20: \tmetricSource \"github.com/moira-alert/moira/metric_source\"\n21: \t\"github.com/moira-alert/moira/metric_source/local\"\n22: \t\"github.com/moira-alert/moira/metric_source/remote\"\n23: \t_ \"go.uber.org/automaxprocs\"\n24: )\n25: \n26: const serviceName = \"api\"\n27: \n28: var (\n29: \tconfigFileName         = flag.String(\"config\", \"/etc/moira/api.yml\", \"Path to configuration file\")\n30: \tprintVersion           = flag.Bool(\"version\", false, \"Print version and exit\")\n31: \tprintDefaultConfigFlag = flag.Bool(\"default-config\", false, \"Print default config and exit\")\n32: )\n33: \n34"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "pattern": "net/http|http\\.Server|ListenAndServe",
+          "path": "/cmd"
+        },
+        "result_head": "/cmd/api/main.go:8: \"net/http\"\n/cmd/api/main.go:129: server := &http.Server{\n/cmd/api/main.go:151: func Stop(logger moira.Logger, server *http.Server) {\n/cmd/telemetry.go:6: \"net/http\"\n/cmd/telemetry.go:7: \"net/http/pprof\"\n/cmd/telemetry.go:56: server := &http.Server{Handler: serverMux}"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "pattern": "net/http|http\\.Server|ListenAndServe|http\\.HandleFunc",
+          "path": "/filter"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "pattern": "net/http|http\\.Server|ListenAndServe|http\\.HandleFunc",
+          "path": "/notifier"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "pattern": "net/http|http\\.Server|ListenAndServe|http\\.HandleFunc",
+          "path": "/checker"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "pattern": "net/http|http\\.Server|ListenAndServe|http\\.HandleFunc",
+          "path": "/cli"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 9,
+        "tool": "read_file",
+        "args": {
+          "path": "/cmd/telemetry.go"
+        },
+        "result_head": "1: package cmd\n2: \n3: import (\n4: \t\"context\"\n5: \t\"net\"\n6: \t\"net/http\"\n7: \t\"net/http/pprof\"\n8: \t\"time\"\n9: \n10: \t\"github.com/prometheus/client_golang/prometheus\"\n11: \t\"github.com/prometheus/client_golang/prometheus/promhttp\"\n12: \n13: \t\"github.com/moira-alert/moira\"\n14: \t\"github.com/moira-alert/moira/metrics\"\n15: )\n16: \n17: type Telemetry struct {\n18: \tMetrics  metrics.Registry\n19: \tstopFunc func()\n20: }\n21: \n22: func (source *Telemetry) Stop() {\n23: \tsource.stopFunc()\n24: }\n25: \n26: func ConfigureTelemetry(logger moira.Logger, config TelemetryConfig, service string) (*Telemetry, error) {\n27: \tgraphiteRegistry, err := metrics.NewGraphiteRegistry(config.Graphite.GetSettings(), service)\n28: \tif err != nil {\n29: \t\treturn nil, err\n30: \t}\n31: \tprometheusRegistry := metrics.NewPrometheusRegistry()\n32: \tprometheusRegistryAdapter := metrics.NewPrometheusRegistryAdapter(prometheusRegistry, service)\n33: \tstopServer, err := startTelemetryServer(logger, config.Listen, config.Pprof, prometheusRegistry"
+      },
+      {
+        "step": 9,
+        "tool": "list_dir",
+        "args": {
+          "path": "/cmd/cli"
+        },
+        "result_head": "cluster.go\ncluster_test.go\nconfig.go\nextra.go\nfrom_2.3_to_2.4.go\nfrom_2.6_to_2.7.go\nmain.go\nmetrics.go\nmetrics_test.go\ntriggers.go\nuser.go\nuser_test.go"
+      },
+      {
+        "step": 9,
+        "tool": "list_dir",
+        "args": {
+          "path": "/cmd/filter"
+        },
+        "result_head": "config.go\nmain.go"
+      },
+      {
+        "step": 9,
+        "tool": "list_dir",
+        "args": {
+          "path": "/cmd/notifier"
+        },
+        "result_head": "config.go\nmain.go"
+      },
+      {
+        "step": 9,
+        "tool": "list_dir",
+        "args": {
+          "path": "/cmd/checker"
+        },
+        "result_head": "config.go\nmain.go"
+      },
+      {
+        "step": 10,
+        "tool": "grep",
+        "args": {
+          "pattern": "ConfigureTelemetry",
+          "path": "/cmd"
+        },
+        "result_head": "/cmd/api/main.go:75: telemetry, err := cmd.ConfigureTelemetry(logger, config.Telemetry, serviceName)\n/cmd/checker/main.go:74: telemetry, err := cmd.ConfigureTelemetry(logger, config.Telemetry, serviceName)\n/cmd/filter/main.go:72: telemetry, err := cmd.ConfigureTelemetry(logger, config.Telemetry, serviceName)\n/cmd/notifier/main.go:73: telemetry, err := cmd.ConfigureTelemetry(logger, config.Telemetry, serviceName)\n/cmd/telemetry.go:26: func ConfigureTelemetry(logger moira.Logger, config TelemetryConfig, service string) (*Telemetry, error) {"
+      },
+      {
+        "step": 10,
+        "tool": "read_file",
+        "args": {
+          "path": "/cmd/filter/main.go"
+        },
+        "result_head": "1: package main\n2: \n3: import (\n4: \t\"flag\"\n5: \t\"fmt\"\n6: \t\"os\"\n7: \t\"os/signal\"\n8: \t\"runtime\"\n9: \t\"syscall\"\n10: \n11: \t\"github.com/moira-alert/moira\"\n12: \t\"github.com/moira-alert/moira/cmd\"\n13: \t\"github.com/moira-alert/moira/database/redis\"\n14: \t\"github.com/moira-alert/moira/filter\"\n15: \t\"github.com/moira-alert/moira/filter/connection\"\n16: \t\"github.com/moira-alert/moira/filter/heartbeat\"\n17: \tmatchedmetrics \"github.com/moira-alert/moira/filter/matched_metrics\"\n18: \t\"github.com/moira-alert/moira/filter/patterns\"\n19: \tlogging \"github.com/moira-alert/moira/logging/zerolog_adapter\"\n20: \t\"github.com/moira-alert/moira/metrics\"\n21: \t\"github.com/xiam/to\"\n22: \t_ \"go.uber.org/automaxprocs\"\n23: )\n24: \n25: const serviceName = \"filter\"\n26: \n27: var (\n28: \tlogger                 moira.Logger\n29: \tconfigFileName         = flag.String(\"config\", \"/etc/moira/filter.yml\", \"path config file\")\n30: \tprintVersion           = flag.Bool(\"version\", false, \"Print version and exit\")\n31: \tprintDefaultConfigFlag = fla"
+      },
+      {
+        "step": 11,
+        "tool": "list_dir",
+        "args": {
+          "path": "/pkg"
+        },
+        "result_head": "api/\nchecker/\ncli/\nfilter/\nnotifier/"
+      },
+      {
+        "step": 11,
+        "tool": "read_file",
+        "args": {
+          "path": "/docker-compose.yml"
+        },
+        "result_head": "1: version: \"3.7\"\n2: \n3: services:\n4:   redis:\n5:     image: redis:6.2.12-alpine3.18\n6:     volumes:\n7:       - data:/data\n8:     ports:\n9:       - \"6379:6379\"\n10:     restart: always\n11: \n12:   graphite:\n13:     image: graphiteapp/graphite-statsd\n14:     ports:\n15:       - \"7080:80\"\n16:     restart: always\n17: \n18:   prometheus:\n19:     image: prom/prometheus\n20:     volumes:\n21:       - ./local/prometheus.yml:/etc/prometheus/prometheus.yml\n22:     command: \"--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus\"\n23:     ports:\n24:       - \"9080:9090\"\n25:     restart: always\n26: \n27:   filter:\n28:     build:\n29:       context: .\n30:       dockerfile: Dockerfile.filter\n31:     volumes:\n32:       - ./local/filter.yml:/etc/moira/filter.yml\n33:     depends_on:\n34:       - redis\n35:       - relay\n36:     ports:\n37:       - \"8094:8094\"\n38:     restart: always\n39: \n40:   checker:\n41:     build:\n42:       context: .\n43:       dockerfile: Dockerfile.checker\n44:     volume"
+      },
+      {
+        "step": 12,
+        "tool": "read_file",
+        "args": {
+          "path": "/cmd/cli/main.go",
+          "start": "1"
+        },
+        "result_head": "1: package main\n2: \n3: import (\n4: \t\"encoding/json\"\n5: \t\"flag\"\n6: \t\"fmt\"\n7: \t\"os\"\n8: \t\"strings\"\n9: \n10: \t\"github.com/moira-alert/moira\"\n11: \t\"github.com/moira-alert/moira/api/dto\"\n12: \t\"github.com/moira-alert/moira/cmd\"\n13: \t\"github.com/moira-alert/moira/database/redis\"\n14: \tlogging \"github.com/moira-alert/moira/logging/zerolog_adapter\"\n15: \t\"github.com/moira-alert/moira/support\"\n16: \t_ \"go.uber.org/automaxprocs\"\n17: )\n18: \n19: // Moira version\n20: var (\n21: \tMoiraVersion = \"unknown\"\n22: \tGitCommit    = \"unknown\"\n23: \tGoVersion    = \"unknown\"\n24: )\n25: \n26: var moiraValidVersions = []string{\"2.3\", \"2.6\"}\n27: \n28: var (\n29: \tconfigFileName         = flag.String(\"config\", \"/etc/moira/cli.yml\", \"Path to configuration file\")\n30: \tprintVersion           = flag.Bool(\"version\", false, \"Print version and exit\")\n31: \tprintDefaultConfigFlag = flag.Bool(\"default-config\", false, \"Print default config and exit\")\n32: )\n33: \n34: var (\n35: \tupdate    = flag.Bool(\"update\", false, fmt.Sprintf(\"convert d"
+      },
+      {
+        "step": 12,
+        "tool": "grep",
+        "args": {
+          "path": "/api/handler/triggers.go",
+          "pattern": "router\\."
+        },
+        "result_head": "/api/handler/triggers.go:28: router.Use(middleware.MetricSourceProvider(metricSourceProvider))\n/api/handler/triggers.go:29: router.Use(middleware.SearchIndexContext(searcher))\n/api/handler/triggers.go:30: router.Get(\"/\", getAllTriggers)\n/api/handler/triggers.go:31: router.Put(\"/\", createTrigger)\n/api/handler/triggers.go:32: router.Put(\"/check\", triggerCheck)\n/api/handler/triggers.go:33: router.Route(\"/{triggerId}\", trigger)\n/api/handler/triggers.go:34: router.With(middleware.Paginate(0, 10)).With(middleware.Pager(false, \"\")).Get(\"/search\", searchTriggers)\n/api/handler/triggers.go:35: router.With(middleware.Pager(false, \"\")).Delete(\"/search/pager\", deletePager)\n/api/handler/triggers.go:37: router.With(middleware.Paginate(0, 10)).With(middleware.Pager(false, \"\")).Get(\"/page\", searchTriggers)"
+      },
+      {
+        "step": 13,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/trigger.go",
+          "start": "178"
+        },
+        "result_head": "178: func setTriggerMaintenance(writer http.ResponseWriter, request *http.Request) {\n179: \ttriggerID := middleware.GetTriggerID(request)\n180: \ttriggerMaintenance := dto.TriggerMaintenance{}\n181: \tif err := render.Bind(request, &triggerMaintenance); err != nil {\n182: \t\trender.Render(writer, request, api.ErrorInvalidRequest(err)) //nolint\n183: \t\treturn\n184: \t}\n185: \tuserLogin := middleware.GetLogin(request)\n186: \ttimeCallMaintenance := time.Now().Unix()\n187: \n188: \terr := controller.SetTriggerMaintenance(database, triggerID, triggerMaintenance, userLogin, timeCallMaintenance)\n189: \tif err != nil {\n190: \t\trender.Render(writer, request, err) //nolint\n191: \t}\n192: }\n193: \n194: func triggerDump(writer http.ResponseWriter, request *http.Request) {\n195: \ttriggerID, log := prepareTriggerContext(request)\n196: \n197: \tif dump, err := controller.GetTriggerDump(database, log, triggerID); err != nil {\n198: \t\trender.Render(writer, request, err) //nolint\n199: \t} else {\n200: \t\trender.JSON(writer, reques"
+      },
+      {
+        "step": 13,
+        "tool": "read_file",
+        "args": {
+          "path": "/api/handler/team.go",
+          "start": "170"
+        },
+        "result_head": "170: func addTeamUsers(writer http.ResponseWriter, request *http.Request) {\n171: \tmembers := dto.TeamMembers{}\n172: \terr := render.Bind(request, &members)\n173: \tif err != nil {\n174: \t\trender.Render(writer, request, api.ErrorInvalidRequest(err)) // nolint:errcheck\n175: \t\treturn\n176: \t}\n177: \tteamID := middleware.GetTeamID(request)\n178: \n179: \tresponse, apiErr := controller.AddTeamUsers(database, teamID, members.Usernames)\n180: \tif err != nil {\n181: \t\trender.Render(writer, request, apiErr) // nolint:errcheck\n182: \t\treturn\n183: \t}\n184: \n185: \tif err := render.Render(writer, request, response); err != nil {\n186: \t\trender.Render(writer, request, api.ErrorRender(err)) // nolint:errcheck\n187: \t\treturn\n188: \t}\n189: }\n190: \n191: func deleteTeamUser(writer http.ResponseWriter, request *http.Request) {\n192: \tteamID := middleware.GetTeamID(request)\n193: \tuserID := middleware.GetTeamUserID(request)\n194: \n195: \tresponse, err := controller.DeleteTeamUser(database, teamID, userID)\n196: \tif err != nil "
+      },
+      {
+        "step": 14,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\":[{\"name\":\"api\",\"dirs\":[\"/cmd/api\",\"/api\",\"/pkg/api\",\"/cmd\"]},{\"name\":\"checker\",\"dirs\":[\"/cmd/checker\",\"/checker\",\"/pkg/checker\"]},{\"name\":\"filter\",\"dirs\":[\"/cmd/filter\",\"/filter\",\"/pkg/fil"
+        },
+        "result_head": "Recorded 5 new: service api, service checker, service filter, service notifier, service cli\nTotal: 5 services, 0 endpoints in 0 files.\nServices with no endpoints recorded yet: api, checker, filter, notifier, cli."
+      },
+      {
+        "step": 15,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\":[\n{\"path\":\"/api/handler/handler.go\",\"service\":\"api\",\"endpoints\":[\n{\"className\":\"\",\"methodName\":\"getWebConfig\",\"httpMethod\":\"GET\",\"path\":\"/api/config\",\"line\":38,\"evidence\":\"router.Get(\\\"/confi"
+        },
+        "result_head": "Recorded 55 new: GET /api/config, GET /api/user/, GET /api/user/settings, GET /api/trigger/, PUT /api/trigger/, PUT /api/trigger/check, GET /api/trigger/search, DELETE /api/trigger/search/pager, GET /api/trigger/page, PUT /api/trigger/{triggerId}/, GET /api/trigger/{triggerId}/, DELETE /api/trigger/{triggerId}/, GET /api/trigger/{triggerId}/state, GET /api/trigger/{triggerId}/throttling/, DELETE /api/trigger/{triggerId}/throttling/, PUT /api/trigger/{triggerId}/setMaintenance, GET /api/trigger/{triggerId}/render, GET /api/trigger/{triggerId}/dump, GET /api/trigger/{triggerId}/metrics/, DELETE /api/trigger/{triggerId}/metrics/, DELETE /api/trigger/{triggerId}/metrics/nodata, GET /api/tag/, GET /api/tag/stats, DELETE /api/tag/{tag}/, GET /api/pattern/, DELETE /api/pattern/{pattern}, GET /api/event/{triggerId}, DELETE /api/event/all, GET /api/contact/, PUT /api/contact/, PUT /api/contact/{contactId}/, DELETE /api/contact/{contactId}/, POST /api/contact/{contactId}/test, GET /api/subscript"
+      },
+      {
+        "step": 16,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\":[\n{\"path\":\"/cmd/telemetry.go\",\"service\":\"api\",\"endpoints\":[\n{\"className\":\"\",\"methodName\":\"pprof.Index\",\"httpMethod\":\"GET\",\"path\":\"/pprof/\",\"line\":47,\"evidence\":\"serverMux.HandleFunc(\\\"/pprof/"
+        },
+        "result_head": "Recorded 8 new: GET /pprof/, GET /pprof/cmdline, GET /pprof/profile, GET /pprof/symbol, GET /pprof/trace, GET /pprof/heap, GET /pprof/goroutine, GET /metrics\nTotal: 5 services, 63 endpoints in 16 files.\nServices with no endpoints recorded yet: checker, filter, notifier, cli."
+      },
+      {
+        "step": 17,
+        "tool": "submit",
+        "args": {},
+        "result_head": "[ACCEPTED] 5 services, 63 endpoints."
+      }
+    ]
+  }
+}

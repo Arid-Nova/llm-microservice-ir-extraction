@@ -1,0 +1,1012 @@
+{
+  "system": "orchestra",
+  "services": [
+    {
+      "name": "dashboard",
+      "dirs": [
+        "/services/dashboard"
+      ]
+    },
+    {
+      "name": "forward-interop",
+      "dirs": [
+        "/services/forward-interop",
+        "/services/common"
+      ]
+    },
+    {
+      "name": "grafana",
+      "dirs": [
+        "/services/grafana"
+      ]
+    },
+    {
+      "name": "image-rec-auto",
+      "dirs": [
+        "/services/image-rec-auto"
+      ]
+    },
+    {
+      "name": "image-rec-master",
+      "dirs": [
+        "/services/image-rec-master"
+      ]
+    },
+    {
+      "name": "imagery",
+      "dirs": [
+        "/services/imagery"
+      ]
+    },
+    {
+      "name": "interop-proxy",
+      "dirs": [
+        "/services/interop-proxy"
+      ]
+    },
+    {
+      "name": "mavproxy",
+      "dirs": [
+        "/services/mavproxy"
+      ]
+    },
+    {
+      "name": "pong",
+      "dirs": [
+        "/services/pong"
+      ]
+    },
+    {
+      "name": "telemetry",
+      "dirs": [
+        "/services/telemetry"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/services/forward-interop/src/router.js",
+      "service": "forward-interop",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/alive",
+          "line": 9,
+          "evidence": "router.get('/api/alive', (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/upload-rate",
+          "line": 13,
+          "evidence": "router.get('/api/upload-rate', (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/services/imagery/src/router.js",
+      "service": "imagery",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/alive",
+          "line": 11,
+          "evidence": "router.get('/api/alive', (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/count",
+          "line": 15,
+          "evidence": "router.get('/api/count', async (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/available",
+          "line": 22,
+          "evidence": "router.get('/api/available', async (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/capture-rate",
+          "line": 31,
+          "evidence": "router.get('/api/capture-rate', (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/image/latest",
+          "line": 39,
+          "evidence": "router.get('/api/image/latest', async (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/image/next",
+          "line": 51,
+          "evidence": "router.get('/api/image/next', async (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/image/:id",
+          "line": 61,
+          "evidence": "router.get('/api/image/:id', async (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "DELETE",
+          "path": "/api/image/:id",
+          "line": 74,
+          "evidence": "router.delete('/api/image/:id', async (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/services/pong/src/router.js",
+      "service": "pong",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/alive",
+          "line": 9,
+          "evidence": "router.get('/api/alive', (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/ping",
+          "line": 13,
+          "evidence": "router.get('/api/ping', (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/services/telemetry/src/router.js",
+      "service": "telemetry",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/alive",
+          "line": 28,
+          "evidence": "router.get('/api/alive', (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/interop-telem",
+          "line": 32,
+          "evidence": "router.get('/api/interop-telem', (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/camera-telem",
+          "line": 36,
+          "evidence": "router.get('/api/camera-telem', (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/overview",
+          "line": 40,
+          "evidence": "router.get('/api/overview', (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/raw-mission",
+          "line": 44,
+          "evidence": "router.get('/api/raw-mission', timeout, async (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/api/raw-mission",
+          "line": 48,
+          "evidence": "router.post('/api/raw-mission', mission, timeout, async (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/api/mission-current",
+          "line": 53,
+          "evidence": "router.get('/api/mission-current', timeout, async (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/api/mission-current",
+          "line": 57,
+          "evidence": "router.post('/api/mission-current', missionCurrent, timeout, async (ctx) => {",
+          "framework": "Koa",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/services/interop-proxy/lib/interop_proxy_web/router.ex",
+      "service": "interop-proxy",
+      "endpoints": [
+        {
+          "className": "MissionController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/api/mission",
+          "line": 11,
+          "evidence": "get \"/mission\", MissionController, :index",
+          "framework": "Phoenix",
+          "confidence": "high"
+        },
+        {
+          "className": "ObstaclesController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/api/obstacles",
+          "line": 12,
+          "evidence": "get \"/obstacles\", ObstaclesController, :index",
+          "framework": "Phoenix",
+          "confidence": "high"
+        },
+        {
+          "className": "TelemetryController",
+          "methodName": "create",
+          "httpMethod": "POST",
+          "path": "/api/telemetry",
+          "line": 13,
+          "evidence": "post \"/telemetry\", TelemetryController, :create",
+          "framework": "Phoenix",
+          "confidence": "high"
+        },
+        {
+          "className": "OdlcController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/api/odlcs",
+          "line": 15,
+          "evidence": "get \"/odlcs\", OdlcController, :index",
+          "framework": "Phoenix",
+          "confidence": "high"
+        },
+        {
+          "className": "OdlcController",
+          "methodName": "show",
+          "httpMethod": "GET",
+          "path": "/api/odlcs/:id",
+          "line": 16,
+          "evidence": "get \"/odlcs/:id\", OdlcController, :show",
+          "framework": "Phoenix",
+          "confidence": "high"
+        },
+        {
+          "className": "OdlcController",
+          "methodName": "create",
+          "httpMethod": "POST",
+          "path": "/api/odlcs",
+          "line": 17,
+          "evidence": "post \"/odlcs\",  OdlcController, :create",
+          "framework": "Phoenix",
+          "confidence": "high"
+        },
+        {
+          "className": "OdlcController",
+          "methodName": "update",
+          "httpMethod": "PUT",
+          "path": "/api/odlcs/:id",
+          "line": 18,
+          "evidence": "put \"/odlcs/:id\", OdlcController, :update",
+          "framework": "Phoenix",
+          "confidence": "high"
+        },
+        {
+          "className": "OdlcController",
+          "methodName": "delete",
+          "httpMethod": "DELETE",
+          "path": "/api/odlcs/:id",
+          "line": 19,
+          "evidence": "delete \"/odlcs/:id\", OdlcController, :delete",
+          "framework": "Phoenix",
+          "confidence": "high"
+        },
+        {
+          "className": "AliveController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/api/alive",
+          "line": 21,
+          "evidence": "get \"/alive\", AliveController, :index",
+          "framework": "Phoenix",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/services/image-rec-master/service/app.py",
+      "service": "image-rec-master",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "handle_alive",
+          "httpMethod": "GET",
+          "path": "/api/alive",
+          "line": 19,
+          "evidence": "@routes.get('/api/alive')",
+          "framework": "aiohttp",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "handle_get_pipeline",
+          "httpMethod": "GET",
+          "path": "/api/pipeline",
+          "line": 25,
+          "evidence": "@routes.get('/api/pipeline')",
+          "framework": "aiohttp",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "handle_get_pipeline_image_by_id",
+          "httpMethod": "GET",
+          "path": "/api/pipeline/images/{id}",
+          "line": 97,
+          "evidence": "@routes.get(r'/api/pipeline/images/{id:\\d+}')",
+          "framework": "aiohttp",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "handle_process_next_auto_pipeline_image",
+          "httpMethod": "POST",
+          "path": "/api/pipeline/images/start-processing-next-auto",
+          "line": 109,
+          "evidence": "@routes.post('/api/pipeline/images/start-processing-next-auto')",
+          "framework": "aiohttp",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "handle_processed_auto_pipeline_image",
+          "httpMethod": "POST",
+          "path": "/api/pipeline/images/{id}/finish-processing-auto",
+          "line": 123,
+          "evidence": "@routes.post(r'/api/pipeline/images/{id:\\d+}/finish-processing-auto')",
+          "framework": "aiohttp",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "handle_process_next_auto_pipeline_image",
+          "httpMethod": "POST",
+          "path": "/api/pipeline/images/process-next-manual",
+          "line": 155,
+          "evidence": "@routes.post('/api/pipeline/images/process-next-manual')",
+          "framework": "aiohttp",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "handle_get_pipeline_target_by_id",
+          "httpMethod": "GET",
+          "path": "/api/pipeline/targets/{id}",
+          "line": 176,
+          "evidence": "@routes.get(r'/api/pipeline/targets/{id:\\d+}')",
+          "framework": "aiohttp",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "handle_post_pipeline_target",
+          "httpMethod": "POST",
+          "path": "/api/pipeline/targets",
+          "line": 188,
+          "evidence": "@routes.post('/api/pipeline/targets')",
+          "framework": "aiohttp",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "handle_queue_pipeline_target_removal",
+          "httpMethod": "POST",
+          "path": "/api/pipeline/targets/{id}/queue-removal",
+          "line": 289,
+          "evidence": "@routes.post(r'/api/pipeline/targets/{id:\\d+}/queue-removal')",
+          "framework": "aiohttp",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "handle_reset_pipeline",
+          "httpMethod": "POST",
+          "path": "/api/pipeline/reset",
+          "line": 344,
+          "evidence": "@routes.post('/api/pipeline/reset')",
+          "framework": "aiohttp",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "handle_get_pipeline_archive",
+          "httpMethod": "GET",
+          "path": "/api/pipeline/archive",
+          "line": 351,
+          "evidence": "@routes.get('/api/pipeline/archive')",
+          "framework": "aiohttp",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "DeepSeek-V4.1-Flash-1017",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "low",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "orchestra",
+    "commit": "b2b60253723caa2f265139f89d4cd3f2d1ba805f",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 1,
+    "elided_results": 0,
+    "steps": 18,
+    "tool_calls": 58,
+    "rejected_entries": 0,
+    "no_call_replies": 0,
+    "input_tokens": 301409,
+    "cached_input_tokens": 269312,
+    "output_tokens": 6099,
+    "list_price_usd": 0.0093,
+    "wall_seconds": 44.1,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".gitattributes\n.travis.yml\nLICENSE\nMakefile\nREADME.md\nci/\nconfig/\nservices/\ntest/"
+      },
+      {
+        "step": 1,
+        "tool": "find",
+        "args": {
+          "pattern": "Dockerfile"
+        },
+        "result_head": "/services/dashboard/Dockerfile\n/services/forward-interop/Dockerfile\n/services/grafana/Dockerfile\n/services/image-rec-auto/Dockerfile\n/services/image-rec-master/Dockerfile\n/services/imagery/Dockerfile\n/services/interop-proxy/Dockerfile\n/services/mavproxy/Dockerfile\n/services/pong/Dockerfile\n/services/telemetry/Dockerfile\n/test/plane-sitl/Dockerfile"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/services"
+        },
+        "result_head": ".dockerignore\ncommon/\ndashboard/\nforward-interop/\ngrafana/\nimage-rec-auto/\nimage-rec-master/\nimagery/\ninterop-proxy/\nmavproxy/\npong/\ntelemetry/"
+      },
+      {
+        "step": 2,
+        "tool": "find",
+        "args": {
+          "pattern": "*.py",
+          "path": "/services"
+        },
+        "result_head": "/services/common/python/logger.py\n/services/image-rec-auto/service/__init__.py\n/services/image-rec-auto/service/__main__.py\n/services/image-rec-auto/service/util.py\n/services/image-rec-auto/test/__init__.py\n/services/image-rec-auto/test/test_service.py\n/services/image-rec-auto/test/test_util.py\n/services/image-rec-master/service/__init__.py\n/services/image-rec-master/service/__main__.py\n/services/image-rec-master/service/app.py\n/services/image-rec-master/service/backup.py\n/services/image-rec-master/service/tasks.py\n/services/image-rec-master/service/util.py\n/services/image-rec-master/test/conftest.py\n/services/image-rec-master/test/test_app.py\n/services/image-rec-master/test/test_service.py\n/services/image-rec-master/test/test_tasks.py"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/services/dashboard"
+        },
+        "result_head": ".gitignore\nDockerfile\nMakefile\nREADME.md\npackage.json\nsrc/"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/services/forward-interop"
+        },
+        "result_head": ".babelrc\n.eslintrc.yml\n.gitignore\nDockerfile\nDockerfile.test\nMakefile\nREADME.md\nbin/\njest.config.js\npackage.json\nsrc/\ntest/"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/services/imagery"
+        },
+        "result_head": ".babelrc\n.eslintrc.yml\n.gitignore\nDockerfile\nDockerfile.test\nMakefile\nREADME.md\nbin/\njest.config.js\npackage.json\nsrc/\ntest/"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/services/interop-proxy"
+        },
+        "result_head": ".gitignore\nDockerfile\nDockerfile.test\nMakefile\nREADME.md\nconfig/\nlib/\nmix.exs\npriv/\nrel/\ntest.sh\ntest/"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/services/mavproxy"
+        },
+        "result_head": "Dockerfile\nMakefile\nREADME.md\nentrypoint.sh"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/services/pong"
+        },
+        "result_head": ".babelrc\n.eslintrc.yml\n.gitignore\nDockerfile\nDockerfile.test\nMakefile\nREADME.md\nbin/\njest.config.js\npackage.json\nsrc/\ntest/"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/services/telemetry"
+        },
+        "result_head": ".babelrc\n.eslintrc.yml\n.gitignore\nDockerfile\nDockerfile.test\nMakefile\nREADME.md\nbin/\njest.config.js\npackage.json\nsrc/\ntest/"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/services/grafana"
+        },
+        "result_head": "Dockerfile\nMakefile\nprovisioning/"
+      },
+      {
+        "step": 4,
+        "tool": "find",
+        "args": {
+          "path": "/services/dashboard/src",
+          "pattern": "*"
+        },
+        "result_head": "/services/dashboard/src/dashboard.js\n/services/dashboard/src/util.js"
+      },
+      {
+        "step": 4,
+        "tool": "find",
+        "args": {
+          "path": "/services/forward-interop/src",
+          "pattern": "*"
+        },
+        "result_head": "/services/forward-interop/src/router.js\n/services/forward-interop/src/service.js\n/services/forward-interop/src/upload-monitor.js"
+      },
+      {
+        "step": 4,
+        "tool": "find",
+        "args": {
+          "path": "/services/imagery/src",
+          "pattern": "*"
+        },
+        "result_head": "/services/imagery/src/backends/camera-base-backend.js\n/services/imagery/src/backends/file-backend.js\n/services/imagery/src/backends/gphoto2-backend.js\n/services/imagery/src/backends/sync-backend.js\n/services/imagery/src/backends/z-cam-e1-backend.js\n/services/imagery/src/image-store.js\n/services/imagery/src/router.js\n/services/imagery/src/service.js\n/services/imagery/src/util.js"
+      },
+      {
+        "step": 4,
+        "tool": "find",
+        "args": {
+          "path": "/services/pong/src",
+          "pattern": "*"
+        },
+        "result_head": "/services/pong/src/ping-store.js\n/services/pong/src/router.js\n/services/pong/src/service.js"
+      },
+      {
+        "step": 4,
+        "tool": "find",
+        "args": {
+          "path": "/services/telemetry/src",
+          "pattern": "*"
+        },
+        "result_head": "/services/telemetry/src/mavlink-socket.js\n/services/telemetry/src/mission.js\n/services/telemetry/src/plane.js\n/services/telemetry/src/router.js\n/services/telemetry/src/service.js\n/services/telemetry/src/util.js"
+      },
+      {
+        "step": 4,
+        "tool": "find",
+        "args": {
+          "path": "/services/interop-proxy/lib",
+          "pattern": "*"
+        },
+        "result_head": "/services/interop-proxy/lib/interop_proxy.ex\n/services/interop-proxy/lib/interop_proxy/application.ex\n/services/interop-proxy/lib/interop_proxy/message.ex\n/services/interop-proxy/lib/interop_proxy/request.ex\n/services/interop-proxy/lib/interop_proxy/sanitize.ex\n/services/interop-proxy/lib/interop_proxy/session.ex\n/services/interop-proxy/lib/interop_proxy_web.ex\n/services/interop-proxy/lib/interop_proxy_web/controllers/alive_controller.ex\n/services/interop-proxy/lib/interop_proxy_web/controllers/controller_helpers.ex\n/services/interop-proxy/lib/interop_proxy_web/controllers/mission_controller.ex\n/services/interop-proxy/lib/interop_proxy_web/controllers/obstacles_controller.ex\n/services/interop-proxy/lib/interop_proxy_web/controllers/odlc_controller.ex\n/services/interop-proxy/lib/interop_proxy_web/controllers/telemetry_controller.ex\n/services/interop-proxy/lib/interop_proxy_web/endpoint.ex\n/services/interop-proxy/lib/interop_proxy_web/plugs/decode_protobuf.ex\n/services/interop-proxy/lib/"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/dashboard/src/dashboard.js"
+        },
+        "result_head": "1: /**\n2:  * Terminal dashboard which shows the system status.\n3:  *\n4:  * This uses the blessed (and blessed-contrib) libraries to make a\n5:  * somewhat-graphical terminal dashboard display.\n6:  */\n7: \n8: import async from 'async';\n9: import blessed from 'blessed';\n10: import contrib from 'blessed-contrib';\n11: import chalk from 'chalk';\n12: import _ from 'lodash';\n13: import request from 'request';\n14: import { sprintf } from 'sprintf-js';\n15: \n16: import { stats } from './messages';\n17: \n18: import { parseMessage } from './util';\n19: \n20: // The main screen object.\n21: let screen = blessed.screen();\n22: \n23: // The screen is set up in a 12x12 grid.\n24: let grid = new contrib.grid({ rows: 12, cols: 12, screen: screen });\n25: \n26: // The ping table shows the output from the pong service. This\n27: // differs from the built-in table in that we can specify a more\n28: // custom header.\n29: let pingTable = grid.set(6, 0, 6, 12, blessed.box, {\n30:     label: 'Ping',\n31: });\n32: \n33: functio"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/forward-interop/src/router.js"
+        },
+        "result_head": "1: import koaProtobuf from 'koa-protobuf';\n2: import Router from 'koa-router';\n3: \n4: let router = new Router();\n5: \n6: // Encode outbound protobuf messages.\n7: router.use(koaProtobuf.protobufSender());\n8: \n9: router.get('/api/alive', (ctx) => {\n10:   ctx.body = 'Yo dude, I\\'m good.\\n';\n11: });\n12: \n13: router.get('/api/upload-rate', (ctx) => {\n14:   ctx.proto = ctx.uploadMonitor.getUploadRate();\n15: });\n16: \n17: export default router;"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/imagery/src/router.js"
+        },
+        "result_head": "1: import koaProtobuf from 'koa-protobuf';\n2: import Router from 'koa-router';\n3: \n4: import { imagery, stats } from './messages';\n5: \n6: const router = new Router();\n7: \n8: // Encode outbound protobuf messages.\n9: router.use(koaProtobuf.protobufSender());\n10: \n11: router.get('/api/alive', (ctx) => {\n12:   ctx.body = 'Howdy.\\n';\n13: });\n14: \n15: router.get('/api/count', async (ctx) => {\n16:   ctx.proto = imagery.ImageCount.create({\n17:     time: Date.now() / 1000,\n18:     count: await ctx.imageStore.getCount()\n19:   });\n20: });\n21: \n22: router.get('/api/available', async (ctx) => {\n23:   const id_list = await ctx.imageStore.getAvailable();\n24:   ctx.proto = imagery.AvailableImages.create({\n25:     time: Date.now() / 1000,\n26:     count: id_list.length,\n27:     id_list\n28:   });\n29: });\n30: \n31: router.get('/api/capture-rate', (ctx) => {\n32:   // Returning the rate that images are being captured.\n33:   ctx.proto = stats.ImageCaptureRate.create({\n34:     time: Date.now() / 1000,\n35:     "
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/pong/src/router.js"
+        },
+        "result_head": "1: import koaProtobuf from 'koa-protobuf';\n2: import Router from 'koa-router';\n3: \n4: const router = new Router();\n5: \n6: // Encode outbound protobuf messages.\n7: router.use(koaProtobuf.protobufSender());\n8: \n9: router.get('/api/alive', (ctx) => {\n10:   ctx.body = 'Yeah, this is kinda meta tho.\\n';\n11: });\n12: \n13: router.get('/api/ping', (ctx) => {\n14:   ctx.proto = ctx.pingStore.getPing();\n15: });\n16: \n17: export default router;"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/telemetry/src/router.js"
+        },
+        "result_head": "1: import koaProtobuf from 'koa-protobuf';\n2: import Router from 'koa-router';\n3: \n4: import logger from './common/logger';\n5: import { telemetry } from './messages';\n6: \n7: let router = new Router();\n8: \n9: // Encode outbound protobuf messages.\n10: router.use(koaProtobuf.protobufSender());\n11: \n12: // Middleware for handling timeout errors. Enabled on some endpoints.\n13: let timeout = async (ctx, next) => {\n14:   try {\n15:     await next();\n16:   } catch (err) {\n17:     logger.error(err.message);\n18:     ctx.status = 504;\n19:   }\n20: };\n21: \n22: // Middleware to parse a request mission body.\n23: let mission = koaProtobuf.protobufParser(telemetry.RawMission);\n24: \n25: // Middleware to parse a request mission current body.\n26: let missionCurrent = koaProtobuf.protobufParser(telemetry.MissionCurrent);\n27: \n28: router.get('/api/alive', (ctx) => {\n29:   ctx.body = 'Yes, I\\'m alive!\\n';\n30: });\n31: \n32: router.get('/api/interop-telem', (ctx) => {\n33:   ctx.proto = ctx.plane.getInteropTelem("
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/forward-interop/src/service.js"
+        },
+        "result_head": "1: import Koa from 'koa';\n2: import request from 'superagent';\n3: import addProtobuf from 'superagent-protobuf';\n4: \n5: import koaLogger from './common/koa-logger';\n6: import logger from './common/logger';\n7: import { createTimeoutTask } from './common/task';\n8: import { interop } from './messages';\n9: \n10: import router from './router';\n11: import UploadMonitor from './upload-monitor';\n12: \n13: addProtobuf(request);\n14: \n15: /**\n16:  * Service-level implementation for forward-interop.\n17:  *\n18:  * When run, this service forwards telemetry from the telemetry\n19:  * service to the interop-proxy service with a timeout.\n20:  *\n21:  * An API is also hosted which serves the rate at which raw and\n22:  * unique telemetry is uploaded over the last 1 or 5 seconds.\n23:  */\n24: export default class Service {\n25:   /**\n26:    * Create a new forward-interop service.\n27:    *\n28:    * @param {Object} options\n29:    * @param {number} options.port\n30:    * @param {number} options.uploadInterval\n31:  "
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/imagery/src/service.js"
+        },
+        "result_head": "1: import Koa from 'koa';\n2: \n3: import koaLogger from './common/koa-logger';\n4: import logger from './common/logger';\n5: \n6: import GPhoto2Backend from './backends/gphoto2-backend';\n7: import FileBackend from './backends/file-backend';\n8: import SyncBackend from './backends/sync-backend';\n9: import ZCamE1Backend from './backends/z-cam-e1-backend';\n10: import ImageStore from './image-store';\n11: import router from './router';\n12: \n13: /**\n14:  * Service-level implementation for imagery.\n15:  *\n16:  * An API is hosted which serves imagery data. Tasks are created for\n17:  * either taking photos, watching a folder, or syncing imagery with\n18:  * another imagery service.\n19:  */\n20: export default class Service {\n21:   /**\n22:    * Create a new imagery service.\n23:    *\n24:    * @param {Object} options\n25:    * @param {number} options.port\n26:    * @param {string} options.backend - one of 'gphoto2', 'z-cam-e1',\n27:    *                                   'file', 'sync'\n28:    * @param {stri"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/pong/src/service.js"
+        },
+        "result_head": "1: import Koa from 'koa';\n2: import ping from 'net-ping';\n3: import request from 'superagent';\n4: import dns from 'dns';\n5: import { promisify } from 'util';\n6: import ipRegex from 'ip-regex';\n7: \n8: import koaLogger from './common/koa-logger';\n9: import logger from './common/logger';\n10: import { createTimeoutTask } from './common/task';\n11: \n12: import router from './router';\n13: import PingStore from './ping-store';\n14: \n15: /**\n16:  * Service-level implementation for pong.\n17:  */\n18: export default class Service {\n19:   /**\n20:    * Create a new forward-interop service.\n21:    *\n22:    * @param {Object}   options\n23:    * @param {number}   options.port\n24:    * @param {number}   options.serviceTimeout\n25:    * @param {Object[]} options.pingServices\n26:    * @param {string}   options.pingServices[].name\n27:    * @param {string}   options.pingServices[].host\n28:    * @param {number}   options.pingServices[].port\n29:    * @param {string}   options.pingServices[].endpoint\n30:    * @pa"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/telemetry/src/service.js"
+        },
+        "result_head": "1: import Koa from 'koa';\n2: \n3: import koaLogger from './common/koa-logger';\n4: import logger from './common/logger';\n5: \n6: import Plane from './plane';\n7: import router from './router';\n8: \n9: /**\n10:  * Service-level implementation for telemetry.\n11:  *\n12:  * An API is hosted which serves general telemetry and allows for the\n13:  * getting and setting of missions.\n14:  */\n15: export default class Service {\n16:   /**\n17:    * Create a new telemetry service.\n18:    *\n19:    * @param {Object} options\n20:    * @param {number} options.port\n21:    * @param {string} options.planeHost\n22:    * @param {number} options.planePort\n23:    */\n24:   constructor(options) {\n25:     this._port = options.port;\n26: \n27:     this._planeHost = options.planeHost;\n28:     this._planePort = options.planePort;\n29: \n30:     this._plane = null;\n31:     this._server = null;\n32:   }\n33: \n34:   /** Start the service. */\n35:   async start() {\n36:     logger.debug('Starting service.');\n37: \n38:     this._plane = "
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/interop-proxy/lib/interop_proxy_web/router.ex"
+        },
+        "result_head": "1: defmodule InteropProxyWeb.Router do\n2:   use InteropProxyWeb, :router\n3: \n4:   pipeline :api do\n5:     plug :accepts, [\"protobuf\", \"json\"]\n6:   end\n7: \n8:   scope \"/api\", InteropProxyWeb do\n9:     pipe_through :api\n10: \n11:     get \"/mission\", MissionController, :index\n12:     get \"/obstacles\", ObstaclesController, :index\n13:     post \"/telemetry\", TelemetryController, :create\n14:     \n15:     get \"/odlcs\", OdlcController, :index\n16:     get \"/odlcs/:id\", OdlcController, :show\n17:     post \"/odlcs\",  OdlcController, :create\n18:     put \"/odlcs/:id\", OdlcController, :update\n19:     delete \"/odlcs/:id\", OdlcController, :delete\n20: \n21:     get \"/alive\", AliveController, :index\n22:   end\n23: end"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/image-rec-master/service/app.py"
+        },
+        "result_head": "1: import asyncio\n2: from time import time\n3: \n4: from aiohttp import web\n5: import aioredis\n6: import google.protobuf.json_format\n7: \n8: from messages.image_rec_pb2 import PipelineImage, PipelineState, PipelineTarget\n9: from messages.interop_pb2 import Odlc\n10: \n11: from .backup import create_archive\n12: from . import tasks\n13: from .util import get_int_list, get_int_set, watch_keys\n14: \n15: \n16: routes = web.RouteTableDef()\n17: \n18: \n19: @routes.get('/api/alive')\n20: async def handle_alive(request):\n21:     \"\"\"Send back text as a sanity check.\"\"\"\n22:     return web.Response(text='Wazzup?\\n')\n23: \n24: \n25: @routes.get('/api/pipeline')\n26: async def handle_get_pipeline(request):\n27:     \"\"\"Return the current pipeline state.\"\"\"\n28:     tr = request.app['redis'].multi_exec()\n29: \n30:     def get_set(key):\n31:         tr.smembers(key)\n32: \n33:     def get_list(key):\n34:         tr.lrange(key, 0, -1)\n35: \n36:     # All registered images.\n37:     get_set('all-images')\n38: \n39:     # Auto im"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/image-rec-master/service/__main__.py"
+        },
+        "result_head": "1: import asyncio\n2: import os\n3: import sys\n4: \n5: from common.logger import configure_logger\n6: \n7: from . import Service\n8: \n9: \n10: if __name__ == '__main__':\n11:     configure_logger()\n12: \n13:     service = Service(\n14:         port=int(os.environ.get('PORT')),\n15:         imagery_host=os.environ.get('IMAGERY_HOST'),\n16:         imagery_port=int(os.environ.get('IMAGERY_PORT')),\n17:         interop_host=os.environ.get('INTEROP_PROXY_HOST'),\n18:         interop_port=os.environ.get('INTEROP_PROXY_PORT'),\n19:         redis_host=os.environ.get('REDIS_HOST'),\n20:         redis_port=int(os.environ.get('REDIS_PORT')),\n21:         max_auto_targets=int(os.environ.get('MAX_AUTO_TARGETS') or -1)\n22:     )\n23: \n24:     loop = asyncio.get_event_loop()\n25:     loop.create_task(service.start())\n26: \n27:     try:\n28:         loop.run_forever()\n29: \n30:         # If the above finishes, an error occurred.\n31:         sys.exit(1)\n32:     except KeyboardInterrupt:\n33:         loop.run_until_complete("
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/image-rec-auto/service/__main__.py"
+        },
+        "result_head": "1: __author__ = \"Alex Witt, Kevin Li, Bradley Bridges, Shrivu Shankar\"\n2: \n3: import os\n4: import sys\n5: \n6: from common import logger\n7: from . import Service\n8: \n9: \n10: if __name__ == \"__main__\":\n11:     logger.configure_logger()\n12: \n13:     service = Service(\n14:         imagery_host=os.environ.get(\"IMAGERY_HOST\"),\n15:         imagery_port=int(os.environ.get(\"IMAGERY_PORT\")),\n16:         master_host=os.environ.get(\"IMAGE_REC_MASTER_HOST\"),\n17:         master_port=os.environ.get(\"IMAGE_REC_MASTER_PORT\"),\n18:         fetch_interval=int(os.environ.get(\"FETCH_INTERVAL\")),\n19:     )\n20: \n21:     try:\n22:         # Keep running an iteration of the service.\n23:         while True:\n24:             service.run_iter()\n25: \n26:         # If the above finishes, an error occurred.\n27:         sys.exit(1)\n28:     except KeyboardInterrupt:\n29:         sys.exit(0)"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/image-rec-auto/service/util.py"
+        },
+        "result_head": "1: \"\"\"Basic utilities to manages shape objects and determine target\n2: location.\"\"\"\n3: \n4: __author__ = \"Alex Witt, Bradley Bridges, and Shrivu Shankar\"\n5: \n6: import io\n7: import math\n8: import time\n9: from typing import Tuple\n10: \n11: from hawk_eye.inference import types\n12: \n13: from messages import interop_pb2\n14: \n15: EARTH_RADIUS = 6378137\n16: EARTH_ECCEN = 0.0818191\n17: \n18: \n19: def curr_time() -> int:\n20:     \"\"\"Return the current time in ms.\"\"\"\n21:     return int(time.perf_counter() * 1000)\n22: \n23: \n24: def get_odlc(image, image_telem, target) -> interop_pb2.Odlc:\n25:     \"\"\"Convert a target into a odlc message.\"\"\"\n26:     odlc = interop_pb2.Odlc()\n27: \n28:     odlc.type = interop_pb2.Odlc.STANDARD\n29:     odlc.pos.lat, odlc.pos.lon = _get_lat_lon(image, image_telem, target)\n30:     odlc.orientation = _convert_orientation(image_telem, target.orientation)\n31:     odlc.shape = _convert_shape(target.shape)\n32:     odlc.background_color = _convert_color(target.background_color)\n"
+      },
+      {
+        "step": 8,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/image-rec-master/service/app.py",
+          "start": "176"
+        },
+        "result_head": "176: @routes.get(r'/api/pipeline/targets/{id:\\d+}')\n177: async def handle_get_pipeline_target_by_id(request):\n178:     \"\"\"Return a target by id in the pipeline.\"\"\"\n179:     target_id = int(request.match_info['id'])\n180:     target = await _get_target(request, target_id)\n181: \n182:     if target:\n183:         return _proto_response(request, target)\n184:     else:\n185:         return web.HTTPNotFound()\n186: \n187: \n188: @routes.post('/api/pipeline/targets')\n189: async def handle_post_pipeline_target(request):\n190:     \"\"\"Create a target from an odlc.\"\"\"\n191:     # Reading submitted target, we only care about the odlc and\n192:     # source image.\n193:     target = await _parse_body(request, PipelineTarget)\n194:     odlc = target.odlc\n195:     image_id = target.image_id\n196: \n197:     # Have to wrap this in the case another target is submitted at\n198:     # the same time. Note that if during the process, a target is\n199:     # found to not be unique, a HTTP 303 request will be returned\n200:"
+      },
+      {
+        "step": 8,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/image-rec-master/service/__init__.py"
+        },
+        "result_head": "1: \"\"\"Records new images for workers and uploads targets.\"\"\"\n2: \n3: import aiohttp\n4: import aioredis\n5: \n6: from .app import create_app\n7: \n8: \n9: class Service:\n10:     def __init__(self, port, imagery_host, imagery_port, interop_host,\n11:                  interop_port, redis_host, redis_port, max_auto_targets):\n12:         \"\"\"Create a new image-rec-master service.\"\"\"\n13:         self._port = port\n14: \n15:         app = create_app(\n16:             redis_url=f'redis://{redis_host}:{redis_port}',\n17:             imagery_url=f'http://{imagery_host}:{imagery_port}',\n18:             interop_url=f'http://{interop_host}:{interop_port}',\n19:             max_auto_targets=max_auto_targets\n20:         )\n21: \n22:         self._app = app\n23:         self._runner = aiohttp.web.AppRunner(self._app)\n24: \n25:     async def start(self):\n26:         \"\"\"Start the service.\"\"\"\n27:         app = self._app\n28:         runner = self._runner\n29: \n30:         app['http_client'] = aiohttp.ClientSession(loop=app"
+      },
+      {
+        "step": 9,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/image-rec-master/service/app.py",
+          "start": "300"
+        },
+        "result_head": "300:             # removed, just in case the target no longer can be\n301:             # removed.\n302:             async with watch_keys(request.app, 'all-targets',\n303:                                   'unremoved-targets') as r:\n304:                 all_targets = await get_int_set(r, 'all-targets')\n305: \n306:                 if target_id not in all_targets:\n307:                     return web.HTTPNotFound()\n308: \n309:                 # New transaction for checking if the target is in\n310:                 # one of the removal lists. The watch won't apply to\n311:                 # this one.\n312:                 tr = request.app['redis'].multi_exec()\n313:                 tr.lrange('unremoved-targets', 0, -1)\n314:                 tr.lrange('removing-targets', 0, -1)\n315:                 tr.smembers('removed-targets')\n316:                 lists = await tr.execute()\n317: \n318:                 # All targets in any removal list.\n319:                 remove_ids = [int(id_str) for list in lists"
+      },
+      {
+        "step": 10,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/image-rec-auto/service/__init__.py"
+        },
+        "result_head": "1: \"\"\"Identifies targets as new images come in.\"\"\"\n2: \n3: __author__ = \"Alex Witt, Kevin Li, Bradley Bridges, Shrivu Shankar\"\n4: \n5: import inflect\n6: import io\n7: import logging\n8: import requests\n9: import time\n10: from typing import List\n11: \n12: from PIL import Image\n13: from hawk_eye.inference import find_targets, types\n14: \n15: from common import logger\n16: from messages import image_rec_pb2\n17: from messages import imagery_pb2\n18: from . import util\n19: \n20: # Used for printing in Service._queue_targets().\n21: p = inflect.engine()\n22: \n23: \n24: class Service:\n25:     def __init__(\n26:         self,\n27:         imagery_host: str,\n28:         imagery_port: int,\n29:         master_host: str,\n30:         master_port: int,\n31:         fetch_interval: int,\n32:     ) -> None:\n33:         \"\"\"Create a new image-rec-auto service.\"\"\"\n34:         self._imagery_url = f\"http://{imagery_host}:{imagery_port}\"\n35:         self._master_url = f\"http://{master_host}:{master_port}\"\n36:         self."
+      },
+      {
+        "step": 10,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/mavproxy/entrypoint.sh"
+        },
+        "result_head": "1: #!/usr/bin/sh\n2: \n3: # Wrapper around mavproxy.py that allows for a tune to be set.\n4: # Essentially, if the environment variable STARTING_TUNE is set, we\n5: # just copy in the contents into a file that mavproxy reads on\n6: # startup.\n7: \n8: if [ -n \"$STARTING_TUNE\" ]; then\n9:     printf \"\\033[32mAdding in tune: \\\"$STARTING_TUNE\\\"\\033[0m\\n\"\n10:     echo \"playtune $STARTING_TUNE\" > .mavinit.scr\n11: fi\n12: \n13: mavproxy.py \"$@\""
+      },
+      {
+        "step": 10,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/interop-proxy/lib/interop_proxy_web/controllers/odlc_controller.ex"
+        },
+        "result_head": "1: defmodule InteropProxyWeb.OdlcController do\n2:   use InteropProxyWeb, :controller\n3: \n4:   plug InteropProxyWeb.Plugs.DecodeProtobuf, Odlc\n5:   when action in [:create, :update]\n6: \n7:   def index(conn, %{\"image\" => image}) do\n8:     send_message conn, InteropProxy.get_odlcs(image: is_truthy(image))\n9:   end\n10: \n11:   def index(conn, _params), do: index conn, %{\"image\" => false}\n12: \n13:   def show(conn, %{\"id\" => id, \"image\" => image}) do\n14:     send_message conn, InteropProxy.get_odlc(String.to_integer(id),\n15:                                              image: is_truthy(image))\n16:   end\n17: \n18:   def show(conn, %{\"id\" => id}), do: show conn, %{\"id\" => id, \"image\" => false}\n19: \n20:   def create(conn, _params) do\n21:     send_message conn, InteropProxy.post_odlc(conn.assigns.protobuf)\n22:   end\n23: \n24:   def update(conn, %{\"id\" => id}) do\n25:     send_message conn, InteropProxy.put_odlc(String.to_integer(id),\n26:                                              conn.assigns.prot"
+      },
+      {
+        "step": 11,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/interop-proxy/lib/interop_proxy_web/endpoint.ex"
+        },
+        "result_head": "1: defmodule InteropProxyWeb.Endpoint do\n2:   use Phoenix.Endpoint, otp_app: :interop_proxy\n3: \n4:   plug Plug.Logger\n5: \n6:   plug Plug.Parsers,\n7:     parsers: [:json],\n8:     pass: [\"*/*\"],\n9:     json_decoder: Poison\n10: \n11:   plug Plug.MethodOverride\n12:   plug Plug.Head\n13: \n14:   plug InteropProxyWeb.Router\n15: \n16:   @doc \"\"\"\n17:   Callback for dynamically configuring the endpoint.\n18: \n19:   Since this is containerized, we really don't need any dynamic\n20:   configuration.\n21:   \"\"\"\n22:   def init(_key, config), do: {:ok, config}\n23: end"
+      },
+      {
+        "step": 11,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/dashboard/package.json"
+        },
+        "result_head": "1: {\n2:     \"name\": \"dashboard\",\n3:     \"main\": \"lib/dashboard.js\",\n4:     \"private\": true,\n5:     \"license\": \"MIT\",\n6:     \"scripts\": {\n7:         \"start\": \"node .\",\n8:         \"build\": \"babel src --out-dir lib\",\n9:         \"build-msg\": \"mkdir -p lib && pbjs -t static-module --es6 --keep-case -o src/messages.js src/messages/*.proto\"\n10:     },\n11:     \"dependencies\": {\n12:         \"async\": \"^2.6.0\",\n13:         \"blessed\": \"^0.1.81\",\n14:         \"blessed-contrib\": \"^4.8.5\",\n15:         \"chalk\": \"^2.3.1\",\n16:         \"lodash\": \"^4.17.5\",\n17:         \"request\": \"^2.83.0\",\n18:         \"protobufjs\": \"~6.8.6\",\n19:         \"source-map-support\": \"^0.5.6\",\n20:         \"sprintf-js\": \"^1.1.1\"\n21:     },\n22:     \"devDependencies\": {\n23:         \"babel-cli\": \"^6.26.0\",\n24:         \"babel-plugin-source-map-support\": \"^2.0.1\",\n25:         \"babel-preset-env\": \"^1.6.1\"\n26:     },\n27:     \"babel\": {\n28:         \"sourceMaps\": \"inline\",\n29:         \"plugins\": [\n30:             \"source-map-support\"\n31:   "
+      },
+      {
+        "step": 11,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/interop-proxy/lib/interop_proxy_web/controllers/alive_controller.ex"
+        },
+        "result_head": "1: defmodule InteropProxyWeb.AliveController do\n2:   use InteropProxyWeb, :controller\n3: \n4:   def index(conn, _params) do\n5:     conn\n6:     |> put_resp_content_type(\"text/plain\")\n7:     |> send_resp(200, \"What's up?\\n\")\n8:   end\n9: end"
+      },
+      {
+        "step": 11,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/interop-proxy/lib/interop_proxy_web/controllers/mission_controller.ex"
+        },
+        "result_head": "1: defmodule InteropProxyWeb.MissionController do\n2:   use InteropProxyWeb, :controller\n3: \n4:   def index(conn, _params) do\n5:     send_message conn, InteropProxy.get_mission\n6:   end\n7: end"
+      },
+      {
+        "step": 11,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/interop-proxy/lib/interop_proxy_web/controllers/obstacles_controller.ex"
+        },
+        "result_head": "1: defmodule InteropProxyWeb.ObstaclesController do\n2:   use InteropProxyWeb, :controller\n3: \n4:   def index(conn, _params) do\n5:     send_message conn, InteropProxy.get_obstacles\n6:   end\n7: end"
+      },
+      {
+        "step": 11,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/interop-proxy/lib/interop_proxy_web/controllers/telemetry_controller.ex"
+        },
+        "result_head": "1: defmodule InteropProxyWeb.TelemetryController do\n2:   use InteropProxyWeb, :controller\n3: \n4:   plug InteropProxyWeb.Plugs.DecodeProtobuf, InteropTelem\n5:   when action in [:create]\n6: \n7:   def create(conn, _params) do\n8:     send_message conn, InteropProxy.post_telemetry(conn.assigns.protobuf)\n9:   end\n10: end"
+      },
+      {
+        "step": 12,
+        "tool": "list_dir",
+        "args": {
+          "path": "/services/common"
+        },
+        "result_head": "messages/\nnodejs/\npython/\nscripts/"
+      },
+      {
+        "step": 12,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/grafana/Dockerfile"
+        },
+        "result_head": "1: FROM grafana/grafana\n2: \n3: COPY grafana/provisioning /etc/grafana/provisioning\n4: \n5: # Grafana's Dockerfile uses ENTRYPOINT so we have to override\n6: # ENTRYPOINT ourselves instead of using CMD. Sigh.\n7: ENTRYPOINT envsubst \"$INFLUX_HOST $INFLUX_PORT $DB_NAME\" \\\n8:         < /etc/grafana/provisioning/datasources/datasource.yaml \\\n9:         > /etc/grafana/provisioning/datasources/datasource.yaml && \\\n10:     /run.sh"
+      },
+      {
+        "step": 12,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/dashboard/Dockerfile"
+        },
+        "result_head": "1: # Compile our js source\n2: FROM node:12-slim AS builder\n3: \n4: WORKDIR /builder\n5: \n6: COPY dashboard/package.json .\n7: \n8: RUN npm install\n9: \n10: COPY common/messages/stats.proto \\\n11:     src/messages/\n12: \n13: RUN npm run build-msg\n14: \n15: COPY dashboard .\n16: \n17: RUN npm run build\n18: \n19: # Making the actual image now\n20: FROM node:12-slim\n21: \n22: WORKDIR /app\n23: \n24: COPY dashboard/package.json .\n25: \n26: RUN export NODE_ENV=production && npm install\n27: \n28: # Adding in the output from the js builder above\n29: COPY --from=builder /builder/lib lib\n30: \n31: ENV FORWARD_INTEROP_URL='0.0.0.0:4000' \\\n32:     PONG_URL='0.0.0.0:7000'\n33: \n34: ENV LANG=en_US.UTF-8\n35: \n36: CMD npm start --silent"
+      },
+      {
+        "step": 12,
+        "tool": "read_file",
+        "args": {
+          "path": "/services/image-rec-auto/Dockerfile"
+        },
+        "result_head": "1: ARG BASE_BUILDER=alpine:3.9\n2: ARG BASE\n3: \n4: # Compile the proto files (using alpine for easy recent protoc\n5: # install).\n6: FROM ${BASE_BUILDER} AS builder\n7: \n8: WORKDIR /builder\n9: \n10: RUN apk --no-cache add \\\n11:     protobuf\n12: \n13: COPY common/messages/image_rec.proto \\\n14:     common/messages/imagery.proto \\\n15:     common/messages/interop.proto \\\n16:     common/messages/telemetry.proto \\\n17:     messages/\n18: \n19: RUN mkdir dist && protoc --python_out=dist messages/*.proto\n20: \n21: # Making the actual image now\n22: FROM ${BASE}\n23: \n24: WORKDIR /app\n25: \n26: RUN apt-get update && apt-get install -y \\\n27:     python3-dev \\\n28:     wget\n29: \n30: RUN wget https://bootstrap.pypa.io/get-pip.py -O get-pip.py && python3 get-pip.py\n31: RUN python3 -m pip install --upgrade pip\n32: \n33: ARG install_pytorch\n34: RUN if [ -n \"$install_pytorch\" ] ; then \\\n35:         python3 -m pip install torch==1.7.1+cpu torchvision==0.8.2+cpu -f https://download.pytorch.org/whl/torch_stable.html; "
+      },
+      {
+        "step": 13,
+        "tool": "list_dir",
+        "args": {
+          "path": "/config"
+        },
+        "result_head": ".gitignore\nREADME.md\nground/\nplane/"
+      },
+      {
+        "step": 13,
+        "tool": "grep",
+        "args": {
+          "pattern": "services/",
+          "path": "/Makefile"
+        },
+        "result_head": "/Makefile:13: $(MAKE) -C services/mavproxy\n/Makefile:17: $(MAKE) -C services/telemetry\n/Makefile:21: $(MAKE) -C services/telemetry test\n/Makefile:25: $(MAKE) -C services/interop-proxy\n/Makefile:29: $(MAKE) -C services/interop-proxy test\n/Makefile:33: $(MAKE) -C services/pong\n/Makefile:37: $(MAKE) -C services/pong test\n/Makefile:41: $(MAKE) -C services/forward-interop\n/Makefile:45: $(MAKE) -C services/forward-interop test\n/Makefile:49: $(MAKE) -C services/imagery\n/Makefile:53: $(MAKE) -C services/imagery test\n/Makefile:57: $(MAKE) -C services/dashboard\n/Makefile:61: $(MAKE) -C services/image-rec-master\n/Makefile:65: $(MAKE) -C services/image-rec-master test\n/Makefile:69: $(MAKE) -C services/image-rec-auto\n/Makefile:73: $(MAKE) -C services/image-rec-auto test\n/Makefile:77: $(MAKE) -C services/grafana\n/Makefile:81: $(MAKE) -C services/mavproxy clean\n/Makefile:82: $(MAKE) -C services/telemetry clean\n/Makefile:83: $(MAKE) -C services/interop-proxy clean\n/Makefile:84: $(MAKE) -C services/pon"
+      },
+      {
+        "step": 14,
+        "tool": "grep",
+        "args": {
+          "pattern": "common",
+          "path": "/services"
+        },
+        "result_head": "/services/common/nodejs/package.json:2: \"name\": \"common-nodejs\",\n/services/dashboard/Dockerfile:10: COPY common/messages/stats.proto \\\n/services/forward-interop/.gitignore:6: # Ignore common directories.\n/services/forward-interop/.gitignore:7: src/common\n/services/forward-interop/Dockerfile:6: COPY common/nodejs/package.json src/common/\n/services/forward-interop/Dockerfile:11: COPY common/messages/interop.proto \\\n/services/forward-interop/Dockerfile:12: common/messages/stats.proto \\\n/services/forward-interop/Dockerfile:17: COPY common/nodejs src/common\n/services/forward-interop/Dockerfile:29: COPY common/scripts/wait-for-it.sh .\n/services/forward-interop/Dockerfile:34: COPY common/nodejs/package.json src/common/\n/services/forward-interop/Dockerfile.test:7: COPY common/nodejs/package.json src/common/\n/services/forward-interop/Dockerfile.test:12: COPY common/messages/interop.proto \\\n/services/forward-interop/Dockerfile.test:13: common/messages/stats.proto \\\n/services/forward-interop/Dock"
+      },
+      {
+        "step": 15,
+        "tool": "grep",
+        "args": {
+          "path": "/services/pong/Dockerfile",
+          "pattern": "COPY"
+        },
+        "result_head": "/services/pong/Dockerfile:12: COPY common/nodejs/package.json src/common/\n/services/pong/Dockerfile:13: COPY pong/package.json .\n/services/pong/Dockerfile:17: COPY common/messages/stats.proto \\\n/services/pong/Dockerfile:22: COPY common/nodejs src/common\n/services/pong/Dockerfile:23: COPY pong .\n/services/pong/Dockerfile:33: COPY --from=builder /builder/node_modules/raw-socket node_modules/raw-socket\n/services/pong/Dockerfile:37: COPY common/nodejs/package.json src/common/\n/services/pong/Dockerfile:38: COPY pong/package.json .\n/services/pong/Dockerfile:43: COPY --from=builder /builder/lib lib\n/services/pong/Dockerfile:45: COPY /pong/bin bin"
+      },
+      {
+        "step": 15,
+        "tool": "grep",
+        "args": {
+          "path": "/services/telemetry/Dockerfile",
+          "pattern": "COPY"
+        },
+        "result_head": "/services/telemetry/Dockerfile:6: COPY common/nodejs/package.json src/common/\n/services/telemetry/Dockerfile:7: COPY telemetry/package.json .\n/services/telemetry/Dockerfile:11: COPY common/messages/interop.proto \\\n/services/telemetry/Dockerfile:17: COPY common/nodejs src/common\n/services/telemetry/Dockerfile:18: COPY telemetry .\n/services/telemetry/Dockerfile:29: COPY common/nodejs/package.json src/common/\n/services/telemetry/Dockerfile:30: COPY telemetry/package.json .\n/services/telemetry/Dockerfile:35: COPY --from=builder /builder/lib lib\n/services/telemetry/Dockerfile:37: COPY telemetry/bin bin"
+      },
+      {
+        "step": 15,
+        "tool": "grep",
+        "args": {
+          "path": "/services/interop-proxy/Dockerfile",
+          "pattern": "COPY|CMD"
+        },
+        "result_head": "/services/interop-proxy/Dockerfile:10: COPY interop-proxy/mix.exs .\n/services/interop-proxy/Dockerfile:15: COPY interop-proxy .\n/services/interop-proxy/Dockerfile:16: COPY common/messages lib/messages\n/services/interop-proxy/Dockerfile:38: COPY --from=builder /builder/interop_proxy.tar.gz .\n/services/interop-proxy/Dockerfile:47: CMD /app/bin/interop_proxy foreground"
+      },
+      {
+        "step": 15,
+        "tool": "grep",
+        "args": {
+          "path": "/services/mavproxy/Dockerfile",
+          "pattern": "COPY|CMD|ENTRYPOINT"
+        },
+        "result_head": "/services/mavproxy/Dockerfile:21: COPY mavproxy/entrypoint.sh .\n/services/mavproxy/Dockerfile:23: ENTRYPOINT [\"sh\", \"entrypoint.sh\"]"
+      },
+      {
+        "step": 16,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\":[{\"name\":\"dashboard\",\"dirs\":[\"/services/dashboard\"]},{\"name\":\"forward-interop\",\"dirs\":[\"/services/forward-interop\",\"/services/common\"]},{\"name\":\"grafana\",\"dirs\":[\"/services/grafana\"]},{\"na"
+        },
+        "result_head": "Recorded 50 new: service dashboard, service forward-interop, service grafana, service image-rec-auto, service image-rec-master, service imagery, service interop-proxy, service mavproxy, service pong, service telemetry, GET /api/alive, GET /api/upload-rate, GET /api/alive, GET /api/count, GET /api/available, GET /api/capture-rate, GET /api/image/latest, GET /api/image/next, GET /api/image/:id, DELETE /api/image/:id, GET /api/alive, GET /api/ping, GET /api/alive, GET /api/interop-telem, GET /api/camera-telem, GET /api/overview, GET /api/raw-mission, POST /api/raw-mission, GET /api/mission-current, POST /api/mission-current, GET /api/mission, GET /api/obstacles, POST /api/telemetry, GET /api/odlcs, GET /api/odlcs/:id, POST /api/odlcs, PUT /api/odlcs/:id, DELETE /api/odlcs/:id, GET /api/alive, GET /api/alive ...\nTotal: 10 services, 40 endpoints in 6 files.\nServices with no endpoints recorded yet: dashboard, grafana, image-rec-auto, mavproxy."
+      },
+      {
+        "step": 17,
+        "tool": "grep",
+        "args": {
+          "path": "/services",
+          "pattern": "@routes\\.|app\\.(get|post|put|delete)\\(|router\\.(get|post|put|delete|all)\\(|listen\\("
+        },
+        "result_head": "/services/forward-interop/src/router.js:9: router.get('/api/alive', (ctx) => {\n/services/forward-interop/src/router.js:13: router.get('/api/upload-rate', (ctx) => {\n/services/forward-interop/src/service.js:84: let server = app.listen(this._port, (err) => {\n/services/forward-interop/test/router.test.js:17: let server = app.listen();\n/services/forward-interop/test/router.test.js:44: let server = app.listen();\n/services/image-rec-master/service/__init__.py:33: app.get('redis_url'), minsize=5, maxsize=10, loop=app.loop\n/services/image-rec-master/service/app.py:19: @routes.get('/api/alive')\n/services/image-rec-master/service/app.py:25: @routes.get('/api/pipeline')\n/services/image-rec-master/service/app.py:97: @routes.get(r'/api/pipeline/images/{id:\\d+}')\n/services/image-rec-master/service/app.py:109: @routes.post('/api/pipeline/images/start-processing-next-auto')\n/services/image-rec-master/service/app.py:123: @routes.post(r'/api/pipeline/images/{id:\\d+}/finish-processing-auto')\n/services/im"
+      },
+      {
+        "step": 18,
+        "tool": "submit",
+        "args": {},
+        "result_head": "[ACCEPTED] 10 services, 40 endpoints."
+      }
+    ]
+  }
+}

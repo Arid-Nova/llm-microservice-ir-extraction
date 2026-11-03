@@ -1,0 +1,2029 @@
+{
+  "system": "remp-beam",
+  "services": [
+    {
+      "name": "beam-app",
+      "dirs": [
+        "/app",
+        "/routes",
+        "/config",
+        "/database",
+        "/resources",
+        "/public",
+        "/bootstrap"
+      ]
+    },
+    {
+      "name": "beam-tracker",
+      "dirs": [
+        "/go/cmd/tracker"
+      ]
+    },
+    {
+      "name": "beam-segments",
+      "dirs": [
+        "/go/cmd/segments"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/routes/api.php",
+      "service": "beam-app",
+      "endpoints": [
+        {
+          "className": "ConversionController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/api/conversions",
+          "line": 32,
+          "evidence": "Route::apiResource('conversions', ConversionController::class, ['only' => ['index', 'store']])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ConversionController",
+          "methodName": "store",
+          "httpMethod": "POST",
+          "path": "/api/conversions",
+          "line": 32,
+          "evidence": "Route::apiResource('conversions', ConversionController::class, ['only' => ['index', 'store']])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleControllerApiV1",
+          "methodName": "unreadArticlesForUsers",
+          "httpMethod": "POST",
+          "path": "/api/articles/unread",
+          "line": 35,
+          "evidence": "Route::post('articles/unread', [ArticleControllerApiV1::class, 'unreadArticlesForUsers'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleControllerApiV1",
+          "methodName": "readArticles",
+          "httpMethod": "POST",
+          "path": "/api/articles/read",
+          "line": 36,
+          "evidence": "Route::post('articles/read', [ArticleControllerApiV1::class, 'readArticles'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleControllerApiV1",
+          "methodName": "upsert",
+          "httpMethod": "POST",
+          "path": "/api/articles/upsert",
+          "line": 37,
+          "evidence": "Route::post('articles/upsert', [ArticleControllerApiV1::class, 'upsert'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ConversionController",
+          "methodName": "upsert",
+          "httpMethod": "POST",
+          "path": "/api/conversions/upsert",
+          "line": 38,
+          "evidence": "Route::post('conversions/upsert', [ConversionController::class, 'upsert'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleDetailsController",
+          "methodName": "show",
+          "httpMethod": "GET",
+          "path": "/api/article/{article?}",
+          "line": 40,
+          "evidence": "Route::get('article/{article?}', [ArticleDetailsController::class, 'show'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleDetailsController",
+          "methodName": "timeHistogram",
+          "httpMethod": "GET",
+          "path": "/api/article/{article}/histogram",
+          "line": 41,
+          "evidence": "Route::get('article/{article}/histogram', [ArticleDetailsController::class, 'timeHistogram'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleDetailsController",
+          "methodName": "variantsHistogram",
+          "httpMethod": "GET",
+          "path": "/api/article/{article}/variants-histogram",
+          "line": 42,
+          "evidence": "Route::get('article/{article}/variants-histogram', [ArticleDetailsController::class, 'variantsHistogram'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "JournalController",
+          "methodName": "concurrentsCount",
+          "httpMethod": "GET",
+          "path": "/api/journal/concurrents/count/",
+          "line": 44,
+          "evidence": "Route::get('/journal/concurrents/count/', [JournalController::class, 'concurrentsCount'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "JournalController",
+          "methodName": "articlesConcurrentsCount",
+          "httpMethod": "ANY",
+          "path": "/api/journal/concurrents/count/articles",
+          "line": 45,
+          "evidence": "Route::match(['GET', 'POST'], '/journal/concurrents/count/articles', [JournalController::class, 'articlesConcurrentsCount'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "JournalController",
+          "methodName": "concurrentsCount",
+          "httpMethod": "POST",
+          "path": "/api/journal/concurrents/count/",
+          "line": 46,
+          "evidence": "Route::post('/journal/concurrents/count/', [JournalController::class, 'concurrentsCount'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "JournalProxyController",
+          "methodName": "pageviewsProgressCount",
+          "httpMethod": "POST",
+          "path": "/api/journal/pageviews/actions/progress/count",
+          "line": 49,
+          "evidence": "Route::post('/journal/pageviews/actions/progress/count', [JournalProxyController::class, 'pageviewsProgressCount'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "JournalProxyController",
+          "methodName": "pageviewsUniqueBrowsersCount",
+          "httpMethod": "POST",
+          "path": "/api/journal/pageviews/actions/load/unique/browsers",
+          "line": 50,
+          "evidence": "Route::post('/journal/pageviews/actions/load/unique/browsers', [JournalProxyController::class, 'pageviewsUniqueBrowsersCount'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "JournalProxyController",
+          "methodName": "commercePurchaseCount",
+          "httpMethod": "POST",
+          "path": "/api/journal/commerce/steps/purchase/count",
+          "line": 51,
+          "evidence": "Route::post('/journal/commerce/steps/purchase/count', [JournalProxyController::class, 'commercePurchaseCount'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleControllerApiV1",
+          "methodName": "topArticles",
+          "httpMethod": "POST",
+          "path": "/api/articles/top",
+          "line": 53,
+          "evidence": "Route::post('articles/top', [ArticleControllerApiV1::class, 'topArticles'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorControllerApiV1",
+          "methodName": "topAuthors",
+          "httpMethod": "POST",
+          "path": "/api/authors/top",
+          "line": 54,
+          "evidence": "Route::post('authors/top', [AuthorControllerApiV1::class, 'topAuthors'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "TagControllerApiV1",
+          "methodName": "topTags",
+          "httpMethod": "POST",
+          "path": "/api/tags/top",
+          "line": 55,
+          "evidence": "Route::post('tags/top', [TagControllerApiV1::class, 'topTags'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "PageviewController",
+          "methodName": "timeHistogram",
+          "httpMethod": "POST",
+          "path": "/api/pageviews/histogram",
+          "line": 57,
+          "evidence": "Route::post('pageviews/histogram', [PageviewController::class, 'timeHistogram'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleControllerApiV2",
+          "methodName": "topArticles",
+          "httpMethod": "POST",
+          "path": "/api/v2/articles/top",
+          "line": 60,
+          "evidence": "Route::post('articles/top', [ArticleControllerApiV2::class, 'topArticles'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorControllerApiV2",
+          "methodName": "topAuthors",
+          "httpMethod": "POST",
+          "path": "/api/v2/authors/top",
+          "line": 61,
+          "evidence": "Route::post('authors/top', [AuthorControllerApiV2::class, 'topAuthors'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "TagControllerApiV2",
+          "methodName": "topTags",
+          "httpMethod": "POST",
+          "path": "/api/v2/tags/top",
+          "line": 62,
+          "evidence": "Route::post('tags/top', [TagControllerApiV2::class, 'topTags'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleControllerApiV2",
+          "methodName": "upsert",
+          "httpMethod": "POST",
+          "path": "/api/v2/articles/upsert",
+          "line": 63,
+          "evidence": "Route::post('articles/upsert', [ArticleControllerApiV2::class, 'upsert'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/api/authors",
+          "line": 66,
+          "evidence": "Route::get('authors', [\\App\\Http\\Controllers\\AuthorController::class, 'index'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SectionController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/api/sections",
+          "line": 67,
+          "evidence": "Route::get('sections', [\\App\\Http\\Controllers\\SectionController::class, 'index'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "TagController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/api/tags",
+          "line": 68,
+          "evidence": "Route::get('tags', [\\App\\Http\\Controllers\\TagController::class, 'index'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "JournalController",
+          "methodName": "actions",
+          "httpMethod": "GET",
+          "path": "/api/journal/{group}/categories/{category}/actions",
+          "line": 71,
+          "evidence": "Route::get('/journal/{group}/categories/{category}/actions', [JournalController::class, 'actions'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "JournalController",
+          "methodName": "flags",
+          "httpMethod": "GET",
+          "path": "/api/journal/flags",
+          "line": 72,
+          "evidence": "Route::get('/journal/flags', [JournalController::class, 'flags'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "DashboardController",
+          "methodName": "options",
+          "httpMethod": "GET",
+          "path": "/api/dashboard/options",
+          "line": 75,
+          "evidence": "Route::get('/dashboard/options', [DashboardController::class, 'options'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/api/articles",
+          "line": 29,
+          "evidence": "Route::apiResource('articles', ArticleController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleController",
+          "methodName": "store",
+          "httpMethod": "POST",
+          "path": "/api/articles",
+          "line": 29,
+          "evidence": "Route::apiResource('articles', ArticleController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/routes/web.php",
+      "service": "beam-app",
+      "endpoints": [
+        {
+          "className": "AuthController",
+          "methodName": "error",
+          "httpMethod": "GET",
+          "path": "/error",
+          "line": 36,
+          "evidence": "Route::get('/error', [AuthController::class, 'error'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "DashboardController",
+          "methodName": "public",
+          "httpMethod": "GET",
+          "path": "/public",
+          "line": 41,
+          "evidence": "Route::get('public', [DashboardController::class, 'public'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "DashboardController",
+          "methodName": "mostReadArticles",
+          "httpMethod": "POST",
+          "path": "/public/articlesJson",
+          "line": 42,
+          "evidence": "Route::post('public/articlesJson', [DashboardController::class, 'mostReadArticles'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "DashboardController",
+          "methodName": "timeHistogram",
+          "httpMethod": "POST",
+          "path": "/public/timeHistogramJson",
+          "line": 43,
+          "evidence": "Route::post('public/timeHistogramJson', [DashboardController::class, 'timeHistogram'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "DashboardController",
+          "methodName": "timeHistogramNew",
+          "httpMethod": "POST",
+          "path": "/public/timeHistogramNewJson",
+          "line": 44,
+          "evidence": "Route::post('public/timeHistogramNewJson', [DashboardController::class, 'timeHistogramNew'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "PropertyController",
+          "methodName": "switch",
+          "httpMethod": "POST",
+          "path": "/properties/switch",
+          "line": 48,
+          "evidence": "Route::post('/properties/switch', [PropertyController::class, 'switch'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "DashboardController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/dashboard",
+          "line": 52,
+          "evidence": "Route::get('dashboard', [DashboardController::class, 'index'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "DashboardController",
+          "methodName": "mostReadArticles",
+          "httpMethod": "POST",
+          "path": "/dashboard/articlesJson",
+          "line": 53,
+          "evidence": "Route::post('dashboard/articlesJson', [DashboardController::class, 'mostReadArticles'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "DashboardController",
+          "methodName": "timeHistogram",
+          "httpMethod": "POST",
+          "path": "/dashboard/timeHistogramJson",
+          "line": 54,
+          "evidence": "Route::post('dashboard/timeHistogramJson', [DashboardController::class, 'timeHistogram'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "DashboardController",
+          "methodName": "timeHistogramNew",
+          "httpMethod": "POST",
+          "path": "/dashboard/timeHistogramNewJson",
+          "line": 55,
+          "evidence": "Route::post('dashboard/timeHistogramNewJson', [DashboardController::class, 'timeHistogramNew'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AccountController",
+          "methodName": "json",
+          "httpMethod": "GET",
+          "path": "/accounts/json",
+          "line": 57,
+          "evidence": "Route::get('accounts/json', [AccountController::class, 'json'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "PropertyController",
+          "methodName": "json",
+          "httpMethod": "GET",
+          "path": "/accounts/{account}/properties/json",
+          "line": 58,
+          "evidence": "Route::get('accounts/{account}/properties/json', [PropertyController::class, 'json'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SegmentController",
+          "methodName": "json",
+          "httpMethod": "GET",
+          "path": "/segments/json",
+          "line": 60,
+          "evidence": "Route::get('segments/json', [SegmentController::class, 'json'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SegmentController",
+          "methodName": "copy",
+          "httpMethod": "GET",
+          "path": "/segments/{sourceSegment}/copy",
+          "line": 61,
+          "evidence": "Route::get('segments/{sourceSegment}/copy', [SegmentController::class, 'copy'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SegmentController",
+          "methodName": "embed",
+          "httpMethod": "GET",
+          "path": "/segments/beta/embed",
+          "line": 62,
+          "evidence": "Route::get('segments/beta/embed', [SegmentController::class, 'embed'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SegmentController",
+          "methodName": "betaCreate",
+          "httpMethod": "GET",
+          "path": "/segments/beta/create",
+          "line": 63,
+          "evidence": "Route::get('segments/beta/create', [SegmentController::class, 'betaCreate'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SegmentController",
+          "methodName": "betaEdit",
+          "httpMethod": "GET",
+          "path": "/segments/beta/{segment}/edit",
+          "line": 64,
+          "evidence": "Route::get('segments/beta/{segment}/edit', [SegmentController::class, 'betaEdit'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleController",
+          "methodName": "conversions",
+          "httpMethod": "GET",
+          "path": "/articles/conversions",
+          "line": 66,
+          "evidence": "Route::get('articles/conversions', [ArticleController::class, 'conversions'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleController",
+          "methodName": "dtConversions",
+          "httpMethod": "GET",
+          "path": "/articles/dtConversions",
+          "line": 67,
+          "evidence": "Route::get('articles/dtConversions', [ArticleController::class, 'dtConversions'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleController",
+          "methodName": "pageviews",
+          "httpMethod": "GET",
+          "path": "/articles/pageviews",
+          "line": 68,
+          "evidence": "Route::get('articles/pageviews', [ArticleController::class, 'pageviews'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleController",
+          "methodName": "dtPageviews",
+          "httpMethod": "GET",
+          "path": "/articles/dtPageviews",
+          "line": 69,
+          "evidence": "Route::get('articles/dtPageviews', [ArticleController::class, 'dtPageviews'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleController",
+          "methodName": "upsert",
+          "httpMethod": "POST",
+          "path": "/articles/upsert",
+          "line": 70,
+          "evidence": "Route::post('articles/upsert', [ArticleController::class, 'upsert'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ConversionController",
+          "methodName": "json",
+          "httpMethod": "GET",
+          "path": "/conversions/json",
+          "line": 72,
+          "evidence": "Route::get('conversions/json', [ConversionController::class, 'json'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ConversionController",
+          "methodName": "upsert",
+          "httpMethod": "POST",
+          "path": "/conversions/upsert",
+          "line": 73,
+          "evidence": "Route::post('conversions/upsert', [ConversionController::class, 'upsert'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorSegmentsController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/author-segments",
+          "line": 75,
+          "evidence": "Route::get('author-segments', [AuthorSegmentsController::class, 'index'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorSegmentsController",
+          "methodName": "json",
+          "httpMethod": "GET",
+          "path": "/author-segments/json",
+          "line": 76,
+          "evidence": "Route::get('author-segments/json', [AuthorSegmentsController::class, 'json'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorSegmentsController",
+          "methodName": "testingConfiguration",
+          "httpMethod": "GET",
+          "path": "/author-segments/test-parameters",
+          "line": 77,
+          "evidence": "Route::get('author-segments/test-parameters', [AuthorSegmentsController::class, 'testingConfiguration'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorSegmentsController",
+          "methodName": "compute",
+          "httpMethod": "POST",
+          "path": "/author-segments/compute",
+          "line": 78,
+          "evidence": "Route::post('author-segments/compute', [AuthorSegmentsController::class, 'compute'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorSegmentsController",
+          "methodName": "validateTest",
+          "httpMethod": "POST",
+          "path": "/author-segments/validate-test",
+          "line": 79,
+          "evidence": "Route::post('author-segments/validate-test', [AuthorSegmentsController::class, 'validateTest'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SectionSegmentsController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/section-segments",
+          "line": 81,
+          "evidence": "Route::get('section-segments', [SectionSegmentsController::class, 'index'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SectionSegmentsController",
+          "methodName": "json",
+          "httpMethod": "GET",
+          "path": "/section-segments/json",
+          "line": 82,
+          "evidence": "Route::get('section-segments/json', [SectionSegmentsController::class, 'json'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SectionSegmentsController",
+          "methodName": "testingConfiguration",
+          "httpMethod": "GET",
+          "path": "/section-segments/test-parameters",
+          "line": 83,
+          "evidence": "Route::get('section-segments/test-parameters', [SectionSegmentsController::class, 'testingConfiguration'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SectionSegmentsController",
+          "methodName": "compute",
+          "httpMethod": "POST",
+          "path": "/section-segments/compute",
+          "line": 84,
+          "evidence": "Route::post('section-segments/compute', [SectionSegmentsController::class, 'compute'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SectionSegmentsController",
+          "methodName": "validateTest",
+          "httpMethod": "POST",
+          "path": "/section-segments/validate-test",
+          "line": 85,
+          "evidence": "Route::post('section-segments/validate-test', [SectionSegmentsController::class, 'validateTest'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorController",
+          "methodName": "dtAuthors",
+          "httpMethod": "GET",
+          "path": "/authors/dtAuthors",
+          "line": 87,
+          "evidence": "Route::get('authors/dtAuthors', [AuthorController::class, 'dtAuthors'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorController",
+          "methodName": "dtArticles",
+          "httpMethod": "GET",
+          "path": "/authors/{author}/dtArticles",
+          "line": 88,
+          "evidence": "Route::get('authors/{author}/dtArticles', [AuthorController::class, 'dtArticles'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "VisitorController",
+          "methodName": "devices",
+          "httpMethod": "GET",
+          "path": "/visitors/devices",
+          "line": 90,
+          "evidence": "Route::get('visitors/devices', [VisitorController::class, 'devices'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "VisitorController",
+          "methodName": "sources",
+          "httpMethod": "GET",
+          "path": "/visitors/sources",
+          "line": 91,
+          "evidence": "Route::get('visitors/sources', [VisitorController::class, 'sources'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "VisitorController",
+          "methodName": "dtBrowsers",
+          "httpMethod": "GET",
+          "path": "/visitors/dtBrowsers",
+          "line": 92,
+          "evidence": "Route::get('visitors/dtBrowsers', [VisitorController::class, 'dtBrowsers'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "VisitorController",
+          "methodName": "dtDevices",
+          "httpMethod": "GET",
+          "path": "/visitors/dtDevices",
+          "line": 93,
+          "evidence": "Route::get('visitors/dtDevices', [VisitorController::class, 'dtDevices'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "VisitorController",
+          "methodName": "dtReferers",
+          "httpMethod": "GET",
+          "path": "/visitors/dtReferers",
+          "line": 94,
+          "evidence": "Route::get('visitors/dtReferers', [VisitorController::class, 'dtReferers'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthController",
+          "methodName": "logout",
+          "httpMethod": "GET",
+          "path": "/auth/logout",
+          "line": 96,
+          "evidence": "Route::get('auth/logout', [AuthController::class, 'logout'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleDetailsController",
+          "methodName": "timeHistogram",
+          "httpMethod": "GET",
+          "path": "/articles/{article}/histogramJson",
+          "line": 103,
+          "evidence": "Route::get('articles/{article}/histogramJson', [ArticleDetailsController::class, 'timeHistogram'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleDetailsController",
+          "methodName": "variantsHistogram",
+          "httpMethod": "GET",
+          "path": "/articles/{article}/variantsHistogramJson",
+          "line": 104,
+          "evidence": "Route::get('articles/{article}/variantsHistogramJson', [ArticleDetailsController::class, 'variantsHistogram'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleDetailsController",
+          "methodName": "dtReferers",
+          "httpMethod": "GET",
+          "path": "/articles/{article}/dtReferers",
+          "line": 105,
+          "evidence": "Route::get('articles/{article}/dtReferers', [ArticleDetailsController::class, 'dtReferers'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleDetailsController",
+          "methodName": "showByParameter",
+          "httpMethod": "GET",
+          "path": "/article/{article?}",
+          "line": 114,
+          "evidence": "Route::get('article/{article?}', [ArticleDetailsController::class, 'showByParameter'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "NewsletterController",
+          "methodName": "json",
+          "httpMethod": "GET",
+          "path": "/newsletters/json",
+          "line": 116,
+          "evidence": "Route::get('newsletters/json', [NewsletterController::class, 'json'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "NewsletterController",
+          "methodName": "validateForm",
+          "httpMethod": "POST",
+          "path": "/newsletters/validate",
+          "line": 117,
+          "evidence": "Route::post('newsletters/validate', [NewsletterController::class, 'validateForm'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "NewsletterController",
+          "methodName": "start",
+          "httpMethod": "POST",
+          "path": "/newsletters/{newsletter}/start",
+          "line": 118,
+          "evidence": "Route::post('newsletters/{newsletter}/start', [NewsletterController::class, 'start'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "NewsletterController",
+          "methodName": "pause",
+          "httpMethod": "POST",
+          "path": "/newsletters/{newsletter}/pause",
+          "line": 119,
+          "evidence": "Route::post('newsletters/{newsletter}/pause', [NewsletterController::class, 'pause'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "UserPathController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/userpath",
+          "line": 122,
+          "evidence": "Route::get('userpath', [UserPathController::class, 'index'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "UserPathController",
+          "methodName": "stats",
+          "httpMethod": "POST",
+          "path": "/userpath/statsJson",
+          "line": 123,
+          "evidence": "Route::post('userpath/statsJson', [UserPathController::class, 'stats'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "UserPathController",
+          "methodName": "diagramData",
+          "httpMethod": "POST",
+          "path": "/userpath/diagram",
+          "line": 124,
+          "evidence": "Route::post('userpath/diagram', [UserPathController::class, 'diagramData'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SectionController",
+          "methodName": "dtSections",
+          "httpMethod": "GET",
+          "path": "/sections/dtSections",
+          "line": 133,
+          "evidence": "Route::get('sections/dtSections', [SectionController::class, 'dtSections'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SectionController",
+          "methodName": "dtArticles",
+          "httpMethod": "GET",
+          "path": "/sections/{section}/dtArticles",
+          "line": 134,
+          "evidence": "Route::get('sections/{section}/dtArticles', [SectionController::class, 'dtArticles'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "TagController",
+          "methodName": "dtTags",
+          "httpMethod": "GET",
+          "path": "/tags/dtTags",
+          "line": 139,
+          "evidence": "Route::get('tags/dtTags', [TagController::class, 'dtTags'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "TagController",
+          "methodName": "dtArticles",
+          "httpMethod": "GET",
+          "path": "/tags/{tag}/dtArticles",
+          "line": 140,
+          "evidence": "Route::get('tags/{tag}/dtArticles', [TagController::class, 'dtArticles'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "TagCategoryController",
+          "methodName": "dtTagCategories",
+          "httpMethod": "GET",
+          "path": "/tag-categories/dtTagCategories",
+          "line": 145,
+          "evidence": "Route::get('tag-categories/dtTagCategories', [TagCategoryController::class, 'dtTagCategories'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "TagCategoryController",
+          "methodName": "dtTags",
+          "httpMethod": "GET",
+          "path": "/tag-categories/{tagCategory}/dtTags",
+          "line": 146,
+          "evidence": "Route::get('tag-categories/{tagCategory}/dtTags', [TagCategoryController::class, 'dtTags'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "TagCategoryController",
+          "methodName": "dtArticles",
+          "httpMethod": "GET",
+          "path": "/tag-categories/{tagCategory}/dtArticles",
+          "line": 147,
+          "evidence": "Route::get('tag-categories/{tagCategory}/dtArticles', [TagCategoryController::class, 'dtArticles'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SettingsController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/settings",
+          "line": 152,
+          "evidence": "Route::get('settings', [SettingsController::class, 'index'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SettingsController",
+          "methodName": "update",
+          "httpMethod": "POST",
+          "path": "/settings/{configCategory}",
+          "line": 153,
+          "evidence": "Route::post('settings/{configCategory}', [SettingsController::class, 'update'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "EntitiesController",
+          "methodName": "validateForm",
+          "httpMethod": "POST",
+          "path": "/entities/validate/{entity?}",
+          "line": 155,
+          "evidence": "Route::post('entities/validate/{entity?}', [EntitiesController::class, 'validateForm'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "EntitiesController",
+          "methodName": "json",
+          "httpMethod": "GET",
+          "path": "/entities/json",
+          "line": 156,
+          "evidence": "Route::get('entities/json', [EntitiesController::class, 'json'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "GoogleAnalyticsReportingController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/googleanalyticsreporting",
+          "line": 160,
+          "evidence": "Route::get('googleanalyticsreporting', [GoogleAnalyticsReportingController::class, 'index'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "GoogleAnalyticsReportingController",
+          "methodName": "timeHistogram",
+          "httpMethod": "GET",
+          "path": "/googleanalyticsreporting/histogramJson",
+          "line": 162,
+          "evidence": "Route::get('googleanalyticsreporting/histogramJson', [GoogleAnalyticsReportingController::class, 'timeHistogram'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SearchController",
+          "methodName": "search",
+          "httpMethod": "GET",
+          "path": "/search",
+          "line": 166,
+          "evidence": "Route::get('search', [SearchController::class, 'search'])",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AccountController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/accounts",
+          "line": 98,
+          "evidence": "Route::resource('accounts', AccountController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AccountController",
+          "methodName": "store",
+          "httpMethod": "POST",
+          "path": "/accounts",
+          "line": 98,
+          "evidence": "Route::resource('accounts', AccountController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AccountController",
+          "methodName": "show",
+          "httpMethod": "GET",
+          "path": "/accounts/{account}",
+          "line": 98,
+          "evidence": "Route::resource('accounts', AccountController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AccountController",
+          "methodName": "update",
+          "httpMethod": "PUT",
+          "path": "/accounts/{account}",
+          "line": 98,
+          "evidence": "Route::resource('accounts', AccountController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "PropertyController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/accounts/{account}/properties",
+          "line": 99,
+          "evidence": "Route::resource('accounts.properties', PropertyController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "PropertyController",
+          "methodName": "store",
+          "httpMethod": "POST",
+          "path": "/accounts/{account}/properties",
+          "line": 99,
+          "evidence": "Route::resource('accounts.properties', PropertyController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "PropertyController",
+          "methodName": "show",
+          "httpMethod": "GET",
+          "path": "/accounts/{account}/properties/{property}",
+          "line": 99,
+          "evidence": "Route::resource('accounts.properties', PropertyController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "PropertyController",
+          "methodName": "update",
+          "httpMethod": "PUT",
+          "path": "/accounts/{account}/properties/{property}",
+          "line": 99,
+          "evidence": "Route::resource('accounts.properties', PropertyController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SegmentController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/segments",
+          "line": 101,
+          "evidence": "Route::resource('segments', SegmentController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SegmentController",
+          "methodName": "store",
+          "httpMethod": "POST",
+          "path": "/segments",
+          "line": 101,
+          "evidence": "Route::resource('segments', SegmentController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SegmentController",
+          "methodName": "show",
+          "httpMethod": "GET",
+          "path": "/segments/{segment}",
+          "line": 101,
+          "evidence": "Route::resource('segments', SegmentController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SegmentController",
+          "methodName": "update",
+          "httpMethod": "PUT",
+          "path": "/segments/{segment}",
+          "line": 101,
+          "evidence": "Route::resource('segments', SegmentController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleDetailsController",
+          "methodName": "show",
+          "httpMethod": "GET",
+          "path": "/articles/{article}",
+          "line": 111,
+          "evidence": "Route::resource('articles', ArticleDetailsController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/articles",
+          "line": 107,
+          "evidence": "Route::resource('articles', ArticleController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ArticleController",
+          "methodName": "store",
+          "httpMethod": "POST",
+          "path": "/articles",
+          "line": 107,
+          "evidence": "Route::resource('articles', ArticleController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "NewsletterController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/newsletters",
+          "line": 120,
+          "evidence": "Route::resource('newsletters', NewsletterController::class, ['except' => ['show']]);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "NewsletterController",
+          "methodName": "store",
+          "httpMethod": "POST",
+          "path": "/newsletters",
+          "line": 120,
+          "evidence": "Route::resource('newsletters', NewsletterController::class, ['except' => ['show']]);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "NewsletterController",
+          "methodName": "edit",
+          "httpMethod": "GET",
+          "path": "/newsletters/{newsletter}/edit",
+          "line": 120,
+          "evidence": "Route::resource('newsletters', NewsletterController::class, ['except' => ['show']]);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "NewsletterController",
+          "methodName": "update",
+          "httpMethod": "PUT",
+          "path": "/newsletters/{newsletter}",
+          "line": 120,
+          "evidence": "Route::resource('newsletters', NewsletterController::class, ['except' => ['show']]);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ConversionController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/conversions",
+          "line": 126,
+          "evidence": "Route::resource('conversions', ConversionController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ConversionController",
+          "methodName": "store",
+          "httpMethod": "POST",
+          "path": "/conversions",
+          "line": 126,
+          "evidence": "Route::resource('conversions', ConversionController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "ConversionController",
+          "methodName": "show",
+          "httpMethod": "GET",
+          "path": "/conversions/{conversion}",
+          "line": 126,
+          "evidence": "Route::resource('conversions', ConversionController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/authors",
+          "line": 129,
+          "evidence": "Route::resource('authors', AuthorController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "AuthorController",
+          "methodName": "show",
+          "httpMethod": "GET",
+          "path": "/authors/{author}",
+          "line": 129,
+          "evidence": "Route::resource('authors', AuthorController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SectionController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/sections",
+          "line": 135,
+          "evidence": "Route::resource('sections', SectionController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "SectionController",
+          "methodName": "show",
+          "httpMethod": "GET",
+          "path": "/sections/{section}",
+          "line": 135,
+          "evidence": "Route::resource('sections', SectionController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "TagController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/tags",
+          "line": 141,
+          "evidence": "Route::resource('tags', TagController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "TagController",
+          "methodName": "show",
+          "httpMethod": "GET",
+          "path": "/tags/{tag}",
+          "line": 141,
+          "evidence": "Route::resource('tags', TagController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "TagCategoryController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/tag-categories",
+          "line": 148,
+          "evidence": "Route::resource('tag-categories', TagCategoryController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "TagCategoryController",
+          "methodName": "show",
+          "httpMethod": "GET",
+          "path": "/tag-categories/{tagCategory}",
+          "line": 148,
+          "evidence": "Route::resource('tag-categories', TagCategoryController::class, [",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "EntitiesController",
+          "methodName": "index",
+          "httpMethod": "GET",
+          "path": "/entities",
+          "line": 157,
+          "evidence": "Route::resource('entities', EntitiesController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "EntitiesController",
+          "methodName": "store",
+          "httpMethod": "POST",
+          "path": "/entities",
+          "line": 157,
+          "evidence": "Route::resource('entities', EntitiesController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "EntitiesController",
+          "methodName": "show",
+          "httpMethod": "GET",
+          "path": "/entities/{entity}",
+          "line": 157,
+          "evidence": "Route::resource('entities', EntitiesController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        },
+        {
+          "className": "EntitiesController",
+          "methodName": "update",
+          "httpMethod": "PUT",
+          "path": "/entities/{entity}",
+          "line": 157,
+          "evidence": "Route::resource('entities', EntitiesController::class);",
+          "framework": "Laravel",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/go/cmd/tracker/design/resources.go",
+      "service": "beam-tracker",
+      "endpoints": [
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 26,
+          "methodName": "(inline)",
+          "path": "/track/pageview",
+          "evidence": "Routing(POST(\"/pageview\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 38,
+          "methodName": "(inline)",
+          "path": "/track/commerce",
+          "evidence": "Routing(POST(\"/commerce\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 50,
+          "methodName": "(inline)",
+          "path": "/track/event",
+          "evidence": "Routing(POST(\"/event\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 62,
+          "methodName": "(inline)",
+          "path": "/track/entity",
+          "evidence": "Routing(POST(\"/entity\"))",
+          "framework": "goa",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/go/cmd/segments/design/resources.go",
+      "service": "beam-segments",
+      "endpoints": [
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 44,
+          "methodName": "(inline)",
+          "path": "/segments/show",
+          "evidence": "Routing(GET(\"/show\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 55,
+          "methodName": "(inline)",
+          "path": "/segments/",
+          "evidence": "Routing(GET(\"/\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 69,
+          "methodName": "(inline)",
+          "path": "/segments/groups",
+          "evidence": "Routing(GET(\"/groups\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 76,
+          "methodName": "(inline)",
+          "path": "/segments/{segment_code}/users/check/{user_id}",
+          "evidence": "Routing(GET(\"/:segment_code/users/check/:user_id\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 95,
+          "methodName": "(inline)",
+          "path": "/segments/{segment_code}/browsers/check/{browser_id}",
+          "evidence": "Routing(GET(\"/:segment_code/browsers/check/:browser_id\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 115,
+          "methodName": "(inline)",
+          "path": "/segments/{segment_code}/users",
+          "evidence": "GET(\"/:segment_code/users\"),",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 130,
+          "methodName": "(inline)",
+          "path": "/segments/criteria",
+          "evidence": "GET(\"/criteria\"),",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 138,
+          "methodName": "(inline)",
+          "path": "/segments/detail",
+          "evidence": "Routing(POST(\"/detail\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 153,
+          "methodName": "(inline)",
+          "path": "/segments/count",
+          "evidence": "Routing(POST(\"/count\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 162,
+          "methodName": "(inline)",
+          "path": "/segments/related",
+          "evidence": "Routing(POST(\"/related\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 177,
+          "methodName": "(inline)",
+          "path": "/journal/flags",
+          "evidence": "Routing(GET(\"/flags\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 189,
+          "methodName": "(inline)",
+          "path": "/journal/events/categories/{category}/actions/{action}/count",
+          "evidence": "Routing(POST(\"/categories/:category/actions/:action/count\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 206,
+          "methodName": "(inline)",
+          "path": "/journal/events/count",
+          "evidence": "Routing(POST(\"/count\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 219,
+          "methodName": "(inline)",
+          "path": "/journal/events/list",
+          "evidence": "Routing(POST(\"/list\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 229,
+          "methodName": "(inline)",
+          "path": "/journal/events/categories",
+          "evidence": "Routing(GET(\"/categories\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 234,
+          "methodName": "(inline)",
+          "path": "/journal/events/categories/{category}/actions",
+          "evidence": "Routing(GET(\"/categories/:category/actions\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 242,
+          "methodName": "(inline)",
+          "path": "/journal/events/users",
+          "evidence": "Routing(GET(\"/users\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 255,
+          "methodName": "(inline)",
+          "path": "/journal/commerce/steps/{step}/count",
+          "evidence": "Routing(POST(\"/steps/:step/count\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 274,
+          "methodName": "(inline)",
+          "path": "/journal/commerce/count",
+          "evidence": "Routing(POST(\"/count\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 288,
+          "methodName": "(inline)",
+          "path": "/journal/commerce/steps/{step}/sum",
+          "evidence": "Routing(POST(\"/steps/:step/sum\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 307,
+          "methodName": "(inline)",
+          "path": "/journal/commerce/sum",
+          "evidence": "Routing(POST(\"/sum\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 320,
+          "methodName": "(inline)",
+          "path": "/journal/commerce/list",
+          "evidence": "Routing(POST(\"/list\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 330,
+          "methodName": "(inline)",
+          "path": "/journal/commerce/categories",
+          "evidence": "Routing(GET(\"/categories\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 335,
+          "methodName": "(inline)",
+          "path": "/journal/commerce/categories/{category}/actions",
+          "evidence": "Routing(GET(\"/categories/:category/actions\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 351,
+          "methodName": "(inline)",
+          "path": "/journal/pageviews/actions/{action}/count",
+          "evidence": "Routing(POST(\"/actions/:action/count\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 369,
+          "methodName": "(inline)",
+          "path": "/journal/pageviews/actions/{action}/sum",
+          "evidence": "Routing(POST(\"/actions/:action/sum\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 387,
+          "methodName": "(inline)",
+          "path": "/journal/pageviews/actions/{action}/avg",
+          "evidence": "Routing(POST(\"/actions/:action/avg\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 405,
+          "methodName": "(inline)",
+          "path": "/journal/pageviews/actions/{action}/unique/{item}",
+          "evidence": "Routing(POST(\"/actions/:action/unique/:item\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 425,
+          "methodName": "(inline)",
+          "path": "/journal/pageviews/list",
+          "evidence": "Routing(POST(\"/list\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 435,
+          "methodName": "(inline)",
+          "path": "/journal/pageviews/categories",
+          "evidence": "Routing(GET(\"/categories\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "GET",
+          "line": 440,
+          "methodName": "(inline)",
+          "path": "/journal/pageviews/categories/{category}/actions",
+          "evidence": "Routing(GET(\"/categories/:category/actions\"))",
+          "framework": "goa",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "httpMethod": "POST",
+          "line": 456,
+          "methodName": "(inline)",
+          "path": "/journal/concurrents/count",
+          "evidence": "Routing(POST(\"/count\"))",
+          "framework": "goa",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "GLM-5.3-Flash",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "default",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "Beam",
+    "commit": "b4ff30913bcf770c67cf072fd2a5991c60966fae",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 21,
+    "steps": 22,
+    "tool_calls": 32,
+    "rejected_entries": 66,
+    "no_call_replies": 0,
+    "input_tokens": 286330,
+    "cached_input_tokens": 205312,
+    "output_tokens": 19981,
+    "list_price_usd": 0.0283,
+    "wall_seconds": 138.8,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".env.example\n.gitattributes\n.gitignore\nMakefile\nREADME.md\napp/\nartisan\nbootstrap/\ncomposer.json\ncomposer.lock\nconfig/\ndatabase/\ngo/\npackage.json\nphpunit.xml\npublic/\nresources/\nroutes/\nserver.php\nstorage/\ntests/\nwebpack.mix.js\nyarn.lock"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/go"
+        },
+        "result_head": "cmd/\ngo.mod\ngo.sum\nmodel/"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/routes"
+        },
+        "result_head": "api.php\nchannels.php\nconsole.php\nweb.php"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/go/cmd"
+        },
+        "result_head": "segments/\ntracker/"
+      },
+      {
+        "step": 3,
+        "tool": "grep",
+        "args": {
+          "path": "/routes",
+          "pattern": "Route::"
+        },
+        "result_head": "/routes/api.php:28: Route::middleware('auth:api')->group(function() {\n/routes/api.php:29: Route::apiResource('articles', ArticleController::class, [\n/routes/api.php:32: Route::apiResource('conversions', ConversionController::class, [\n/routes/api.php:35: Route::post('articles/unread', [ArticleControllerApiV1::class, 'unreadArticlesForUsers'])->name('articles.unreadArticlesForUsers');\n/routes/api.php:36: Route::post('articles/read', [ArticleControllerApiV1::class, 'readArticles'])->name('articles.readArticles');\n/routes/api.php:37: Route::post('articles/upsert', [ArticleControllerApiV1::class, 'upsert'])->name('articles.upsert');\n/routes/api.php:38: Route::post('conversions/upsert', [ConversionController::class, 'upsert'])->name('conversions.upsert');\n/routes/api.php:40: Route::get('article/{article?}', [ArticleDetailsController::class, 'show']);\n/routes/api.php:41: Route::get('article/{article}/histogram', [ArticleDetailsController::class, 'timeHistogram']);\n/routes/api.php:42: Route::g"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/routes/web.php"
+        },
+        "result_head": "1: <?php\n2: \n3: /*\n4: |--------------------------------------------------------------------------\n5: | Web Routes\n6: |--------------------------------------------------------------------------\n7: |\n8: | Here is where you can register web routes for your application. These\n9: | routes are loaded by the RouteServiceProvider within a group which\n10: | contains the \"web\" middleware group. Now create something great!\n11: |\n12: */\n13: \n14: use App\\Http\\Controllers\\DashboardController;\n15: use App\\Http\\Controllers\\AccountController;\n16: use App\\Http\\Controllers\\SegmentController;\n17: use App\\Http\\Controllers\\PropertyController;\n18: use App\\Http\\Controllers\\ArticleController;\n19: use App\\Http\\Controllers\\AuthController;\n20: use App\\Http\\Controllers\\ArticleDetailsController;\n21: use App\\Http\\Controllers\\AuthorController;\n22: use App\\Http\\Controllers\\AuthorSegmentsController;\n23: use App\\Http\\Controllers\\ConversionController;\n24: use App\\Http\\Controllers\\SearchController;\n25: use App\\Http\\Contro"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/routes/api.php"
+        },
+        "result_head": "1: <?php\n2: \n3: use App\\Http\\Controllers\\Api\\v1\\PageviewController;\n4: use App\\Http\\Controllers\\ArticleController;\n5: use App\\Http\\Controllers\\Api\\v1\\ArticleController as ArticleControllerApiV1;\n6: use App\\Http\\Controllers\\Api\\v2\\ArticleController as ArticleControllerApiV2;\n7: use App\\Http\\Controllers\\ArticleDetailsController;\n8: use App\\Http\\Controllers\\Api\\v1\\AuthorController as AuthorControllerApiV1;\n9: use App\\Http\\Controllers\\Api\\v2\\AuthorController as AuthorControllerApiV2;\n10: use App\\Http\\Controllers\\ConversionController;\n11: use App\\Http\\Controllers\\DashboardController;\n12: use App\\Http\\Controllers\\Api\\v1\\JournalController;\n13: use App\\Http\\Controllers\\JournalProxyController;\n14: use App\\Http\\Controllers\\Api\\v1\\TagController as TagControllerApiV1;\n15: use App\\Http\\Controllers\\Api\\v2\\TagController as TagControllerApiV2;\n16: \n17: /*\n18: |--------------------------------------------------------------------------\n19: | API Routes\n20: |----------------------------------------------"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/routes/web.php",
+          "start": "85"
+        },
+        "result_head": "85:     Route::post('section-segments/validate-test', [SectionSegmentsController::class, 'validateTest'])->name('sectionSegments.validateTest');\n86: \n87:     Route::get('authors/dtAuthors', [AuthorController::class, 'dtAuthors'])->name('authors.dtAuthors');\n88:     Route::get('authors/{author}/dtArticles', [AuthorController::class, 'dtArticles'])->name('authors.dtArticles');\n89: \n90:     Route::get('visitors/devices', [VisitorController::class, 'devices'])->name('visitors.devices');\n91:     Route::get('visitors/sources', [VisitorController::class, 'sources'])->name('visitors.sources');\n92:     Route::get('visitors/dtBrowsers', [VisitorController::class, 'dtBrowsers'])->name('visitors.dtBrowsers');\n93:     Route::get('visitors/dtDevices', [VisitorController::class, 'dtDevices'])->name('visitors.dtDevices');\n94:     Route::get('visitors/dtReferers', [VisitorController::class, 'dtReferers'])->name('visitors.dtReferers');\n95: \n96:     Route::get('auth/logout', [AuthController::class, 'logo"
+      },
+      {
+        "step": 5,
+        "tool": "list_dir",
+        "args": {
+          "path": "/go/cmd/tracker"
+        },
+        "result_head": ".env.example\n.gitignore\nDockerfile\nMakefile\nREADME.md\nbuilder/\nconfig.go\ncontroller/\ndata/\ndesign/\ndockerize-alpine-linux-amd64-v0.5.0.tar.gz\nmain.go\nrefererparser/"
+      },
+      {
+        "step": 6,
+        "tool": "list_dir",
+        "args": {
+          "path": "/go/cmd/segments"
+        },
+        "result_head": ".env.example\n.gitignore\nDockerfile\nMakefile\nREADME.md\nbuilder/\nconfig.go\ncontroller/\ndesign/\nmain.go"
+      },
+      {
+        "step": 6,
+        "tool": "grep",
+        "args": {
+          "path": "/go/cmd/tracker",
+          "pattern": "HandleFunc|\\.GET|\\.POST|Handle\\("
+        },
+        "result_head": "(no matches)\n[not searched: 1 files over 1 MB: /go/cmd/tracker/dockerize-alpine-linux-amd64-v0.5.0.tar.gz - read_file them if they matter]"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/go/cmd/tracker/controller",
+          "pattern": "Handle|GET|POST|func "
+        },
+        "result_head": "/go/cmd/tracker/controller/entity_schema.go:17: func (es *EntitySchema) Validate(payload *app.Entity) error {\n/go/cmd/tracker/controller/kafka_event_producer.go:24: func NewKafkaEventProducer(brokerAddrs []string, saslConfig *SaslConfig) (*KafkaEventProducer, error) {\n/go/cmd/tracker/controller/kafka_event_producer.go:56: func (kep KafkaEventProducer) Produce(ctx context.Context, table string, time time.Time, data map[string]any) error {\n/go/cmd/tracker/controller/kafka_event_producer.go:69: func (kep KafkaEventProducer) Close() error {\n/go/cmd/tracker/controller/pubsub_event_producer.go:20: func NewPubSubEventProducer(ctx context.Context, projectID string, topicID string) (*PubSubEventProducer, error) {\n/go/cmd/tracker/controller/pubsub_event_producer.go:42: func (psep PubSubEventProducer) Produce(ctx context.Context, table string, time time.Time, data map[string]any) error {\n/go/cmd/tracker/controller/pubsub_event_producer.go:63: func (psep PubSubEventProducer) Close() error {\n/go/cm"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/go/cmd/segments",
+          "pattern": "Handle|GET|POST|func "
+        },
+        "result_head": "/go/cmd/segments/Makefile:5: TARGET_GOOS?=linux\n/go/cmd/segments/Makefile:6: TARGET_GOARCH?=amd64\n/go/cmd/segments/Makefile:7: TARGET_SUFFIX?=\n/go/cmd/segments/Makefile:8: export TARGET_GOOS TARGET_GOARCH TARGET_SUFFIX\n/go/cmd/segments/Makefile:32: CGO_ENABLED=0 GOOS=$(TARGET_GOOS) GOARCH=$(TARGET_GOARCH) go build -a -installsuffix cgo -o segments$(TARGET_SUFFIX)\n/go/cmd/segments/Makefile:37: docker run -e TARGET_GOOS -e TARGET_GOARCH -e TARGET_SUFFIX --rm -v $$PWD/../../:/src/build remp-beam_segments_builder > segments.tar;\n/go/cmd/segments/builder/build:6: tar -cf - segments${TARGET_SUFFIX} swagger\n/go/cmd/segments/controller/commerce.go:18: func NewCommerceController(service *goa.Service, cs model.CommerceStorage) *CommerceController {\n/go/cmd/segments/controller/commerce.go:26: func (c *CommerceController) Count(ctx *app.CountCommerceContext) error {\n/go/cmd/segments/controller/commerce.go:39: func (c *CommerceController) CountStep(ctx *app.CountStepCommerceContext) error {\n/go/cmd"
+      },
+      {
+        "step": 8,
+        "tool": "list_dir",
+        "args": {
+          "path": "/go/cmd/tracker/design"
+        },
+        "result_head": "api.go\nresources.go\nuser_types.go"
+      },
+      {
+        "step": 8,
+        "tool": "list_dir",
+        "args": {
+          "path": "/go/cmd/segments/design"
+        },
+        "result_head": "api.go\nmedia_types.go\nresources.go\nuser_types.go"
+      },
+      {
+        "step": 9,
+        "tool": "grep",
+        "args": {
+          "path": "/go/cmd/tracker/design",
+          "pattern": "Routing|Path|GET|POST"
+        },
+        "result_head": "/go/cmd/tracker/design/api.go:18: Methods(\"GET\", \"POST\", \"PUT\", \"PATCH\", \"DELETE\", \"OPTIONS\")\n/go/cmd/tracker/design/resources.go:10: Methods(\"GET\", \"OPTIONS\")\n/go/cmd/tracker/design/resources.go:20: BasePath(\"/track\")\n/go/cmd/tracker/design/resources.go:26: Routing(POST(\"/pageview\"))\n/go/cmd/tracker/design/resources.go:38: Routing(POST(\"/commerce\"))\n/go/cmd/tracker/design/resources.go:50: Routing(POST(\"/event\"))\n/go/cmd/tracker/design/resources.go:62: Routing(POST(\"/entity\"))"
+      },
+      {
+        "step": 9,
+        "tool": "grep",
+        "args": {
+          "path": "/go/cmd/segments/design",
+          "pattern": "Routing|Path|GET|POST"
+        },
+        "result_head": "/go/cmd/segments/design/api.go:18: Methods(\"GET\", \"POST\", \"PUT\", \"PATCH\", \"DELETE\", \"OPTIONS\")\n/go/cmd/segments/design/resources.go:30: Methods(\"GET\", \"OPTIONS\")\n/go/cmd/segments/design/resources.go:39: BasePath(\"/segments\")\n/go/cmd/segments/design/resources.go:44: Routing(GET(\"/show\"))\n/go/cmd/segments/design/resources.go:55: Routing(GET(\"/\"))\n/go/cmd/segments/design/resources.go:69: Routing(GET(\"/groups\"))\n/go/cmd/segments/design/resources.go:76: Routing(GET(\"/:segment_code/users/check/:user_id\"))\n/go/cmd/segments/design/resources.go:95: Routing(GET(\"/:segment_code/browsers/check/:browser_id\"))\n/go/cmd/segments/design/resources.go:114: Routing(\n/go/cmd/segments/design/resources.go:115: GET(\"/:segment_code/users\"),\n/go/cmd/segments/design/resources.go:129: Routing(\n/go/cmd/segments/design/resources.go:130: GET(\"/criteria\"),\n/go/cmd/segments/design/resources.go:136: Description(\"Create or update segment (for fupdate, use GET parameter ?id={segment_id})\")\n/go/cmd/segments/design/resourc"
+      },
+      {
+        "step": 10,
+        "tool": "read_file",
+        "args": {
+          "path": "/go/cmd/tracker/design/resources.go"
+        },
+        "result_head": "1: package design\n2: \n3: import (\n4: \t. \"github.com/goadesign/goa/design\"\n5: \t. \"github.com/goadesign/goa/design/apidsl\"\n6: )\n7: \n8: var _ = Resource(\"swagger\", func() {\n9: \tOrigin(\"*\", func() {\n10: \t\tMethods(\"GET\", \"OPTIONS\")\n11: \t\tHeaders(\"*\")\n12: \t})\n13: \tNoSecurity()\n14: \tFiles(\"/swagger.json\", \"swagger/swagger.json\")\n15: })\n16: \n17: var _ = Resource(\"track\", func() {\n18: \n19: \tDescription(\"Track different types of events\")\n20: \tBasePath(\"/track\")\n21: \tNoSecurity()\n22: \n23: \tAction(\"pageview\", func() {\n24: \t\tDescription(\"Track new pageview\")\n25: \t\tPayload(Pageview)\n26: \t\tRouting(POST(\"/pageview\"))\n27: \t\tResponse(BadRequest, func() {\n28: \t\t\tDescription(\"Returned when request does not comply with Swagger specification\")\n29: \t\t})\n30: \t\tResponse(NotFound, func() {\n31: \t\t\tDescription(\"Returned when property_token was not found\")\n32: \t\t})\n33: \t\tResponse(Accepted)\n34: \t})\n35: \tAction(\"commerce\", func() {\n36: \t\tDescription(\"Track new pageview\")\n37: \t\tPayload(Commerce)\n38: \t\tRouting(POST(\"/"
+      },
+      {
+        "step": 10,
+        "tool": "read_file",
+        "args": {
+          "path": "/go/cmd/segments/design/resources.go"
+        },
+        "result_head": "1: package design\n2: \n3: import (\n4: \t. \"github.com/goadesign/goa/design\"\n5: \t. \"github.com/goadesign/goa/design/apidsl\"\n6: )\n7: \n8: // set of constants reused within multiple actions\n9: const (\n10: \tSegmentPattern        = `^[a-zA-Z0-9_\\-@.]+$`\n11: \tUserPattern           = `^[a-zA-Z0-9_\\-@.]+$`\n12: \tCacheParamDescription = `JSON-encoded object of internal cache with count of events provided by third party (mostly Beam's remplib.js), e.g.:\n13: \n14: \t{\n15: \t\t10: { // segment rule ID\n16: \t\t\t\"d\": \"2017-11-07T08:06:26.612Z\" // RFC3339 date\n17: \t\t\t\"c\": 11 // number of occurrences\n18: \t\t}\n19: \t}`\n20: \tFieldsParamDescription = `JSON-encoded object of overriden pairs, e.g.:\n21: \n22: \t{\n23: \t\t\"rtm_campaign\": \"custom-campaign-id\",\n24: \t\t// ...\n25: \t}`\n26: )\n27: \n28: var _ = Resource(\"swagger\", func() {\n29: \tOrigin(\"*\", func() {\n30: \t\tMethods(\"GET\", \"OPTIONS\")\n31: \t\tHeaders(\"*\")\n32: \t})\n33: \tNoSecurity()\n34: \tFiles(\"/swagger.json\", \"swagger/swagger.json\")\n35: })\n36: \n37: var _ = Resource(\"segment"
+      },
+      {
+        "step": 11,
+        "tool": "read_file",
+        "args": {
+          "path": "/go/cmd/segments/design/resources.go",
+          "start": "194"
+        },
+        "result_head": "194: \t\t})\n195: \t\tResponse(BadRequest, func() {\n196: \t\t\tDescription(\"Returned when request does not comply with Swagger specification\")\n197: \t\t})\n198: \t\tResponse(OK, func() {\n199: \t\t\tMedia(CollectionOf(Count, func() {\n200: \t\t\t\tView(\"default\")\n201: \t\t\t}))\n202: \t\t})\n203: \t})\n204: \tAction(\"count\", func() {\n205: \t\tDescription(\"Returns counts of events\")\n206: \t\tRouting(POST(\"/count\"))\n207: \t\tPayload(EventOptionsPayload)\n208: \t\tResponse(BadRequest, func() {\n209: \t\t\tDescription(\"Returned when request does not comply with Swagger specification\")\n210: \t\t})\n211: \t\tResponse(OK, func() {\n212: \t\t\tMedia(CollectionOf(Count, func() {\n213: \t\t\t\tView(\"default\")\n214: \t\t\t}))\n215: \t\t})\n216: \t})\n217: \tAction(\"list\", func() {\n218: \t\tDescription(\"Returns full list of events\")\n219: \t\tRouting(POST(\"/list\"))\n220: \t\tPayload(ListEventOptionsPayload)\n221: \t\tResponse(OK, func() {\n222: \t\t\tMedia(CollectionOf(Events, func() {\n223: \t\t\t\tView(\"default\")\n224: \t\t\t}))\n225: \t\t})\n226: \t})\n227: \tAction(\"categories\", func() {\n228:"
+      },
+      {
+        "step": 12,
+        "tool": "read_file",
+        "args": {
+          "path": "/go/cmd/segments/design/resources.go",
+          "start": "384"
+        },
+        "result_head": "384: \tAction(\"avg\", func() {\n385: \t\tDescription(\"Returns avg of amounts within events\")\n386: \t\tPayload(PageviewOptionsPayload)\n387: \t\tRouting(POST(\"/actions/:action/avg\"))\n388: \t\tParams(func() {\n389: \t\t\tParam(\"action\", String, \"Identification of pageview action\", func() {\n390: \t\t\t\tEnum(\"timespent\")\n391: \t\t\t})\n392: \t\t})\n393: \t\tResponse(BadRequest, func() {\n394: \t\t\tDescription(\"Returned when request does not comply with Swagger specification\")\n395: \t\t})\n396: \t\tResponse(OK, func() {\n397: \t\t\tMedia(CollectionOf(Avg, func() {\n398: \t\t\t\tView(\"default\")\n399: \t\t\t}))\n400: \t\t})\n401: \t})\n402: \tAction(\"unique\", func() {\n403: \t\tDescription(\"Returns unique count of amounts within events\")\n404: \t\tPayload(PageviewOptionsPayload)\n405: \t\tRouting(POST(\"/actions/:action/unique/:item\"))\n406: \t\tParams(func() {\n407: \t\t\tParam(\"action\", String, \"Identification of pageview action\", func() {\n408: \t\t\t\tEnum(\"load\")\n409: \t\t\t})\n410: \t\t\tParam(\"item\", String, \"Identification of queried unique items\", func() {\n411: \t\t\t\tE"
+      },
+      {
+        "step": 13,
+        "tool": "grep",
+        "args": {
+          "path": "/app/Providers",
+          "pattern": "prefix|group"
+        },
+        "result_head": "/app/Providers/AppServiceProvider.php:48: Connection::resolverFor('mysql', function ($connection, $database, $prefix, $config) {\n/app/Providers/AppServiceProvider.php:50: return new MySqlConnection($connection, $database, $prefix, $config);\n/app/Providers/RouteServiceProvider.php:38: Route::prefix('api')\n/app/Providers/RouteServiceProvider.php:41: ->group(base_path('routes/api.php'));\n/app/Providers/RouteServiceProvider.php:45: ->group(base_path('routes/web.php'));"
+      },
+      {
+        "step": 13,
+        "tool": "list_dir",
+        "args": {
+          "path": "/app/Http/Controllers"
+        },
+        "result_head": "AccountController.php\nApi/\nArticleController.php\nArticleDetailsController.php\nAuthController.php\nAuthorController.php\nAuthorSegmentsController.php\nController.php\nConversionController.php\nDashboardController.php\nEntitiesController.php\nGoogleAnalyticsReportingController.php\nJournalProxyController.php\nNewsletterController.php\nPropertyController.php\nSearchController.php\nSectionController.php\nSectionSegmentsController.php\nSegmentController.php\nSettingsController.php\nTagCategoryController.php\nTagController.php\nUserPathController.php\nVisitorController.php"
+      },
+      {
+        "step": 14,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"beam-app\", \"dirs\": [\"/app\", \"/routes\", \"/config\", \"/database\", \"/resources\", \"/public\", \"/bootstrap\"]}, {\"name\": \"beam-tracker\", \"dirs\": [\"/go/cmd/tracker\"]}, {\"name\": \"beam-se"
+        },
+        "result_head": "Recorded 3 new: service beam-app, service beam-tracker, service beam-segments\nTotal: 3 services, 0 endpoints in 0 files.\nServices with no endpoints recorded yet: beam-app, beam-tracker, beam-segments."
+      },
+      {
+        "step": 15,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/routes/api.php\", \"service\": \"beam-app\", \"endpoints\": [\n{\"className\": \"ArticleController\", \"methodName\": \"index\", \"httpMethod\": \"GET\", \"path\": \"/api/articles\", \"line\": 29, \"eviden"
+        },
+        "result_head": "Recorded 97 new: GET /api/conversions, POST /api/conversions, POST /api/articles/unread, POST /api/articles/read, POST /api/articles/upsert, POST /api/conversions/upsert, GET /api/article/{article?}, GET /api/article/{article}/histogram, GET /api/article/{article}/variants-histogram, GET /api/journal/concurrents/count/, ANY /api/journal/concurrents/count/articles, POST /api/journal/concurrents/count/, POST /api/journal/pageviews/actions/progress/count, POST /api/journal/pageviews/actions/load/unique/browsers, POST /api/journal/commerce/steps/purchase/count, POST /api/articles/top, POST /api/authors/top, POST /api/tags/top, POST /api/pageviews/histogram, POST /api/v2/articles/top, POST /api/v2/authors/top, POST /api/v2/tags/top, POST /api/v2/articles/upsert, GET /api/authors, GET /api/sections, GET /api/tags, GET /api/journal/{group}/categories/{category}/actions, GET /api/journal/flags, GET /api/dashboard/options, GET /error, GET /public, POST /public/articlesJson, POST /public/timeHis"
+      },
+      {
+        "step": 16,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/routes/api.php\", \"service\": \"beam-app\", \"endpoints\": [\n{\"className\": \"ArticleController\", \"methodName\": \"index\", \"httpMethod\": \"GET\", \"path\": \"/api/articles\", \"line\": 29, \"eviden"
+        },
+        "result_head": "Recorded 36 new: GET /api/articles, POST /api/articles, GET /accounts, POST /accounts, GET /accounts/{account}, PUT /accounts/{account}, GET /accounts/{account}/properties, POST /accounts/{account}/properties, GET /accounts/{account}/properties/{property}, PUT /accounts/{account}/properties/{property}, GET /segments, POST /segments, GET /segments/{segment}, PUT /segments/{segment}, GET /articles/{article}, GET /articles, POST /articles, GET /newsletters, POST /newsletters, GET /newsletters/{newsletter}/edit, PUT /newsletters/{newsletter}, GET /conversions, POST /conversions, GET /conversions/{conversion}, GET /authors, GET /authors/{author}, GET /sections, GET /sections/{section}, GET /tags, GET /tags/{tag}, GET /tag-categories, GET /tag-categories/{tagCategory}, GET /entities, POST /entities, GET /entities/{entity}, PUT /entities/{entity}\nTotal: 3 services, 132 endpoints in 2 files.\nServices with no endpoints recorded yet: beam-tracker, beam-segments.\n[REJECTED 5] Fix these and record"
+      },
+      {
+        "step": 17,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/routes/web.php\", \"service\": \"beam-app\", \"endpoints\": [\n{\"className\": \"AccountController\", \"methodName\": \"destroy\", \"httpMethod\": \"DELETE\", \"path\": \"/accounts/{account}\", \"line\": "
+        },
+        "result_head": "Recorded 0 new: nothing\nTotal: 3 services, 132 endpoints in 2 files.\nServices with no endpoints recorded yet: beam-tracker, beam-segments.\n[REJECTED 5] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0].endpoints[0] DELETE /accounts/{account} (AccountController.destroy): method destroy does not appear in this file\n- files[0].endpoints[1] DELETE /accounts/{account}/properties/{property} (PropertyController.destroy): method destroy does not appear in this file\n- files[0].endpoints[2] DELETE /segments/{segment} (SegmentController.destroy): method destroy does not appear in this file\n- files[0].endpoints[3] DELETE /newsletters/{newsletter} (NewsletterController.destroy): method destroy does not appear in this file\n- files[0].endpoints[4] DELETE /entities/{entity} (EntitiesController.destroy): method destroy does not appear in this file"
+      },
+      {
+        "step": 18,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/go/cmd/tracker/design/resources.go\", \"service\": \"beam-tracker\", \"endpoints\": [\n{\"className\": \"TrackController\", \"methodName\": \"Pageview\", \"httpMethod\": \"POST\", \"path\": \"/track/pa"
+        },
+        "result_head": "Recorded 0 new: nothing\nTotal: 3 services, 132 endpoints in 2 files.\nServices with no endpoints recorded yet: beam-tracker, beam-segments.\n[REJECTED 36] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0].endpoints[0] POST /track/pageview (TrackController.Pageview): class TrackController does not appear in this file\n- files[0].endpoints[1] POST /track/commerce (TrackController.Commerce): class TrackController does not appear in this file\n- files[0].endpoints[2] POST /track/event (TrackController.Event): class TrackController does not appear in this file\n- files[0].endpoints[3] POST /track/entity (TrackController.Entity): class TrackController does not appear in this file\n- files[1].endpoints[0] GET /segments/show (SegmentController.Show): class SegmentController does not appear in this file\n- files[1].endpoints[1] GET /segments/ (SegmentController.List): class SegmentController does not appear in this file\n- files[1].endpoints[2] GET /segments/gr"
+      },
+      {
+        "step": 19,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"endpoints\": [{\"className\": \"\", \"httpMethod\": \"POST\", \"line\": 26, \"methodName\": \"(inline)\", \"path\": \"/track/pageview\", \"service\": \"beam-tracker\", \"evidence\": \"Routing(POST(\\\"/pageview\\\"))\""
+        },
+        "result_head": "Recorded 0 new: nothing\nTotal: 3 services, 132 endpoints in 2 files.\nServices with no endpoints recorded yet: beam-tracker, beam-segments.\n[REJECTED 2] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0]: service None is not recorded; record it first (recorded: beam-app, beam-tracker, beam-segments)\n- files[1]: service None is not recorded; record it first (recorded: beam-app, beam-tracker, beam-segments)"
+      },
+      {
+        "step": 20,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/go/cmd/tracker/design/resources.go\", \"service\": \"beam-tracker\", \"endpoints\": [{\"className\": \"\", \"httpMethod\": \"POST\", \"line\": 26, \"methodName\": \"(inline)\", \"path\": \"/track/pagevi"
+        },
+        "result_head": "Recorded 36 new: POST /track/pageview, POST /track/commerce, POST /track/event, POST /track/entity, GET /segments/show, GET /segments/, GET /segments/groups, GET /segments/{segment_code}/users/check/{user_id}, GET /segments/{segment_code}/browsers/check/{browser_id}, GET /segments/{segment_code}/users, GET /segments/criteria, POST /segments/detail, POST /segments/count, POST /segments/related, GET /journal/flags, POST /journal/events/categories/{category}/actions/{action}/count, POST /journal/events/count, POST /journal/events/list, GET /journal/events/categories, GET /journal/events/categories/{category}/actions, GET /journal/events/users, POST /journal/commerce/steps/{step}/count, POST /journal/commerce/count, POST /journal/commerce/steps/{step}/sum, POST /journal/commerce/sum, POST /journal/commerce/list, GET /journal/commerce/categories, GET /journal/commerce/categories/{category}/actions, POST /journal/pageviews/actions/{action}/count, POST /journal/pageviews/actions/{action}/sum,"
+      },
+      {
+        "step": 21,
+        "tool": "submit",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"beam-app\", \"dirs\": [\"/app\", \"/routes\", \"/config\", \"/database\", \"/resources\", \"/public\", \"/bootstrap\"]}, {\"name\": \"beam-tracker\", \"dirs\": [\"/go/cmd/tracker\"]}, {\"name\": \"beam-se"
+        },
+        "result_head": "Recorded 3 new: service beam-app, service beam-tracker, service beam-segments\nTotal: 3 services, 168 endpoints in 4 files.\n[REJECTED 4] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0]: needs \"path\", \"service\" and an \"endpoints\" list\n- files[1]: needs \"path\", \"service\" and an \"endpoints\" list\n- files[2]: needs \"path\", \"service\" and an \"endpoints\" list\n- files[3]: needs \"path\", \"service\" and an \"endpoints\" list\n[NOT FINISHED] fix the rejected entries, then submit again."
+      },
+      {
+        "step": 22,
+        "tool": "submit",
+        "args": {},
+        "result_head": "[ACCEPTED] 3 services, 168 endpoints."
+      }
+    ]
+  }
+}

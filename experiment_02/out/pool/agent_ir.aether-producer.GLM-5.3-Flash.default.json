@@ -1,0 +1,243 @@
+{
+  "system": "aether-producer",
+  "services": [
+    {
+      "name": "aether-producer",
+      "dirs": [
+        "/",
+        "/aether/producer"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/aether/producer/server.py",
+      "service": "aether-producer",
+      "endpoints": [
+        {
+          "className": "ServerMixin",
+          "methodName": "request_health",
+          "httpMethod": "GET",
+          "path": "/health",
+          "line": 78,
+          "evidence": "self.register('health', self.request_health)",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "ServerMixin",
+          "methodName": "request_healthcheck",
+          "httpMethod": "GET",
+          "path": "/healthcheck",
+          "line": 79,
+          "evidence": "self.register('healthcheck', self.request_healthcheck)",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "ServerMixin",
+          "methodName": "request_kernelcheck",
+          "httpMethod": "GET",
+          "path": "/kernelcheck",
+          "line": 80,
+          "evidence": "self.register('kernelcheck', self.request_kernelcheck)",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "ServerMixin",
+          "methodName": "request_kafkacheck",
+          "httpMethod": "GET",
+          "path": "/kafkacheck",
+          "line": 81,
+          "evidence": "self.register('kafkacheck', self.request_kafkacheck)",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "ServerMixin",
+          "methodName": "request_check_app",
+          "httpMethod": "GET",
+          "path": "/check-app",
+          "line": 82,
+          "evidence": "self.register('check-app', self.request_check_app)",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "ServerMixin",
+          "methodName": "request_kernelcheck",
+          "httpMethod": "GET",
+          "path": "/check-app/aether-kernel",
+          "line": 83,
+          "evidence": "self.register('check-app/aether-kernel', self.request_kernelcheck)",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "ServerMixin",
+          "methodName": "request_kafkacheck",
+          "httpMethod": "GET",
+          "path": "/check-app/kafka",
+          "line": 84,
+          "evidence": "self.register('check-app/kafka', self.request_kafkacheck)",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "ServerMixin",
+          "methodName": "request_status",
+          "httpMethod": "GET",
+          "path": "/status",
+          "line": 87,
+          "evidence": "self.register('status', self.request_status)",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "ServerMixin",
+          "methodName": "request_topics",
+          "httpMethod": "GET",
+          "path": "/topics",
+          "line": 88,
+          "evidence": "self.register('topics', self.request_topics)",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "ServerMixin",
+          "methodName": "request_pause",
+          "httpMethod": "GET",
+          "path": "/pause",
+          "line": 89,
+          "evidence": "self.register('pause', self.request_pause)",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "ServerMixin",
+          "methodName": "request_resume",
+          "httpMethod": "GET",
+          "path": "/resume",
+          "line": 90,
+          "evidence": "self.register('resume', self.request_resume)",
+          "framework": "Flask",
+          "confidence": "high"
+        },
+        {
+          "className": "ServerMixin",
+          "methodName": "request_rebuild",
+          "httpMethod": "GET",
+          "path": "/rebuild",
+          "line": 91,
+          "evidence": "self.register('rebuild', self.request_rebuild)",
+          "framework": "Flask",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "GLM-5.3-Flash",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "default",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "aether-producer",
+    "commit": "2a4bf1b78d1bcb207af51dc06c6393ad78fe0291",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 7,
+    "tool_calls": 9,
+    "rejected_entries": 0,
+    "no_call_replies": 0,
+    "input_tokens": 30853,
+    "cached_input_tokens": 20928,
+    "output_tokens": 1826,
+    "list_price_usd": 0.003,
+    "wall_seconds": 10.7,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".dockerignore\nDockerfile\nREADME.md\naether/\nconf/\nentrypoint.sh\nmanage.py\nsetup.cfg\nsetup.py\ntests/"
+      },
+      {
+        "step": 1,
+        "tool": "find",
+        "args": {
+          "pattern": "*producer*"
+        },
+        "result_head": "/aether/producer/__init__.py\n/aether/producer/db.py\n/aether/producer/kernel.py\n/aether/producer/kernel_api.py\n/aether/producer/kernel_db.py\n/aether/producer/server.py\n/aether/producer/settings.json\n/aether/producer/settings.py\n/aether/producer/topic.py\n/aether/producer/utils.py\n/tests/conf/producer.json"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/producer/server.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: from datetime import datetime\n20: from functools import wraps\n21: import json\n22: \n23: from flask import Flask, request, Response\n24: \n25: from gevent.pool import Pool\n26: from gevent.pywsgi import WSGIS"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/producer/kernel_api.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: import requests\n20: \n21: from datetime import datetime\n22: from gevent import sleep\n23: \n24: from aether.producer.settings import SETTINGS\n25: from aether.producer.kernel import KernelClient, logger\n26: "
+      },
+      {
+        "step": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/producer/server.py",
+          "start": "154"
+        },
+        "result_head": "154:                 {'healthy': healthy},\n155:                 status=200 if healthy else 424,  # Failed dependency\n156:             )\n157: \n158:     def request_check_app(self):\n159:         with self.app.app_context():\n160:             return self.return_json({\n161:                 'app_name': 'aether-producer',\n162:                 'app_version': VERSION,\n163:                 'app_revision': REVISION,\n164:                 'now': datetime.now().isoformat(),\n165:             })\n166: \n167:     @requires_auth\n168:     def request_status(self):\n169:         with self.app.app_context():\n170:             return self.return_json(self.check_status())\n171: \n172:     @requires_auth\n173:     def request_topics(self):\n174:         with self.app.app_context():\n175:             return self.return_json(self.check_topics())\n176: \n177:     # Topic Command API\n178: \n179:     @requires_auth\n180:     def request_pause(self):\n181:         return self.handle_topic_command(request, TopicStatus.PAUSED)\n182"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/entrypoint.sh"
+        },
+        "result_head": "1: #!/usr/bin/env bash\n2: #\n3: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n4: #\n5: # See the NOTICE file distributed with this work for additional information\n6: # regarding copyright ownership.\n7: #\n8: # Licensed under the Apache License, Version 2.0 (the \"License\");\n9: # you may not use this file except in compliance with\n10: # the License.  You may obtain a copy of the License at\n11: #\n12: #   http://www.apache.org/licenses/LICENSE-2.0\n13: #\n14: # Unless required by applicable law or agreed to in writing,\n15: # software distributed under the License is distributed on an\n16: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n17: # KIND, either express or implied.  See the License for the\n18: # specific language governing permissions and limitations\n19: # under the License.\n20: #\n21: set -Eeuo pipefail\n22: \n23: function show_help {\n24:     echo \"\"\"\n25:     Commands\n26:     ----------------------------------------------------------------------------\n27: "
+      },
+      {
+        "step": 5,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"aether-producer\", \"dirs\": [\"/\", \"/aether/producer\"]}]}"
+        },
+        "result_head": "Recorded 1 new: service aether-producer\nTotal: 1 services, 0 endpoints in 0 files.\nServices with no endpoints recorded yet: aether-producer."
+      },
+      {
+        "step": 6,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"path\": \"/aether/producer/server.py\", \"service\": \"aether-producer\", \"endpoints\": [{\"className\": \"ServerMixin\", \"methodName\": \"request_health\", \"httpMethod\": \"GET\", \"path\": \"/health\", \"line"
+        },
+        "result_head": "Recorded 12 new: GET /health, GET /healthcheck, GET /kernelcheck, GET /kafkacheck, GET /check-app, GET /check-app/aether-kernel, GET /check-app/kafka, GET /status, GET /topics, GET /pause, GET /resume, GET /rebuild\nTotal: 1 services, 12 endpoints in 1 files."
+      },
+      {
+        "step": 7,
+        "tool": "submit",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"aether-producer\", \"dirs\": [\"/\", \"/aether/producer\"]}], \"files\": [{\"path\": \"/aether/producer/server.py\", \"service\": \"aether-producer\", \"endpoints\": [{\"className\": \"ServerMixin\","
+        },
+        "result_head": "Recorded 1 new: service aether-producer\nTotal: 1 services, 12 endpoints in 1 files.\n[ACCEPTED] 1 services, 12 endpoints."
+      }
+    ]
+  }
+}

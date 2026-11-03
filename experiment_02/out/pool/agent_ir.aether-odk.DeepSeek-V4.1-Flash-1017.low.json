@@ -1,0 +1,658 @@
+{
+  "system": "aether-odk",
+  "services": [
+    {
+      "name": "aether-odk",
+      "dirs": [
+        "/aether",
+        "/conf"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/aether/odk/api/views.py",
+      "service": "aether-odk",
+      "endpoints": [
+        {
+          "className": "ProjectViewSet",
+          "methodName": "propagate",
+          "httpMethod": "PATCH",
+          "path": "/projects/{pk}/propagate/",
+          "line": 72,
+          "evidence": "@action(detail=True, methods=['patch'])",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ProjectViewSet",
+          "methodName": "download",
+          "httpMethod": "GET",
+          "path": "/projects/{pk}/download/",
+          "line": 92,
+          "evidence": "@action(detail=True, methods=['get'])",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "XFormViewSet",
+          "methodName": "propagate",
+          "httpMethod": "PATCH",
+          "path": "/xforms/{pk}/propagate/",
+          "line": 140,
+          "evidence": "@action(detail=True, methods=['patch'])",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "XFormViewSet",
+          "methodName": "download",
+          "httpMethod": "GET",
+          "path": "/xforms/{pk}/download/",
+          "line": 161,
+          "evidence": "@action(detail=True, methods=['get'])",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "MediaFileViewSet",
+          "methodName": "content",
+          "httpMethod": "GET",
+          "path": "/media-files/{pk}/content/",
+          "line": 192,
+          "evidence": "@action(detail=True, methods=['get'])",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/aether/odk/api/collect/urls.py",
+      "service": "aether-odk",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "xform_list",
+          "httpMethod": "GET",
+          "path": "/formList",
+          "line": 24,
+          "evidence": "path(route='formList',",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "xform_get_download",
+          "httpMethod": "GET",
+          "path": "/forms/{pk}/form.xml",
+          "line": 28,
+          "evidence": "path(route='forms/<slug:pk>/form.xml',",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "xform_get_manifest",
+          "httpMethod": "GET",
+          "path": "/forms/{pk}/manifest.xml",
+          "line": 32,
+          "evidence": "path(route='forms/<slug:pk>/manifest.xml',",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "media_file_get_content",
+          "httpMethod": "GET",
+          "path": "/media-file/{pk}",
+          "line": 36,
+          "evidence": "path(route='media-file/<slug:pk>',",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "xform_submission",
+          "httpMethod": "POST",
+          "path": "/submission",
+          "line": 40,
+          "evidence": "path(route='submission',",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/aether/odk/api/urls.py",
+      "service": "aether-odk",
+      "endpoints": [
+        {
+          "className": "ProjectViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/projects/",
+          "line": 25,
+          "evidence": "router.register('projects', views.ProjectViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ProjectViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/projects/",
+          "line": 25,
+          "evidence": "router.register('projects', views.ProjectViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ProjectViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/projects/{pk}/",
+          "line": 25,
+          "evidence": "router.register('projects', views.ProjectViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ProjectViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "PUT",
+          "path": "/projects/{pk}/",
+          "line": 25,
+          "evidence": "router.register('projects', views.ProjectViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ProjectViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "PATCH",
+          "path": "/projects/{pk}/",
+          "line": 25,
+          "evidence": "router.register('projects', views.ProjectViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ProjectViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "DELETE",
+          "path": "/projects/{pk}/",
+          "line": 25,
+          "evidence": "router.register('projects', views.ProjectViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "XFormViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/xforms/",
+          "line": 26,
+          "evidence": "router.register('xforms', views.XFormViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "XFormViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/xforms/",
+          "line": 26,
+          "evidence": "router.register('xforms', views.XFormViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "XFormViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/xforms/{pk}/",
+          "line": 26,
+          "evidence": "router.register('xforms', views.XFormViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "XFormViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "PUT",
+          "path": "/xforms/{pk}/",
+          "line": 26,
+          "evidence": "router.register('xforms', views.XFormViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "XFormViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "PATCH",
+          "path": "/xforms/{pk}/",
+          "line": 26,
+          "evidence": "router.register('xforms', views.XFormViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "XFormViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "DELETE",
+          "path": "/xforms/{pk}/",
+          "line": 26,
+          "evidence": "router.register('xforms', views.XFormViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "MediaFileViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/media-files/",
+          "line": 27,
+          "evidence": "router.register('media-files', views.MediaFileViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "MediaFileViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/media-files/",
+          "line": 27,
+          "evidence": "router.register('media-files', views.MediaFileViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "MediaFileViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/media-files/{pk}/",
+          "line": 27,
+          "evidence": "router.register('media-files', views.MediaFileViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "MediaFileViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "PUT",
+          "path": "/media-files/{pk}/",
+          "line": 27,
+          "evidence": "router.register('media-files', views.MediaFileViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "MediaFileViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "PATCH",
+          "path": "/media-files/{pk}/",
+          "line": 27,
+          "evidence": "router.register('media-files', views.MediaFileViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "MediaFileViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "DELETE",
+          "path": "/media-files/{pk}/",
+          "line": 27,
+          "evidence": "router.register('media-files', views.MediaFileViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "SurveyorViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/surveyors/",
+          "line": 28,
+          "evidence": "router.register('surveyors', views.SurveyorViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "SurveyorViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "POST",
+          "path": "/surveyors/",
+          "line": 28,
+          "evidence": "router.register('surveyors', views.SurveyorViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "SurveyorViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "GET",
+          "path": "/surveyors/{pk}/",
+          "line": 28,
+          "evidence": "router.register('surveyors', views.SurveyorViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "SurveyorViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "PUT",
+          "path": "/surveyors/{pk}/",
+          "line": 28,
+          "evidence": "router.register('surveyors', views.SurveyorViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "SurveyorViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "PATCH",
+          "path": "/surveyors/{pk}/",
+          "line": 28,
+          "evidence": "router.register('surveyors', views.SurveyorViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "SurveyorViewSet",
+          "methodName": "(inline)",
+          "httpMethod": "DELETE",
+          "path": "/surveyors/{pk}/",
+          "line": 28,
+          "evidence": "router.register('surveyors', views.SurveyorViewSet)",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "DeepSeek-V4.1-Flash-1017",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "low",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "aether-odk-module",
+    "commit": "2a4bf1b78d1bcb207af51dc06c6393ad78fe0291",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 15,
+    "tool_calls": 31,
+    "rejected_entries": 25,
+    "no_call_replies": 0,
+    "input_tokens": 152923,
+    "cached_input_tokens": 132864,
+    "output_tokens": 6845,
+    "list_price_usd": 0.0075,
+    "wall_seconds": 38.6,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".dockerignore\nDockerfile\naether/\nconf/\nentrypoint.sh\nmanage.py\nsetup.cfg\nsetup.py"
+      },
+      {
+        "step": 1,
+        "tool": "find",
+        "args": {
+          "pattern": "Dockerfile"
+        },
+        "result_head": "/Dockerfile"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/aether"
+        },
+        "result_head": "__init__.py\nodk/"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/Dockerfile"
+        },
+        "result_head": "1: FROM python:3.10-slim\n2: \n3: LABEL description=\"Aether ODK Module\" \\\n4:       name=\"aether-odk\" \\\n5:       author=\"eHealth Africa\"\n6: \n7: ################################################################################\n8: ## set up container\n9: ################################################################################\n10: \n11: COPY ./conf/docker/* /tmp/\n12: RUN /tmp/setup.sh\n13: \n14: WORKDIR /code\n15: ENTRYPOINT [\"/code/entrypoint.sh\"]\n16: \n17: ################################################################################\n18: ## install dependencies\n19: ## copy files one by one and split commands to use docker cache\n20: ################################################################################\n21: \n22: COPY --chown=aether:aether ./conf/pip /code/conf/pip\n23: \n24: ENV VIRTUAL_ENV=/var/run/aether/venv\n25: ENV PATH=\"$VIRTUAL_ENV/bin:$PATH\"\n26: \n27: RUN mkdir -p $VIRTUAL_ENV && \\\n28:     python3 -m venv $VIRTUAL_ENV && \\\n29:     pip install -q --upgrade pip && \\\n30:     pi"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/manage.py"
+        },
+        "result_head": "1: #!/usr/bin/env python\n2: \n3: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n4: #\n5: # See the NOTICE file distributed with this work for additional information\n6: # regarding copyright ownership.\n7: #\n8: # Licensed under the Apache License, Version 2.0 (the \"License\");\n9: # you may not use this file except in compliance with\n10: # the License.  You may obtain a copy of the License at\n11: #\n12: #   http://www.apache.org/licenses/LICENSE-2.0\n13: #\n14: # Unless required by applicable law or agreed to in writing,\n15: # software distributed under the License is distributed on an\n16: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n17: # KIND, either express or implied.  See the License for the\n18: # specific language governing permissions and limitations\n19: # under the License.\n20: \n21: import sys\n22: \n23: if __name__ == '__main__':\n24:     from django.core.management import execute_from_command_line\n25: \n26:     execute_from_command_line(sys.argv)"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/aether/odk"
+        },
+        "result_head": "__init__.py\nadmin.py\napi/\napps.py\nmanagement/\nsettings.py\ntemplates/\ntests/\nurls.py"
+      },
+      {
+        "step": 3,
+        "tool": "find",
+        "args": {
+          "pattern": "urls.py"
+        },
+        "result_head": "/aether/odk/api/collect/urls.py\n/aether/odk/api/urls.py\n/aether/odk/urls.py"
+      },
+      {
+        "step": 3,
+        "tool": "find",
+        "args": {
+          "pattern": "views*.py"
+        },
+        "result_head": "/aether/odk/api/collect/views.py\n/aether/odk/api/views.py"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/odk/urls.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: from django.conf import settings\n20: from django.urls import include, path\n21: \n22: from aether.sdk.conf.urls import generate_urlpatterns\n23: \n24: \n25: urlpatterns = generate_urlpatterns(token=True, app="
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/odk/api/urls.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: from rest_framework.routers import DefaultRouter\n20: \n21: from . import views\n22: \n23: router = DefaultRouter()\n24: \n25: router.register('projects', views.ProjectViewSet)\n26: router.register('xforms', vi"
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/odk/api/collect/urls.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: from django.urls import path\n20: \n21: from . import views\n22: \n23: urlpatterns = [\n24:     path(route='formList',\n25:          view=views.xform_list,\n26:          name='xform-list-xml'),\n27: \n28:     pat"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/odk/settings.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: import os\n20: \n21: # Common settings\n22: # ------------------------------------------------------------------------------\n23: \n24: from aether.sdk.conf.settings_aether import *  # noqa\n25: from aether.sd"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/odk/api/views.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: import tempfile\n20: import zipfile\n21: \n22: from django.http import FileResponse\n23: \n24: from rest_framework import viewsets, status\n25: from rest_framework.decorators import action\n26: from rest_framew"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/odk/api/collect/views.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: '''\n20: Views needed by ODK Collect\n21: \n22: https://docs.opendatakit.org/\n23: '''\n24: \n25: import datetime\n26: import logging\n27: \n28: from django.conf import settings\n29: from django.http import HttpRe"
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/odk/api/views.py",
+          "start": "160"
+        },
+        "result_head": "160: \n161:     @action(detail=True, methods=['get'])\n162:     def download(self, request, pk=None, *args, **kwargs):\n163:         '''\n164:         Downloads the linked XML definition.\n165: \n166:         Reachable at ``.../xforms/{pk}/download/``\n167:         '''\n168: \n169:         xform = self.get_object_or_404(pk=pk)\n170: \n171:         response = FileResponse(\n172:             streaming_content=xform.xml_data,\n173:             as_attachment=True,\n174:             filename=sanitize_filename(f'{xform.title}.xml'),\n175:             content_type='text/xml',\n176:         )\n177:         response['Access-Control-Expose-Headers'] = 'Content-Disposition'\n178:         return response\n179: \n180: \n181: class MediaFileViewSet(MtViewSetMixin, viewsets.ModelViewSet):\n182:     '''\n183:     Create new Media File entries.\n184:     '''\n185: \n186:     permission_classes = [IsAuthenticatedAndNotSurveyor]\n187:     queryset = MediaFile.objects.order_by('name')\n188:     serializer_class = MediaFileSerializer"
+      },
+      {
+        "step": 6,
+        "tool": "grep",
+        "args": {
+          "pattern": "@api_view|^def |^class ",
+          "path": "/aether/odk/api/collect/views.py"
+        },
+        "result_head": "/aether/odk/api/collect/views.py:147: def _get_host(request, current_path):\n/aether/odk/api/collect/views.py:160: def _get_instance(request, model, pk):\n/aether/odk/api/collect/views.py:178: def _get_xforms(request):\n/aether/odk/api/collect/views.py:183: def _send_response(request, nature, message, status):\n/aether/odk/api/collect/views.py:204: class IsAuthenticatedAndSurveyor(IsAuthenticated):\n/aether/odk/api/collect/views.py:216: @api_view(['GET'])\n/aether/odk/api/collect/views.py:220: def xform_list(request, *args, **kwargs):\n/aether/odk/api/collect/views.py:247: @api_view(['GET'])\n/aether/odk/api/collect/views.py:251: def xform_get_download(request, pk, *args, **kwargs):\n/aether/odk/api/collect/views.py:285: @api_view(['GET'])\n/aether/odk/api/collect/views.py:288: def media_file_get_content(request, pk, *args, **kwargs):\n/aether/odk/api/collect/views.py:305: @api_view(['GET'])\n/aether/odk/api/collect/views.py:309: def xform_get_manifest(request, pk, *args, **kwargs):\n/aether/odk/ap"
+      },
+      {
+        "step": 7,
+        "tool": "list_dir",
+        "args": {
+          "path": "/conf"
+        },
+        "result_head": "check_vars.sh\ndocker/\nextras/\npip/\nuwsgi/"
+      },
+      {
+        "step": 7,
+        "tool": "read_file",
+        "args": {
+          "path": "/entrypoint.sh"
+        },
+        "result_head": "1: #!/usr/bin/env bash\n2: #\n3: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n4: #\n5: # See the NOTICE file distributed with this work for additional information\n6: # regarding copyright ownership.\n7: #\n8: # Licensed under the Apache License, Version 2.0 (the \"License\");\n9: # you may not use this file except in compliance with\n10: # the License.  You may obtain a copy of the License at\n11: #\n12: #   http://www.apache.org/licenses/LICENSE-2.0\n13: #\n14: # Unless required by applicable law or agreed to in writing,\n15: # software distributed under the License is distributed on an\n16: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n17: # KIND, either express or implied.  See the License for the\n18: # specific language governing permissions and limitations\n19: # under the License.\n20: #\n21: set -Eeuo pipefail\n22: \n23: function show_help {\n24:     echo \"\"\"\n25:     Commands\n26:     ----------------------------------------------------------------------------\n27: "
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "pattern": "generate_urlpatterns|ODK_COLLECT_ENDPOINT"
+        },
+        "result_head": "/aether/odk/api/tests/test_models.py:27: _URL_PREFIX = '/' + settings.ODK_COLLECT_ENDPOINT[:-1] if settings.ODK_COLLECT_ENDPOINT else ''\n/aether/odk/settings.py:41: ODK_COLLECT_ENDPOINT = os.environ.get('ODK_COLLECT_ENDPOINT', '')\n/aether/odk/urls.py:22: from aether.sdk.conf.urls import generate_urlpatterns\n/aether/odk/urls.py:25: urlpatterns = generate_urlpatterns(token=True, app=[\n/aether/odk/urls.py:27: path(settings.ODK_COLLECT_ENDPOINT, include('aether.odk.api.collect.urls')),"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "pattern": "ODK_COLLECT_ENDPOINT",
+          "path": "/conf"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 8,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/odk/api/collect/views.py",
+          "start": "200"
+        },
+        "result_head": "200:         http_response[k] = v\n201:     return http_response\n202: \n203: \n204: class IsAuthenticatedAndSurveyor(IsAuthenticated):\n205:     '''\n206:     Allows access only to surveyor users.\n207:     '''\n208: \n209:     def has_permission(self, request, view):\n210:         return bool(\n211:             super(IsAuthenticatedAndSurveyor, self).has_permission(request, view) and\n212:             is_surveyor(request.user)\n213:         )\n214: \n215: \n216: @api_view(['GET'])\n217: @renderer_classes([TemplateHTMLRenderer])\n218: @authentication_classes([CollectAuthentication])\n219: @permission_classes([IsAuthenticatedAndSurveyor])\n220: def xform_list(request, *args, **kwargs):\n221:     '''\n222:     https://docs.opendatakit.org/openrosa-form-list/\n223: \n224:     '''\n225: \n226:     xforms = _get_xforms(request).filter(project__active=True, active=True)\n227:     formID = request.query_params.get('formID')\n228:     if formID:\n229:         xforms = xforms.filter(form_id=formID)\n230: \n231:     return R"
+      },
+      {
+        "step": 9,
+        "tool": "grep",
+        "args": {
+          "pattern": "path\\(|re_path\\(|url\\(",
+          "path": "/aether"
+        },
+        "result_head": "/aether/__init__.py:19: __path__ = __import__('pkgutil').extend_path(__path__, __name__)\n/aether/odk/api/collect/tests/test_authentication.py:528: def test__access__with_another_realm_in_path(self):\n/aether/odk/api/collect/tests/test_views_submission.py:131: self.KERNEL_URL = kernel_utils.get_kernel_url()\n/aether/odk/api/collect/tests/test_views_submission.py:133: self.SUBMISSIONS_URL = kernel_utils.get_submissions_url()\n/aether/odk/api/collect/tests/test_views_submission.py:134: self.ATTACHMENTS_URL = kernel_utils.get_attachments_url()\n/aether/odk/api/collect/urls.py:24: path(route='formList',\n/aether/odk/api/collect/urls.py:28: path(route='forms/<slug:pk>/form.xml',\n/aether/odk/api/collect/urls.py:32: path(route='forms/<slug:pk>/manifest.xml',\n/aether/odk/api/collect/urls.py:36: path(route='media-file/<slug:pk>',\n/aether/odk/api/collect/urls.py:40: path(route='submission',\n/aether/odk/api/collect/views.py:420: url=get_submissions_url(submission_id),\n/aether/odk/api/collect/views.py:5"
+      },
+      {
+        "step": 9,
+        "tool": "find",
+        "args": {
+          "pattern": "*.py",
+          "path": "/aether/odk/api"
+        },
+        "result_head": "/aether/odk/api/__init__.py\n/aether/odk/api/collect/__init__.py\n/aether/odk/api/collect/apps.py\n/aether/odk/api/collect/auth_utils.py\n/aether/odk/api/collect/authentication.py\n/aether/odk/api/collect/migrations/0001_initial.py\n/aether/odk/api/collect/migrations/0002_unique_together_constraint.py\n/aether/odk/api/collect/migrations/__init__.py\n/aether/odk/api/collect/models.py\n/aether/odk/api/collect/tests/__init__.py\n/aether/odk/api/collect/tests/test_authentication.py\n/aether/odk/api/collect/tests/test_views.py\n/aether/odk/api/collect/tests/test_views_submission.py\n/aether/odk/api/collect/urls.py\n/aether/odk/api/collect/views.py\n/aether/odk/api/forms.py\n/aether/odk/api/kernel_utils.py\n/aether/odk/api/migrations/0001_initial.py\n/aether/odk/api/migrations/0002_rename_survey_to_mapping.py\n/aether/odk/api/migrations/0003_media_files.py\n/aether/odk/api/migrations/0004_xform_avro_schema.py\n/aether/odk/api/migrations/0005_rename_models.py\n/aether/odk/api/migrations/0006_verbose_name.py\n/aethe"
+      },
+      {
+        "step": 10,
+        "tool": "grep",
+        "args": {
+          "path": "/aether/odk/api/tests/test_views.py",
+          "pattern": "reverse\\(|/projects|/xforms|/media-files|/surveyors"
+        },
+        "result_head": "/aether/odk/api/tests/test_views.py:42: response = self.client.get('/xforms.json')\n/aether/odk/api/tests/test_views.py:46: url = f'/xforms.json?project_id={project_ids[0]}'\n/aether/odk/api/tests/test_views.py:51: url = f'/xforms.json?project_id={project_ids[1]}'\n/aether/odk/api/tests/test_views.py:56: url = f'/xforms.json?project_id={project_ids[2]}'\n/aether/odk/api/tests/test_views.py:61: url = f'/xforms.json?project_id={project_ids[3]}'\n/aether/odk/api/tests/test_views.py:72: response = self.client.get('/surveyors.json')\n/aether/odk/api/tests/test_views.py:76: response = self.client.get('/surveyors.json?search=peter')\n/aether/odk/api/tests/test_views.py:80: response = self.client.get('/surveyors.json?search=pan')\n/aether/odk/api/tests/test_views.py:84: response = self.client.get('/surveyors.json?search=paul')\n/aether/odk/api/tests/test_views.py:88: response = self.client.get('/surveyors.json?search=wendy')\n/aether/odk/api/tests/test_views.py:102: response = self.client.get('/surveyor"
+      },
+      {
+        "step": 10,
+        "tool": "grep",
+        "args": {
+          "path": "/aether/odk/api/collect/tests/test_views.py",
+          "pattern": "reverse\\(|_URL_PREFIX|ODK_COLLECT"
+        },
+        "result_head": "/aether/odk/api/collect/tests/test_views.py:38: self.url_list = reverse('xform-list-xml')\n/aether/odk/api/collect/tests/test_views.py:71: url = reverse('xform-get-download', kwargs={'pk': 0})\n/aether/odk/api/collect/tests/test_views.py:75: url = reverse('xform-get-manifest', kwargs={'pk': 0})"
+      },
+      {
+        "step": 11,
+        "tool": "grep",
+        "args": {
+          "path": "/conf/pip",
+          "pattern": "aether"
+        },
+        "result_head": "/conf/pip/primary-requirements.txt:19: aether.sdk[cache,server,storage,test]\n/conf/pip/requirements.txt:15: aether.sdk==1.4.4"
+      },
+      {
+        "step": 11,
+        "tool": "grep",
+        "args": {
+          "path": "/aether/odk/api/collect/tests/test_views.py",
+          "pattern": "formList|submission|media-file|forms/"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 12,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\":[{\"name\":\"aether-odk\",\"dirs\":[\"/aether\",\"/conf\"]}]}"
+        },
+        "result_head": "Recorded 1 new: service aether-odk\nTotal: 1 services, 0 endpoints in 0 files.\nServices with no endpoints recorded yet: aether-odk."
+      },
+      {
+        "step": 13,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\":[\n{\"path\":\"/aether/odk/api/urls.py\",\"service\":\"aether-odk\",\"endpoints\":[\n{\"className\":\"ProjectViewSet\",\"methodName\":\"list\",\"httpMethod\":\"GET\",\"path\":\"/projects/\",\"line\":25,\"evidence\":\"router."
+        },
+        "result_head": "Recorded 10 new: PATCH /projects/{pk}/propagate/, GET /projects/{pk}/download/, PATCH /xforms/{pk}/propagate/, GET /xforms/{pk}/download/, GET /media-files/{pk}/content/, GET /formList, GET /forms/{pk}/form.xml, GET /forms/{pk}/manifest.xml, GET /media-file/{pk}, POST /submission\nTotal: 1 services, 10 endpoints in 2 files.\n[REJECTED 25] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0].endpoints[0] GET /projects/ (ProjectViewSet.list): method list does not appear in this file\n- files[0].endpoints[1] POST /projects/ (ProjectViewSet.create): method create does not appear in this file\n- files[0].endpoints[2] GET /projects/{pk}/ (ProjectViewSet.retrieve): method retrieve does not appear in this file\n- files[0].endpoints[3] PUT /projects/{pk}/ (ProjectViewSet.update): method update does not appear in this file\n- files[0].endpoints[4] PATCH /projects/{pk}/ (ProjectViewSet.partial_update): method partial_update does not appear in this file\n- files[0]."
+      },
+      {
+        "step": 14,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\":[\n{\"path\":\"/aether/odk/api/urls.py\",\"service\":\"aether-odk\",\"endpoints\":[\n{\"className\":\"ProjectViewSet\",\"methodName\":\"(inline)\",\"httpMethod\":\"GET\",\"path\":\"/projects/\",\"line\":25,\"evidence\":\"rou"
+        },
+        "result_head": "Recorded 24 new: GET /projects/, POST /projects/, GET /projects/{pk}/, PUT /projects/{pk}/, PATCH /projects/{pk}/, DELETE /projects/{pk}/, GET /xforms/, POST /xforms/, GET /xforms/{pk}/, PUT /xforms/{pk}/, PATCH /xforms/{pk}/, DELETE /xforms/{pk}/, GET /media-files/, POST /media-files/, GET /media-files/{pk}/, PUT /media-files/{pk}/, PATCH /media-files/{pk}/, DELETE /media-files/{pk}/, GET /surveyors/, POST /surveyors/, GET /surveyors/{pk}/, PUT /surveyors/{pk}/, PATCH /surveyors/{pk}/, DELETE /surveyors/{pk}/\nTotal: 1 services, 34 endpoints in 3 files."
+      },
+      {
+        "step": 15,
+        "tool": "submit",
+        "args": {},
+        "result_head": "[ACCEPTED] 1 services, 34 endpoints."
+      }
+    ]
+  }
+}

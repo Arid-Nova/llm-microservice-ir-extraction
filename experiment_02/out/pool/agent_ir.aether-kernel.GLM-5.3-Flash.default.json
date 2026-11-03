@@ -1,0 +1,652 @@
+{
+  "system": "aether-kernel",
+  "services": [
+    {
+      "name": "aether-kernel",
+      "dirs": [
+        "/"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "/aether/kernel/urls.py",
+      "service": "aether-kernel",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "extract_view",
+          "httpMethod": "ANY",
+          "path": "/{ADMIN_URL}/~extract",
+          "line": 40,
+          "evidence": "path(route=f'{settings.ADMIN_URL}/~extract', view=extract_view, name='admin-extract')",
+          "framework": "Django",
+          "confidence": "high"
+        },
+        {
+          "className": "AetherSchemaView",
+          "httpMethod": "GET",
+          "line": 33,
+          "methodName": "AetherSchemaView",
+          "path": "/{version:v1}/schema/",
+          "evidence": "re_path(route=f'{API_PREFIX}/schema/', view=AetherSchemaView.without_ui(cache_timeout=0), name='api_schema')",
+          "framework": "Django/DRF (drf-yasg)",
+          "confidence": "high"
+        },
+        {
+          "className": "AetherSchemaView",
+          "httpMethod": "GET",
+          "line": 36,
+          "methodName": "AetherSchemaView",
+          "path": "/{version:v1}/swagger/$",
+          "evidence": "re_path(route=f'{API_PREFIX}/swagger/$', view=AetherSchemaView.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui')",
+          "framework": "Django/DRF (drf-yasg)",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/aether/kernel/api/urls.py",
+      "service": "aether-kernel",
+      "endpoints": [
+        {
+          "className": "",
+          "methodName": "validate_mappings_view",
+          "httpMethod": "ANY",
+          "path": "/validate-mappings/ (and /{version:v1}/validate-mappings/)",
+          "line": 41,
+          "evidence": "path('validate-mappings/', view=views.validate_mappings_view, name='validate-mappings')",
+          "framework": "Django",
+          "confidence": "high"
+        },
+        {
+          "className": "",
+          "methodName": "generate_avro_input",
+          "httpMethod": "ANY",
+          "path": "/generate-avro-input/ (and /{version:v1}/generate-avro-input/)",
+          "line": 42,
+          "evidence": "path('generate-avro-input/', view=views.generate_avro_input, name='generate-avro-input')",
+          "framework": "Django",
+          "confidence": "high"
+        },
+        {
+          "className": "SchemaViewSet",
+          "httpMethod": "ANY",
+          "line": 27,
+          "methodName": "router.register",
+          "path": "/schemas/ (and /{version:v1}/schemas/)",
+          "evidence": "router.register('schemas', views.SchemaViewSet)",
+          "framework": "Django REST Framework DefaultRouter",
+          "confidence": "high"
+        },
+        {
+          "className": "ProjectViewSet",
+          "httpMethod": "ANY",
+          "line": 28,
+          "methodName": "router.register",
+          "path": "/projects/ (and /{version:v1}/projects/)",
+          "evidence": "router.register('projects', views.ProjectViewSet)",
+          "framework": "Django REST Framework DefaultRouter",
+          "confidence": "high"
+        },
+        {
+          "className": "ProjectStatsViewSet",
+          "httpMethod": "ANY",
+          "line": 29,
+          "methodName": "router.register",
+          "path": "/projects-stats/ (and /{version:v1}/projects-stats/)",
+          "evidence": "router.register('projects-stats', views.ProjectStatsViewSet, basename='projects_stats')",
+          "framework": "Django REST Framework DefaultRouter",
+          "confidence": "high"
+        },
+        {
+          "className": "SchemaDecoratorViewSet",
+          "httpMethod": "ANY",
+          "line": 30,
+          "methodName": "router.register",
+          "path": "/schemadecorators/ (and /{version:v1}/schemadecorators/)",
+          "evidence": "router.register('schemadecorators', views.SchemaDecoratorViewSet)",
+          "framework": "Django REST Framework DefaultRouter",
+          "confidence": "high"
+        },
+        {
+          "className": "MappingSetViewSet",
+          "httpMethod": "ANY",
+          "line": 31,
+          "methodName": "router.register",
+          "path": "/mappingsets/ (and /{version:v1}/mappingsets/)",
+          "evidence": "router.register('mappingsets', views.MappingSetViewSet)",
+          "framework": "Django REST Framework DefaultRouter",
+          "confidence": "high"
+        },
+        {
+          "className": "MappingSetStatsViewSet",
+          "httpMethod": "ANY",
+          "line": 32,
+          "methodName": "router.register",
+          "path": "/mappingsets-stats/ (and /{version:v1}/mappingsets-stats/)",
+          "evidence": "router.register('mappingsets-stats', views.MappingSetStatsViewSet, basename='mappingsets_stats')",
+          "framework": "Django REST Framework DefaultRouter",
+          "confidence": "high"
+        },
+        {
+          "className": "MappingViewSet",
+          "httpMethod": "ANY",
+          "line": 33,
+          "methodName": "router.register",
+          "path": "/mappings/ (and /{version:v1}/mappings/)",
+          "evidence": "router.register('mappings', views.MappingViewSet)",
+          "framework": "Django REST Framework DefaultRouter",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionViewSet",
+          "httpMethod": "ANY",
+          "line": 34,
+          "methodName": "router.register",
+          "path": "/submissions/ (and /{version:v1}/submissions/)",
+          "evidence": "router.register('submissions', views.SubmissionViewSet)",
+          "framework": "Django REST Framework DefaultRouter",
+          "confidence": "high"
+        },
+        {
+          "className": "AttachmentViewSet",
+          "httpMethod": "ANY",
+          "line": 35,
+          "methodName": "router.register",
+          "path": "/attachments/ (and /{version:v1}/attachments/)",
+          "evidence": "router.register('attachments', views.AttachmentViewSet)",
+          "framework": "Django REST Framework DefaultRouter",
+          "confidence": "high"
+        },
+        {
+          "className": "EntityViewSet",
+          "httpMethod": "ANY",
+          "line": 36,
+          "methodName": "router.register",
+          "path": "/entities/ (and /{version:v1}/entities/)",
+          "evidence": "router.register('entities', views.EntityViewSet)",
+          "framework": "Django REST Framework DefaultRouter",
+          "confidence": "high"
+        },
+        {
+          "className": "ExportTaskViewSet",
+          "httpMethod": "ANY",
+          "line": 37,
+          "methodName": "router.register",
+          "path": "/export-tasks/ (and /{version:v1}/export-tasks/)",
+          "evidence": "router.register('export-tasks', views.ExportTaskViewSet)",
+          "framework": "Django REST Framework DefaultRouter",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/aether/kernel/api/views.py",
+      "service": "aether-kernel",
+      "endpoints": [
+        {
+          "className": "ProjectViewSet",
+          "httpMethod": "PATCH",
+          "line": 58,
+          "methodName": "delete_data",
+          "path": "/projects/{pk}/delete-data/",
+          "evidence": "@action(detail=True, methods=['patch'], url_name='erase_data', url_path='delete-data')",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ProjectViewSet",
+          "httpMethod": "GET",
+          "line": 71,
+          "methodName": "schemas_skeleton",
+          "path": "/projects/{pk}/schemas-skeleton/",
+          "evidence": "@action(detail=True, methods=['get'], url_name='skeleton', url_path='schemas-skeleton')",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ProjectViewSet",
+          "httpMethod": "ANY",
+          "line": 119,
+          "methodName": "artefacts",
+          "path": "/projects/{pk}/artefacts/",
+          "evidence": "@action(detail=True, methods=['get', 'patch'])",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ProjectViewSet",
+          "httpMethod": "PATCH",
+          "line": 135,
+          "methodName": "avro_schemas",
+          "path": "/projects/{pk}/avro-schemas/",
+          "evidence": "@action(detail=True, methods=['patch'], url_path='avro-schemas')",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "MappingSetViewSet",
+          "httpMethod": "POST",
+          "line": 327,
+          "methodName": "delete_artefacts",
+          "path": "/mappingsets/{pk}/delete-artefacts/",
+          "evidence": "@action(detail=True, methods=['post'], url_path='delete-artefacts')",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "MappingViewSet",
+          "httpMethod": "POST",
+          "line": 349,
+          "methodName": "delete_artefacts",
+          "path": "/mappings/{pk}/delete-artefacts/",
+          "evidence": "@action(detail=True, methods=['post'], url_path='delete-artefacts')",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "MappingViewSet",
+          "httpMethod": "GET",
+          "line": 363,
+          "methodName": "topics",
+          "path": "/mappings/{pk}/topics/",
+          "evidence": "@action(detail=True, methods=['get'], url_path='topics')",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "SubmissionViewSet",
+          "httpMethod": "POST",
+          "line": 436,
+          "methodName": "validate",
+          "path": "/submissions/validate/",
+          "evidence": "@action(detail=False, methods=['post'])",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "AttachmentViewSet",
+          "httpMethod": "GET",
+          "line": 532,
+          "methodName": "content",
+          "path": "/attachments/{pk}/content/",
+          "evidence": "@action(detail=True, methods=['get'])",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "SchemaViewSet",
+          "httpMethod": "GET",
+          "line": 544,
+          "methodName": "skeleton",
+          "path": "/schemas/{pk}/skeleton/",
+          "evidence": "@action(detail=True, methods=['get'])",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "SchemaViewSet",
+          "httpMethod": "POST",
+          "line": 569,
+          "methodName": "unique_usage",
+          "path": "/schemas/unique-usage/",
+          "evidence": "@action(detail=False, methods=['post'], url_path='unique-usage')",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "SchemaDecoratorViewSet",
+          "httpMethod": "GET",
+          "line": 615,
+          "methodName": "skeleton",
+          "path": "/schemadecorators/{pk}/skeleton/",
+          "evidence": "@action(detail=True, methods=['get'])",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        },
+        {
+          "className": "ExportTaskViewSet",
+          "httpMethod": "GET",
+          "line": 841,
+          "methodName": "file_content",
+          "path": "/export-tasks/{pk}/file-content/{file_pk}/",
+          "evidence": "url_path='file-content/(?P<file_pk>[^/.]+)',",
+          "framework": "Django REST Framework",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "path": "/aether/kernel/api/entity_extractor.py",
+      "service": "aether-kernel",
+      "endpoints": [
+        {
+          "className": "ExtractMixin",
+          "httpMethod": "PATCH",
+          "line": 58,
+          "methodName": "extract",
+          "path": "/{model}/{pk}/extract/",
+          "evidence": "@action(detail=True, methods=['patch'])",
+          "framework": "Django REST Framework",
+          "confidence": "high",
+          "implementedBy": [
+            "ProjectViewSet",
+            "MappingSetViewSet",
+            "SubmissionViewSet"
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/aether/kernel/api/exporter.py",
+      "service": "aether-kernel",
+      "endpoints": [
+        {
+          "className": "ExporterMixin",
+          "httpMethod": "ANY",
+          "line": 149,
+          "methodName": "query",
+          "path": "/{model}/query/",
+          "evidence": "@action(detail=False, methods=['get', 'post'])",
+          "framework": "Django REST Framework",
+          "confidence": "high",
+          "implementedBy": [
+            "SubmissionViewSet",
+            "EntityViewSet"
+          ]
+        },
+        {
+          "className": "ExporterMixin",
+          "httpMethod": "ANY",
+          "line": 159,
+          "methodName": "xlsx",
+          "path": "/{model}/xlsx/",
+          "evidence": "@action(detail=False, methods=['get', 'post'])",
+          "framework": "Django REST Framework",
+          "confidence": "high",
+          "implementedBy": [
+            "SubmissionViewSet",
+            "EntityViewSet"
+          ]
+        },
+        {
+          "className": "ExporterMixin",
+          "httpMethod": "ANY",
+          "line": 168,
+          "methodName": "csv",
+          "path": "/{model}/csv/",
+          "evidence": "@action(detail=False, methods=['get', 'post'])",
+          "framework": "Django REST Framework",
+          "confidence": "high",
+          "implementedBy": [
+            "SubmissionViewSet",
+            "EntityViewSet"
+          ]
+        }
+      ]
+    }
+  ],
+  "_run": {
+    "model": "GLM-5.3-Flash",
+    "provider": "https://pass.wafer.ai/v1",
+    "workflow": "agent",
+    "effort": "default",
+    "temperature": 0,
+    "native_tools": true,
+    "repo": "aether-kernel",
+    "commit": "2a4bf1b78d1bcb207af51dc06c6393ad78fe0291",
+    "dirty": false,
+    "accepted": true,
+    "fallback": null,
+    "error": null,
+    "stopped": null,
+    "loop_warnings": 0,
+    "blocked_calls": 0,
+    "record_nudges": 0,
+    "elided_results": 0,
+    "steps": 18,
+    "tool_calls": 28,
+    "rejected_entries": 15,
+    "no_call_replies": 0,
+    "input_tokens": 171582,
+    "cached_input_tokens": 139776,
+    "output_tokens": 5300,
+    "list_price_usd": 0.0116,
+    "wall_seconds": 36.2,
+    "trace": [
+      {
+        "step": 1,
+        "tool": "list_dir",
+        "args": {
+          "path": "/"
+        },
+        "result_head": ".dockerignore\nDockerfile\naether/\nconf/\nentrypoint.sh\nmanage.py\nsetup.cfg\nsetup.py"
+      },
+      {
+        "step": 2,
+        "tool": "list_dir",
+        "args": {
+          "path": "/aether"
+        },
+        "result_head": "__init__.py\nkernel/"
+      },
+      {
+        "step": 2,
+        "tool": "read_file",
+        "args": {
+          "path": "/Dockerfile"
+        },
+        "result_head": "1: FROM python:3.10-slim\n2: \n3: LABEL description=\"Aether Kernel\" \\\n4:       name=\"aether-kernel\" \\\n5:       author=\"eHealth Africa\"\n6: \n7: ################################################################################\n8: ## set up container\n9: ################################################################################\n10: \n11: COPY ./conf/docker/* /tmp/\n12: RUN /tmp/setup.sh\n13: \n14: WORKDIR /code\n15: ENTRYPOINT [\"/code/entrypoint.sh\"]\n16: \n17: ################################################################################\n18: ## install dependencies\n19: ## copy files one by one and split commands to use docker cache\n20: ################################################################################\n21: \n22: COPY --chown=aether:aether ./conf/pip /code/conf/pip\n23: \n24: ENV VIRTUAL_ENV=/var/run/aether/venv\n25: ENV PATH=\"$VIRTUAL_ENV/bin:$PATH\"\n26: \n27: RUN mkdir -p $VIRTUAL_ENV && \\\n28:     python3 -m venv $VIRTUAL_ENV && \\\n29:     pip install -q --upgrade pip && \\\n30:     pip"
+      },
+      {
+        "step": 3,
+        "tool": "list_dir",
+        "args": {
+          "path": "/aether/kernel"
+        },
+        "result_head": "__init__.py\nadmin.py\napi/\napps.py\nmanagement/\nmodels.py\nsettings.py\ntests/\nurls.py\nviews.py"
+      },
+      {
+        "step": 3,
+        "tool": "read_file",
+        "args": {
+          "path": "/entrypoint.sh"
+        },
+        "result_head": "1: #!/usr/bin/env bash\n2: #\n3: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n4: #\n5: # See the NOTICE file distributed with this work for additional information\n6: # regarding copyright ownership.\n7: #\n8: # Licensed under the Apache License, Version 2.0 (the \"License\");\n9: # you may not use this file except in compliance with\n10: # the License.  You may obtain a copy of the License at\n11: #\n12: #   http://www.apache.org/licenses/LICENSE-2.0\n13: #\n14: # Unless required by applicable law or agreed to in writing,\n15: # software distributed under the License is distributed on an\n16: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n17: # KIND, either express or implied.  See the License for the\n18: # specific language governing permissions and limitations\n19: # under the License.\n20: #\n21: set -Eeuo pipefail\n22: \n23: function show_help {\n24:     echo \"\"\"\n25:     Commands\n26:     ----------------------------------------------------------------------------\n27: "
+      },
+      {
+        "step": 4,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/kernel/urls.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: from django.conf import settings\n20: from django.urls import include, path, re_path\n21: \n22: from aether.sdk.conf.urls import generate_urlpatterns\n23: from aether.kernel.views import AetherSchemaView\n24:"
+      },
+      {
+        "step": 4,
+        "tool": "list_dir",
+        "args": {
+          "path": "/aether/kernel/api"
+        },
+        "result_head": "__init__.py\nconstants.py\nentity_extractor.py\nexporter.py\nfilters.py\nmapping_validation.py\nmigrations/\nmodels.py\nproject_artefacts.py\nredis.py\nserializers.py\ntests/\nurls.py\nutils.py\nvalidators.py\nviews.py"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/kernel/api/urls.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: from django.urls import path\n20: from rest_framework.routers import DefaultRouter\n21: \n22: from . import views\n23: \n24: \n25: router = DefaultRouter()\n26: \n27: router.register('schemas', views.SchemaViewS"
+      },
+      {
+        "step": 5,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/kernel/api/views.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: from django.db import models as db_models\n20: from django.db.models.functions import Cast, Coalesce\n21: from django.utils.translation import gettext as _\n22: from django.shortcuts import get_object_or_40"
+      },
+      {
+        "step": 6,
+        "tool": "grep",
+        "args": {
+          "path": "/",
+          "pattern": "generate_urlpatterns"
+        },
+        "result_head": "/aether/kernel/urls.py:22: from aether.sdk.conf.urls import generate_urlpatterns\n/aether/kernel/urls.py:29: urlpatterns = generate_urlpatterns(token=True, app=["
+      },
+      {
+        "step": 6,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/kernel/views.py"
+        },
+        "result_head": "1: # Copyright (C) 2023 by eHealth Africa : http://www.eHealthAfrica.org\n2: #\n3: # See the NOTICE file distributed with this work for additional information\n4: # regarding copyright ownership.\n5: #\n6: # Licensed under the Apache License, Version 2.0 (the \"License\");\n7: # you may not use this file except in compliance with\n8: # the License.  You may obtain a copy of the License at\n9: #\n10: #   http://www.apache.org/licenses/LICENSE-2.0\n11: #\n12: # Unless required by applicable law or agreed to in writing,\n13: # software distributed under the License is distributed on an\n14: # \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n15: # KIND, either express or implied.  See the License for the\n16: # specific language governing permissions and limitations\n17: # under the License.\n18: \n19: from drf_yasg.views import get_schema_view\n20: from drf_yasg import openapi\n21: \n22: from rest_framework import permissions, versioning\n23: \n24: SchemaView = get_schema_view(\n25:     openapi.Info(\n26:   "
+      },
+      {
+        "step": 7,
+        "tool": "find",
+        "args": {
+          "pattern": "aether/sdk/**"
+        },
+        "result_head": "(no files)"
+      },
+      {
+        "step": 7,
+        "tool": "grep",
+        "args": {
+          "path": "/",
+          "pattern": "def generate_urlpatterns"
+        },
+        "result_head": "(no matches)"
+      },
+      {
+        "step": 8,
+        "tool": "list_dir",
+        "args": {
+          "path": "/conf"
+        },
+        "result_head": "check_vars.sh\ndocker/\nextras/\npip/\nuwsgi/"
+      },
+      {
+        "step": 8,
+        "tool": "grep",
+        "args": {
+          "path": "/",
+          "pattern": "aether\\.sdk|aether-python|aether_python"
+        },
+        "result_head": "/aether/kernel/api/migrations/0112_json_field_2.py:4: import aether.sdk.drf.fields\n/aether/kernel/api/models.py:35: from aether.sdk.multitenancy.models import MtModelAbstract, MtModelChildAbstract\n/aether/kernel/api/models.py:36: from aether.sdk.utils import json_prettified, get_file_content\n/aether/kernel/api/models.py:122: .. note:: Extends from :class:`aether.sdk.multitenancy.models.MultitenancyBaseAbstract`\n/aether/kernel/api/serializers.py:27: from aether.sdk.drf.serializers import (\n/aether/kernel/api/serializers.py:35: from aether.sdk.multitenancy.serializers import (\n/aether/kernel/api/tests/test_exporter.py:1200: with mock.patch('aether.sdk.utils.request',\n/aether/kernel/api/tests/test_multitenancy.py:29: from aether.sdk.multitenancy.models import MtInstance\n/aether/kernel/api/tests/test_multitenancy.py:30: from aether.sdk.multitenancy import utils\n/aether/kernel/api/views.py:23: from aether.sdk.multitenancy.utils import filter_by_realm, is_accessible_by_realm\n/aether/kernel/a"
+      },
+      {
+        "step": 9,
+        "tool": "record",
+        "args": {
+          "json": "{\"services\": [{\"name\": \"aether-kernel\", \"dirs\": [\"/\"]}], \"files\": [{\"path\": \"/aether/kernel/urls.py\", \"service\": \"aether-kernel\", \"endpoints\": [{\"className\": \"AetherSchemaView\", \"methodName\": \"get\", \""
+        },
+        "result_head": "Recorded 4 new: service aether-kernel, ANY /{ADMIN_URL}/~extract, ANY /validate-mappings/ (and /{version:v1}/validate-mappings/), ANY /generate-avro-input/ (and /{version:v1}/generate-avro-input/)\nTotal: 1 services, 3 endpoints in 2 files.\n[REJECTED 13] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0].endpoints[0] GET /{version:v1}/schema/ (AetherSchemaView.get): method get does not appear in this file\n- files[0].endpoints[1] GET /{version:v1}/swagger/ (AetherSchemaView.get): method get does not appear in this file\n- files[1].endpoints[0] ANY /schemas/ (and /{version:v1}/schemas/) (SchemaViewSet.(viewset)): method (viewset) does not appear in this file\n- files[1].endpoints[1] ANY /projects/ (and /{version:v1}/projects/) (ProjectViewSet.(viewset)): method (viewset) does not appear in this file\n- files[1].endpoints[2] ANY /projects-stats/ (and /{version:v1}/projects-stats/) (ProjectStatsViewSet.(viewset)): method (viewset) does not appear in thi"
+      },
+      {
+        "step": 10,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"endpoints\": [{\"className\": \"AetherSchemaView\", \"httpMethod\": \"GET\", \"line\": 33, \"methodName\": \"AetherSchemaView\", \"path\": \"/{version:v1}/schema/\", \"evidence\": \"re_path(route=f'{API_PREFIX"
+        },
+        "result_head": "Recorded 12 new: GET /{version:v1}/schema/, ANY /schemas/ (and /{version:v1}/schemas/), ANY /projects/ (and /{version:v1}/projects/), ANY /projects-stats/ (and /{version:v1}/projects-stats/), ANY /schemadecorators/ (and /{version:v1}/schemadecorators/), ANY /mappingsets/ (and /{version:v1}/mappingsets/), ANY /mappingsets-stats/ (and /{version:v1}/mappingsets-stats/), ANY /mappings/ (and /{version:v1}/mappings/), ANY /submissions/ (and /{version:v1}/submissions/), ANY /attachments/ (and /{version:v1}/attachments/), ANY /entities/ (and /{version:v1}/entities/), ANY /export-tasks/ (and /{version:v1}/export-tasks/)\nTotal: 1 services, 15 endpoints in 2 files.\n[REJECTED 1] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0].endpoints[1] GET /{version:v1}/swagger/ (AetherSchemaView.AetherSchemaView): path /{version:v1}/swagger/ does not end with the route in the evidence ({}/swagger/$); join the prefixes with it"
+      },
+      {
+        "step": 11,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"endpoints\": [{\"className\": \"AetherSchemaView\", \"httpMethod\": \"GET\", \"line\": 36, \"methodName\": \"AetherSchemaView\", \"path\": \"/{version:v1}/swagger/$\", \"evidence\": \"re_path(route=f'{API_PREF"
+        },
+        "result_head": "Recorded 1 new: GET /{version:v1}/swagger/$\nTotal: 1 services, 16 endpoints in 2 files."
+      },
+      {
+        "step": 12,
+        "tool": "grep",
+        "args": {
+          "path": "/aether/kernel/api",
+          "pattern": "@action|def (validate_mappings_view|generate_avro_input|extract_view)"
+        },
+        "result_head": "/aether/kernel/api/entity_extractor.py:58: @action(detail=True, methods=['patch'])\n/aether/kernel/api/entity_extractor.py:113: def extract_view(request, *args, **kwargs):\n/aether/kernel/api/exporter.py:149: @action(detail=False, methods=['get', 'post'])\n/aether/kernel/api/exporter.py:159: @action(detail=False, methods=['get', 'post'])\n/aether/kernel/api/exporter.py:168: @action(detail=False, methods=['get', 'post'])\n/aether/kernel/api/views.py:58: @action(detail=True, methods=['patch'], url_name='erase_data', url_path='delete-data')\n/aether/kernel/api/views.py:71: @action(detail=True, methods=['get'], url_name='skeleton', url_path='schemas-skeleton')\n/aether/kernel/api/views.py:119: @action(detail=True, methods=['get', 'patch'])\n/aether/kernel/api/views.py:135: @action(detail=True, methods=['patch'], url_path='avro-schemas')\n/aether/kernel/api/views.py:327: @action(detail=True, methods=['post'], url_path='delete-artefacts')\n/aether/kernel/api/views.py:349: @action(detail=True, methods="
+      },
+      {
+        "step": 13,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/kernel/api/views.py",
+          "start": "320"
+        },
+        "result_head": "320: class MappingSetViewSet(MtViewSetMixin, FilteredMixin, ExtractMixin, viewsets.ModelViewSet):\n321:     queryset = models.MappingSet.objects.all()\n322:     serializer_class = serializers.MappingSetSerializer\n323:     filterset_class = filters.MappingSetFilter\n324:     search_fields = ('name',)\n325:     mt_field = 'project'\n326: \n327:     @action(detail=True, methods=['post'], url_path='delete-artefacts')\n328:     def delete_artefacts(self, request, pk=None, *args, **kwargs):\n329:         mappingset = self.get_object_or_404(pk=pk)\n330:         opts = request.data\n331:         try:\n332:             result = utils.bulk_delete_by_mappings(opts, pk)\n333:             mappingset.delete()\n334:             return Response(result)\n335:         except Exception as e:  # pragma: no cover\n336:             return Response(\n337:                 str(e),\n338:                 status=status.HTTP_500_INTERNAL_SERVER_ERROR,\n339:             )\n340: \n341: \n342: class MappingViewSet(MtViewSetMixin, Filtere"
+      },
+      {
+        "step": 13,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/kernel/api/views.py",
+          "start": "430"
+        },
+        "result_head": "430:         except Exception as e:\n431:             return Response(str(e), status=status.HTTP_400_BAD_REQUEST)\n432: \n433:     def check_realm_permission(self, request, mappingset):\n434:         return is_accessible_by_realm(request, mappingset)\n435: \n436:     @action(detail=False, methods=['post'])\n437:     def validate(self, request, *args, **kwargs):\n438:         '''\n439:         Validates a submission payload using the provided mappingset id\n440: \n441:         Reachable at ``POST /submissions/validate/``\n442: \n443:         expected body:\n444: \n445:             {\n446:                 'mappingset': 'uuid',\n447:                 'payload': {}\n448:             }\n449: \n450:         expected response:\n451: \n452:         {\n453:             # flag indicating if the submission is valid or not\n454:             'is_valid': True|False,\n455: \n456:             # list of entities successfully generated from the submitted payload\n457:             'entities': [],\n458: \n459:             # list of en"
+      },
+      {
+        "step": 14,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/kernel/api/views.py",
+          "start": "600"
+        },
+        "result_head": "600:                 models.Mapping.objects.filter(pk__in=request.data or []),\n601:                 'mappingset__project'\n602:             ).values_list('id', flat=True)\n603:             return Response(utils.get_unique_schemas_used(mappings))\n604:         except Exception as e:\n605:             return Response(str(e), status=status.HTTP_500_INTERNAL_SERVER_ERROR)\n606: \n607: \n608: class SchemaDecoratorViewSet(MtViewSetMixin, FilteredMixin, viewsets.ModelViewSet):\n609:     queryset = models.SchemaDecorator.objects.all()\n610:     serializer_class = serializers.SchemaDecoratorSerializer\n611:     filterset_class = filters.SchemaDecoratorFilter\n612:     search_fields = ('name',)\n613:     mt_field = 'project'\n614: \n615:     @action(detail=True, methods=['get'])\n616:     def skeleton(self, request, pk=None, *args, **kwargs):\n617:         '''\n618:         Returns the schema \"skeleton\".\n619: \n620:         Reachable at ``/schemadecorators/{pk}/skeleton/``\n621:         '''\n622: \n623:         sche"
+      },
+      {
+        "step": 14,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/kernel/api/views.py",
+          "start": "820"
+        },
+        "result_head": "820:     fields_list = ('id', 'name', 'created', 'active',)\n821: \n822: \n823: class MappingSetStatsViewSet(SubmissionStatsMixin, viewsets.ReadOnlyModelViewSet):\n824:     queryset = models.MappingSet.objects.all()\n825:     serializer_class = serializers.MappingSetStatsSerializer\n826:     filterset_class = filters.MappingSetFilter\n827:     search_fields = ('name',)\n828:     mt_field = 'project'\n829: \n830: \n831: class ExportTaskViewSet(MtViewSetMixin, viewsets.ReadOnlyModelViewSet, mixins.DestroyModelMixin):\n832:     queryset = models.ExportTask.objects.all()\n833:     serializer_class = serializers.ExportTaskSerializer\n834:     filterset_class = filters.ExportTaskFilter\n835:     mt_field = 'project'\n836: \n837:     @action(\n838:         detail=True,\n839:         methods=['get'],\n840:         url_name='file_content',\n841:         url_path='file-content/(?P<file_pk>[^/.]+)',\n842:     )\n843:     def file_content(self, request, pk=None, file_pk=None, *args, **kwargs):\n844:         task = self.g"
+      },
+      {
+        "step": 15,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/kernel/api/exporter.py",
+          "start": "140"
+        },
+        "result_head": "140:             for k, v in data.items()\n141:             if k.startswith(json_filter)\n142:         ]\n143:         queryset = self.queryset\n144:         for k, v in filters:\n145:             kwargs = {k: parse_value(v)}\n146:             queryset = queryset.filter(**kwargs)\n147:         return queryset\n148: \n149:     @action(detail=False, methods=['get', 'post'])\n150:     def query(self, request, *args, **kwargs):\n151:         '''\n152:         Allow to list data from a POST request.\n153: \n154:         Reachable at ``.../{model}/query/``\n155:         '''\n156: \n157:         return self.list(request, *args, **kwargs)\n158: \n159:     @action(detail=False, methods=['get', 'post'])\n160:     def xlsx(self, request, *args, **kwargs):\n161:         '''\n162:         Export the data as an XLSX file\n163: \n164:         Reachable at ``/{model}/xlsx/``\n165:         '''\n166:         return self.__export(request, file_format=XLSX_FORMAT)\n167: \n168:     @action(detail=False, methods=['get', 'post'])\n169: "
+      },
+      {
+        "step": 15,
+        "tool": "read_file",
+        "args": {
+          "path": "/aether/kernel/api/entity_extractor.py",
+          "start": "40"
+        },
+        "result_head": "40: from .models import SchemaDecorator, Submission, Entity\n41: from .utils import send_model_item_to_redis\n42: \n43: # The maximum number of submissions that are extracted locally\n44: # instead of sending them to redis => exm.\n45: LOCAL_MAXIMUM = 20\n46: \n47: DELTA_UNITS = {\n48:     'd': 'days',\n49:     'h': 'hours',\n50:     'm': 'minutes',\n51:     's': 'seconds',\n52:     'w': 'weeks',\n53: }\n54: \n55: \n56: class ExtractMixin(object):\n57: \n58:     @action(detail=True, methods=['patch'])\n59:     def extract(self, request, pk, *args, **kwargs):\n60:         '''\n61:         Executes the entity extraction for the submission or the linked submissions.\n62: \n63:         Optionally expects as query parameters:\n64: \n65:         - `overwrite` to indicate that even the submissions with extracted\n66:           entities should repeat the extraction process.\n67:           It's only taken into consideration for projects or mapping sets,\n68:           single submissions are always processed immediately.\n6"
+      },
+      {
+        "step": 16,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"endpoints\": [{\"className\": \"ProjectViewSet\", \"httpMethod\": \"PATCH\", \"line\": 58, \"methodName\": \"delete_data\", \"path\": \"/projects/{pk}/delete-data/\", \"evidence\": \"@action(detail=True, metho"
+        },
+        "result_head": "Recorded 16 new: PATCH /projects/{pk}/delete-data/, GET /projects/{pk}/schemas-skeleton/, ANY /projects/{pk}/artefacts/, PATCH /projects/{pk}/avro-schemas/, POST /mappingsets/{pk}/delete-artefacts/, POST /mappings/{pk}/delete-artefacts/, GET /mappings/{pk}/topics/, POST /submissions/validate/, GET /attachments/{pk}/content/, GET /schemas/{pk}/skeleton/, POST /schemas/unique-usage/, GET /schemadecorators/{pk}/skeleton/, PATCH /{model}/{pk}/extract/, ANY /{model}/query/, ANY /{model}/xlsx/, ANY /{model}/csv/\nTotal: 1 services, 32 endpoints in 5 files.\n[REJECTED 1] Fix these and record them again (accepted entries are kept, do not resend them):\n- files[0].endpoints[12] GET /export-tasks/{pk}/file-content/{file_pk}/ (ExportTaskViewSet.file_content): evidence is not at line 837; copy the route declaration verbatim. Lines 834-840 read: filterset_class = filters.ExportTaskFilter mt_field = 'project' @action( detail=True, methods=['get'], url_name='file_content',"
+      },
+      {
+        "step": 17,
+        "tool": "record",
+        "args": {
+          "json": "{\"files\": [{\"endpoints\": [{\"className\": \"ExportTaskViewSet\", \"httpMethod\": \"GET\", \"line\": 841, \"methodName\": \"file_content\", \"path\": \"/export-tasks/{pk}/file-content/{file_pk}/\", \"evidence\": \"url_path"
+        },
+        "result_head": "Recorded 1 new: GET /export-tasks/{pk}/file-content/{file_pk}/\nTotal: 1 services, 33 endpoints in 5 files."
+      },
+      {
+        "step": 18,
+        "tool": "submit",
+        "args": {},
+        "result_head": "[ACCEPTED] 1 services, 33 endpoints."
+      }
+    ]
+  }
+}
