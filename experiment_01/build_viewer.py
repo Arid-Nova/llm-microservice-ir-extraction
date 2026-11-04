@@ -100,7 +100,8 @@ def main():
                 src[d.name] = {"root": d.resolve().as_posix(), "files": files}
                 print(f"source {d.name}: {len(files)} files")
     sj = json.dumps(src, ensure_ascii=False).replace("</", "<\\/")
-    Path(a.out).write_text(tpl.replace("__DATA__", js).replace("__SRC__", sj), encoding="utf-8")
+    calls = (HERE / "calls.json").read_text(encoding="utf-8").replace("</", "<\\/") if (HERE / "calls.json").exists() else "{}"
+    Path(a.out).write_text(tpl.replace("__CALLS__", calls).replace("__SRC__", sj).replace("__DATA__", js), encoding="utf-8")
     print("->", a.out)
 
 

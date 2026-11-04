@@ -92,7 +92,7 @@ dialog#code[open]{display:flex}dialog#code::backdrop{background:rgba(0,0,0,.45)}
  <div class="card"><h2>Scoreboard <span class="small" id="lvlnote"></span></h2>
   <div class="wrap"><table class="board" id="board"></table></div>
   <p class="small" style="margin:8px 0 0">Click a row to inspect that source. Role-separation and hallucination counts use evaluate.py's surplus rule (neither M2 route nor M4 handler in the ground-truth inbound set) and do not depend on the level; duplicates are counted on the M2 key. Outbound is scored only for sources that emit outbound calls inside the frame.</p></div>
- <div class="card"><h2>Service map · <span id="maplabel" class="mute" style="font-weight:400"></span></h2><div id="graph"></div><div class="legend" id="legend"></div></div>
+ <div class="card"><h2>Service map · <span id="maplabel" class="mute" style="font-weight:400"></span></h2><div id="graph"></div><div class="legend" id="legend"></div><div id="calllist"></div></div>
 </div>
 
 <div class="grid" id="kpis"></div>
@@ -133,6 +133,7 @@ dialog#code[open]{display:flex}dialog#code::backdrop{background:rgba(0,0,0,.45)}
 </main>
 <script id="data" type="application/json">__DATA__</script>
 <script id="srcdata" type="application/json">__SRC__</script>
+<script id="callsdata" type="application/json">__CALLS__</script>
 <script>
 // ------------------------------------------------ evaluate.py, ported 1:1 --
 const CIMET_BUCKETS = ["controllers","services","repositories","entities","unknowns","feignClients"];
@@ -323,22 +324,35 @@ function fillSelects(){
   return true;
 }
 
+const CALLS = (() => { try { return JSON.parse(document.getElementById("callsdata").textContent); } catch (e) { return {}; } })();
+const stepTwo = (sys, src) => (src.ref ? sys.gtOut : src.out).some(c => c.target) ? [] : (CALLS[sys.meta.system] || {calls: []}).calls;
+
 function edges(sys, src){
-  return (src.ref ? sys.gtOut : src.out).filter(c => c.target).map(c => [c.service, c.target]);
+  const own = (src.ref ? sys.gtOut : src.out).filter(c => c.target).map(c => [c.service, c.target]);
+  return own.length ? own : stepTwo(sys, src).map(c => [c.from, c.to]);
+}
+
+function showCalls(sys, src, a, b){
+  const list = stepTwo(sys, src).filter(c => c.from === a && c.to === b).sort((x, y) => x.call.localeCompare(y.call));
+  if (!list.length) return;
+  $("calllist").innerHTML = `<h2 style="margin-top:12px">${esc(a)} → ${esc(b)} · ${list.length} calls</h2><div class="wrap" style="max-height:320px;overflow:auto"><table>${list.map(c =>
+    `<tr><td class="small">${esc(c.kind)}</td><td><code>${esc(c.call)}</code></td><td class="small">${c.url ? `<a href="${esc(c.url)}#L${c.line}" target="_blank" rel="noopener" style="color:var(--acc)">${esc(c.file)}:${c.line}</a>` : `${esc(c.file)}:${c.line}`}</td></tr>`).join("")}</table></div>`;
 }
 
 function graph(sys, src, rows){
   const inb = n => rows.filter(r => r.dir === "inbound" && r.service === n && r.status !== "outside frame");
   const reported = n => inb(n).filter(r => r.status !== "missed").length;
-  const names = [...new Set([...sys.services, ...src.inb.map(r => r.service), ...src.out.map(r => r.service)])];
+  const drawn = stepTwo(sys, src);
+  const names = [...new Set([...sys.services, ...src.inb.map(r => r.service), ...src.out.map(r => r.service), ...drawn.flatMap(c => [c.from, c.to])])];
   const W = 900, n = names.length, H = n > 8 ? 600 : 470, cx = W/2, cy = H/2, R = Math.min(W, H)/2 - 76;
   const pos = Object.fromEntries(names.map((nm, i) => [nm, [cx + R*Math.cos(2*Math.PI*i/n - Math.PI/2), cy + R*Math.sin(2*Math.PI*i/n - Math.PI/2)]]));
   const rad = nm => reported(nm) ? 14 + Math.min(reported(nm), 24) : 11;
   const agg = {}; edges(sys, src).forEach(([a, b]) => { if (pos[a] && pos[b]) { const k = a + "\u0000" + b; agg[k] = (agg[k] || 0) + 1; } });
-  let g = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Service map"><defs><marker id="ar" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="var(--out)"/></marker></defs>`;
+  let g = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Service map"><defs><marker id="ar" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0L10,5L0,10z" fill="var(--out)"/></marker></defs>`;
   for (const k in agg) { const [a, b] = k.split("\u0000"), [x1, y1] = pos[a], [x2, y2] = pos[b], d = Math.hypot(x2-x1, y2-y1) || 1, ra = rad(a)+2, rb = rad(b)+5;
-    const sx = x1+(x2-x1)*ra/d, sy = y1+(y2-y1)*ra/d, tx = x2-(x2-x1)*rb/d, ty = y2-(y2-y1)*rb/d;
-    g += `<line x1="${sx}" y1="${sy}" x2="${tx}" y2="${ty}" stroke="var(--out)" stroke-width="${1.4+agg[k]*.5}" marker-end="url(#ar)"/><text x="${(sx+tx)/2}" y="${(sy+ty)/2-6}" font-size="12" fill="var(--out)" text-anchor="middle">${agg[k]}×</text>`; }
+    const back = agg[b + "\u0000" + a] ? 5 : 0, ox = -(y2-y1)/d*back, oy = (x2-x1)/d*back;   // a -> b and b -> a side by side
+    const sx = x1+(x2-x1)*ra/d+ox, sy = y1+(y2-y1)*ra/d+oy, tx = x2-(x2-x1)*rb/d+ox, ty = y2-(y2-y1)*rb/d+oy;
+    g += `<g data-from="${esc(a)}" data-to="${esc(b)}" style="${drawn.length ? "cursor:pointer" : ""}"><title>${esc(a)} → ${esc(b)}: ${agg[k]} calls</title><line x1="${sx}" y1="${sy}" x2="${tx}" y2="${ty}" stroke="transparent" stroke-width="12"/><line x1="${sx}" y1="${sy}" x2="${tx}" y2="${ty}" stroke="var(--out)" stroke-opacity=".65" stroke-width="${Math.min(1+agg[k]*.25, 4)}" marker-end="url(#ar)"/><text x="${(sx+tx)/2+ox*2}" y="${(sy+ty)/2-6+oy*2}" font-size="12" fill="var(--out)" text-anchor="middle">${agg[k]}×</text></g>`; }
   names.forEach(nm => { const [x, y] = pos[nm], rs = inb(nm), r = rad(nm), bad = rs.some(x => !["match","ground truth"].includes(x.status));
     const fill = !rs.length ? "var(--dim)" : src.ref ? "var(--acc)" : bad ? "var(--bad)" : "var(--ok)";
     g += `<g style="cursor:pointer" data-svc="${esc(nm)}"><title>${esc(nm)}: ${reported(nm)} inbound endpoints reported</title><circle cx="${x}" cy="${y}" r="${r}" fill="${fill}"/>
@@ -347,7 +361,7 @@ function graph(sys, src, rows){
   $("legend").innerHTML = (src.ref
     ? `<span><i style="background:var(--acc)"></i>service with inbound endpoints (number = count)</span>`
     : `<span><i style="background:var(--ok)"></i>all inbound match</span><span><i style="background:var(--bad)"></i>has errors or misses</span>`)
-    + `<span><i style="background:var(--dim)"></i>no inbound</span><span><i style="background:var(--out)"></i>outbound calls${src.ref ? "" : " (target inferred from the URL)"}</span><span>click a service to filter the table</span>`;
+    + `<span><i style="background:var(--dim)"></i>no inbound</span><span><i style="background:var(--out)"></i>${drawn.length ? `calls from step 2 (${esc(CALLS[sys.meta.system].model)}), preliminary and not checked by hand; click a line to list them` : `outbound calls${src.ref ? "" : " (target inferred from the URL)"}`}</span><span>click a service to filter the table</span>`;
   return g + "</svg>";
 }
 
@@ -539,6 +553,8 @@ function render(){
   board(sys); kpis(sys, src, rows, L); compare(sys, src, L);
   $("maplabel").textContent = src.show;
   $("graph").innerHTML = graph(sys, src, rows);
+  $("calllist").innerHTML = "";
+  $("graph").querySelectorAll("g[data-from]").forEach(g => g.onclick = () => showCalls(sys, src, g.dataset.from, g.dataset.to));
   $("graph").querySelectorAll("g[data-svc]").forEach(g => g.onclick = () => { state.svc = state.svc === g.dataset.svc ? "" : g.dataset.svc; render(); $("rows").scrollIntoView({behavior: "smooth", block: "start"}); });
   table(sys, src, rows);
   $("excl").innerHTML = sys.excluded.length ? `<div class="card"><h2>Excluded from the ground truth</h2><div class="wrap"><table>${sys.excluded.map(x => `<tr><td style="white-space:nowrap;width:1%"><code style="word-break:normal">${esc(x.id)}</code></td><td><b>${esc(x.what)}</b><br><span class="mute">${esc(x.reason)}</span></td></tr>`).join("")}</table></div></div>` : "";
