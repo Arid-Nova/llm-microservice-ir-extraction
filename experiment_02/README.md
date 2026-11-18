@@ -132,13 +132,13 @@ differences only; a full manual review of the Spinnaker endpoints is in progress
 **Spinnaker side by side.** `spinnaker_compare.py` puts the endpoints of each
 model and of CIMET into one table per service, with the verdicts of a hand check
 of the disagreements (`spinnaker_review.json`):
-https://knapejar.github.io/llm-microservice-ir-extraction/spinnaker/.
+https://arid-nova.github.io/llm-microservice-ir-extraction/spinnaker/.
 `agent_cli.py` exposes the agent's tools as a command line, so a model working
 in an interactive session runs the same task with the same validation.
 The endpoints every finished run found, plus the confirmed disagreements, form a
 draft ground truth of 752 endpoints (`../experiment_01/groundtruth/spinnaker.gt.json`),
 which the viewer scores like the other systems:
-https://knapejar.github.io/llm-microservice-ir-extraction/viewer/#spinnaker.
+https://arid-nova.github.io/llm-microservice-ir-extraction/viewer/#spinnaker.
 
 | source | found | tp | fp | fn | F1 (M2) |
 |---|---:|---:|---:|---:|---:|
